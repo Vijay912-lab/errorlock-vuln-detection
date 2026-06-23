@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.pyc
+*.sqlite-wal
+*.sqlite-shm
+.venv/
+venv/
+
+# Keep errorlock_dbs/ (small training DBs) and errorlock_results/ CSVs.
+# Exclude bulky per-run SQLite files inside results/ sub-directories.
+results/*/errorlock.sqlite

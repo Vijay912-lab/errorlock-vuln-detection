@@ -1,0 +1,199 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,errorlock_applied,gate_reason,retrieved_count,max_similarity,explanation,raw
+phi3:mini,train_baseline,22-10,False,CWE-22,[],True,,while ((ch = fgetc(file)) != EOF),True,,False,False,False,wrong_binary_label,,,0,,Buffer overread vulnerability due to unchecked file size.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""while ((ch = fgetc(file)) != EOF)"",
+  ""explanation"": ""Buffer overread vulnerability due to unchecked file size.""
+}"
+phi3:mini,train_baseline,78-8,False,CWE-78,[],True,,line 14,True,,False,False,False,wrong_binary_label,,,0,,"The code uses `strcpy` and `strcat` without checking the destination buffer size, leading to potential overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""line 14"",
+  ""explanation"": ""The code uses `strcpy` and `strcat` without checking the destination buffer size, leading to potential overflow.""
+}"
+phi3:mini,train_baseline,22-3,True,CWE-22,"[12, 23, 32]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Buffer overflow due to use of `snprintf` without checking the result,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Buffer overflow due to use of `snprintf` without checking the result""
+}"
+phi3:mini,train_baseline,78-2,True,CWE-78,"[9, 10]",True,CWE-20,line 6: strncat function call with unchecked buffer size and user input.,True,,True,False,False,wrong_cwe,,,0,,,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""line 6: strncat function call with unchecked buffer size and user input."",
+  ""explanenzusammenfassung"": ""Der Code führt einen unsicheren String-Aufbau mit `strncat` durch, der ein Formatstringangriff darstellen könnte.""
+}"
+phi3:mini,train_baseline,22-2,True,CWE-22,"[8, 20, 29]",True,CWE-20,validatePath function: char* path parameter is not sanitized or validated before use.,True,,True,False,False,wrong_cwe,,,0,,The code blindly trusts user input for file paths without validation.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""validatePath function: char* path parameter is not sanitized or validated before use."",
+  ""explanation"": ""The code blindly trusts user input for file paths without validation.""
+}"
+phi3:mini,train_baseline,78-4,True,CWE-78,"[11, 12]",True,CWE-CS006,"#13: snprintf
+    snprintf(command, sizeof(command), ""ls -l | head -n %s"", userInput);
+",True,,True,False,False,wrong_cwe,,,0,,,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-CS006"",
+  ""location"": ""#13: snprintf\n    snprintf(command, sizeof(command), \""ls -l | head -n %s\"", userInput);\n"",
+  ""explanenzusammenfassung"": ""Das Programm führt einen unsicheren Befehl aus, der vom Benutzer bestimmt wird und das Risiko einer Shell-Exploitation darstellt.""
+}"
+phi3:mini,train_baseline,78-10,False,CWE-78,[],True,,"strcpy(__buff, buf);",True,,False,False,False,wrong_binary_label,,,0,,Use of strcpy with a local buffer that is not initialized or cleared can lead to uncontrolled memory copying.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""strcpy(__buff, buf);"",
+  ""explanation"": ""Use of strcpy with a local buffer that is not initialized or cleared can lead to uncontrolled memory copying.""
+}"
+phi3:mini,train_baseline,22-9,False,CWE-22,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,The code uses the `system()` function to execute a shell command without proper sanitization or escaping of arguments.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code uses the `system()` function to execute a shell command without proper sanitization or escaping of arguments.""
+}"
+phi3:mini,baseline,22-6,True,CWE-22,"[10, 49]",True,CWE-327,#main: malloc and free of fileNames array without bounds checking,True,,True,False,False,wrong_cwe,,,0,,The code does not check the return value of `malloc` for allocation failure or ensure proper memory deallocation.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-327"",
+  ""location"": ""#main: malloc and free of fileNames array without bounds checking"",
+  ""explanation"": ""The code does not check the return value of `malloc` for allocation failure or ensure proper memory deallocation.""
+}"
+phi3:mini,baseline,22-1,True,CWE-22,"[16, 19]",True,CWE-20,while ((ch = fgetc(file)) != EOF),True,,True,False,False,wrong_cwe,,,0,,Buffer overread vulnerability due to unchecked file read operation,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""while ((ch = fgetc(file)) != EOF)"",
+  ""explanation"": ""Buffer overread vulnerability due to unchecked file read operation""
+}"
+phi3:mini,baseline,78-7,False,CWE-78,[],True,CWE-20,"#include <stdlib.h>
+int main() {
+    char userInput[10];
+    int numFiles;
+... (truncated for brevity)",True,,False,False,False,wrong_binary_label,,,0,,"The code uses `system()` with unsanitized input, leading to command injection vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""#include <stdlib.h>\nint main() {\n    char userInput[10];\n    int numFiles;\n... (truncated for brevity)"",
+  ""explanation"": ""The code uses `system()` with unsanitized input, leading to command injection vulnerability.""
+}"
+phi3:mini,baseline,22-7,False,CWE-22,[],True,CWE-20,if (!is_valid_path(full_path)) {,True,,False,False,False,wrong_binary_label,,,0,,The code does not properly validate the file path to prevent directory traversal attacks.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""if (!is_valid_path(full_path)) {"",
+  ""explanation"": ""The code does not properly validate the file path to prevent directory traversal attacks.""
+}"
+phi3:mini,baseline,78-3,True,CWE-78,"[23, 25]",True,CWE-20,#13 - strncpy and strncat functions call with unchecked buffer size leading to potential overflow.,True,,True,False,False,wrong_cwe,,,0,,"The code does not properly check the length of `argv[1]`, allowing for a possible buffer overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""#13 - strncpy and strncat functions call with unchecked buffer size leading to potential overflow."",
+  ""explanation"": ""The code does not properly check the length of `argv[1]`, allowing for a possible buffer overflow.""
+}"
+phi3:mini,baseline,22-8,False,CWE-22,[],True,,"snprintf(command, sizeof(command), ""grep %s %s"", argv[2], path);",True,,False,False,False,wrong_binary_label,,,0,,Use of snprintf without checking the result can lead to buffer overflow if input exceeds PATH_MAX.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);"",
+  ""explanation"": ""Use of snprintf without checking the result can lead to buffer overflow if input exceeds PATH_MAX.""
+}"
+phi3:mini,baseline,78-6,True,CWE-78,[29],True,CWE-20,strcpy function call with user input not properly sanitized.,True,,True,False,False,wrong_cwe,,,0,,The code uses unsanitized user input in a `strcpy` without bounds checking.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""strcpy function call with user input not properly sanitized."",
+  ""explanation"": ""The code uses unsanitized user input in a `strcpy` without bounds checking.""
+}"
+phi3:mini,baseline,78-9,False,CWE-78,[],True,CWE-20,test function: system() call with user input directly in command string without sanitization.,True,,False,False,False,wrong_binary_label,,,0,,Directly using unsanitized user input can lead to arbitrary code execution.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""test function: system() call with user input directly in command string without sanitization."",
+  ""explanation"": ""Directly using unsanitized user input can lead to arbitrary code execution.""
+}"
+phi3:mini,baseline,78-1,True,CWE-78,"[13, 16]",True,,line 7: snprintf with unchecked user input,True,,True,False,False,wrong_cwe,,,0,,Unvalidated and unsanitized user-provided data is used to construct a system command.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""line 7: snprintf with unchecked user input"",
+  ""explanation"": ""Unvalidated and unsanitized user-provided data is used to construct a system command.""
+}"
+phi3:mini,baseline,78-5,True,CWE-78,[10],True,CWE-20,"line 13: strcpy(sys, cmd)",True,,True,False,False,wrong_cwe,,,0,,Use of unsafe string copy function without length check,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""line 13: strcpy(sys, cmd)"",
+  ""explanation"": ""Use of unsafe string copy function without length check""
+}"
+phi3:mini,baseline,22-4,True,CWE-22,"[46, 66, 70]",True,,"snprintf(command, sizeof(command), ""grep %s %s"", argv[2], path);",True,,True,False,False,wrong_cwe,,,0,,Use of snprintf without checking the return value can lead to buffer overflow if command is too long.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);"",
+  ""explanation"": ""Use of snprintf without checking the return value can lead to buffer overflow if command is too long.""
+}"
+phi3:mini,baseline,22-5,True,CWE-22,"[8, 28]",True,,printFile function: fopen call,True,,True,False,False,wrong_cwe,,,0,,Attempting to open a file without checking if it's readable or not.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""printFile function: fopen call"",
+  ""explanation"": ""Attempting to open a file without checking if it's readable or not.""
+}"
+phi3:mini,errorlock_gated,22-6,True,CWE-22,"[10, 49]",True,,main function,True,,True,False,False,wrong_cwe,True,cwe_recheck,3,0.37562671245866425,The code attempts to open files without checking if the file names are valid or accessible.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code attempts to open files without checking if the file names are valid or accessible.""
+}"
+phi3:mini,errorlock_gated,22-1,True,CWE-22,"[16, 19]",True,CWE-20,while ((ch = fgetc(file)) != EOF),True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,1.0,Buffer overread vulnerability due to unchecked file read operation,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""while ((ch = fgetc(file)) != EOF)"",
+  ""explanation"": ""Buffer overread vulnerability due to unchecked file read operation""
+}"
+phi3:mini,errorlock_gated,78-7,False,CWE-78,[],True,,#13: snprintf,True,,False,False,False,wrong_binary_label,True,cwe_recheck,3,0.7817894892635503,The code uses `snprintf` with user input directly without proper validation or sanitization.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""#13: snprintf"",
+  ""explanation"": ""The code uses `snprintf` with user input directly without proper validation or sanitization.""
+}"
+phi3:mini,errorlock_gated,22-7,False,CWE-22,[],False,,main function: line 39,True,,True,True,True,,True,cwe_recheck,3,0.5637825299663117,The code includes a check against directory traversal attacks.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function: line 39"",
+  ""explanation"": ""The code includes a check against directory traversal attacks.""
+}"
+phi3:mini,errorlock_gated,78-3,True,CWE-78,"[23, 25]",True,,#13: snprintf,True,,True,False,False,wrong_cwe,True,cwe_recheck,3,0.36814605362977487,User input is directly used in a command without proper sanitization.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""#13: snprintf"",
+  ""explanation"": ""User input is directly used in a command without proper sanitization.""
+}"
+phi3:mini,errorlock_gated,22-8,False,CWE-22,[],True,,main function: Validate path and query,True,,False,False,False,wrong_binary_label,True,applied,3,0.881953260070353,The code does not sanitize or validate the file path input before using it in a system command.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function: Validate path and query"",
+  ""explanation"": ""The code does not sanitize or validate the file path input before using it in a system command.""
+}"
+phi3:mini,errorlock_gated,78-6,True,CWE-78,[29],True,,line 12: strcpy function call with unchecked user input,True,,True,False,False,wrong_cwe,True,cwe_recheck,3,0.8697155348601007,The code uses `strcpy` to copy the command string into 'sys' without checking its length.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""line 12: strcpy function call with unchecked user input"",
+  ""explanation"": ""The code uses `strcpy` to copy the command string into 'sys' without checking its length.""
+}"
+phi3:mini,errorlock_gated,78-9,False,CWE-78,[],True,CWE-278,line 9: snprintf function call with unchecked buffer size and user input.,True,,False,False,False,wrong_binary_label,True,cwe_recheck,3,0.355749253279163,The code uses an unsafe `snprintf` without checking the return value for truncated output.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-278"",
+  ""location"": ""line 9: snprintf function call with unchecked buffer size and user input."",
+  ""explanation"": ""The code uses an unsafe `snprintf` without checking the return value for truncated output.""
+}"
+phi3:mini,errorlock_gated,78-1,True,CWE-78,"[13, 16]",True,,#1: fgets(),True,,True,False,False,wrong_cwe,True,applied,3,0.4137092225176751,The code does not sanitize user input for shell command execution.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""#1: fgets()"",
+  ""explanation"": ""The code does not sanitize user input for shell command execution.""
+}"
+phi3:mini,errorlock_gated,78-5,True,CWE-78,[10],True,CWE-278,line 14: strcpy function call with unchecked buffer size and user input.,True,,True,False,False,wrong_cwe,True,cwe_recheck,3,0.7678886585164261,"The code uses `strcpy` to concatenate the command string without checking if it fits in the destination array, leading to a potential stack-based buffer overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-278"",
+  ""location"": ""line 14: strcpy function call with unchecked buffer size and user input."",
+  ""explanation"": ""The code uses `strcpy` to concatenate the command string without checking if it fits in the destination array, leading to a potential stack-based buffer overflow.""
+}"
+phi3:mini,errorlock_gated,22-4,True,CWE-22,"[46, 66, 70]",True,,main function: Validate path with illegal characters,True,,True,False,False,wrong_cwe,True,applied,3,0.873564244623223,The code does not sanitize or validate the file path input before use.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function: Validate path with illegal characters"",
+  ""explanation"": ""The code does not sanitize or validate the file path input before use.""
+}"
+phi3:mini,errorlock_gated,22-5,True,CWE-22,"[8, 28]",True,,"while ((ch = fgets(buffer, sizeof(buffer), fp)) != NULL) {",True,,True,False,False,wrong_cwe,True,applied,3,0.48167631829640883,The code does not check the return value of `fopen` or handle potential errors.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""while ((ch = fgets(buffer, sizeof(buffer), fp)) != NULL) {"",
+  ""explanation"": ""The code does not check the return value of `fopen` or handle potential errors.""
+}"

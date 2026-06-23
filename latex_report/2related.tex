@@ -1,0 +1,27 @@
+\label{sec:related}
+
+In this section, we review prior work related to \system. Our project is connected to three areas: CWE-based vulnerability benchmarks, LLM-based vulnerability detection, and retrieval-augmented systems that use external memory.
+
+\subsection{CWE Vulnerability Benchmarks}
+
+The Common Weakness Enumeration (CWE) is a community-developed taxonomy of common software and hardware weaknesses. A CWE describes a type of weakness that can contribute to a vulnerability, such as buffer overflow, improper input validation, or use of weak cryptography~\cite{cwe}. CWE labels are useful for vulnerability detection because they provide a standardized way to describe the type of security weakness present in a program.
+
+Several benchmarks use CWE labels to evaluate vulnerability detection systems. CASTLE is a recent benchmark designed to evaluate static analyzers, formal verification tools, and LLMs for CWE detection. It contains 250 hand-crafted C micro-benchmark programs covering 25 common CWE categories~\cite{castle,castle_github}. CASTLE is useful for our project because its examples are small, controlled, and labeled with CWE categories, making it suitable for analyzing whether an LLM repeats similar detection mistakes.
+
+The Juliet Test Suite is another widely used CWE benchmark. Juliet C/C++ 1.3 contains examples organized under 118 different CWE categories~\cite{juliet_nist}. Unlike CASTLE, Juliet is much larger and contains paired benign and defective implementations. In our project, we use CASTLE as the main controlled benchmark and sample a Juliet subset whose CWE categories overlap with CASTLE. This lets us evaluate whether a mistake database built from CASTLE can transfer to another CWE benchmark.
+
+\subsection{LLM-Based Vulnerability Detection}
+
+LLMs have recently been applied to many software engineering tasks, including code generation, program repair, code review, and vulnerability detection. For CWE detection, an LLM can be prompted with a code snippet and asked to decide whether the snippet contains a vulnerability, identify the CWE type, and report vulnerable lines. This makes LLMs attractive because they can reason over source code without requiring a manually written rule for each vulnerability pattern.
+
+However, standard LLM inference has an important limitation: each input is usually handled independently. If the model incorrectly predicts that safe code is vulnerable, or misses a real vulnerability, that error is not automatically stored and used in the next prediction. This differs from human debugging behavior, where past mistakes can influence future analysis. In benchmarks such as CASTLE, this limitation appears as repeated false positives, false negatives, or malformed outputs. \system addresses this limitation by adding an external mistake database to the inference pipeline instead of relying only on the base model.
+
+\subsection{Retrieval-Augmented and Memory-Based Methods}
+
+Retrieval-augmented generation (RAG) combines a language model with an external information source. In the original RAG formulation, a model retrieves relevant documents from non-parametric memory and conditions generation on the retrieved information~\cite{rag}. This idea is useful because the model does not need to store all useful information only in its parameters. Instead, relevant external records can be retrieved at inference time.
+
+\system is related to retrieval-augmented methods, but its retrieval target is different. Standard RAG usually retrieves knowledge documents, passages, or facts to help answer a question. \system retrieves previous model mistakes. Each retrieved record contains the old code sample, the ground-truth label, the model's incorrect prediction, the error type, and related CWE information. These records are then inserted into the prompt as cautionary examples. Therefore, \system uses retrieval not mainly to add domain knowledge, but to help the model avoid repeating similar errors.
+
+\subsection{Difference from Prior Work}
+
+Compared with standard LLM baselines, \system changes the system architecture by adding a persistent database-backed feedback loop. The baseline model receives a prompt and produces an answer, but it does not preserve its failures. \system records incorrect predictions in SQLite and retrieves similar mistakes for future prompts. Compared with general RAG systems, \system focuses specifically on model failure records rather than external knowledge documents. Compared with benchmark-only evaluation work, \system uses the benchmark labels not only for scoring, but also for constructing a reusable mistake memory. This design makes the system more inspectable because each ErrorLock prediction can be traced back to the retrieved mistake identifiers and similarity scores used during inference.

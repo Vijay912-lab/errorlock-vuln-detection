@@ -1,0 +1,105 @@
+{
+  "model": "openai/gpt-oss-120b:free",
+  "dataset": "data/CASTLE-C250.min.json",
+  "n_total": 250,
+  "n_train": 100,
+  "n_test": 150,
+  "top_k": 3,
+  "all_memory": false,
+  "rag_memory": true,
+  "rag_candidate_k": 25,
+  "rag_context_k": 6,
+  "rag_snippet_chars": 700,
+  "gated": true,
+  "min_similarity": 0.18,
+  "cwe_recheck_similarity": 0.35,
+  "near_duplicate_similarity": 0.95,
+  "preserve_binary_decision": true,
+  "selective_binary_override": false,
+  "binary_override_similarity": 0.62,
+  "binary_override_votes": 2,
+  "skip_if_baseline_not_vulnerable": true,
+  "skip_if_baseline_vulnerable": false,
+  "skip_if_baseline_has_cwe": true,
+  "baseline": {
+    "n": 150,
+    "accuracy": 0.5933333333333334,
+    "precision": 0.8305084745762712,
+    "recall": 0.49,
+    "f1": 0.6163522012578616,
+    "parse_failure_rate": 0.20666666666666667,
+    "binary_correct_rate": 0.5266666666666666,
+    "cwe_correct_rate": 0.43333333333333335,
+    "location_correct_rate": 0.2,
+    "failure_counts": {
+      "correct": 65,
+      "wrong_cwe": 14,
+      "parse_error": 31,
+      "wrong_binary_label": 40
+    },
+    "confusion_matrix": [
+      [
+        40,
+        10
+      ],
+      [
+        51,
+        49
+      ]
+    ]
+  },
+  "errorlock": {
+    "n": 150,
+    "accuracy": 0.6666666666666666,
+    "precision": 0.8472222222222222,
+    "recall": 0.61,
+    "f1": 0.7093023255813954,
+    "parse_failure_rate": 0.05333333333333334,
+    "binary_correct_rate": 0.64,
+    "cwe_correct_rate": 0.52,
+    "location_correct_rate": 0.23333333333333334,
+    "failure_counts": {
+      "correct": 78,
+      "wrong_cwe": 18,
+      "wrong_binary_label": 46,
+      "parse_error": 8
+    },
+    "confusion_matrix": [
+      [
+        39,
+        11
+      ],
+      [
+        39,
+        61
+      ]
+    ]
+  },
+  "train_baseline_for_memory": {
+    "n": 100,
+    "accuracy": 0.68,
+    "precision": 0.75,
+    "recall": 0.54,
+    "f1": 0.627906976744186,
+    "parse_failure_rate": 0.27,
+    "binary_correct_rate": 0.54,
+    "cwe_correct_rate": 0.44,
+    "location_correct_rate": 0.27,
+    "failure_counts": {
+      "parse_error": 27,
+      "correct": 44,
+      "wrong_cwe": 10,
+      "wrong_binary_label": 19
+    },
+    "confusion_matrix": [
+      [
+        41,
+        9
+      ],
+      [
+        23,
+        27
+      ]
+    ]
+  }
+}

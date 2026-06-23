@@ -1,0 +1,2068 @@
+model,dataset,method,id,true_label,true_cwe,true_lines,pred_label,pred_cwe,pred_lines,retrieved_mistake_ids,retrieved_scores,retrieved_error_types,retrieved_true_cwes,retrieved_pred_cwes,raw
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-1,1,22,"[16, 19]",1,22.0,[10],"[""22-10"", ""253-8"", ""362-5""]","[0.9851617551143723, 0.4575822614949081, 0.3378365886203529]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(22), np.int64(253), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 22,
+        ""message"": ""Potential directory traversal vulnerability due to use of user-supplied input in path construction."",
+        ""line_content"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-2,1,22,"[8, 20, 29]",0,,[],"[""22-10"", ""22-9"", ""22-8""]","[0.9219811478854043, 0.43135544993344, 0.41322553366284615]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-3,1,22,"[12, 23, 32]",0,,[],"[""22-10"", ""22-9"", ""253-8""]","[0.8752561482882754, 0.45316339410132467, 0.38430201022429156]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-4,1,22,"[46, 66, 70]",1,78.0,[24],"[""22-8"", ""22-9"", ""78-7""]","[0.9959577925208735, 0.8557401200894563, 0.3715722419648261]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user-supplied input in the construction of the 'command' buffer."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-5,1,22,"[8, 28]",0,,[],"[""253-8"", ""22-10"", ""134-9""]","[0.6238937614710981, 0.5332220452695815, 0.4643607958737927]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(134)]""","[78.0, 78.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-6,1,22,"[10, 49]",1,190.0,"[14, 15]","[""787-7"", ""476-7"", ""787-10""]","[0.4900973596041356, 0.4869647224810821, 0.4721468171204652]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(787), np.int64(476), np.int64(787)]""","[680.0, 680.0, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow detected due to lack of bounds checking on strncpy."",
+        ""line_content"": ""strncpy(fileNames[i], argv[i+1], 255);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 15,
+        ""cwe"": 0,
+        ""message"": ""Potential off-by-one error in buffer handling."",
+        ""line_content"": ""fileNames[255] = '\\0'; // ensuring null termination""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-7,0,22,[],0,,[],"[""22-10"", ""22-9"", ""253-8""]","[0.6376758000987464, 0.5919445103014923, 0.48961709782140117]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-8,0,22,[],1,78.0,[24],"[""22-8"", ""22-9"", ""78-7""]","[0.9966967139087143, 0.8634955121206687, 0.36559817407841405]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user-supplied input in the construction of the 'command' buffer."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-9,0,22,[],1,78.0,[27],"[""22-9"", ""22-8"", ""22-10""]","[0.996531459567421, 0.8642651586556981, 0.3494594250945716]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user-supplied input in the 'command' variable."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,22-10,0,22,[],1,22.0,[16],"[""22-10"", ""253-8"", ""22-9""]","[0.9902111809961511, 0.4530220288091162, 0.3496838908185369]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(253), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 22,
+        ""message"": ""Potential directory traversal vulnerability due to use of user-supplied input in path construction."",
+        ""line_content"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-1,1,78,"[13, 16]",1,78.0,[10],"[""78-7"", ""22-9"", ""22-8""]","[0.3402154305368896, 0.2959488841968152, 0.2851881141691116]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(78), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user-supplied input in the 'snprintf' function."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""ping %s\"", ip);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-2,1,78,"[9, 10]",1,78.0,[6],"[""78-8"", ""134-7"", ""78-10""]","[0.3641577274505003, 0.31974707177213507, 0.29272060093310864]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(78), np.int64(134), np.int64(78)]""","[78.0, 89.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of `strncat` with user input."",
+        ""line_content"": ""strncat(cmd, argv[1], CMD_MAX - 14);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-3,1,78,"[23, 25]",1,78.0,"[16, 17]","[""22-9"", ""22-8"", ""134-7""]","[0.4107095426024762, 0.39750019891746957, 0.33316359746317226]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(134)]""","[78.0, 78.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of `strncpy` followed by `strncat` without proper bounds checking."",
+        ""line_content"": ""strncpy(command, cat, commandLength);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of `strncpy` followed by `strncat` without proper bounds checking."",
+        ""line_content"": ""strncat(command, argv[1], (commandLength - strlen(cat)));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-4,1,78,"[11, 12]",1,78.0,[7],"[""78-7"", ""22-9"", ""22-8""]","[0.7783688523154493, 0.24466654107445204, 0.23363711822583275]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(78), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user input in a shell command."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""ls -l | head -n %s\"", userInput);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-5,1,78,[10],1,78.0,[16],"[""78-8"", ""78-10"", ""78-9""]","[0.8305491393337054, 0.5921204019003453, 0.2940374415555049]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(78), np.int64(78), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Potential command injection vulnerability due to use of strcpy and strcat."",
+        ""line_content"": ""strcpy(sys, cmd);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-6,1,78,[29],1,78.0,"[14, 15]","[""78-8"", ""78-10"", ""617-4""]","[0.936036645817526, 0.5775301430482126, 0.3034700077679248]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(78), np.int64(78), np.int64(617)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of strcpy and strcat without proper validation."",
+        ""line_content"": ""strcpy(sys, cmd);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 15,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of strcpy and strcat without proper validation."",
+        ""line_content"": ""strcat(sys, buff);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-7,0,78,[],1,78.0,[14],"[""78-7"", ""22-8"", ""22-9""]","[0.9904666558937021, 0.3676477375328093, 0.2893404859305151]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(78), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 14,
+        ""cwe"": 78,
+        ""message"": ""Potential Command Injection via 'numFiles'"",
+        ""line_content"": ""snprintf(command, sizeof(command), \""ls -l | head -n %d\"", numFiles);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-8,0,78,[],1,78.0,"[11, 12]","[""78-8"", ""78-10"", ""617-4""]","[0.9868095279300698, 0.5818295632734748, 0.30791432370246663]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(78), np.int64(78), np.int64(617)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 11,
+        ""cwe"": 78,
+        ""message"": ""Potential command injection vulnerability due to use of user-supplied input in system call."",
+        ""line_content"": ""strcpy(sys, cmd);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 12,
+        ""cwe"": 78,
+        ""message"": ""Potential command injection vulnerability due to use of user-supplied input in system call."",
+        ""line_content"": ""strcat(sys, buff);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-9,0,78,[],1,78.0,[14],"[""78-9"", ""761-1"", ""798-8""]","[0.9854598422503076, 0.4598547157649526, 0.2828417448789822]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(78), np.int64(761), np.int64(798)]""","[78.0, NaN, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of system() with untrusted input."",
+        ""line_content"": ""snprintf(buf, sizeof buf, \""/bin/echo %s\"", str);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,78-10,0,78,[],1,78.0,"[17, 18, 20]","[""78-10"", ""78-8"", ""78-9""]","[0.9924035276692049, 0.5769817150922005, 0.26503519333896947]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(78), np.int64(78), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of `strcat` with user input."",
+        ""line_content"": ""strcat(sys, cmd);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of `strcat` with user input."",
+        ""line_content"": ""strcat(sys, buff);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 0,
+        ""message"": ""Potential buffer overflow in `strcpy` call."",
+        ""line_content"": ""strcpy(__buff, buf);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-1,1,89,"[25, 28]",1,89.0,[14],"[""89-10"", ""522-10"", ""89-8""]","[0.9755667948709957, 0.6108792751196318, 0.4369414950473301]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(89), np.int64(522), np.int64(89)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user input directly in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM existential_crises WHERE id = '%s'\"", id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-2,1,89,"[40, 43]",1,89.0,[22],"[""89-8"", ""522-9"", ""89-10""]","[0.9578067009271956, 0.9409897126485108, 0.34198490590557196]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(89), np.int64(522), np.int64(89)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM tokens WHERE id = %s\"", id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-3,1,89,"[121, 122]",1,89.0,[42],"[""522-9"", ""89-8"", ""798-8""]","[0.6008546422496088, 0.5216533007315947, 0.36483013884833165]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(522), np.int64(89), np.int64(798)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 42,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user-supplied input in SQL query."",
+        ""line_content"": ""sprintf(query, fmtString, argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-4,1,89,"[123, 125]",1,89.0,[42],"[""522-9"", ""89-8"", ""798-8""]","[0.6141335847122125, 0.5427867508652926, 0.3851470281634863]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(522), np.int64(89), np.int64(798)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 42,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user-supplied input in SQL query."",
+        ""line_content"": ""sprintf(query, fmtString, argv[i]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-5,1,89,"[55, 58]",1,89.0,[22],"[""89-8"", ""522-9"", ""89-10""]","[0.9955941559242767, 0.87595572983369, 0.3834976564580496]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(89), np.int64(522), np.int64(89)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM tokens WHERE id = %s\"", id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-6,1,89,"[126, 128]",1,89.0,[42],"[""522-9"", ""89-8"", ""798-8""]","[0.6209235737934409, 0.5395295258185183, 0.36128662665242534]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(522), np.int64(89), np.int64(798)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 42,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user-supplied input in SQL query."",
+        ""line_content"": ""sprintf(query, fmtString, argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-7,0,89,[],0,,[],"[""89-10"", ""522-10"", ""798-8""]","[0.8728283102859552, 0.6973288743114116, 0.4624756642210066]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(89), np.int64(522), np.int64(798)]""","[89.0, 89.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-8,0,89,[],1,89.0,[24],"[""89-8"", ""522-9"", ""89-10""]","[0.9969126856651356, 0.8626744697956495, 0.38879751815836794]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(89), np.int64(522), np.int64(89)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM tokens WHERE id = %s\"", id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-9,0,89,[],1,89.0,[42],"[""522-9"", ""89-8"", ""798-8""]","[0.6230913970822026, 0.5492977944566111, 0.36484356015996927]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(522), np.int64(89), np.int64(798)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 42,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user-supplied input in SQL query without proper sanitization."",
+        ""line_content"": ""sprintf(query, fmtString, param_escaped);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,89-10,0,89,[],1,89.0,[11],"[""89-10"", ""522-10"", ""798-8""]","[0.9950234997268408, 0.6399691800541738, 0.43542157359693323]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(89), np.int64(522), np.int64(798)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 11,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user-supplied input directly in SQL query."",
+        ""line_content"": ""char sql[256];""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-1,1,125,[7],1,125.0,[6],"[""415-9"", ""125-9"", ""617-4""]","[0.5092838429549156, 0.4756165283087923, 0.4451468454150665]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(415), np.int64(125), np.int64(617)]""","[190.0, 190.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 125,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""%d\\n\"", array[i]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-2,1,125,[8],1,125.0,"[4, 7]","[""125-9"", ""617-4"", ""787-10""]","[0.7085020036745746, 0.6837954631512909, 0.6469968545603293]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(125), np.int64(617), np.int64(787)]""","[190.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 125,
+        ""message"": ""Buffer overflow due to out-of-bounds write."",
+        ""line_content"": ""nondet[i]=i;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 125,
+        ""message"": ""Buffer overflow due to out-of-bounds read."",
+        ""line_content"": ""printf(\""%d\\n\"", nondet[i]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-3,1,125,[8],0,,[],"[""125-9"", ""617-4"", ""787-10""]","[0.5136923818897652, 0.4923512205829455, 0.4683892433848341]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(125), np.int64(617), np.int64(787)]""","[190.0, NaN, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-4,1,125,[13],0,,[],"[""125-4"", ""125-9"", ""787-7""]","[0.9826212195402928, 0.43461202297459534, 0.4091901965507111]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(125), np.int64(125), np.int64(787)]""","[NaN, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-5,1,125,"[9, 11]",1,190.0,[6],"[""617-4"", ""125-9"", ""787-7""]","[0.6863024579462679, 0.6779486772975694, 0.6695972604123039]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(125), np.int64(787)]""","[NaN, 190.0, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""%d, \"", a[i]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-6,1,125,"[41, 50]",0,,[],"[""787-7"", ""476-7"", ""617-4""]","[0.4329539560390762, 0.412789977787777, 0.35638951722734225]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(787), np.int64(476), np.int64(617)]""","[680.0, 680.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-7,0,125,[],0,,[],"[""617-4"", ""761-8"", ""125-9""]","[0.686334788407055, 0.6468566426730449, 0.635209191924277]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(761), np.int64(125)]""","[NaN, 415.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-8,0,125,[],0,,[],"[""761-1"", ""78-9"", ""369-8""]","[0.42795615339237547, 0.3033947151507246, 0.18599008675526274]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(761), np.int64(78), np.int64(369)]""","[NaN, 78.0, 369.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-9,0,125,[],1,125.0,"[10, 12]","[""125-9"", ""787-10"", ""787-7""]","[0.9711571963059171, 0.9081236039837892, 0.5409125897051132]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(125), np.int64(787), np.int64(787)]""","[190.0, 190.0, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 125,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""%d, \"", a[i]);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 12,
+        ""cwe"": 125,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""Special elem: %d\\n\"", a[INT_MAX]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,125-10,0,125,[],0,,[],"[""787-7"", ""476-7"", ""617-4""]","[0.42859203803820517, 0.4086312075315486, 0.35279896948240963]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(787), np.int64(476), np.int64(617)]""","[680.0, 680.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-1,1,134,[9],1,114.0,[7],"[""134-7"", ""134-9"", ""134-8""]","[0.9206707302028116, 0.5780785804379366, 0.3628682717187942]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(134)]""","[89.0, 190.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 114,
+        ""message"": ""Potential buffer overflow due to direct use of user-supplied input."",
+        ""line_content"": ""printf(argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-2,1,134,[9],1,114.0,[6],"[""134-9"", ""134-8"", ""134-7""]","[0.8187409868757, 0.757226128263897, 0.38993191365569957]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(134)]""","[190.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 114,
+        ""message"": ""Potential format string vulnerability due to use of printf with user-controlled input."",
+        ""line_content"": ""printf(buffer);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-3,1,134,"[4, 13]",1,114.0,[7],"[""134-8"", ""134-9"", ""253-8""]","[0.952957587072192, 0.6304394772615847, 0.3043769246996671]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(253)]""","[89.0, 190.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 114,
+        ""message"": ""Potential format string vulnerability in 'logger' function."",
+        ""line_content"": ""logger(buffer);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-4,1,134,"[6, 21, 23]",1,190.0,"[10, 12]","[""134-8"", ""134-9"", ""253-8""]","[0.864248530298577, 0.6714211323136606, 0.35946423935919464]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(253)]""","[89.0, 190.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow risk due to use of strcpy without proper bounds checking."",
+        ""line_content"": ""strcpy(combined, buffer);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 12,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow risk due to use of strncat without proper bounds checking."",
+        ""line_content"": ""strncat(combined, buffer, sizeof(combined) - strlen(buffer) - 1);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-5,1,134,"[6, 7]",1,114.0,[5],"[""134-9"", ""134-8"", ""134-7""]","[0.9377445469175402, 0.6773414684614137, 0.5370476162612154]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(134)]""","[190.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 5,
+        ""cwe"": 114,
+        ""message"": ""Buffer overflow due to use of snprintf with user-controlled input."",
+        ""line_content"": ""snprintf(buffer, sizeof(buffer), argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-6,1,134,"[17, 18]",1,190.0,[10],"[""134-7"", ""134-9"", ""89-8""]","[0.5743025379280877, 0.448671946020173, 0.38175821884928796]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(89)]""","[89.0, 190.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 190,
+        ""message"": ""Potential format string vulnerability due to use of user-supplied input in format specifier."",
+        ""line_content"": ""printf(formatter, id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-7,0,134,[],0,,[],"[""134-7"", ""134-9"", ""134-8""]","[0.925772266412008, 0.5891782463191901, 0.3643788537436207]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(134)]""","[89.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-8,0,134,[],0,,[],"[""134-8"", ""134-9"", ""134-7""]","[0.9579283404032681, 0.6458386418377428, 0.3246076580529103]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(134)]""","[89.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-9,0,134,[],1,114.0,[5],"[""134-9"", ""134-8"", ""134-7""]","[0.9422308301624861, 0.6738492471059605, 0.5525415666603725]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(134)]""","[190.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 5,
+        ""cwe"": 114,
+        ""message"": ""Buffer overflow due to use of snprintf with potentially untrusted input."",
+        ""line_content"": ""snprintf(buffer, sizeof(buffer), \""%s\"", argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,134-10,0,134,[],0,,[],"[""134-7"", ""22-8"", ""134-9""]","[0.711575854774792, 0.5590644801098749, 0.4630719336457964]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(22), np.int64(134)]""","[89.0, 78.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-1,1,190,[6],0,,[],"[""190-1"", ""401-4"", ""843-5""]","[0.9807056822267769, 0.45382643556108143, 0.30128367835917086]","[""false_negative"", ""false_negative"", ""false_negative""]","""[np.int64(190), np.int64(401), np.int64(843)]""","[NaN, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-2,1,190,[6],1,190.0,[4],"[""190-10"", ""369-7"", ""190-4""]","[0.36053116957805814, 0.34617543734942513, 0.23242583545782702]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(190), np.int64(369), np.int64(190)]""","[327.0, 682.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow can occur when converting a large integer to a smaller type."",
+        ""line_content"": ""long long int APPLE = atoi(\""3000000000\"")+1;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-3,1,190,[9],1,190.0,[6],"[""190-4"", ""787-10"", ""125-9""]","[0.6648313977625463, 0.43462446095909735, 0.43118937462945617]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(190), np.int64(787), np.int64(125)]""","[NaN, 190.0, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow occurs when adding 1 to INT_MAX."",
+        ""line_content"": ""printf(\""%d\\n\"", n + 1);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-4,1,190,[8],0,,[],"[""190-4"", ""674-10"", ""787-8""]","[0.8837633478522381, 0.3276525649745937, 0.25529802826474884]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(190), np.int64(674), np.int64(787)]""","[NaN, 190.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-5,1,190,[13],0,,[],"[""190-5"", ""761-8"", ""415-7""]","[0.9798619754822375, 0.4010328447380969, 0.3562217283986546]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(190), np.int64(761), np.int64(415)]""","[NaN, 415.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-6,1,190,[6],1,190.0,[7],"[""190-5"", ""369-10"", ""843-5""]","[0.44484202035168335, 0.2644547102051805, 0.24475756146636723]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(190), np.int64(369), np.int64(843)]""","[NaN, 682.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Comparison of floating-point numbers with zero can lead to incorrect results due to precision issues."",
+        ""line_content"": ""if (chipWithMagnification == 0.0) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-7,0,190,[],0,,[],"[""787-8"", ""125-9"", ""787-10""]","[0.5023309261937207, 0.44068061758594973, 0.4376744575925546]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(787), np.int64(125), np.int64(787)]""","[190.0, 190.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-8,0,190,[],0,,[],"[""190-1"", ""401-4"", ""843-5""]","[0.6873882201777082, 0.5486109596568509, 0.39882641745430486]","[""false_negative"", ""false_negative"", ""false_negative""]","""[np.int64(190), np.int64(401), np.int64(843)]""","[NaN, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-9,0,190,[],0,,[],"[""190-1"", ""401-4"", ""843-5""]","[0.7238972102835637, 0.3788131466260346, 0.25860946560114256]","[""false_negative"", ""false_negative"", ""false_negative""]","""[np.int64(190), np.int64(401), np.int64(843)]""","[NaN, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,190-10,0,190,[],0,,[],"[""190-10"", ""369-7"", ""761-5""]","[0.998360324624271, 0.42347490700896584, 0.14563056210478062]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(190), np.int64(369), np.int64(761)]""","[327.0, 682.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-1,1,253,"[6, 11, 12]",0,,[],"[""415-7"", ""415-8"", ""476-8""]","[0.36929092742506253, 0.35718712688330473, 0.35097506466373024]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(476)]""","[68.0, 68.0, 48.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-2,1,253,"[9, 14, 19, 20]",0,,[],"[""761-5"", ""415-7"", ""415-8""]","[0.37453500662254946, 0.3525132344416112, 0.34315264461005307]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(761), np.int64(415), np.int64(415)]""","[NaN, 68.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-3,1,253,[10],1,78.0,[10],"[""253-10"", ""253-4"", ""134-8""]","[0.9609240707946691, 0.5956316570494402, 0.16109872768220448]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer overflow due to use of fgets with fixed size buffer."",
+        ""line_content"": ""if (fgets(data, 100, stdin) < 0)""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-4,1,253,[11],0,,[],"[""253-4"", ""253-10"", ""22-9""]","[0.9743154870929316, 0.5795750690121934, 0.13293212150844727]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(22)]""","[NaN, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-5,1,253,"[8, 15]",1,22.0,[6],"[""253-8"", ""22-10"", ""362-5""]","[0.9804665033768086, 0.4553296272700615, 0.3602029389012747]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 22,
+        ""message"": ""Potential directory traversal vulnerability due to use of user-controlled input in file path."",
+        ""line_content"": ""FILE *file = fopen(filename, \""r\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-6,1,253,"[5, 9, 16]",0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.978437486737227, 0.4525883794530756, 0.3580343878982243]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-7,0,253,[],0,,[],"[""401-4"", ""415-7"", ""761-5""]","[0.41459637073267636, 0.33849357146155123, 0.3292331705750076]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(401), np.int64(415), np.int64(761)]""","[NaN, 68.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-8,0,253,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.9811197454711356, 0.452549150475188, 0.37608451902190654]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-9,0,253,[],0,,[],"[""415-7"", ""415-8"", ""761-5""]","[0.3690259146172674, 0.3569202359687578, 0.35101200380275777]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(415), np.int64(415), np.int64(761)]""","[68.0, 68.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,253-10,0,253,[],1,78.0,[10],"[""253-10"", ""253-4"", ""134-8""]","[0.9606634012503913, 0.5910700471808736, 0.16059047219465417]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer overflow due to use of fgets with fixed size buffer."",
+        ""line_content"": ""if (fgets(data, 100, stdin) == NULL)""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-1,1,327,"[24, 32, 38, 44]",1,89.0,"[44, 52, 57]","[""798-8"", ""522-10"", ""89-10""]","[0.8332710131180079, 0.7014612830082405, 0.45753106775600766]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(798), np.int64(522), np.int64(89)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 44,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""const char *sql = \""INSERT INTO users (username, password, salt) VALUES (?, ?, ?);\"";""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 52,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in fgets due to lack of bounds checking."",
+        ""line_content"": ""fgets(username, sizeof(username), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 57,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in fgets due to lack of bounds checking."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-2,1,327,"[11, 26, 34, 40, 46]",1,89.0,"[44, 54, 55]","[""798-8"", ""522-10"", ""628-4""]","[0.8447677987543085, 0.70354397616385, 0.4660057803019864]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(798), np.int64(522), np.int64(628)]""","[89.0, 89.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 44,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""const char *sql = \""INSERT INTO users (username, password, salt) VALUES (?, ?, ?);\"";""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 54,
+        ""cwe"": 628,
+        ""message"": ""Potential buffer overflow in strncpy function call."",
+        ""line_content"": ""strncpy(saltedPassword, password, 33);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 55,
+        ""cwe"": 628,
+        ""message"": ""Potential buffer overflow in strncat function call."",
+        ""line_content"": ""strncat(saltedPassword, salt, 32);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-3,1,327,"[16, 19, 28]",1,327.0,"[24, 32]","[""798-9"", ""253-8"", ""798-1""]","[0.5923419757948595, 0.3940294276220574, 0.3638396155883011]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(798), np.int64(253), np.int64(798)]""","[327.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 327,
+        ""message"": ""Potential buffer overflow due to use of fixed-size array with insufficient bounds checking."",
+        ""line_content"": ""char ciphertext[2048];""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 253,
+        ""message"": ""Hardcoded secret data ('echo \""18812f545d4d12ac\"" > key.txt') can lead to security vulnerabilities."",
+        ""line_content"": ""// echo \""18812f545d4d12ac\"" > key.txt""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-4,1,327,[65],1,327.0,"[36, 40]","[""798-9"", ""798-1"", ""253-8""]","[0.5178043134613247, 0.4839930701648197, 0.3344785544206158]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(798), np.int64(798), np.int64(253)]""","[327.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 36,
+        ""cwe"": 327,
+        ""message"": ""Insecure use of RSA encryption with no padding."",
+        ""line_content"": ""if (EVP_PKEY_encrypt_init(ctx) <= 0) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 40,
+        ""cwe"": 327,
+        ""message"": ""Insecure use of RSA encryption with no padding."",
+        ""line_content"": ""if (EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_NO_PADDING) <= 0) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-5,1,327,[65],0,,[],"[""798-9"", ""798-1"", ""253-8""]","[0.5178043134613247, 0.4839930701648197, 0.3344785544206158]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(798), np.int64(798), np.int64(253)]""","[327.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-6,1,327,[22],1,327.0,"[24, 32]","[""798-9"", ""253-8"", ""798-1""]","[0.6320204782843042, 0.43249901034243754, 0.3599562030782648]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(798), np.int64(253), np.int64(798)]""","[327.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 327,
+        ""message"": ""Potential buffer overflow due to use of `fgets` without proper bounds checking."",
+        ""line_content"": ""fgets(sensitiveText, sizeof(sensitiveText), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 253,
+        ""message"": ""Hardcoded sensitive information in the source code."",
+        ""line_content"": ""// echo \""d25b859e5277340274873697196ba955\"" > key.txt""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-7,0,327,[],1,89.0,"[44, 54, 60]","[""798-8"", ""522-10"", ""628-4""]","[0.8462057004090414, 0.7042491715253576, 0.4668216102815746]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(798), np.int64(522), np.int64(628)]""","[89.0, 89.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 44,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""const char *sql = \""INSERT INTO users (username, password, salt) VALUES (?, ?, ?);\"";""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 54,
+        ""cwe"": 628,
+        ""message"": ""Potential buffer overflow in fgets call due to fixed size buffer."",
+        ""line_content"": ""fgets(username, sizeof(username), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 60,
+        ""cwe"": 628,
+        ""message"": ""Potential buffer overflow in fgets call due to fixed size buffer."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-8,0,327,[],0,,[],"[""798-9"", ""798-1"", ""253-8""]","[0.9393806728238463, 0.6800939890744973, 0.2758917560003136]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(798), np.int64(798), np.int64(253)]""","[327.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-9,0,327,[],0,,[],"[""798-9"", ""798-1"", ""253-8""]","[0.5178043134613247, 0.4839930701648197, 0.3344785544206158]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(798), np.int64(798), np.int64(253)]""","[327.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,327-10,0,327,[],0,,[],"[""798-9"", ""253-8"", ""798-1""]","[0.6323614271289969, 0.4297804270215789, 0.36008437766729395]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(798), np.int64(253), np.int64(798)]""","[327.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-1,1,362,[10],0,,[],"[""362-1"", ""617-4"", ""787-7""]","[0.9965844268746312, 0.24434933295660388, 0.22705678690974085]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(362), np.int64(617), np.int64(787)]""","[NaN, NaN, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-2,1,362,"[9, 17]",0,,[],"[""362-2"", ""362-10"", ""362-5""]","[0.9958111003386259, 0.9619696150890994, 0.4048094167582269]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(362), np.int64(362), np.int64(362)]""","[NaN, 190.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-3,1,362,"[22, 25]",1,362.0,[17],"[""362-2"", ""362-10"", ""362-9""]","[0.7339407647323212, 0.732251958183947, 0.38007565462368276]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(362), np.int64(362), np.int64(362)]""","[NaN, 190.0, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 362,
+        ""message"": ""Race condition on shared variable 'counter'. Multiple threads can read and write to 'counter' simultaneously without proper synchronization."",
+        ""line_content"": ""counter = c;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-4,1,362,[8],1,614.0,[10],"[""362-9"", ""362-5"", ""362-8""]","[0.8428459621823566, 0.49920249077571177, 0.3571331638683314]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(362), np.int64(362), np.int64(362)]""","[680.0, NaN, 617.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 614,
+        ""message"": ""Race condition detected in 'counter++'. Multiple threads can access and modify the shared variable 'counter' simultaneously without proper synchronization."",
+        ""line_content"": ""counter++;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-5,1,362,"[8, 15, 19]",0,,[],"[""362-5"", ""362-9"", ""362-2""]","[0.9892851612166922, 0.4174970387821525, 0.4079727703871119]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(362), np.int64(362), np.int64(362)]""","[NaN, 680.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-6,1,362,"[14, 16, 25]",0,,[],"[""362-8"", ""362-5"", ""362-9""]","[0.8571739008699258, 0.41919026219238803, 0.34717252109524044]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(362), np.int64(362), np.int64(362)]""","[617.0, NaN, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-7,0,362,[],0,,[],"[""362-1"", ""617-4"", ""787-7""]","[0.9935801167605548, 0.2491046352892626, 0.23508699704154334]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(362), np.int64(617), np.int64(787)]""","[NaN, NaN, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-8,0,362,[],0,,[],"[""362-8"", ""362-5"", ""362-9""]","[0.9944240506113405, 0.3629325344545468, 0.30404674369214857]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(362), np.int64(362), np.int64(362)]""","[617.0, NaN, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-9,0,362,[],0,,[],"[""362-9"", ""416-10"", ""401-9""]","[0.9891354979773654, 0.46314005915519246, 0.4538504143374732]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(362), np.int64(416), np.int64(401)]""","[680.0, 416.0, 69.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,362-10,0,362,[],0,,[],"[""362-10"", ""362-2"", ""362-5""]","[0.9962758965052028, 0.9604250168459167, 0.3711517022178857]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(362), np.int64(362), np.int64(362)]""","[190.0, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-1,1,369,[10],1,190.0,[5],"[""369-8"", ""401-6"", ""401-5""]","[0.3943226143558427, 0.36334247565382183, 0.3619531295772999]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(369), np.int64(401), np.int64(401)]""","[369.0, NaN, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 5,
+        ""cwe"": 190,
+        ""message"": ""Integer division by zero"",
+        ""line_content"": ""int test= 17/ (hello+20+b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-2,1,369,[7],1,369.0,[4],"[""369-8"", ""369-10"", ""190-4""]","[0.33139907846208855, 0.22882349798445673, 0.21056885345804288]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(369), np.int64(369), np.int64(190)]""","[369.0, 682.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 369,
+        ""message"": ""Integer division by zero"",
+        ""line_content"": ""int what= 1000/ (nn);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-3,1,369,[13],0,,[],"[""369-3"", ""522-8"", ""798-8""]","[0.9917329976126988, 0.23467394595412341, 0.22585407488127202]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(522), np.int64(798)]""","[NaN, 89.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-4,1,369,[20],1,369.0,[14],"[""369-10"", ""369-7"", ""822-7""]","[0.3822376230680139, 0.29225205914074154, 0.23835353183659838]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(369), np.int64(822)]""","[682.0, 682.0, 339.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 369,
+        ""message"": ""Integer division by zero can occur if 'rand' becomes zero."",
+        ""line_content"": ""printf(\""Value now: %d\\n\"", input / rand);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-5,1,369,[11],1,369.0,[7],"[""369-10"", ""369-7"", ""787-7""]","[0.6446832704973731, 0.515174391820489, 0.5146302985365672]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(369), np.int64(787)]""","[682.0, 682.0, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 369,
+        ""message"": ""Integer division by zero"",
+        ""line_content"": ""printf(\""%d\\n\"", input / i);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-6,1,369,[21],1,369.0,[14],"[""674-10"", ""628-2"", ""401-6""]","[0.7253232017833597, 0.3704957894652398, 0.36213456819139606]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(674), np.int64(628), np.int64(401)]""","[190.0, NaN, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 369,
+        ""message"": ""Division by zero is possible when 'b' is 0."",
+        ""line_content"": ""printf(\""%d\\n\"", a / (fibonacci(b) - sqr(b)));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-7,0,369,[],1,369.0,[10],"[""369-7"", ""369-10"", ""190-10""]","[0.9625705865741813, 0.461213193494077, 0.45400647735028016]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(369), np.int64(190)]""","[682.0, 682.0, 327.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 369,
+        ""message"": ""Integer division by zero"",
+        ""line_content"": ""printf(\""Result: %d\\n\"", devide(input, (long long)1-1+1));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-8,0,369,[],1,369.0,[6],"[""369-8"", ""416-7"", ""401-9""]","[0.8974107723643497, 0.46466320187408505, 0.463699822398607]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(416), np.int64(401)]""","[369.0, 68.0, 69.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 369,
+        ""message"": ""Division by zero occurs when 'a' equals 'b'."",
+        ""line_content"": ""printf(\""%d\\n\"", 1/(b-a));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-9,0,369,[],0,,[],"[""369-8"", ""843-7"", ""369-10""]","[0.5510601861433487, 0.450487296606275, 0.38478002540454054]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(843), np.int64(369)]""","[369.0, 357.0, 682.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,369-10,0,369,[],1,190.0,[7],"[""369-10"", ""369-7"", ""22-8""]","[0.9335259654848336, 0.48267663565174, 0.29337397190636477]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(369), np.int64(22)]""","[682.0, 682.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Integer division by constant can lead to unexpected results."",
+        ""line_content"": ""printf(\""Result: %d\\n\"", input / ZERO);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-1,1,401,"[5, 16]",0,,[],"[""401-1"", ""787-7"", ""476-7""]","[0.964012748344963, 0.6167823193232528, 0.600262167984016]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(401), np.int64(787), np.int64(476)]""","[NaN, 680.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-2,1,401,"[14, 15, 22, 36]",1,190.0,"[10, 14]","[""415-9"", ""761-8"", ""401-4""]","[0.4501630883636721, 0.4158019381645405, 0.4087004790287342]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(415), np.int64(761), np.int64(401)]""","[190.0, 415.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 190,
+        ""message"": ""Potential integer overflow when calculating buffer size."",
+        ""line_content"": ""int *b = (int*)malloc(sizeof(int) * size);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 14,
+        ""cwe"": 416,
+        ""message"": ""Potential use of uninitialized variable 'b' after failed malloc call."",
+        ""line_content"": ""return b;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-3,1,401,"[6, 14]",0,,[],"[""761-1"", ""78-9"", ""798-8""]","[0.6643026857658766, 0.5385111063865236, 0.3236633304137788]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(761), np.int64(78), np.int64(798)]""","[NaN, 78.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-4,1,401,"[8, 31]",0,,[],"[""401-4"", ""761-8"", ""415-7""]","[0.9864505673441516, 0.5824193257943138, 0.5334267541280714]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(401), np.int64(761), np.int64(415)]""","[NaN, 415.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-5,1,401,"[22, 39]",0,,[],"[""401-5"", ""401-8"", ""401-6""]","[0.9915591898062818, 0.9820903469990353, 0.965925842490521]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(401), np.int64(401), np.int64(401)]""","[NaN, 69.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-6,1,401,"[22, 39]",0,,[],"[""401-6"", ""401-9"", ""401-5""]","[0.9889157576155448, 0.9816092203188167, 0.9686316707463195]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(401), np.int64(401), np.int64(401)]""","[NaN, 69.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-7,0,401,[],0,,[],"[""415-9"", ""761-8"", ""401-4""]","[0.4509036346934832, 0.41720212715997884, 0.40766077964432007]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(415), np.int64(761), np.int64(401)]""","[190.0, 415.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-8,0,401,[],0,,[],"[""401-8"", ""401-5"", ""401-9""]","[0.9884009333802987, 0.9843907401414173, 0.9672458113978599]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(401), np.int64(401), np.int64(401)]""","[69.0, NaN, 69.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-9,0,401,[],0,,[],"[""401-9"", ""401-6"", ""401-8""]","[0.987953826971706, 0.9818179574900848, 0.967735824410394]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(401), np.int64(401), np.int64(401)]""","[69.0, NaN, 69.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,401-10,0,401,[],1,416.0,[14],"[""401-10"", ""401-9"", ""401-8""]","[0.9568970236302972, 0.7907708362877471, 0.7881700810350126]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(401), np.int64(401), np.int64(401)]""","[416.0, 69.0, 69.0]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 14,
+        ""cwe"": 416,
+        ""message"": ""Memory allocated with malloc is never freed."",
+        ""line_content"": ""if (false) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-1,1,415,[22],1,415.0,[4],"[""415-7"", ""415-8"", ""416-7""]","[0.9164799899208961, 0.9112088163805291, 0.8907384692349569]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(416)]""","[68.0, 68.0, 68.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 415,
+        ""message"": ""Memory is freed before its value is returned."",
+        ""line_content"": ""free(a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-2,1,415,[31],1,415.0,"[7, 14]","[""415-8"", ""415-7"", ""416-10""]","[0.9563224458602061, 0.9213691330861996, 0.8967806695418673]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(416)]""","[68.0, 68.0, 416.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 415,
+        ""message"": ""Memory leak detected. The pointer 'a' is freed after its value is used."",
+        ""line_content"": ""free(a);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 14,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free vulnerability. The pointer 'p' might be dereferenced after being freed."",
+        ""line_content"": ""if (b > 20) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-3,1,415,[31],1,415.0,"[10, 17]","[""415-7"", ""415-8"", ""401-9""]","[0.9553224671432109, 0.9216960770059034, 0.8858279462880394]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(401)]""","[68.0, 68.0, 69.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 415,
+        ""message"": ""Memory leak detected. The pointer 'a' is freed after its value is used."",
+        ""line_content"": ""free(a);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 17,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free. The variable 'b' is accessed after 'a' is freed."",
+        ""line_content"": ""printf(\""Result: %d\\n\"", b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-4,1,415,[13],1,415.0,[10],"[""415-7"", ""415-8"", ""401-10""]","[0.7095803451526874, 0.7054991636961706, 0.6931969069967094]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(401)]""","[68.0, 68.0, 416.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 415,
+        ""message"": ""Double free of pointer 'a'"",
+        ""line_content"": ""free(a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-5,1,415,[19],0,,[],"[""415-5"", ""415-7"", ""415-8""]","[0.9728907746119869, 0.3814429158759732, 0.37924903076398125]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(415)]""","[NaN, 68.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-6,1,415,[32],1,190.0,"[16, 20]","[""415-9"", ""401-4"", ""415-5""]","[0.9846619952594201, 0.33196008108566943, 0.3207885434449212]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(415), np.int64(401), np.int64(415)]""","[190.0, NaN, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to use of fixed size array instead of dynamically allocated array."",
+        ""line_content"": ""int* array = allocateArray(5);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free vulnerability due to freeing 'ptr' before returning from 'cleanup'."",
+        ""line_content"": ""free(ptr);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-7,0,415,[],0,,[],"[""415-7"", ""415-8"", ""401-9""]","[0.980362387332475, 0.945337513739391, 0.9072406560439406]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(401)]""","[68.0, 68.0, 69.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-8,0,415,[],0,,[],"[""415-8"", ""415-7"", ""416-7""]","[0.9810703411821214, 0.944478291433232, 0.9131187281670182]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(416)]""","[68.0, 68.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-9,0,415,[],1,190.0,"[14, 17]","[""415-9"", ""401-4"", ""674-5""]","[0.9897560408028002, 0.320335506058355, 0.30356322001465746]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(415), np.int64(401), np.int64(674)]""","[190.0, NaN, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to fixed-size buffer used with variable-sized input."",
+        ""line_content"": ""int* array = allocateArray(5);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 17,
+        ""cwe"": 401,
+        ""message"": ""Potential integer overflow when calculating the size of the allocated memory."",
+        ""line_content"": ""int* buffer = (int*) malloc(size * sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,415-10,0,415,[],0,,[],"[""415-7"", ""415-8"", ""401-10""]","[0.6903037970112773, 0.6863334854391338, 0.680868933533735]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(401)]""","[68.0, 68.0, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-1,1,416,[20],1,416.0,[7],"[""416-8"", ""416-7"", ""416-10""]","[0.9143977719268285, 0.9079788813689919, 0.895146729315134]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(416), np.int64(416), np.int64(416)]""","[416.0, 68.0, 416.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 416,
+        ""message"": ""Memory deallocation before use."",
+        ""line_content"": ""*a = b * b;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-2,1,416,"[10, 31, 32]",1,415.0,[17],"[""416-8"", ""416-7"", ""415-7""]","[0.8255854240116102, 0.8236461253381856, 0.8051570899582299]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(416), np.int64(416), np.int64(415)]""","[416.0, 68.0, 68.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free vulnerability due to dereferencing 'p' after freeing 'a'."",
+        ""line_content"": ""*p = -(*p);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-3,1,416,[34],1,416.0,"[14, 20]","[""416-10"", ""416-7"", ""401-8""]","[0.9760255880717138, 0.9545454377207028, 0.9375661647759955]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(416), np.int64(416), np.int64(401)]""","[416.0, 68.0, 69.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free vulnerability due to dereferencing 'a' after freeing it."",
+        ""line_content"": ""*b = *a;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free vulnerability due to dereferencing 'b' after freeing it."",
+        ""line_content"": ""printf(\""Result: %d\\n\"", *b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-4,1,416,[34],1,416.0,"[14, 20]","[""416-10"", ""416-8"", ""401-9""]","[0.9528725615771325, 0.9497549313262369, 0.9367492667910935]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(416), np.int64(416), np.int64(401)]""","[416.0, 416.0, 69.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free vulnerability."",
+        ""line_content"": ""*b = *a;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free vulnerability."",
+        ""line_content"": ""printf(\""Result: %d\\n\"", *b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-5,1,416,"[5, 7, 23]",1,415.0,[9],"[""415-7"", ""415-8"", ""416-8""]","[0.8153503215338531, 0.810660799571273, 0.7786570690107658]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(416)]""","[68.0, 68.0, 416.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 9,
+        ""cwe"": 415,
+        ""message"": ""Memory leak detected. The allocated memory is freed twice."",
+        ""line_content"": ""free(a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-6,1,416,[32],1,190.0,[18],"[""415-9"", ""401-4"", ""674-5""]","[0.9520462524493118, 0.3145514111355916, 0.3129530862372007]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(415), np.int64(401), np.int64(674)]""","[190.0, NaN, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to lack of bounds checking when reading from 'array'."",
+        ""line_content"": ""array[0] = size;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-7,0,416,[],0,,[],"[""416-7"", ""416-8"", ""416-10""]","[0.9892782773123865, 0.9649524416440292, 0.9470063854068984]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(416), np.int64(416), np.int64(416)]""","[68.0, 416.0, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-8,0,416,[],0,,[],"[""416-8"", ""416-7"", ""416-10""]","[0.98375789600327, 0.9703241927399783, 0.925353476481438]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(416), np.int64(416), np.int64(416)]""","[416.0, 68.0, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-9,0,416,[],0,,[],"[""415-7"", ""415-8"", ""401-10""]","[0.31040804778090253, 0.3086227227261557, 0.26062920344629914]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(415), np.int64(401)]""","[68.0, 68.0, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,416-10,0,416,[],1,416.0,"[17, 21]","[""416-10"", ""416-7"", ""401-8""]","[0.9800729446384969, 0.9587836711572174, 0.9368190513298231]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(416), np.int64(416), np.int64(401)]""","[416.0, 68.0, 69.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free vulnerability due to dereferencing 'a' after freeing it."",
+        ""line_content"": ""*b = *a;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 21,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free vulnerability due to dereferencing 'a' after freeing it."",
+        ""line_content"": ""swap(&a, &b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-1,1,476,"[5, 8]",1,476.0,[4],"[""476-7"", ""787-7"", ""761-8""]","[0.8498793370546486, 0.7526954272754072, 0.6440472213515436]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(476), np.int64(787), np.int64(761)]""","[680.0, 680.0, 415.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 476,
+        ""message"": ""Potential null pointer dereference when accessing array A."",
+        ""line_content"": ""A[i] = i;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-2,1,476,"[7, 9, 13]",1,416.0,[6],"[""787-8"", ""476-7"", ""787-7""]","[0.9282507917391066, 0.4986135637627135, 0.4498261017697994]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(787), np.int64(476), np.int64(787)]""","[190.0, 680.0, 680.0]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 6,
+        ""cwe"": 416,
+        ""message"": ""Potential buffer overflow due to use of fixed size buffer with variable input."",
+        ""line_content"": ""scanf(\""%3d\"", &arr[i]);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 120,
+        ""message"": ""Buffer overflow vulnerability due to lack of bounds checking on user input."",
+        ""line_content"": ""scanf(\""%3d\"", &arr[i]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-3,1,476,[19],0,,[],"[""476-3"", ""416-7"", ""416-8""]","[0.9917323521718989, 0.5744523587954875, 0.5696406369397804]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(476), np.int64(416), np.int64(416)]""","[NaN, 68.0, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-4,1,476,[51],1,680.0,[29],"[""617-4"", ""787-7"", ""401-10""]","[0.1350714501699379, 0.12996886071890262, 0.12270295590778214]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(787), np.int64(401)]""","[NaN, 680.0, 416.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 680,
+        ""message"": ""Potential buffer overflow due to dereferencing freed memory."",
+        ""line_content"": ""printf(\""Curr value: %d, next value: %d\\n\"", copy.value, copy.next->value);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-5,1,476,[10],1,476.0,[6],"[""476-7"", ""401-10"", ""415-7""]","[0.45440249050782605, 0.36600516406525246, 0.34829882152813535]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(476), np.int64(401), np.int64(415)]""","[680.0, 416.0, 68.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 476,
+        ""message"": ""Dereference of null pointer"",
+        ""line_content"": ""printf(\""AlwaysNonNullResult: %d\\n\"", *a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-6,1,476,[35],1,190.0,"[14, 24]","[""415-7"", ""415-8"", ""761-5""]","[0.5415734855826557, 0.5384586027060376, 0.4772381944055765]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(415), np.int64(415), np.int64(761)]""","[68.0, 68.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow in 'a.a + b.a' can lead to undefined behavior."",
+        ""line_content"": ""return (IntAndPtr) {a.a + b.a, p};""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 24,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow in 'scanf' due to lack of bounds checking."",
+        ""line_content"": ""scanf(\""%9d\"", &input);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-7,0,476,[],0,,[],"[""476-7"", ""787-7"", ""761-8""]","[0.9201075766714607, 0.7782647667372822, 0.6776991639587325]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(476), np.int64(787), np.int64(761)]""","[680.0, 680.0, 415.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-8,0,476,[],0,,[],"[""476-8"", ""415-8"", ""415-7""]","[0.9546166681722704, 0.25047048025319335, 0.24432067029462218]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(476), np.int64(415), np.int64(415)]""","[48.0, 68.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-9,0,476,[],0,,[],"[""476-3"", ""401-5"", ""401-6""]","[0.9818375348866739, 0.6189971053854957, 0.6186355392131454]","[""false_negative"", ""false_negative"", ""false_negative""]","""[np.int64(476), np.int64(401), np.int64(401)]""","[NaN, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,476-10,0,476,[],0,,[],"[""416-7"", ""415-7"", ""415-8""]","[0.6908730252737422, 0.6908003269849002, 0.6868271595995498]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(416), np.int64(415), np.int64(415)]""","[68.0, 68.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-1,1,522,"[70, 74]",1,89.0,[24],"[""798-8"", ""522-10"", ""89-10""]","[0.8023162078866218, 0.7598644624279437, 0.5327595144859828]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(798), np.int64(522), np.int64(89)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct string concatenation of user input."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM users WHERE username = '%s' and password = '%s'\"", username, password);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-2,1,522,"[56, 68]",1,89.0,"[24, 32, 36]","[""522-10"", ""798-8"", ""89-10""]","[0.887719875246895, 0.6927868270749179, 0.5526206155258998]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(522), np.int64(798), np.int64(89)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""const char *sql = \""INSERT INTO users (username, password) VALUES (?, ?);\"";""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 20,
+        ""message"": ""Buffer overflow vulnerability due to fixed-size buffer for username and password."",
+        ""line_content"": ""char username[32];""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 36,
+        ""cwe"": 20,
+        ""message"": ""Buffer overflow vulnerability due to fixed-size buffer for username and password."",
+        ""line_content"": ""char password[32];""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-3,1,522,"[112, 123]",0,,[],"[""798-8"", ""522-8"", ""253-8""]","[0.2970087636243102, 0.28341350756102424, 0.28153786563796246]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(798), np.int64(522), np.int64(253)]""","[89.0, 89.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-4,1,522,"[105, 120]",1,89.0,"[42, 45]","[""522-8"", ""798-4"", ""362-5""]","[0.5336058897975541, 0.35226223430401865, 0.24656917839993187]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(522), np.int64(798), np.int64(362)]""","[89.0, NaN, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 42,
+        ""cwe"": 89,
+        ""message"": ""Potential SQL Injection vulnerability due to direct use of user input in a URL."",
+        ""line_content"": ""curl_easy_setopt(curl, CURLOPT_URL, \""https://mypage.com/login\"");""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 45,
+        ""cwe"": 89,
+        ""message"": ""Potential SQL Injection vulnerability due to direct use of user input in POST data."",
+        ""line_content"": ""snprintf(postData, sizeof(postData), \""username=%s&password=%s\"", username, not_password);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-5,1,522,[13],1,78.0,[7],"[""253-8"", ""22-10"", ""362-5""]","[0.5190037730712235, 0.49157115778447125, 0.4473886048225483]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 7,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow risk due to use of fscanf with fixed width specifier."",
+        ""line_content"": ""fscanf(file, \""%31s\"", password);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-6,1,522,[17],1,89.0,[14],"[""798-8"", ""522-10"", ""522-8""]","[0.4348224958434804, 0.3969974417565894, 0.37357022291534464]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(798), np.int64(522), np.int64(522)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 89,
+        ""message"": ""Potential command injection via 'username' parameter."",
+        ""line_content"": ""fprintf(passwd_file, \""%s:%s:1001:1001::/home/%s:/bin/bash\\n\"", username, password, username);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-7,0,522,[],1,89.0,"[44, 54, 60]","[""798-8"", ""522-10"", ""628-4""]","[0.8965390929567473, 0.695599793248292, 0.5813048745329887]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(798), np.int64(522), np.int64(628)]""","[89.0, 89.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 44,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""const char *sql = \""INSERT INTO users (username, password) VALUES (?, ?);\"";""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 54,
+        ""cwe"": 628,
+        ""message"": ""Potential buffer overflow in 'fgets' call, as no check is performed against the size of the input."",
+        ""line_content"": ""fgets(username, sizeof(username), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 60,
+        ""cwe"": 628,
+        ""message"": ""Potential buffer overflow in 'fgets' call, as no check is performed against the size of the input."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-8,0,522,[],1,89.0,[14],"[""522-8"", ""798-4"", ""798-8""]","[0.9946700030550268, 0.6216240597685566, 0.26916694121820095]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(522), np.int64(798), np.int64(798)]""","[89.0, NaN, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 89,
+        ""message"": ""Insecure use of environment variable 'PASSWORD' in URL query parameter."",
+        ""line_content"": ""snprintf(postData, sizeof(postData), \""username=%s&password=%s\"", username, password);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-9,0,522,[],0,,[],"[""522-9"", ""89-8"", ""798-8""]","[0.9958849638114363, 0.860410412119441, 0.24923126385270455]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(522), np.int64(89), np.int64(798)]""","[89.0, 89.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,522-10,0,522,[],1,89.0,"[22, 26]","[""522-10"", ""89-10"", ""798-8""]","[0.997218025198947, 0.6383690554968091, 0.6078750798960592]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(522), np.int64(89), np.int64(798)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 22,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""sqlite3_prepare_v2(db, sql, -1, &res, 0);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""Buffer Overflow vulnerability due to lack of bounds checking on user input."",
+        ""line_content"": ""fgets(username, sizeof(username), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-1,1,617,[28],1,401.0,[16],"[""190-1"", ""401-4"", ""843-5""]","[0.717529291370369, 0.41413409210653285, 0.34093720805198263]","[""false_negative"", ""false_negative"", ""false_negative""]","""[np.int64(190), np.int64(401), np.int64(843)]""","[NaN, NaN, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 401,
+        ""message"": ""Potential buffer overflow due to incorrect handling of pointers."",
+        ""line_content"": ""double* s = x; x = y; y = z; z = s;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-2,1,617,"[8, 19]",0,,[],"[""843-7"", ""416-8"", ""415-7""]","[0.6222913134895358, 0.44564252657300063, 0.44465393651651747]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(843), np.int64(416), np.int64(415)]""","[357.0, 416.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-3,1,617,[7],0,,[],"[""617-3"", ""617-8"", ""617-4""]","[0.9252238464629291, 0.847202122443391, 0.38144356551203135]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(617), np.int64(617), np.int64(617)]""","[NaN, 68.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-4,1,617,[12],0,,[],"[""617-4"", ""787-10"", ""787-7""]","[0.9550329258616583, 0.5391437597547108, 0.5348032088397332]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(787), np.int64(787)]""","[NaN, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-5,1,617,[8],0,,[],"[""617-4"", ""617-3"", ""617-8""]","[0.5513359820213956, 0.4488131413077247, 0.42990449079678195]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(617), np.int64(617), np.int64(617)]""","[NaN, NaN, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-6,1,617,[10],1,190.0,[5],"[""369-10"", ""369-7"", ""617-3""]","[0.616119140683371, 0.44145558716488414, 0.347373109549057]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(369), np.int64(369), np.int64(617)]""","[682.0, 682.0, NaN]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 5,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow risk due to limited width of the format specifier in scanf."",
+        ""line_content"": ""scanf(\""%9d\"", &input);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-7,0,617,[],0,,[],"[""617-7"", ""617-10"", ""822-10""]","[0.9974433154987484, 0.9741954666288984, 0.9533987760022267]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(617), np.int64(822)]""","[190.0, 680.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-8,0,617,[],0,,[],"[""617-8"", ""617-3"", ""617-4""]","[0.9369245869393061, 0.8112604875961393, 0.35912450731693296]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(617), np.int64(617), np.int64(617)]""","[68.0, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-9,0,617,[],0,,[],"[""617-4"", ""617-3"", ""617-8""]","[0.5513359820213956, 0.4488131413077247, 0.42990449079678195]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(617), np.int64(617), np.int64(617)]""","[NaN, NaN, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,617-10,0,617,[],1,680.0,[24],"[""617-10"", ""617-7"", ""822-10""]","[0.9973452986743888, 0.9747233956100163, 0.97170349642524]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(617), np.int64(822)]""","[680.0, 190.0, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 680,
+        ""message"": ""Potential integer overflow in 'strtoul' function."",
+        ""line_content"": ""unsigned long input = strtoul(buffer, &endptr, 10);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 24,
+        ""cwe"": 190,
+        ""message"": ""Possible use of uninitialized variable 'endptr'."",
+        ""line_content"": ""char *endptr;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-1,1,628,[18],1,22.0,[10],"[""253-8"", ""22-10"", ""362-5""]","[0.5774848840491825, 0.40685868471350617, 0.38007294741669756]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 22,
+        ""message"": ""Potential directory traversal vulnerability due to use of user-supplied input in file path."",
+        ""line_content"": ""write_to_file(text, filename);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-2,1,628,[18],0,,[],"[""628-2"", ""401-6"", ""416-10""]","[0.9738586314887584, 0.6496789208864239, 0.6423058627525617]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(628), np.int64(401), np.int64(416)]""","[NaN, NaN, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-3,1,628,[36],0,,[],"[""190-10"", ""369-7"", ""761-5""]","[0.996992187405664, 0.4233707932159587, 0.14559475797578136]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(190), np.int64(369), np.int64(761)]""","[327.0, 682.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-4,1,628,"[10, 12, 58]",0,,[],"[""628-4"", ""798-8"", ""78-9""]","[0.9970054046656254, 0.626801386948522, 0.22114336269217294]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(628), np.int64(798), np.int64(78)]""","[NaN, 89.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-5,1,628,"[23, 27, 32, 36, 41, 48]",1,89.0,[14],"[""628-8"", ""628-9"", ""78-10""]","[0.9974842188508157, 0.9973950470225014, 0.24645026001785103]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(628), np.int64(628), np.int64(78)]""","[89.0, 89.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 89,
+        ""message"": ""Potential Cross-Site Scripting (XSS) vulnerability due to URL decoding of user input."",
+        ""line_content"": ""*dest = (char)(high * 16 + low);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-6,1,628,[53],0,,[],"[""798-4"", ""522-8"", ""617-10""]","[0.6287235303502997, 0.5715088105847145, 0.2204492473972212]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(798), np.int64(522), np.int64(617)]""","[NaN, 89.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-7,0,628,[],0,,[],"[""415-9"", ""476-7"", ""787-7""]","[0.5473559694642532, 0.3231479191715571, 0.3072693327468025]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(476), np.int64(787)]""","[190.0, 680.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-8,0,628,[],1,89.0,[14],"[""628-8"", ""628-9"", ""78-10""]","[0.9973031413191924, 0.9972146814636009, 0.2451522881241093]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(628), np.int64(628), np.int64(78)]""","[89.0, 89.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 89,
+        ""message"": ""Potential Cross-Site Scripting (XSS) vulnerability due to URL decoding of user input."",
+        ""line_content"": ""*dest = (char)(high * 16 + low);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-9,0,628,[],1,89.0,[14],"[""628-8"", ""628-9"", ""78-10""]","[0.9973031413191924, 0.9972146814636009, 0.2451522881241093]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(628), np.int64(628), np.int64(78)]""","[89.0, 89.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 89,
+        ""message"": ""Potential Cross-Site Scripting (XSS) vulnerability due to URL decoding of user input."",
+        ""line_content"": ""*dest = (char)(high * 16 + low);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,628-10,0,628,[],0,,[],"[""628-4"", ""798-8"", ""78-9""]","[0.9967838074126576, 0.6260933897199551, 0.21943053525066]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(628), np.int64(798), np.int64(78)]""","[NaN, 89.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-1,1,674,[5],1,118.0,[4],"[""617-4"", ""787-7"", ""787-10""]","[0.41812250886155883, 0.3674985895498184, 0.3667753690929781]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(787), np.int64(787)]""","[NaN, 680.0, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 118,
+        ""message"": ""Potential stack overflow due to recursive call without proper termination condition."",
+        ""line_content"": ""print(i);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-2,1,674,[9],0,,[],"[""617-4"", ""787-7"", ""787-10""]","[0.6426829339578027, 0.5707565656166811, 0.5563315325370112]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(787), np.int64(787)]""","[NaN, 680.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-3,1,674,"[4, 7, 9]",0,,[],"[""674-10"", ""787-8"", ""617-4""]","[0.9748648084388012, 0.33264794263080016, 0.3056090585480848]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(674), np.int64(787), np.int64(617)]""","[190.0, 190.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-4,1,674,"[9, 10]",1,674.0,[4],"[""674-5"", ""787-8"", ""415-9""]","[0.9834465159049305, 0.40578496539721687, 0.25660460967189747]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(674), np.int64(787), np.int64(415)]""","[NaN, 190.0, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 674,
+        ""message"": ""Potential buffer overflow due to improper handling of array indexing."",
+        ""line_content"": ""printf(\""%d\\n\"", arr[index]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-5,1,674,"[9, 10]",0,,[],"[""674-5"", ""787-8"", ""415-9""]","[0.987762237737079, 0.3933192614894509, 0.3048134554632559]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(674), np.int64(787), np.int64(415)]""","[NaN, 190.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-6,1,674,"[5, 8, 9]",0,,[],"[""674-5"", ""787-8"", ""415-9""]","[0.8410856625713911, 0.429624266023882, 0.2757896297352545]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(674), np.int64(787), np.int64(415)]""","[NaN, 190.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-7,0,674,[],0,,[],"[""674-5"", ""787-8"", ""415-9""]","[0.9834465159049305, 0.40578496539721687, 0.25660460967189747]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(674), np.int64(787), np.int64(415)]""","[NaN, 190.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-8,0,674,[],0,,[],"[""674-5"", ""787-8"", ""401-4""]","[0.8451432944362092, 0.4973364550185022, 0.2938264016644102]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(674), np.int64(787), np.int64(401)]""","[NaN, 190.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-9,0,674,[],0,,[],"[""362-9"", ""617-4"", ""787-7""]","[0.44425654739969744, 0.35921835631440246, 0.2906822406904537]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(362), np.int64(617), np.int64(787)]""","[680.0, NaN, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,674-10,0,674,[],0,,[],"[""674-10"", ""787-8"", ""617-4""]","[0.9827035254654658, 0.33175202191324665, 0.3076845738152967]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(674), np.int64(787), np.int64(617)]""","[190.0, 190.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-1,1,761,"[15, 19, 22]",0,,[],"[""761-1"", ""78-9"", ""798-8""]","[0.9941498818088094, 0.45204034969883633, 0.2537102560762731]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(761), np.int64(78), np.int64(798)]""","[NaN, 78.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-2,1,761,[12],1,416.0,[6],"[""78-9"", ""401-10"", ""787-7""]","[0.47520763075541206, 0.24795889189964754, 0.2449961024294364]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(78), np.int64(401), np.int64(787)]""","[78.0, 416.0, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 416,
+        ""message"": ""Buffer overflow due to pointer arithmetic on allocated memory."",
+        ""line_content"": ""buf++;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-3,1,761,[23],0,,[],"[""787-7"", ""761-8"", ""476-7""]","[0.7424695563474327, 0.723215571037867, 0.6660615906823454]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(787), np.int64(761), np.int64(476)]""","[680.0, 415.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-4,1,761,[30],0,,[],"[""761-8"", ""401-6"", ""415-7""]","[0.9769837582115148, 0.7412597849684369, 0.7405179881416557]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(761), np.int64(401), np.int64(415)]""","[415.0, NaN, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-5,1,761,[18],0,,[],"[""761-5"", ""415-7"", ""415-8""]","[0.9768713643677854, 0.3590460611878728, 0.35698099253572463]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(761), np.int64(415), np.int64(415)]""","[NaN, 68.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-6,1,761,"[15, 18]",0,,[],"[""761-5"", ""415-7"", ""415-8""]","[0.9469328571667733, 0.3444783524792266, 0.34249707062169843]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(761), np.int64(415), np.int64(415)]""","[NaN, 68.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-7,0,761,[],0,,[],"[""761-1"", ""78-9"", ""78-10""]","[0.9620658806920095, 0.381860357203282, 0.26681711510459144]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(761), np.int64(78), np.int64(78)]""","[NaN, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-8,0,761,[],1,415.0,"[14, 17]","[""761-8"", ""401-6"", ""401-9""]","[0.9798415899177276, 0.7426994027136657, 0.7348898250203727]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(761), np.int64(401), np.int64(401)]""","[415.0, NaN, 69.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free vulnerability due to dereferencing 'b' after it has been freed."",
+        ""line_content"": ""printf(\""%d\\n\"", *b);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 17,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free vulnerability due to dereferencing 'b' after it has been freed."",
+        ""line_content"": ""if (i < 9) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-9,0,761,[],0,,[],"[""761-8"", ""401-6"", ""415-7""]","[0.9769837582115148, 0.7412597849684369, 0.7405179881416557]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(761), np.int64(401), np.int64(415)]""","[415.0, NaN, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,761-10,0,761,[],0,,[],"[""761-5"", ""415-7"", ""415-8""]","[0.9652518736361089, 0.3442152292347373, 0.3422354607417119]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(761), np.int64(415), np.int64(415)]""","[NaN, 68.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-1,1,770,[68],0,,[],"[""770-1"", ""617-7"", ""822-10""]","[0.9983535503365574, 0.42379012377836506, 0.42279684584454424]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(770), np.int64(617), np.int64(822)]""","[NaN, 190.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-2,1,770,"[30, 37]",0,,[],"[""822-10"", ""617-7"", ""617-10""]","[0.6267635591620061, 0.6228368020477482, 0.6174051904704911]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(822), np.int64(617), np.int64(617)]""","[190.0, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-3,1,770,[26],1,680.0,"[14, 22]","[""787-7"", ""476-7"", ""617-4""]","[0.5194202016384732, 0.5161548528627299, 0.5100372550242441]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(787), np.int64(476), np.int64(617)]""","[680.0, 680.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 680,
+        ""message"": ""Potential integer overflow in 'scanf' function call."",
+        ""line_content"": ""scanf(\""%9u\"", &input);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 22,
+        ""cwe"": 476,
+        ""message"": ""Buffer over-read due to lack of bounds checking on 'input'."",
+        ""line_content"": ""char* randChars = createRandChars(input, &seed);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-4,1,770,[34],0,,[],"[""369-10"", ""22-8"", ""369-7""]","[0.4425531688546026, 0.42440017947756686, 0.34459516050688727]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(22), np.int64(369)]""","[682.0, 78.0, 682.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-5,1,770,[26],0,,[],"[""770-10"", ""770-1"", ""617-7""]","[0.7880843930401573, 0.37410095503836094, 0.26153722862123613]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(770), np.int64(770), np.int64(617)]""","[680.0, NaN, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-6,1,770,[31],0,,[],"[""770-10"", ""770-1"", ""617-7""]","[0.9875599170443513, 0.32975142142008196, 0.30971414780412904]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(770), np.int64(770), np.int64(617)]""","[680.0, NaN, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-7,0,770,[],1,190.0,"[10, 14, 20]","[""369-10"", ""22-8"", ""369-7""]","[0.42859288225332776, 0.408453834979966, 0.3293274327798818]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(22), np.int64(369)]""","[682.0, 78.0, 682.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking when reading from standard input."",
+        ""line_content"": ""int read_val = getchar();""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 14,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking when reading from standard input."",
+        ""line_content"": ""input[i] = c;""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 20,
+        ""cwe"": 0,
+        ""message"": ""Memory reallocation check can be improved by handling the case where realloc fails."",
+        ""line_content"": ""if (new_input == NULL) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-8,0,770,[],0,,[],"[""770-1"", ""822-10"", ""617-7""]","[0.9713044079927478, 0.41548825981332793, 0.4088666660301131]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(770), np.int64(822), np.int64(617)]""","[NaN, 190.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-9,0,770,[],1,680.0,"[20, 24]","[""787-7"", ""617-4"", ""476-7""]","[0.4762583114437034, 0.44545228700954476, 0.4339232734442973]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(787), np.int64(617), np.int64(476)]""","[680.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 20,
+        ""cwe"": 680,
+        ""message"": ""Potential integer overflow due to multiplication in the random number generation formula."",
+        ""line_content"": ""rand = (rand * 89 + 101) % 64;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 24,
+        ""cwe"": 476,
+        ""message"": ""Buffer size calculation can lead to out-of-bounds access if `desiredN` exceeds `LENGTH_LIMIT`."",
+        ""line_content"": ""unsigned int n = (LENGTH_LIMIT < desiredN) ? LENGTH_LIMIT : desiredN;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,770-10,0,770,[],0,,[],"[""770-10"", ""770-1"", ""617-7""]","[0.9903216993994084, 0.3337455594416738, 0.3158485974871746]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(770), np.int64(770), np.int64(617)]""","[680.0, NaN, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-1,1,787,[7],1,190.0,[6],"[""134-7"", ""134-9"", ""798-8""]","[0.4267571706128146, 0.346788820768663, 0.26427936340469926]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(798)]""","[89.0, 190.0, 89.0]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow risk due to lack of bounds checking on input."",
+        ""line_content"": ""scanf(\""%s\"", reg_name);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-2,1,787,[7],1,120.0,[6],"[""522-10"", ""798-8"", ""134-7""]","[0.4574984349613666, 0.35984569885788453, 0.2983139440744974]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(522), np.int64(798), np.int64(134)]""","[89.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 120,
+        ""message"": ""Buffer overflow detected. The 'strcpy' function can write beyond the bounds of the 'username' array."",
+        ""line_content"": ""strcpy(username,\""Is_this_too_long_for_this_array_buffer?\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-3,1,787,[18],1,114.0,[11],"[""78-9"", ""134-7"", ""787-7""]","[0.33505264218485126, 0.32122161915424385, 0.3054362614806852]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(78), np.int64(134), np.int64(787)]""","[78.0, 89.0, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 11,
+        ""cwe"": 114,
+        ""message"": ""Buffer overflow due to fixed-size buffer 'OSusername' being used with 'strcpy'."",
+        ""line_content"": ""strcpy(OSusername,user);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-4,1,787,[14],1,78.0,"[10, 14]","[""253-10"", ""78-10"", ""134-7""]","[0.30662593934518434, 0.3003579814677527, 0.2267708026544577]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(78), np.int64(134)]""","[78.0, 78.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow due to use of fscanf with no size limit."",
+        ""line_content"": ""fscanf(stdin, \""%s\"", string_2);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 14,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer overflow due to use of fgets without checking return value."",
+        ""line_content"": ""fgets(string_3, sizeof(string_3), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-5,1,787,[51],1,680.0,[20],"[""787-7"", ""761-8"", ""476-7""]","[0.5549015556018636, 0.5223197949738003, 0.5027240976024963]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(787), np.int64(761), np.int64(476)]""","[680.0, 415.0, 680.0]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 680,
+        ""message"": ""Potential buffer overflow due to use of scanf without checking input length."",
+        ""line_content"": ""scanf(\""%s\"", str2);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-6,1,787,"[10, 17]",0,,[],"[""787-7"", ""787-8"", ""476-7""]","[0.5709700239749638, 0.5189174938789435, 0.5105888227213662]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(787), np.int64(787), np.int64(476)]""","[680.0, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-7,0,787,[],0,,[],"[""787-7"", ""476-7"", ""761-8""]","[0.9399460300765033, 0.7344236241077711, 0.7066509264812952]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(787), np.int64(476), np.int64(761)]""","[680.0, 680.0, 415.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-8,0,787,[],0,,[],"[""787-8"", ""787-7"", ""787-10""]","[0.9808767206734438, 0.4770543768807259, 0.4255845308086454]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(787), np.int64(787), np.int64(787)]""","[190.0, 680.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-9,0,787,[],0,,[],"[""369-3"", ""798-8"", ""522-8""]","[0.4478559381525037, 0.3900625638045481, 0.3394835097714307]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(798), np.int64(522)]""","[NaN, 89.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,787-10,0,787,[],1,190.0,"[6, 10, 12]","[""787-10"", ""125-9"", ""787-7""]","[0.974396333343827, 0.902391253018612, 0.5989914803437095]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(787), np.int64(125), np.int64(787)]""","[190.0, 190.0, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""a[i] = 350 - 3 * i;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""%d, \"", a[i]);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 12,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""Special elem: %d\\n\"", a[INT_MAX]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-1,1,798,"[40, 45]",0,,[],"[""798-1"", ""798-9"", ""798-8""]","[0.9978808336717657, 0.7565219063291401, 0.16518920159673323]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(798), np.int64(798), np.int64(798)]""","[NaN, 327.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-2,1,798,[10],1,369.0,[7],"[""369-3"", ""522-8"", ""798-8""]","[0.44453349787562274, 0.38557533266148103, 0.3492105148630313]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(369), np.int64(522), np.int64(798)]""","[NaN, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 369,
+        ""message"": ""Buffer overflow risk due to fixed-size buffer 'password' with no bounds checking."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-3,1,798,"[13, 24]",0,,[],"[""522-9"", ""89-8"", ""798-8""]","[0.9451952727623659, 0.8288347462882083, 0.2493604503234757]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(522), np.int64(89), np.int64(798)]""","[89.0, 89.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-4,1,798,[13],0,,[],"[""798-4"", ""522-8"", ""522-9""]","[0.9951745784652988, 0.6206790239681927, 0.09703033497873874]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(798), np.int64(522), np.int64(522)]""","[NaN, 89.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-5,1,798,[144],1,89.0,"[42, 52, 57]","[""798-8"", ""628-4"", ""522-10""]","[0.9919768412810779, 0.629969456769464, 0.6085184171534992]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(798), np.int64(628), np.int64(522)]""","[89.0, NaN, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 42,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user input directly in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM users WHERE username = '%s'\"", username);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 52,
+        ""cwe"": 628,
+        ""message"": ""Potential buffer overflow in 'fgets' call due to fixed size buffer."",
+        ""line_content"": ""fgets(username, sizeof(username), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 57,
+        ""cwe"": 628,
+        ""message"": ""Potential buffer overflow in 'fgets' call due to fixed size buffer."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-6,1,798,[54],1,312.0,"[24, 32]","[""628-4"", ""798-8"", ""369-3""]","[0.862092149059598, 0.7024091139493012, 0.28331694271178376]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(628), np.int64(798), np.int64(369)]""","[NaN, 89.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 312,
+        ""message"": ""Hardcoded secret detected. The password '5f004f22114ef74d6c237da41af0cf694f6d01c10ecf3ccb4d198573fcafa3fe' should not be hardcoded."",
+        ""line_content"": ""if (!strcmp(password, \""5f004f22114ef74d6c237da41af0cf694f6d01c10ecf3ccb4d198573fcafa3fe\"")) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer overflow due to use of fgets without proper bounds checking."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-7,0,798,[],0,,[],"[""798-4"", ""522-8"", ""798-9""]","[0.5569990728371822, 0.41214307025844327, 0.32266543872621717]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(798), np.int64(522), np.int64(798)]""","[NaN, 89.0, 327.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-8,0,798,[],1,89.0,[40],"[""798-8"", ""628-4"", ""522-10""]","[0.9990639116069444, 0.6259383282917415, 0.606319164762207]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(798), np.int64(628), np.int64(522)]""","[89.0, NaN, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 40,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user input in SQL query without proper sanitization."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM users WHERE username = '%s'\"", username);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 40,
+        ""cwe"": 78,
+        ""message"": ""Cross-Site Scripting (XSS) vulnerability due to direct inclusion of user input in the HTML output."",
+        ""line_content"": ""printf(\""<h1>Welcome, %s</h1>\"", username);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-9,0,798,[],0,,[],"[""798-9"", ""798-1"", ""253-8""]","[0.9984802221975593, 0.7564572726233929, 0.2644043374960275]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(798), np.int64(798), np.int64(253)]""","[327.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,798-10,0,798,[],0,,[],"[""798-10"", ""628-8"", ""628-9""]","[0.9665551325541548, 0.16555178955666483, 0.16537952808185907]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(798), np.int64(628), np.int64(628)]""","[89.0, 89.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-1,1,822,"[5, 20, 24, 27]",1,190.0,"[11, 14]","[""415-5"", ""415-9"", ""401-4""]","[0.608007080115761, 0.279372733298797, 0.2724333895386857]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(415), np.int64(415), np.int64(401)]""","[NaN, 190.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 11,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow in 'scanf' function call."",
+        ""line_content"": ""printf(\""Enter a number: \"");""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 14,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free vulnerability due to pointer reuse after deallocation."",
+        ""line_content"": ""free(ptr);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-2,1,822,"[5, 6, 24, 27]",1,415.0,"[14, 15]","[""415-5"", ""787-8"", ""401-4""]","[0.5638946420598325, 0.4475405551050567, 0.44160857761709155]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(415), np.int64(787), np.int64(401)]""","[NaN, 190.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free vulnerability due to freeing 'x' after 'ptr' has been reassigned."",
+        ""line_content"": ""free(ptr);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 15,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free vulnerability due to freeing 'x' after 'ptr' has been reassigned."",
+        ""line_content"": ""free(x);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-3,1,822,"[15, 26, 28, 30]",1,190.0,[14],"[""415-5"", ""134-7"", ""78-7""]","[0.4791304097579177, 0.32704631234959936, 0.2486189292290304]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(78)]""","[NaN, 89.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow can occur when adding 'number' to 'ptr'. This can lead to undefined behavior."",
+        ""line_content"": ""ptr += number;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 14,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow if 'number' is large enough to cause 'ptr' to point outside the allocated memory."",
+        ""line_content"": ""ptr += number;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-4,1,822,"[20, 25, 29, 35]",0,,[],"[""362-5"", ""253-8"", ""22-10""]","[0.3896973234118906, 0.3784153551793606, 0.3499613195302533]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(362), np.int64(253), np.int64(22)]""","[NaN, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-5,1,822,"[16, 21, 25, 31]",1,415.0,[10],"[""415-5"", ""401-4"", ""401-10""]","[0.5424529693827433, 0.26720834969917046, 0.2573115472888077]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(415), np.int64(401), np.int64(401)]""","[NaN, NaN, 416.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 415,
+        ""message"": ""Potential buffer overflow due to use of uninitialized memory."",
+        ""line_content"": ""return (int*)val;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-6,1,822,[61],0,,[],"[""822-10"", ""617-7"", ""617-10""]","[0.9821107719004306, 0.968742708008621, 0.9649665014210593]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(822), np.int64(617), np.int64(617)]""","[190.0, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-7,0,822,[],0,,[],"[""822-7"", ""401-10"", ""415-7""]","[0.947110997407371, 0.1873523261195022, 0.18179742847350944]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(822), np.int64(401), np.int64(415)]""","[339.0, 416.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-8,0,822,[],0,,[],"[""401-10"", ""415-7"", ""415-8""]","[0.5696686552084974, 0.5499085656765164, 0.546745743233153]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(401), np.int64(415), np.int64(415)]""","[416.0, 68.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-9,0,822,[],0,,[],"[""415-5"", ""401-4"", ""401-10""]","[0.6852809088016277, 0.34337395781254526, 0.3255275978503075]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(415), np.int64(401), np.int64(401)]""","[NaN, NaN, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,822-10,0,822,[],0,,[],"[""822-10"", ""617-10"", ""617-7""]","[0.9970909741319632, 0.9706795389434326, 0.9528821212669726]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(822), np.int64(617), np.int64(617)]""","[190.0, 680.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-1,1,835,[4],0,,[],"[""835-1"", ""835-2"", ""835-6""]","[0.8812159238249396, 0.5530737465891341, 0.46758864666790395]","[""false_negative"", ""false_negative"", ""false_negative""]","""[np.int64(835), np.int64(835), np.int64(835)]""","[NaN, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-2,1,835,[6],0,,[],"[""835-2"", ""835-6"", ""416-10""]","[0.8990508871121345, 0.5900787496507767, 0.5842541233129356]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(835), np.int64(835), np.int64(416)]""","[NaN, NaN, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-3,1,835,[4],1,488.0,[4],"[""617-4"", ""787-7"", ""476-7""]","[0.5036652879830994, 0.4833667188357062, 0.4805422783804576]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(787), np.int64(476)]""","[NaN, 680.0, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 488,
+        ""message"": ""Infinite loop condition always evaluates to true."",
+        ""line_content"": ""for (long long int i = 0; i > -1; i++) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-4,1,835,"[6, 8]",0,,[],"[""617-4"", ""787-10"", ""125-9""]","[0.6326897543413107, 0.5991322227807124, 0.5943969372802596]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(787), np.int64(125)]""","[NaN, 190.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-5,1,835,"[11, 14]",1,400.0,[10],"[""617-4"", ""787-7"", ""787-10""]","[0.6604365386041952, 0.5825478312672744, 0.578154834932989]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(787), np.int64(787)]""","[NaN, 680.0, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 400,
+        ""message"": ""Infinite loop can lead to resource exhaustion."",
+        ""line_content"": ""while (i >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-6,1,835,[13],0,,[],"[""835-6"", ""835-2"", ""415-7""]","[0.9253637947894086, 0.5496434997174374, 0.4419023454698904]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(835), np.int64(835), np.int64(415)]""","[NaN, NaN, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-7,0,835,[],0,,[],"[""835-1"", ""835-2"", ""835-6""]","[0.8544465624924464, 0.5531749252302038, 0.4667522099455483]","[""false_negative"", ""false_negative"", ""false_negative""]","""[np.int64(835), np.int64(835), np.int64(835)]""","[NaN, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-8,0,835,[],0,,[],"[""835-2"", ""416-10"", ""835-6""]","[0.8632096552467619, 0.5720657964961205, 0.570008317433039]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(835), np.int64(416), np.int64(835)]""","[NaN, 416.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-9,0,835,[],0,,[],"[""617-4"", ""787-7"", ""787-10""]","[0.6466614018000678, 0.5740215772839055, 0.5681718316245583]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(617), np.int64(787), np.int64(787)]""","[NaN, 680.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,835-10,0,835,[],0,,[],"[""835-6"", ""416-10"", ""401-6""]","[0.823139816632641, 0.6802278278730833, 0.6747887898727343]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(835), np.int64(416), np.int64(401)]""","[NaN, 416.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-1,1,843,"[15, 25]",1,401.0,"[14, 20]","[""253-10"", ""89-10"", ""253-4""]","[0.3263094211505437, 0.2827237683578037, 0.27415115069760865]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(89), np.int64(253)]""","[78.0, 89.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 401,
+        ""message"": ""Potential buffer overflow due to fixed-size array."",
+        ""line_content"": ""char name[20];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 20,
+        ""cwe"": 401,
+        ""message"": ""Potential buffer overflow due to fixed-size array."",
+        ""line_content"": ""char description[50];""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-2,1,843,"[5, 13]",0,,[],"[""843-2"", ""401-6"", ""415-7""]","[0.9613020660114384, 0.31819992496406363, 0.31369250021724265]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(843), np.int64(401), np.int64(415)]""","[NaN, NaN, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-3,1,843,"[6, 11]",1,190.0,[6],"[""134-9"", ""134-8"", ""253-8""]","[0.46355594075461914, 0.42415041107099677, 0.282105666751093]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(134), np.int64(134), np.int64(253)]""","[190.0, 89.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow detected. The buffer 'buffer' has a size of 8 bytes, but 'strcpy' writes more than 8 bytes including the null terminator."",
+        ""line_content"": ""strcpy(buffer, \""!\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-4,1,843,[19],1,68.0,[17],"[""843-2"", ""401-5"", ""401-8""]","[0.6503400518182846, 0.2968324177791924, 0.29164943970400703]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(843), np.int64(401), np.int64(401)]""","[NaN, NaN, 69.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 68,
+        ""message"": ""Potential buffer overflow due to use of uninitialized memory."",
+        ""line_content"": ""printNum(b.integer);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-5,1,843,"[12, 14, 15]",0,,[],"[""843-5"", ""401-4"", ""190-1""]","[0.9941579527660388, 0.3496019713564163, 0.2996244993146258]","[""false_negative"", ""false_negative"", ""false_negative""]","""[np.int64(843), np.int64(401), np.int64(190)]""","[NaN, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-6,1,843,"[3, 14]",1,401.0,[5],"[""843-2"", ""761-8"", ""401-6""]","[0.931141614147034, 0.3723239635010955, 0.32352639523033067]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(843), np.int64(761), np.int64(401)]""","[NaN, 415.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 5,
+        ""cwe"": 401,
+        ""message"": ""Potential buffer overflow due to casting integer to pointer."",
+        ""line_content"": ""*(int*)&i""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-7,0,843,[],0,,[],"[""843-7"", ""843-5"", ""843-2""]","[0.9389756494854703, 0.3005102516248824, 0.2287806834389255]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(843), np.int64(843), np.int64(843)]""","[357.0, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-8,0,843,[],0,,[],"[""843-2"", ""401-6"", ""415-7""]","[0.9613020660114384, 0.31819992496406363, 0.31369250021724265]","[""false_negative"", ""false_negative"", ""false_positive""]","""[np.int64(843), np.int64(401), np.int64(415)]""","[NaN, NaN, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-9,0,843,[],0,,[],"[""843-2"", ""401-6"", ""401-5""]","[0.7940331608827944, 0.3054575439076405, 0.3042895377740101]","[""false_negative"", ""false_negative"", ""false_negative""]","""[np.int64(843), np.int64(401), np.int64(401)]""","[NaN, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,C_errorlock_same_dataset,843-10,0,843,[],0,,[],"[""843-2"", ""761-8"", ""401-6""]","[0.9223108120262726, 0.34047470187604156, 0.294248076630308]","[""false_negative"", ""false_positive"", ""false_negative""]","""[np.int64(843), np.int64(761), np.int64(401)]""","[NaN, 415.0, NaN]","```json
+[]
+```"

@@ -1,0 +1,65 @@
+{
+  "model": "qwen2.5-coder:0.5b",
+  "dataset": "data/CASTLE-C250.min.json",
+  "n_total": 250,
+  "n_train": 100,
+  "n_test": 20,
+  "reused_baseline_from": "results/full_c250_qwen2_5_coder_0_5b_smart_safe_gated",
+  "mode": "rag_memory",
+  "rag_memory": true,
+  "baseline": {
+    "n": 20,
+    "accuracy": 0.65,
+    "precision": 0.6842105263157895,
+    "recall": 0.9285714285714286,
+    "f1": 0.7878787878787878,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.65,
+    "cwe_correct_rate": 0.0,
+    "location_correct_rate": 0.0,
+    "failure_counts": {
+      "wrong_cwe": 13,
+      "wrong_binary_label": 7
+    },
+    "confusion_matrix": [
+      [
+        0,
+        6
+      ],
+      [
+        1,
+        13
+      ]
+    ]
+  },
+  "errorlock": {
+    "n": 20,
+    "accuracy": 0.65,
+    "precision": 0.6842105263157895,
+    "recall": 0.9285714285714286,
+    "f1": 0.7878787878787878,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.65,
+    "cwe_correct_rate": 0.0,
+    "location_correct_rate": 0.0,
+    "failure_counts": {
+      "wrong_cwe": 13,
+      "wrong_binary_label": 7
+    },
+    "confusion_matrix": [
+      [
+        0,
+        6
+      ],
+      [
+        1,
+        13
+      ]
+    ]
+  },
+  "prompt_chars": {
+    "median": 7042,
+    "max": 12001,
+    "count": 11
+  }
+}

@@ -1,0 +1,371 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,explanation,raw
+openai/gpt-oss-120b:free,train_baseline,22-10,False,CWE-22,[],False,,,True,,True,True,True,,"The code does not contain exploitable buffer overflows, injection, or other common vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain exploitable buffer overflows, injection, or other common vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,train_baseline,78-8,False,CWE-78,[],False,,,True,,True,True,True,,"Input is restricted to alphabetic characters and '.' preventing command injection, and buffer sizes are properly bounded.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input is restricted to alphabetic characters and '.' preventing command injection, and buffer sizes are properly bounded.""
+}"
+openai/gpt-oss-120b:free,train_baseline,22-3,True,CWE-22,"[12, 23, 32]",True,CWE-22,validatePath usage allows directory traversal,True,,True,True,False,,"The prefix check does not prevent '../' sequences, enabling path traversal to access files outside the intended directory.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""validatePath usage allows directory traversal"",
+  ""explanation"": ""The prefix check does not prevent '../' sequences, enabling path traversal to access files outside the intended directory.""
+}"
+openai/gpt-oss-120b:free,train_baseline,78-2,True,CWE-78,"[9, 10]",False,,,True,,False,False,False,wrong_binary_label,API error: 'choices',"{""vulnerable"": false, ""cwe"": null, ""location"": null, ""explanation"": ""API error: 'choices'""}"
+openai/gpt-oss-120b:free,train_baseline,22-2,True,CWE-22,"[8, 20, 29]",True,CWE-22,"validatePath always returns 1, allowing path traversal",True,,True,True,False,,"The program trusts user‑supplied filename without proper validation, enabling directory traversal attacks","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""validatePath always returns 1, allowing path traversal"",
+  ""explanation"": ""The program trusts user‑supplied filename without proper validation, enabling directory traversal attacks""
+}"
+openai/gpt-oss-120b:free,train_baseline,78-4,True,CWE-78,"[11, 12]",True,CWE-78,snprintf constructing command with userInput,True,,True,True,False,,"User-controlled input is inserted into a shell command without proper sanitization, leading to command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""snprintf constructing command with userInput"",
+  ""explanation"": ""User-controlled input is inserted into a shell command without proper sanitization, leading to command injection.""
+}"
+openai/gpt-oss-120b:free,train_baseline,78-10,False,CWE-78,[],,,,False,no JSON object found,False,False,False,parse_error,,
+openai/gpt-oss-120b:free,train_baseline,22-9,False,CWE-22,[],,,,False,no JSON object found,False,False,False,parse_error,,
+openai/gpt-oss-120b:free,baseline,22-6,True,CWE-22,"[10, 49]",True,CWE-122,fileNames[255] = '\0';,True,,True,False,False,wrong_cwe,"Writes a null byte past the allocated string buffer, causing a heap buffer overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-122"",
+  ""location"": ""fileNames[255] = '\\0';"",
+  ""explanation"": ""Writes a null byte past the allocated string buffer, causing a heap buffer overflow.""
+}"
+openai/gpt-oss-120b:free,baseline,22-1,True,CWE-22,"[16, 19]",True,CWE-22,snprintf constructing file_name_buffer with user input,True,,True,True,False,,"User-controlled filename is concatenated without validation, allowing directory traversal attacks","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""snprintf constructing file_name_buffer with user input"",
+  ""explanation"": ""User-controlled filename is concatenated without validation, allowing directory traversal attacks""
+}"
+openai/gpt-oss-120b:free,baseline,78-7,False,CWE-78,[],False,,,True,,True,True,True,,API error: 'choices',"{""vulnerable"": false, ""cwe"": null, ""location"": null, ""explanation"": ""API error: 'choices'""}"
+openai/gpt-oss-120b:free,baseline,22-7,False,CWE-22,[],,,,False,Invalid control character at: line 5 column 103 (char 162),False,False,False,parse_error,,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code resolves the absolute path and ensures it{ }starts with the base directory 																																																																																																																																																																																																																																																				: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: 
+ 	: ""
+}"
+openai/gpt-oss-120b:free,baseline,78-3,True,CWE-78,"[23, 25]",True,CWE-78,command construction with strncpy/strncat before system(),True,,True,True,False,,"User-controlled input is concatenated into a shell command without validation, leading to command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""command construction with strncpy/strncat before system()"",
+  ""explanation"": ""User-controlled input is concatenated into a shell command without validation, leading to command injection.""
+}"
+openai/gpt-oss-120b:free,baseline,22-8,False,CWE-22,[],,,,False,Expecting ':' delimiter: line 1 column 21 (char 20),False,False,False,parse_error,,"{""vulnerable':true,""cwe':'CWE-78"",""location':'snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);','explanation':'User‑controlled input is inserted into a shell command without proper sanitization, leading to OS command injection.'}]"
+openai/gpt-oss-120b:free,baseline,78-6,True,CWE-78,[29],True,CWE-78,system(sys) call,True,,True,True,False,,"Insufficient input validation allows command injection despite filtering only ';', '|', and '&'","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""system(sys) call"",
+  ""explanation"": ""Insufficient input validation allows command injection despite filtering only ';', '|', and '&'""
+}"
+openai/gpt-oss-120b:free,baseline,78-9,False,CWE-78,[],,,,False,Expecting ':' delimiter: line 1 column 22 (char 21),False,False,False,parse_error,,"{""vulnerable':false,""cwe':null,""location':null,""explanation':'The input is validated to contain only alphanumeric characters and snprintf limits the buffer size, preventing injection or overflow.'}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]--- (truncated)"
+openai/gpt-oss-120b:free,baseline,78-1,True,CWE-78,"[13, 16]",True,CWE-78,snprintf command creation / system call,True,,True,True,False,,"User-supplied input is concatenated into a command string without validation, leading to OS command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""snprintf command creation / system call"",
+  ""explanation"": ""User-supplied input is concatenated into a command string without validation, leading to OS command injection.""
+}"
+openai/gpt-oss-120b:free,baseline,78-5,True,CWE-78,[10],True,CWE-78,"strcat(sys, buff) builds command string",True,,True,True,False,,"User-controlled input is concatenated into a command passed to system(), enabling command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""strcat(sys, buff) builds command string"",
+  ""explanation"": ""User-controlled input is concatenated into a command passed to system(), enabling command injection.""
+}"
+openai/gpt-oss-120b:free,baseline,22-4,True,CWE-22,"[46, 66, 70]",False,,,True,,False,False,False,wrong_binary_label,"Input validation restricts characters, preventing command injection in the constructed grep command.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input validation restricts characters, preventing command injection in the constructed grep command.""
+}"
+openai/gpt-oss-120b:free,baseline,22-5,True,CWE-22,"[8, 28]",,,,False,no JSON object found,False,False,False,parse_error,,
+openai/gpt-oss-120b:free,errorlock,22-6,True,CWE-22,"[10, 49]",True,CWE-119,fileNames[255] = '\0'; // out-of-bounds write,True,,True,False,False,wrong_cwe,"Writes a null terminator to the wrong array element, causing a buffer overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-119"",
+  ""location"": ""fileNames[255] = '\\0'; // out-of-bounds write"",
+  ""explanation"": ""Writes a null terminator to the wrong array element, causing a buffer overflow.""
+}"
+openai/gpt-oss-120b:free,errorlock,22-1,True,CWE-22,"[16, 19]",True,CWE-22,snprintf constructs file path without validation before fopen,True,,True,True,False,,User-controlled filename can traverse directories and read arbitrary files,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""snprintf constructs file path without validation before fopen"",
+  ""explanation"": ""User-controlled filename can traverse directories and read arbitrary files""
+}"
+openai/gpt-oss-120b:free,errorlock,78-7,False,CWE-78,[],,,,False,no JSON object found,False,False,False,parse_error,,
+openai/gpt-oss-120b:free,errorlock,22-7,False,CWE-22,[],False,,,True,,True,True,True,,"The code validates the resolved path against a fixed base directory and does not execute external commands, preventing path traversal and injection vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code validates the resolved path against a fixed base directory and does not execute external commands, preventing path traversal and injection vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock,78-3,True,CWE-78,"[23, 25]",True,CWE-78,system(command) with unsanitized argv[1],True,,True,True,False,,"User-controlled input is concatenated into a command string and passed to system(), enabling command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""system(command) with unsanitized argv[1]"",
+  ""explanation"": ""User-controlled input is concatenated into a command string and passed to system(), enabling command injection.""
+}"
+openai/gpt-oss-120b:free,errorlock,22-8,False,CWE-22,[],False,,,True,,True,True,True,,"User inputs are restricted to alphanumeric characters (and '.' for paths), preventing command injection via the constructed system call.","{""vulnerable"":false,""cwe"":null,""location"":null,""explanation"":""User inputs are restricted to alphanumeric characters (and '.' for paths), preventing command injection via the constructed system call.""}"
+openai/gpt-oss-120b:free,errorlock,78-6,True,CWE-78,[29],True,CWE-78,system(sys) call,True,,True,True,False,,"User-controlled input is passed to system() with insufficient sanitization, allowing command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""system(sys) call"",
+  ""explanation"": ""User-controlled input is passed to system() with insufficient sanitization, allowing command injection.""
+}"
+openai/gpt-oss-120b:free,errorlock,78-9,False,CWE-78,[],False,,,True,,True,True,True,,"Input is restricted to alphanumeric characters before being passed to system, preventing command injection.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input is restricted to alphanumeric characters before being passed to system, preventing command injection.""
+}"
+openai/gpt-oss-120b:free,errorlock,78-1,True,CWE-78,"[13, 16]",False,,,True,,False,False,False,wrong_binary_label,API error: 'choices',"{""vulnerable"": false, ""cwe"": null, ""location"": null, ""explanation"": ""API error: 'choices'""}"
+openai/gpt-oss-120b:free,errorlock,78-5,True,CWE-78,[10],True,CWE-78,"strcat(sys, buff) followed by system(sys)",True,,True,True,False,,"User-controlled input from stdin is concatenated to a command string and executed with system(), enabling command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""strcat(sys, buff) followed by system(sys)"",
+  ""explanation"": ""User-controlled input from stdin is concatenated to a command string and executed with system(), enabling command injection.""
+}"
+openai/gpt-oss-120b:free,errorlock,22-4,True,CWE-22,"[46, 66, 70]",False,,,True,,False,False,False,wrong_binary_label,"Inputs are restricted to alphanumeric characters (and limited symbols for paths), preventing command injection via the constructed system call.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Inputs are restricted to alphanumeric characters (and limited symbols for paths), preventing command injection via the constructed system call.""
+}"
+openai/gpt-oss-120b:free,errorlock,22-5,True,CWE-22,"[8, 28]",False,,,True,,False,False,False,wrong_binary_label,The program only opens and reads a file path without executing external commands or unsafe operations.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program only opens and reads a file path without executing external commands or unsafe operations.""
+}"

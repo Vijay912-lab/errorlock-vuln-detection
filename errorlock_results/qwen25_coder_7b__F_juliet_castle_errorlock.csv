@@ -1,0 +1,2178 @@
+model,dataset,method,id,true_label,true_cwe,true_lines,pred_label,pred_cwe,pred_lines,retrieved_mistake_ids,retrieved_scores,retrieved_error_types,retrieved_true_cwes,retrieved_pred_cwes,raw
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_ncat_08.cpp::good,0,134,[],0,,[],"[""253-8"", ""134-9"", ""401-10""]","[0.3530922983081263, 0.28380587717562983, 0.25217867873759814]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(134), np.int64(401)]""","[78.0, 190.0, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_ncat_08.cpp::bad,1,134,[],1,122.0,[28],"[""253-10"", ""253-4"", ""134-9""]","[0.45680779240783304, 0.40347920195482156, 0.22554637949695092]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying data into 'data' using wcsncat."",
+        ""line_content"": ""wcsncat(data, source, 100);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_31.c::good,0,125,[],1,122.0,[24],"[""253-8"", ""253-4"", ""253-10""]","[0.28538517503734684, 0.28521816936075434, 0.2476360479331524]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_31.c::bad,1,125,[],1,122.0,"[24, 32]","[""253-10"", ""253-4"", ""787-7""]","[0.4403058786079456, 0.4300010653476929, 0.2390222590072141]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 32,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to copying more data than allocated."",
+        ""line_content"": ""for (i = 0; i < sourceLen + 1; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_53d.c::good,0,125,[],1,122.0,[24],"[""253-4"", ""253-10"", ""253-8""]","[0.3917991040137312, 0.35462873648191084, 0.1916194653142992]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation for the destination buffer."",
+        ""line_content"": ""memcpy(data, source, (strlen(source) + 1) * sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_53d.c::bad,1,125,[],1,122.0,[24],"[""253-4"", ""253-10"", ""253-8""]","[0.40334112225984353, 0.36507575207009996, 0.19726438727126833]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""memcpy(data, source, (strlen(source) + 1) * sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_54e.c::good,0,125,[],0,,[],"[""415-9"", ""134-9"", ""787-7""]","[0.45108827316698064, 0.3304373673880852, 0.28881616096323437]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(787)]""","[190.0, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_54e.c::bad,1,125,[],1,122.0,[22],"[""415-9"", ""134-9"", ""253-8""]","[0.42336306875518376, 0.2657455090482593, 0.25574466062221346]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(253)]""","[190.0, 190.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_65b.cpp::good,0,134,[],1,122.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.4766457140408214, 0.3886656934218075, 0.25934923973478746]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_65b.cpp::bad,1,134,[],1,122.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.4793361017888027, 0.3908594851393035, 0.2608131153062585]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_15.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.3743404796279687, 0.28281970048242944, 0.24561258721519885]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_15.c::bad,1,78,[],1,253.0,[21],"[""253-10"", ""253-4"", ""253-8""]","[0.32070226700614163, 0.2536839164187319, 0.21022665337827312]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of fwscanf should be checked against EOF instead of 0."",
+        ""line_content"": ""if (fwscanf(stdin, L\""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_33.cpp::good,0,190,[],0,,[],"[""22-8"", ""22-9"", ""78-10""]","[0.32420307498762324, 0.31400206387302243, 0.21800477541092494]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_33.cpp::bad,1,190,[],1,426.0,"[26, 32]","[""22-8"", ""22-9"", ""253-10""]","[0.3375707917721298, 0.3337171994612074, 0.3327255598930843]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 426,
+        ""message"": ""Untrusted search path used in popen call."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 32,
+        ""cwe"": 426,
+        ""message"": ""Untrusted search path used in popen call."",
+        ""line_content"": ""pipe = POPEN(data, \""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_66a.c::good,0,125,[],1,122.0,[24],"[""253-8"", ""253-4"", ""415-9""]","[0.2823731572708967, 0.28220791420886515, 0.2697762836812989]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(415)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_66a.c::bad,1,125,[],1,122.0,[24],"[""253-10"", ""253-4"", ""415-9""]","[0.4141257851499478, 0.3782478049425593, 0.2368374451956101]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(415)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_67a.cpp::good,0,89,[],1,590.0,[22],"[""253-8"", ""253-10"", ""253-4""]","[0.3017548449490554, 0.29097459158649774, 0.24052457281341047]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""TwoIntsClass * structFirst;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_67a.cpp::bad,1,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.5087942180490419, 0.41804282940986004, 0.17268798168391558]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_18.c::good,0,125,[],0,,[],"[""253-8"", ""674-5"", ""22-10""]","[0.27491779855541154, 0.23157670380564288, 0.21653775077054818]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(674), np.int64(22)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_18.c::bad,1,125,[],1,122.0,"[24, 26]","[""415-9"", ""134-9"", ""674-5""]","[0.39306854048815837, 0.25732068413488607, 0.24653674622819946]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(415), np.int64(134), np.int64(674)]""","[190.0, 190.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_18.cpp::good,0,134,[],0,,[],"[""253-8"", ""134-9"", ""134-8""]","[0.40993791213629965, 0.31401249968671374, 0.27124797386056515]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(134), np.int64(134)]""","[78.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_18.cpp::bad,1,134,[],1,122.0,"[22, 26]","[""253-10"", ""253-4"", ""134-9""]","[0.45852703462995503, 0.39199916692733533, 0.2698560087703027]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to use of memcpy with incorrect size."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_68a.cpp::good,0,89,[],1,590.0,[14],"[""253-8"", ""253-10"", ""253-4""]","[0.31776123957955, 0.30640915450517014, 0.25328304643935184]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""twoIntsStruct * CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_68_badData;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_68a.cpp::bad,1,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""787-7""]","[0.5538865662248212, 0.4559773327999122, 0.19535346696816028]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_54b.c::good,0,22,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.3599683607226651, 0.28814478331608273, 0.24196552587111203]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_54b.c::bad,1,22,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.36887619115614834, 0.2952752568524776, 0.24795324065493737]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fscanf_67b.c::good,0,125,[],0,,[],"[""415-9"", ""134-9"", ""787-7""]","[0.454413257914803, 0.3314224237539097, 0.28957607358968696]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(787)]""","[190.0, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fscanf_67b.c::bad,1,125,[],1,122.0,[24],"[""415-9"", ""134-9"", ""253-8""]","[0.4308694163672649, 0.2686865515630672, 0.25755669300513495]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(253)]""","[190.0, 190.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_54a.c::good,0,22,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.3241226896231616, 0.3113667361347542, 0.2497373012182746]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_54a.c::bad,1,22,[],1,122.0,[18],"[""253-10"", ""253-4"", ""253-8""]","[0.41794493050867826, 0.3461736052361177, 0.23432870112919893]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (twoIntsStruct *)malloc(50*sizeof(twoIntsStruct));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_02.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.35312054916883906, 0.2756086675152523, 0.2300606253238136]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_02.c::bad,1,78,[],1,253.0,[21],"[""253-4"", ""253-10"", ""253-8""]","[0.35829173674749537, 0.33082891818619414, 0.22370105436870402]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of sscanf should be checked against EOF instead of 0."",
+        ""line_content"": ""if (sscanf(SRC_STRING, \""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_11.cpp::good,0,89,[],1,590.0,[17],"[""253-8"", ""22-10"", ""362-5""]","[0.3739854932406865, 0.3002197501735414, 0.23850755902425705]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete[]'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_11.cpp::bad,1,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""787-7""]","[0.5293456239963255, 0.43930960853175827, 0.199977349462866]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_alloca_54d.cpp::good,0,89,[],1,590.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.3529763618957322, 0.2856734723195432, 0.22210705989047522]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocation error: 'data' was allocated on the stack with 'alloca()', which should be freed with 'free()' instead."",
+        ""line_content"": ""goodG2BSink_e(data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_alloca_54d.cpp::bad,1,89,[],1,590.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.37053850562577856, 0.2998869979896254, 0.23315787385519826]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocation error: 'data' was allocated on the stack with 'alloca()', which should be freed with 'free()' instead."",
+        ""line_content"": ""badSink_e(data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_listen_socket_54b.c::good,0,125,[],0,,[],"[""253-10"", ""253-4"", ""770-1""]","[0.3670987464868089, 0.3167806591293892, 0.24968878201673447]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(770)]""","[78.0, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_listen_socket_54b.c::bad,1,125,[],0,,[],"[""253-10"", ""253-4"", ""770-1""]","[0.3210782302923678, 0.2849184252379441, 0.2583937058837399]","[""false_positive"", ""false_negative"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(770)]""","[78.0, NaN, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_68b.c::good,0,125,[],0,,[],"[""415-9"", ""134-9"", ""787-7""]","[0.4584318801396604, 0.33324167612014616, 0.29560892262793864]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(787)]""","[190.0, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_68b.c::bad,1,125,[],1,122.0,[24],"[""415-9"", ""134-9"", ""253-8""]","[0.4365003212525281, 0.2711169797353314, 0.2578654304871765]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(253)]""","[190.0, 190.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_03.c::good,0,125,[],1,122.0,[24],"[""253-8"", ""362-5"", ""22-10""]","[0.3149056798582481, 0.26953770243459235, 0.2551012346852352]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(362), np.int64(22)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the null terminator."",
+        ""line_content"": ""char *data = (char *)malloc(SRC_STRING);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_03.c::bad,1,125,[],1,122.0,[24],"[""253-4"", ""253-10"", ""253-8""]","[0.4208133620837947, 0.4066251878687398, 0.2082735824871933]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_31.cpp::good,0,89,[],0,,[],"[""253-8"", ""253-10"", ""22-10""]","[0.3232772024650469, 0.31172805849189744, 0.2612143687185891]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_31.cpp::bad,1,89,[],1,590.0,[22],"[""253-10"", ""253-4"", ""253-8""]","[0.5149930913281149, 0.4264633914165236, 0.1433233176295101]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_54e.c::good,0,22,[],1,122.0,[24],"[""253-10"", ""253-4"", ""787-7""]","[0.4503474507992654, 0.3694350124483303, 0.2461399898774958]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_54e.c::bad,1,22,[],1,122.0,[22],"[""253-10"", ""253-4"", ""787-7""]","[0.4596051261080155, 0.37702939182554396, 0.2511998255726701]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking on 'data'."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_05.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""415-5""]","[0.23051397195759651, 0.175744857055665, 0.1520155929020962]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(415)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_05.c::bad,1,78,[],1,253.0,[26],"[""253-8"", ""22-10"", ""22-9""]","[0.18323246046390015, 0.1405277469055447, 0.13845754102720795]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of remove() is checked against 0 instead of being compared to -1."",
+        ""line_content"": ""if (REMOVE(\""removemebad.txt\"") == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_02.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.44278639327929553, 0.33304847290305, 0.28532596630089646]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_02.c::bad,1,78,[],1,253.0,[29],"[""253-8"", ""362-5"", ""22-10""]","[0.31153654225433025, 0.27875814871785687, 0.2510774710915237]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(362), np.int64(22)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value should be checked against NULL instead of INVALID_HANDLE_VALUE."",
+        ""line_content"": ""if (hMutex == INVALID_HANDLE_VALUE)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_placement_new_41.cpp::good,0,89,[],0,,[],"[""253-8"", ""22-10"", ""253-10""]","[0.3659452963499532, 0.3070589537683223, 0.2875282575553748]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_placement_new_41.cpp::bad,1,89,[],1,590.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.5037068323656702, 0.41530887659685484, 0.23484573382888152]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_04.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.36511245810019044, 0.2775542605784551, 0.25013971271467567]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_04.c::bad,1,78,[],1,253.0,[26],"[""253-8"", ""22-10"", ""22-9""]","[0.2797426381190753, 0.2309273806852333, 0.22243112527178208]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of fprintf() is checked against 0 instead of being compared with a positive value."",
+        ""line_content"": ""if (fprintf(stdout, \""%s\\n\"", \""string\"") == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_03.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.40473312863354843, 0.3088483963399986, 0.27917838255918753]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_03.c::bad,1,78,[],1,253.0,[19],"[""253-8"", ""22-10"", ""362-5""]","[0.3258102241078389, 0.2618444967698248, 0.24399174501314383]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 19,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The function ImpersonateSelf() returns 0 on failure, but the code checks for a non-zero value."",
+        ""line_content"": ""if (ImpersonateSelf(SecurityImpersonation) > 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_memcpy_54c.cpp::good,0,134,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.35539853043235814, 0.28438143465428156, 0.23888304909985408]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_memcpy_54c.cpp::bad,1,134,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.36410523536186534, 0.2913483324519528, 0.2447353080234999]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_alloca_64b.cpp::good,0,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.3869271170141743, 0.3113418016235622, 0.2214189224542803]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocated using 'delete' instead of 'free'. This can lead to undefined behavior."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_alloca_64b.cpp::bad,1,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.4017645825068042, 0.3232808026262591, 0.22990965747094838]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocated using 'delete' instead of 'free'. This can lead to undefined behavior."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_74a.cpp::good,0,22,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.3413451824395727, 0.32932937948878727, 0.2642887093253154]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_74a.cpp::bad,1,22,[],1,122.0,[22],"[""253-10"", ""253-4"", ""253-8""]","[0.43922103001526325, 0.36304316725540364, 0.21405939358803758]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (int *)malloc(50*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_static_33.cpp::good,0,89,[],0,,[],"[""253-8"", ""253-10"", ""22-10""]","[0.30904408643537284, 0.2980034234344658, 0.24971372966875782]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_static_33.cpp::bad,1,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""787-7""]","[0.544440518807147, 0.4513049832509012, 0.16761709344290981]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_81_bad.cpp::good,0,134,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.32436770217508565, 0.3121463499350577, 0.24726065861186103]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_81_bad.cpp::bad,1,134,[],1,122.0,[24],"[""253-10"", ""253-4"", ""787-7""]","[0.4928391911499089, 0.40194211780408495, 0.24242867168942078]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying from 'source' to 'data'."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_11.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.4017066845300034, 0.3065389426732127, 0.2645157291244474]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_11.c::bad,1,78,[],1,253.0,[16],"[""253-8"", ""22-10"", ""22-9""]","[0.2993641089509629, 0.2485397737873553, 0.23819859402055038]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of fwrite should be compared with the expected number of bytes written, not less than 0."",
+        ""line_content"": ""if (fwrite((wchar_t *)L\""string\"", sizeof(wchar_t), wcslen(L\""string\""), stdout) < 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_65b.c::good,0,125,[],0,,[],"[""415-9"", ""134-9"", ""787-7""]","[0.4443829639967171, 0.32910121390837854, 0.29958568494371723]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(787)]""","[190.0, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_65b.c::bad,1,125,[],1,122.0,[22],"[""415-9"", ""253-8"", ""134-9""]","[0.4105089436357484, 0.27731188947764984, 0.2628056392290129]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(253), np.int64(134)]""","[190.0, 78.0, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_52b.c::good,0,22,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.36551264943535866, 0.29247451165389193, 0.24568130902359725]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_52b.c::bad,1,22,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.37500435379929253, 0.30006954729190105, 0.2520612095731367]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_04.cpp::good,0,134,[],0,,[],"[""253-8"", ""134-9"", ""134-8""]","[0.3810981724781004, 0.2830442525878667, 0.24439205689664106]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(134), np.int64(134)]""","[78.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_04.cpp::bad,1,134,[],1,122.0,"[26, 34]","[""253-10"", ""253-4"", ""253-8""]","[0.4443361554935158, 0.3881739394622714, 0.2509169377262145]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new TwoIntsClass[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 34,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to use of memcpy with incorrect size."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_static_53b.cpp::good,0,89,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.3407978644465055, 0.27538104999368224, 0.2085342326920114]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_static_53b.cpp::bad,1,89,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.3554243112722996, 0.2871999218375702, 0.21748415633892518]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_memcpy_54e.cpp::good,0,134,[],1,122.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.46780024370378054, 0.3897009195379084, 0.21580965518365297]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying 'source' to 'data'."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_memcpy_54e.cpp::bad,1,134,[],1,122.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.4759779076027986, 0.3965133211644825, 0.2195822458353425]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying 'source' to 'data'."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_06.cpp::good,0,134,[],0,,[],"[""253-8"", ""134-9"", ""134-8""]","[0.3707337383790962, 0.27504106664463207, 0.23753840523020628]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(134), np.int64(134)]""","[78.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_06.cpp::bad,1,134,[],1,122.0,"[24, 30]","[""253-10"", ""253-4"", ""134-9""]","[0.4373456110000409, 0.38527960383594734, 0.2595972429004413]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 30,
+        ""cwe"": 190,
+        ""message"": ""Memory leak detected; allocated memory is not freed after use."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_memcpy_05.c::good,0,22,[],0,,[],"[""253-8"", ""401-10"", ""22-10""]","[0.3524030070377454, 0.25169346187966596, 0.23383875126464354]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(401), np.int64(22)]""","[78.0, 416.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_memcpy_05.c::bad,1,22,[],1,122.0,"[24, 32]","[""253-10"", ""253-4"", ""787-7""]","[0.46909788745786446, 0.4048953798806804, 0.24599402151078623]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (twoIntsStruct *)malloc(50*sizeof(twoIntsStruct));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 32,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to potential buffer overflow when copying data."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(twoIntsStruct));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_alloca_53d.cpp::good,0,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.31902160127535856, 0.2604441586197303, 0.19519010981055135]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocated on the stack instead of the heap."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_alloca_53d.cpp::bad,1,89,[],1,590.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.33507432019312827, 0.2735493428937223, 0.20501180199625668]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocated on the stack instead of the heap."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_67a.cpp::good,0,134,[],0,,[],"[""253-8"", ""253-10"", ""134-9""]","[0.31736843408238874, 0.3057595475859625, 0.24544413097417492]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, 78.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_67a.cpp::bad,1,134,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.36813327988517686, 0.3085682021575584, 0.24345799483357308]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_01.cpp::good,0,134,[],0,,[],"[""253-8"", ""134-9"", ""134-8""]","[0.40993791213629965, 0.31401249968671374, 0.27124797386056515]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(134), np.int64(134)]""","[78.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_01.cpp::bad,1,134,[],1,122.0,"[21, 25]","[""253-10"", ""253-4"", ""134-9""]","[0.45852703462995503, 0.39199916692733533, 0.2698560087703027]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 25,
+        ""cwe"": 190,
+        ""message"": ""Possible integer overflow when calculating the size of the memory to be copied."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_63b.cpp::good,0,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.3605295261781525, 0.29894211870751536, 0.2239560286840771]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocated on the stack instead of the heap."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_63b.cpp::bad,1,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.37293794546365927, 0.3092308714494686, 0.23166396965326086]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocation error: Attempting to free memory that was not allocated on the heap."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_connect_socket_15.c::good,0,125,[],0,,[],"[""770-1"", ""770-10"", ""253-8""]","[0.2602856585759893, 0.2570420311811679, 0.25379292091887523]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(770), np.int64(770), np.int64(253)]""","[NaN, 680.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_connect_socket_15.c::bad,1,125,[],1,122.0,"[44, 45]","[""415-9"", ""770-1"", ""617-7""]","[0.3230125532272261, 0.2829926691073859, 0.25342323653775384]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(415), np.int64(770), np.int64(617)]""","[190.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 44,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 45,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_52c.cpp::good,0,134,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.4546938948906686, 0.3746594611925764, 0.22814576995718047]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying more elements than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_52c.cpp::bad,1,134,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.4643156637828536, 0.3825876229501305, 0.2329735582713064]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_alloca_65a.cpp::good,0,89,[],0,,[],"[""253-8"", ""22-10"", ""253-10""]","[0.36006639402403623, 0.2983719182353129, 0.2943016589058086]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_alloca_65a.cpp::bad,1,89,[],1,590.0,[26],"[""253-10"", ""253-4"", ""787-7""]","[0.5496421199776317, 0.4491728260114719, 0.21477818171868907]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_08.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""415-5""]","[0.3424250393706466, 0.2830788623157298, 0.2502915829056412]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(415)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_08.c::bad,1,78,[],1,253.0,[28],"[""253-10"", ""253-4"", ""253-8""]","[0.31247437874069783, 0.2628784530105543, 0.21238217891406652]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of wscanf() is checked against 0 instead of EOF."",
+        ""line_content"": ""if (wscanf(L\""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_01.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.44727101400159913, 0.32612832566144473, 0.2858552636648345]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_01.c::bad,1,78,[],1,253.0,[26],"[""253-8"", ""362-5"", ""22-10""]","[0.29546720134888416, 0.25653092482827494, 0.23096097584652697]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(362), np.int64(22)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value should be checked against INVALID_HANDLE_VALUE instead of NULL."",
+        ""line_content"": ""if (hPipe == NULL)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_listen_socket_65b.c::good,0,125,[],0,,[],"[""415-9"", ""134-9"", ""787-7""]","[0.44056787402650127, 0.3287860359469599, 0.3124455235517639]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(787)]""","[190.0, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_listen_socket_65b.c::bad,1,125,[],1,122.0,"[28, 30]","[""415-9"", ""253-8"", ""787-7""]","[0.40022228805533616, 0.28803773585249953, 0.2719659680408917]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(253), np.int64(787)]""","[190.0, 78.0, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_67a.c::good,0,190,[],0,,[],"[""22-8"", ""22-9"", ""78-10""]","[0.30614438141698463, 0.29920038844538666, 0.24976785455348624]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_67a.c::bad,1,190,[],1,426.0,[24],"[""22-8"", ""22-9"", ""253-10""]","[0.3084764923568147, 0.30373153844261014, 0.3027607813212394]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 426,
+        ""message"": ""Untrusted search path used in os.popen call."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_12.c::good,0,22,[],0,,[],"[""253-8"", ""22-10"", ""134-9""]","[0.38985814269742924, 0.24902061080255117, 0.24031262624584704]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(134)]""","[78.0, 78.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_12.c::bad,1,22,[],1,122.0,"[26, 32, 38]","[""253-10"", ""253-4"", ""134-9""]","[0.48267180669182225, 0.4133942461706068, 0.2524679186727835]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (int *)malloc(50*sizeof(int));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 32,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (int *)malloc(100*sizeof(int));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 38,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to incorrect use of memcpy."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_54e.c::good,0,22,[],1,122.0,[22],"[""253-10"", ""253-4"", ""787-7""]","[0.4519724781158892, 0.3708085152121276, 0.2591244513617005]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying more elements than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_54e.c::bad,1,22,[],1,190.0,[21],"[""253-10"", ""253-4"", ""787-7""]","[0.46123372938562596, 0.37840665668891244, 0.2644341035427301]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to incorrect loop condition."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_62b.cpp::good,0,125,[],1,122.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.3651274453726863, 0.3546210448814081, 0.24755540958193803]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""data = (char *)malloc((10+1)*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_62b.cpp::bad,1,125,[],1,122.0,[21],"[""253-10"", ""253-4"", ""253-8""]","[0.3748582974460359, 0.3643505564216194, 0.25486255811154396]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_82_bad.cpp::good,0,22,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.334327212233525, 0.32220600440077946, 0.2552912198876324]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_82_bad.cpp::bad,1,22,[],1,122.0,[21],"[""253-10"", ""253-4"", ""787-7""]","[0.4936534020741, 0.4050392440564332, 0.28086984435324314]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying more elements than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_placement_new_12.cpp::good,0,89,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.3666196387363705, 0.2929641275658598, 0.23332637044562377]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_placement_new_12.cpp::bad,1,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.5062673861998652, 0.4209719712100489, 0.16871355031260313]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE131_memmove_04.c::good,0,125,[],0,,[],"[""253-8"", ""22-10"", ""401-10""]","[0.40726986540410787, 0.29859088261461947, 0.26570047080408743]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(401)]""","[78.0, 78.0, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE131_memmove_04.c::bad,1,125,[],1,122.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.4257917919351828, 0.353001995493683, 0.25953714893085866]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Memory allocation size is incorrect. It should use sizeof(int) instead of a hardcoded value."",
+        ""line_content"": ""data = (int *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_13.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.3640148656169265, 0.27829544679662876, 0.24541118806307557]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_13.c::bad,1,78,[],1,253.0,[24],"[""253-4"", ""253-10"", ""253-8""]","[0.3860023519081834, 0.334577571576411, 0.2283561740911595]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of swscanf should be checked against EOF instead of 0."",
+        ""line_content"": ""if (swscanf(SRC_STRING, L\""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_declare_68a.cpp::good,0,89,[],1,590.0,[14],"[""253-8"", ""253-10"", ""22-10""]","[0.33813484171912256, 0.32657625894076614, 0.273482226055901]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""char * CWE590_Free_Memory_Not_on_Heap__delete_char_declare_68_badData;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_declare_68a.cpp::bad,1,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.5183155814932296, 0.42391878372557745, 0.2031164207809658]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_66b.cpp::good,0,134,[],1,122.0,[22],"[""253-10"", ""253-4"", ""253-8""]","[0.4764438168737062, 0.39610635456151194, 0.242917596505906]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_66b.cpp::bad,1,134,[],1,122.0,[22],"[""253-10"", ""253-4"", ""253-8""]","[0.48094256936935387, 0.4000630233555443, 0.22777880555694985]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_ncat_84a.cpp::good,0,134,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.33069803288677674, 0.32708408775207654, 0.28034740800679514]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_ncat_84a.cpp::bad,1,134,[],1,122.0,[20],"[""253-10"", ""253-4"", ""253-8""]","[0.39150760277308083, 0.3277951731586178, 0.26176571206567695]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 20,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new wchar_t[10];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_62b.cpp::good,0,134,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.350593914600944, 0.3000825538451742, 0.26223970641744204]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_62b.cpp::bad,1,134,[],1,122.0,[18],"[""253-10"", ""253-4"", ""253-8""]","[0.33092199724091337, 0.28377060883568694, 0.26911745319451985]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memmove_63b.c::good,0,22,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.48741168704298127, 0.40522483383691216, 0.24850962764567702]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memmove_63b.c::bad,1,22,[],1,122.0,[18],"[""253-10"", ""253-4"", ""253-8""]","[0.4929940055160457, 0.40986586755810983, 0.2513558045470907]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_memmove_73a.cpp::good,0,22,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.32849450619653997, 0.3131397611374638, 0.2539301261492361]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_memmove_73a.cpp::bad,1,22,[],1,122.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.40700566553057177, 0.33763457548827996, 0.19803508179979795]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (int64_t *)malloc(50*sizeof(int64_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fgets_66a.c::good,0,125,[],0,,[],"[""415-9"", ""253-10"", ""253-8""]","[0.28254550169465753, 0.27389972642929516, 0.26087908138518673]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(253), np.int64(253)]""","[190.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fgets_66a.c::bad,1,125,[],1,122.0,"[24, 30]","[""253-10"", ""253-4"", ""415-9""]","[0.4458001963693678, 0.31065229945562334, 0.24763425394926925]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(415)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking when reading input with fgets()."",
+        ""line_content"": ""if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 30,
+        ""cwe"": 0,
+        ""message"": ""Implicit conversion of input to integer without proper validation."",
+        ""line_content"": ""data = atoi(inputBuffer);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_int64_t_alloca_44.cpp::good,0,89,[],0,,[],"[""253-8"", ""22-10"", ""253-10""]","[0.36093489570522885, 0.30285480523772357, 0.291204860337039]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_int64_t_alloca_44.cpp::bad,1,89,[],1,590.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.486693330762225, 0.39884105734212993, 0.17541791403683002]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_52c.c::good,0,125,[],1,122.0,"[27, 32]","[""415-9"", ""134-9"", ""134-8""]","[0.44655279625055794, 0.3301937658922196, 0.28630563609749904]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(134)]""","[190.0, 190.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 32,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_52c.c::bad,1,125,[],1,122.0,[22],"[""415-9"", ""134-9"", ""253-8""]","[0.4142893862493668, 0.26452493851627085, 0.2528610509966563]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(253)]""","[190.0, 190.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE135_09.c::good,0,125,[],0,,[],"[""253-8"", ""415-9"", ""22-10""]","[0.37721071698450664, 0.28746365354000397, 0.2757200117933699]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(415), np.int64(22)]""","[78.0, 190.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE135_09.c::bad,1,125,[],1,122.0,"[26, 30]","[""253-10"", ""253-4"", ""628-8""]","[0.3962873309113423, 0.30957961767368847, 0.2912547657278983]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(628)]""","[78.0, NaN, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to use of strlen on a wide string."",
+        ""line_content"": ""size_t dataLen = strlen((char *)data);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to use of wcscpy with incorrect destination type."",
+        ""line_content"": ""(void)wcscpy(dest, data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_loop_64b.c::good,0,22,[],1,122.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.4821257562142226, 0.3965304117134774, 0.20990558304825058]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying more than the allocated space."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_loop_64b.c::bad,1,22,[],1,122.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.48746521574751034, 0.40092191758050943, 0.21223025114998811]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying more than the allocated space."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_64a.c::good,0,190,[],0,,[],"[""22-8"", ""22-9"", ""78-10""]","[0.3072406388296175, 0.29722402245380625, 0.24954652735785718]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_64a.c::bad,1,190,[],1,426.0,[24],"[""22-8"", ""253-10"", ""22-9""]","[0.3072230306141341, 0.30570827870914996, 0.2999935568657192]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(253), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 426,
+        ""message"": ""Untrusted search path used in os command execution."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE131_memmove_31.c::good,0,125,[],0,,[],"[""253-8"", ""22-10"", ""253-10""]","[0.37531036450399474, 0.276651454460965, 0.2727837427358663]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE131_memmove_31.c::bad,1,125,[],1,122.0,[18],"[""253-10"", ""253-4"", ""253-8""]","[0.4661553387270631, 0.3735859676785748, 0.18919237579455875]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 122,
+        ""message"": ""Memory allocation size is incorrect. It should be 'sizeof(int)' instead of '10'. This can lead to heap-based buffer overflow."",
+        ""line_content"": ""data = (int *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_02.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""253-4""]","[0.3964962395594784, 0.3138227377860585, 0.28604347790147955]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_02.c::bad,1,78,[],1,253.0,[24],"[""253-4"", ""253-10"", ""253-8""]","[0.5133607593088212, 0.36069887642819465, 0.22921038922312043]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of swprintf() should be checked against a non-negative value to determine if the operation was successful."",
+        ""line_content"": ""if (SNPRINTF(data,100-wcslen(SRC_STRING)-1, L\""%s\\n\"", SRC_STRING) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_66b.c::good,0,125,[],0,,[],"[""415-9"", ""134-9"", ""134-8""]","[0.46942807587750274, 0.32570714429121395, 0.28280676806687627]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(134)]""","[190.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_66b.c::bad,1,125,[],1,122.0,[22],"[""415-9"", ""134-9"", ""253-8""]","[0.4401197773646997, 0.25129406212769456, 0.24088465625434924]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(253)]""","[190.0, 190.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_02.cpp::good,0,134,[],0,,[],"[""253-8"", ""134-9"", ""134-8""]","[0.4079227512421258, 0.3239754925764937, 0.278138776659279]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(134), np.int64(134)]""","[78.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_02.cpp::bad,1,134,[],1,122.0,"[20, 25]","[""253-10"", ""253-4"", ""134-9""]","[0.46237547039911003, 0.3951413546178323, 0.27901846999202373]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 20,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 25,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to use of memcpy with incorrect size."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_74a.cpp::good,0,22,[],0,,[],"[""253-10"", ""253-8"", ""253-4""]","[0.34676557236206257, 0.34616841006628435, 0.29418019239212434]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_74a.cpp::bad,1,22,[],1,190.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.4551991548582024, 0.38226834943944493, 0.20799908863426217]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Buffer size mismatch between allocation and usage."",
+        ""line_content"": ""data = (wchar_t *)malloc(50*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_81a.cpp::good,0,89,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.32410726986901073, 0.320807530789667, 0.2583413785588949]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_81a.cpp::bad,1,89,[],1,590.0,[22],"[""253-10"", ""253-4"", ""253-8""]","[0.523641715152709, 0.4289817334250874, 0.18109823602168035]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_memmove_53d.cpp::good,0,134,[],1,122.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.4556191079029131, 0.3753891318996932, 0.22977707574654938]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int64_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_memmove_53d.cpp::bad,1,134,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.465405722383098, 0.38345242127941864, 0.23471264499224245]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int64_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_09.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.4711502721028318, 0.3016546513448829, 0.26000992798907585]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_09.c::bad,1,78,[],1,253.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.5405858682118126, 0.32768274579001444, 0.2854274608154507]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The condition 'if (fgets(data, 100, stdin) < 0)' should be 'if (fgets(data, 100, stdin) == NULL)' to correctly handle the failure of fgets()."",
+        ""line_content"": ""if (fgets(data, 100, stdin) < 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fgets_82a.cpp::good,0,125,[],0,,[],"[""253-10"", ""253-8"", ""415-9""]","[0.31547156765237516, 0.2924280650052101, 0.2302744476296086]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(415)]""","[78.0, 78.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fgets_82a.cpp::bad,1,125,[],1,122.0,"[26, 32]","[""253-10"", ""253-4"", ""253-8""]","[0.4751914195135852, 0.32528740692483277, 0.20586448066994456]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking when reading input with fgets()."",
+        ""line_content"": ""if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 253,
+        ""message"": ""Integer conversion error may lead to unexpected behavior."",
+        ""line_content"": ""data = atoi(inputBuffer);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_10.c::good,0,22,[],0,,[],"[""253-8"", ""22-10"", ""253-10""]","[0.400222125511352, 0.2624935721446668, 0.25641251786607583]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_10.c::bad,1,22,[],1,122.0,[29],"[""253-10"", ""253-4"", ""787-7""]","[0.484798295289373, 0.40354344448859647, 0.2515552643965053]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying 100 elements into a buffer allocated for 50 elements."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_11.c::good,0,125,[],0,,[],"[""253-8"", ""415-9"", ""22-10""]","[0.2751649057551291, 0.22994901781588295, 0.21337160295094781]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(415), np.int64(22)]""","[78.0, 190.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_11.c::bad,1,125,[],1,122.0,"[24, 27]","[""415-9"", ""134-9"", ""253-10""]","[0.4030218303796432, 0.26005847772252055, 0.2522222356705168]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(253)]""","[190.0, 190.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 0,
+        ""message"": ""Potential integer underflow when generating random number."",
+        ""line_content"": ""data = RAND32();""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_16.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.4134446415465144, 0.3161370149556297, 0.2666264240340744]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_16.c::bad,1,78,[],1,253.0,[22],"[""253-10"", ""253-4"", ""253-8""]","[0.3613203877627655, 0.28843345591516695, 0.25403004574445415]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of wscanf should be checked against EOF instead of 0."",
+        ""line_content"": ""if (wscanf(L\""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_84_goodB2G.cpp::good,0,125,[],0,,[],"[""415-9"", ""134-9"", ""253-8""]","[0.3802360245186999, 0.29400367099334845, 0.2694374109076605]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(253)]""","[190.0, 190.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_84_goodB2G.cpp::bad,1,125,[],0,,[],"[""253-8"", ""415-9"", ""674-5""]","[0.2441323558107813, 0.20587663082826818, 0.2054405209937807]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(415), np.int64(674)]""","[78.0, 190.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memmove_17.cpp::good,0,134,[],0,,[],"[""253-8"", ""134-9"", ""134-8""]","[0.40811950908532596, 0.3095944626534215, 0.2674520889649063]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(134), np.int64(134)]""","[78.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memmove_17.cpp::bad,1,134,[],1,122.0,"[24, 34]","[""253-10"", ""253-4"", ""787-7""]","[0.4448702692935029, 0.37761221176096704, 0.27554493127572743]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation of memory."",
+        ""line_content"": ""data = new TwoIntsClass[50];""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 34,
+        ""cwe"": 190,
+        ""message"": ""Potential integer overflow when calculating the size of the buffer to be copied."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_08.c::good,0,22,[],0,,[],"[""253-8"", ""401-10"", ""415-7""]","[0.34915762579220194, 0.2895635888168153, 0.25991879470455725]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(401), np.int64(415)]""","[78.0, 416.0, 68.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_08.c::bad,1,22,[],1,122.0,"[29, 37]","[""253-10"", ""253-4"", ""787-7""]","[0.45171114393822814, 0.3870626388297112, 0.35299259409464595]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation of memory."",
+        ""line_content"": ""data = (twoIntsStruct *)malloc(50*sizeof(twoIntsStruct));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to copying more elements than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_system_41.c::good,0,190,[],0,,[],"[""22-8"", ""22-9"", ""78-10""]","[0.2889940828999517, 0.28034785516435984, 0.22873929597517925]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_system_41.c::bad,1,190,[],1,426.0,[30],"[""22-8"", ""22-9"", ""253-10""]","[0.3114807030590159, 0.30010526993089615, 0.28446468517439355]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 426,
+        ""message"": ""Untrusted search path used in system call."",
+        ""line_content"": ""if (SYSTEM(data) <= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_83a.cpp::good,0,125,[],0,,[],"[""253-8"", ""253-10"", ""362-5""]","[0.3266385750259964, 0.27347219540214174, 0.2662028113399656]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_83a.cpp::bad,1,125,[],1,122.0,[20],"[""253-10"", ""253-4"", ""253-8""]","[0.39751014496421955, 0.3328361869944543, 0.2761008581370732]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 20,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation of memory for the string."",
+        ""line_content"": ""data = (char *)malloc(10); // Insufficient allocation for the string and the NULL terminator""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_73a.cpp::good,0,89,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.3000409957832968, 0.290354598536669, 0.24004498367054136]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_73a.cpp::bad,1,89,[],1,590.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.4883790228758927, 0.4012923732257386, 0.13681956880458596]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_66b.c::good,0,22,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.46736775012052123, 0.3868096147709726, 0.23532564720782292]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_66b.c::bad,1,22,[],1,122.0,[21],"[""253-10"", ""253-4"", ""253-8""]","[0.47288076383461614, 0.39171088040650737, 0.22119002180388972]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_08.cpp::good,0,134,[],0,,[],"[""253-8"", ""134-9"", ""401-10""]","[0.3504701217533597, 0.2814229526063545, 0.24730006075189293]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(134), np.int64(401)]""","[78.0, 190.0, 416.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_08.cpp::bad,1,134,[],1,122.0,"[26, 34]","[""253-10"", ""253-4"", ""134-9""]","[0.44265085681039834, 0.38515608290092807, 0.2449240372768478]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation of memory."",
+        ""line_content"": ""data = new TwoIntsClass[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 34,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to use of memcpy with incorrect size."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_18.c::good,0,125,[],1,122.0,[24],"[""253-8"", ""362-5"", ""22-10""]","[0.3314434549228289, 0.2665800363837601, 0.26620401920961034]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(362), np.int64(22)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_18.c::bad,1,125,[],1,122.0,"[24, 28]","[""253-4"", ""253-10"", ""253-8""]","[0.4336795054327946, 0.41829646189830644, 0.21359744075289927]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 28,
+        ""cwe"": 88,
+        ""message"": ""Potential buffer overflow in strcpy function call."",
+        ""line_content"": ""strcpy(data, source);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_31.c::good,0,190,[],0,,[],"[""22-8"", ""22-9"", ""78-10""]","[0.310142869057121, 0.30002895372578503, 0.2508256301593374]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_31.c::bad,1,190,[],1,426.0,[24],"[""253-10"", ""22-8"", ""22-9""]","[0.33055712784807734, 0.32882868210697425, 0.3249485166543]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 426,
+        ""message"": ""Untrusted search path used in popen call."",
+        ""line_content"": ""pipe = POPEN(data, \""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_61a.c::good,0,22,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.34213021689222195, 0.322168227402949, 0.26404256955611294]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_61a.c::bad,1,22,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.5152316900843084, 0.42759470216582235, 0.2043372490534814]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_53d.c::good,0,125,[],0,,[],"[""415-9"", ""134-9"", ""787-7""]","[0.44517567275372594, 0.32968827829955394, 0.28854886720655654]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(787)]""","[190.0, 190.0, 680.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_53d.c::bad,1,125,[],1,122.0,[22],"[""415-9"", ""134-9"", ""253-8""]","[0.4118596943346826, 0.26367038263199083, 0.2520441756568625]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(415), np.int64(134), np.int64(253)]""","[190.0, 190.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_54c.c::good,0,190,[],0,,[],"[""22-8"", ""22-9"", ""628-8""]","[0.2672620947633466, 0.2572053458159861, 0.2016893100836516]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(628)]""","[78.0, 78.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_54c.c::bad,1,190,[],0,,[],"[""22-8"", ""22-9"", ""78-10""]","[0.2662851654979319, 0.2581659810379817, 0.20321896848555474]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_33.cpp::good,0,134,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.3246793934345257, 0.3119015306872112, 0.2501662428255086]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_33.cpp::bad,1,134,[],1,122.0,[21],"[""253-10"", ""253-4"", ""134-9""]","[0.47129052978507513, 0.3985910696058551, 0.20888326372705107]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying 100 elements into a buffer allocated for 50 elements."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_placement_new_32.cpp::good,0,89,[],0,,[],"[""253-8"", ""22-10"", ""253-10""]","[0.32870834932305654, 0.2697531893793572, 0.2411171955751212]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_placement_new_32.cpp::bad,1,89,[],1,590.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.5078400986030498, 0.4223618437120328, 0.1634899994472753]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_54e.c::good,0,22,[],1,122.0,[29],"[""253-10"", ""253-4"", ""787-7""]","[0.43403584281425595, 0.3539939131771103, 0.33663239271450474]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying more elements than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_54e.c::bad,1,22,[],1,122.0,[29],"[""253-10"", ""253-4"", ""787-7""]","[0.4399714377462863, 0.3588349061775958, 0.34123596073137136]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying more elements than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_alloca_41.cpp::good,0,89,[],1,590.0,[14],"[""253-8"", ""22-10"", ""253-10""]","[0.3633019483681079, 0.3048409619705131, 0.28545134265330246]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocation using 'delete' on a pointer allocated with 'alloca'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_alloca_41.cpp::bad,1,89,[],1,590.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.5020660780003918, 0.41531686719441835, 0.17085693138653538]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_81a.cpp::good,0,125,[],0,,[],"[""253-8"", ""253-10"", ""362-5""]","[0.3251705984136079, 0.2757184235716307, 0.2721693639282224]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_81a.cpp::bad,1,125,[],1,122.0,[17],"[""253-10"", ""253-4"", ""253-8""]","[0.42579021894282276, 0.3331403748263083, 0.24462776741938155]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 122,
+        ""message"": ""Memory allocation for 'data' does not include space for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_01.c::good,0,125,[],1,122.0,[24],"[""253-8"", ""362-5"", ""22-10""]","[0.3314434549228289, 0.2665800363837601, 0.26620401920961034]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(362), np.int64(22)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_01.c::bad,1,125,[],1,122.0,"[21, 27]","[""253-4"", ""253-10"", ""253-8""]","[0.4336795054327946, 0.41829646189830644, 0.21359744075289927]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 88,
+        ""message"": ""Potential buffer overflow in strcpy function call."",
+        ""line_content"": ""strcpy(data, source);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_66a.cpp::good,0,134,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.3179075453412505, 0.30214752554370805, 0.2449485178058845]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_66a.cpp::bad,1,134,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.3680683850462118, 0.31004224077663006, 0.22382318973287751]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int64_t[50];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_09.cpp::good,0,134,[],0,,[],"[""253-8"", ""134-9"", ""134-8""]","[0.40480419575039545, 0.3135450011008117, 0.2708116628895249]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(134), np.int64(134)]""","[78.0, 190.0, 89.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_09.cpp::bad,1,134,[],1,122.0,"[26, 30]","[""253-10"", ""253-4"", ""134-9""]","[0.4581997771312148, 0.391658722951809, 0.2717849324323976]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to use of memmove with incorrect size."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_81_bad.cpp::good,0,125,[],1,122.0,[14],"[""253-8"", ""253-10"", ""362-5""]","[0.31406516377508426, 0.2637185070654232, 0.2514093180718673]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation of memory for the string."",
+        ""line_content"": ""data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_81_bad.cpp::bad,1,125,[],1,190.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.4204321088372876, 0.4033015999064588, 0.23075278174704297]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation of memory for 'data'."",
+        ""line_content"": ""strcpy(data, source);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_05.c::good,0,22,[],0,,[],"[""253-8"", ""401-10"", ""22-10""]","[0.3550114913291719, 0.2565387247274128, 0.24573089879735494]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(401), np.int64(22)]""","[78.0, 416.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_05.c::bad,1,22,[],1,190.0,"[26, 34]","[""253-10"", ""253-4"", ""253-8""]","[0.4703671415365572, 0.40701504462457105, 0.22338006897797275]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient space allocated for 'data'."",
+        ""line_content"": ""data = (wchar_t *)malloc(50*sizeof(wchar_t));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 34,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to copying more data than allocated."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_52a.c::good,0,125,[],1,122.0,[26],"[""253-4"", ""253-8"", ""253-10""]","[0.30430973571066317, 0.2918251103190886, 0.25369410708841483]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_52a.c::bad,1,125,[],1,122.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.43395272850566213, 0.4024363362920739, 0.22410615477974988]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for a null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_14.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.43129295760393216, 0.33306245763980746, 0.2923436636200302]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_14.c::bad,1,78,[],1,253.0,[21],"[""253-8"", ""22-10"", ""22-9""]","[0.3113244401024422, 0.26130008593956394, 0.24249057909089122]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 21,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The function RpcImpersonateClient() could fail and would not return RPC_S_OK, but the code checks if it returns RPC_S_OK."",
+        ""line_content"": ""if (RpcImpersonateClient(0) == RPC_S_OK)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_system_66a.c::good,0,190,[],0,,[],"[""22-8"", ""22-9"", ""78-10""]","[0.2937925562684214, 0.28489394463469475, 0.24167025956888644]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_system_66a.c::bad,1,190,[],1,426.0,[24],"[""253-10"", ""22-8"", ""22-9""]","[0.30425173678588097, 0.2976407718006628, 0.2955976306635994]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(22)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 426,
+        ""message"": ""Untrusted search path used in system call."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_73b.cpp::good,0,190,[],1,78.0,[34],"[""22-8"", ""22-9"", ""253-8""]","[0.33216073996802065, 0.323894160033034, 0.19131366482034948]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 34,
+        ""cwe"": 78,
+        ""message"": ""Untrusted search path used in popen call."",
+        ""line_content"": ""pipe = POPEN(data, \""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_73b.cpp::bad,1,190,[],1,78.0,[34],"[""22-8"", ""22-9"", ""253-8""]","[0.32396302199413674, 0.31795524522771135, 0.19154788248044827]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 34,
+        ""cwe"": 78,
+        ""message"": ""Untrusted search path used in popen call."",
+        ""line_content"": ""pipe = POPEN(data, \""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_18.c::good,0,78,[],0,,[],"[""253-8"", ""253-4"", ""22-10""]","[0.3342806612852185, 0.31271111254764594, 0.27997233123646004]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(22)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_18.c::bad,1,78,[],1,253.0,[24],"[""253-4"", ""253-10"", ""253-8""]","[0.54868115890425, 0.3596673919445103, 0.22977224317290498]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of snprintf should be checked against a non-negative value to determine if the operation was successful."",
+        ""line_content"": ""if (SNPRINTF(data,100-strlen(SRC_STRING)-1, \""%s\\n\"", SRC_STRING) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_21.c::good,0,190,[],0,,[],"[""22-8"", ""22-9"", ""78-10""]","[0.29152093715453886, 0.2822690937226736, 0.2306785919650377]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_21.c::bad,1,190,[],1,426.0,"[30, 42]","[""22-8"", ""22-9"", ""253-10""]","[0.29726724635344765, 0.287063309121247, 0.2802867230260439]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 426,
+        ""message"": ""Untrusted search path vulnerability detected. The full path is not specified in the OS command."",
+        ""line_content"": ""wcscpy(data, BAD_OS_COMMAND);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 42,
+        ""cwe"": 426,
+        ""message"": ""Untrusted search path vulnerability detected. The full path is not specified in the OS command."",
+        ""line_content"": ""pipe = POPEN(data, L\""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_68a.cpp::good,0,134,[],0,,[],"[""253-8"", ""253-10"", ""134-9""]","[0.32896254996593616, 0.3173826320941545, 0.25682310166787053]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(134)]""","[78.0, 78.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_68a.cpp::bad,1,134,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.37469449521256204, 0.3140674129182938, 0.2478086235430487]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_63b.c::good,0,190,[],1,78.0,[26],"[""22-8"", ""22-9"", ""78-10""]","[0.2986458769658744, 0.2864658454086653, 0.19326044756115535]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""Untrusted search path used in wpopen call."",
+        ""line_content"": ""pipe = POPEN(data, L\""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_63b.c::bad,1,190,[],1,78.0,[26],"[""22-8"", ""22-9"", ""78-10""]","[0.29839178752512485, 0.28806051912159225, 0.19843301399570232]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(22), np.int64(22), np.int64(78)]""","[78.0, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""Untrusted search path vulnerability detected. The command is executed without specifying the full path."",
+        ""line_content"": ""pipe = POPEN(data, L\""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_14.c::good,0,78,[],0,,[],"[""253-8"", ""22-10"", ""362-5""]","[0.34845127200018855, 0.3220425300009506, 0.2385056880086544]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(362)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_14.c::bad,1,78,[],1,253.0,[19],"[""22-10"", ""253-8"", ""415-5""]","[0.27173467405670926, 0.23224220210881533, 0.1754341736268482]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(22), np.int64(253), np.int64(415)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 19,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of putchar() should be checked against EOF instead of 0."",
+        ""line_content"": ""if (putchar((int)'A') == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memmove_54e.cpp::good,0,134,[],1,122.0,[26],"[""253-10"", ""253-4"", ""415-9""]","[0.45807370960663646, 0.37513182412105106, 0.22077985257118532]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(415)]""","[78.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memmove_54e.cpp::bad,1,134,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.46519968284734026, 0.3809675210500858, 0.22179045110466536]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_01.c::good,0,22,[],0,,[],"[""253-8"", ""22-10"", ""253-10""]","[0.4168374847049758, 0.27653148008485856, 0.26843794163913415]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_01.c::bad,1,22,[],1,190.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.48203335829002203, 0.4080122649600245, 0.22430828807432607]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient space allocated for 'source' when copying to 'data'."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_45.c::good,0,125,[],1,122.0,[24],"[""253-8"", ""22-10"", ""253-4""]","[0.35520579918398626, 0.29894624849065515, 0.29558031254820577]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(22), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char * CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_45_badData;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_45.c::bad,1,125,[],1,122.0,"[28, 34]","[""253-10"", ""253-4"", ""787-7""]","[0.44292474199557674, 0.4299218315893075, 0.23924757977242025]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(787)]""","[78.0, NaN, 680.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation of memory for the string."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 34,
+        ""cwe"": 88,
+        ""message"": ""Potential format string vulnerability in printLine function."",
+        ""line_content"": ""printLine(data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_connect_socket_84a.cpp::good,0,125,[],0,,[],"[""253-8"", ""415-9"", ""22-10""]","[0.27380223111800245, 0.23145829735435244, 0.2197246846534941]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(415), np.int64(22)]""","[78.0, 190.0, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_connect_socket_84a.cpp::bad,1,125,[],0,,[],"[""253-10"", ""253-4"", ""253-8""]","[0.35399467104882976, 0.28782584089563346, 0.2158323393334234]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_03.c::good,0,78,[],0,,[],"[""253-8"", ""253-4"", ""22-10""]","[0.3172459095171396, 0.29774006275612913, 0.26774312841050196]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(22)]""","[78.0, NaN, 78.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_03.c::bad,1,78,[],1,253.0,[24],"[""253-4"", ""253-10"", ""253-8""]","[0.5255601022254525, 0.3463573216244895, 0.22142115261002276]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[NaN, 78.0, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of snprintf should be checked against a non-negative value to determine if the operation was successful."",
+        ""line_content"": ""if (SNPRINTF(data,100-strlen(SRC_STRING)-1, \""%s\\n\"", SRC_STRING) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_03.c::good,0,125,[],0,,[],"[""674-5"", ""253-8"", ""415-9""]","[0.26659416661801455, 0.2659690917674238, 0.23645682000374274]","[""false_negative"", ""false_positive"", ""false_positive""]","""[np.int64(674), np.int64(253), np.int64(415)]""","[NaN, 78.0, 190.0]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_03.c::bad,1,125,[],1,122.0,"[28, 30]","[""415-9"", ""674-5"", ""134-9""]","[0.40493784320023263, 0.2768917414859645, 0.2528671066723058]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(415), np.int64(674), np.int64(134)]""","[190.0, NaN, 190.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE135_53d.c::good,0,125,[],1,190.0,"[26, 32]","[""253-10"", ""628-8"", ""628-9""]","[0.3378400101122948, 0.3319378993041569, 0.3315925082200064]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(628), np.int64(628)]""","[78.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Using 'strlen' on a pointer of type 'wchar_t*' can lead to buffer overflow."",
+        ""line_content"": ""size_t dataLen = strlen((char *)data);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 32,
+        ""cwe"": 190,
+        ""message"": ""Using 'wcslen' on a pointer of type 'char*' can lead to buffer overflow."",
+        ""line_content"": ""size_t dataLen = wcslen((wchar_t *)data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE135_53d.c::bad,1,125,[],1,190.0,[22],"[""253-10"", ""628-8"", ""628-9""]","[0.35764442917047584, 0.3137380255609675, 0.31341157197728525]","[""false_positive"", ""false_positive"", ""false_positive""]","""[np.int64(253), np.int64(628), np.int64(628)]""","[78.0, 89.0, 89.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 22,
+        ""cwe"": 190,
+        ""message"": ""Using strlen on a pointer of type wchar_t* can lead to buffer overflow."",
+        ""line_content"": ""size_t dataLen = strlen((char *)data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_72a.cpp::good,0,89,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.318681231335431, 0.30839306056829696, 0.25495792924001537]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_72a.cpp::bad,1,89,[],1,590.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.5172421163753292, 0.42507394279777727, 0.1451410828045229]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_loop_74b.cpp::good,0,22,[],1,122.0,[26],"[""253-10"", ""253-4"", ""253-8""]","[0.4869448523307139, 0.40566332425081447, 0.22392075369311926]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying more than the allocated space."",
+        ""line_content"": ""for (i = 0; i < 100; i++) {""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_loop_74b.cpp::bad,1,22,[],1,122.0,[24],"[""253-10"", ""253-4"", ""253-8""]","[0.4939299025453686, 0.4116152434308217, 0.21395304037151658]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to copying more than the allocated space."",
+        ""line_content"": ""for (i = 0; i < 100; i++) {""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_memcpy_64a.c::good,0,22,[],0,,[],"[""253-8"", ""253-10"", ""253-4""]","[0.33628698049825084, 0.31778099481308025, 0.2568209660919374]","[""false_positive"", ""false_positive"", ""false_negative""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, 78.0, NaN]","```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,F_errorlock_from_castle,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_memcpy_64a.c::bad,1,22,[],1,122.0,[29],"[""253-10"", ""253-4"", ""253-8""]","[0.4104076980886978, 0.3386496780629407, 0.2520309959567856]","[""false_positive"", ""false_negative"", ""false_positive""]","""[np.int64(253), np.int64(253), np.int64(253)]""","[78.0, NaN, 78.0]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (int64_t *)malloc(50*sizeof(int64_t));""
+    }
+]
+```"

@@ -1,0 +1,95 @@
+{
+  "model": "llama3.2:1b",
+  "dataset": "data/CASTLE-C250.min.json",
+  "n_total": 250,
+  "n_train": 100,
+  "n_test": 150,
+  "top_k": 3,
+  "gated": true,
+  "min_similarity": 0.18,
+  "cwe_recheck_similarity": 0.35,
+  "near_duplicate_similarity": 0.95,
+  "skip_if_baseline_not_vulnerable": true,
+  "skip_if_baseline_vulnerable": false,
+  "skip_if_baseline_has_cwe": true,
+  "baseline": {
+    "n": 150,
+    "accuracy": 0.46,
+    "precision": 0.6792452830188679,
+    "recall": 0.36,
+    "f1": 0.47058823529411764,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.46,
+    "cwe_correct_rate": 0.22,
+    "location_correct_rate": 0.22,
+    "failure_counts": {
+      "wrong_cwe": 36,
+      "wrong_binary_label": 81,
+      "correct": 33
+    },
+    "confusion_matrix": [
+      [
+        33,
+        17
+      ],
+      [
+        64,
+        36
+      ]
+    ]
+  },
+  "errorlock": {
+    "n": 150,
+    "accuracy": 0.46,
+    "precision": 0.6792452830188679,
+    "recall": 0.36,
+    "f1": 0.47058823529411764,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.46,
+    "cwe_correct_rate": 0.22,
+    "location_correct_rate": 0.22,
+    "failure_counts": {
+      "wrong_cwe": 36,
+      "wrong_binary_label": 81,
+      "correct": 33
+    },
+    "confusion_matrix": [
+      [
+        33,
+        17
+      ],
+      [
+        64,
+        36
+      ]
+    ]
+  },
+  "train_baseline_for_memory": {
+    "n": 100,
+    "accuracy": 0.5,
+    "precision": 0.5,
+    "recall": 0.38,
+    "f1": 0.4318181818181818,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.5,
+    "cwe_correct_rate": 0.31,
+    "location_correct_rate": 0.31,
+    "failure_counts": {
+      "correct": 31,
+      "wrong_cwe": 19,
+      "wrong_binary_label": 50
+    },
+    "confusion_matrix": [
+      [
+        31,
+        19
+      ],
+      [
+        31,
+        19
+      ]
+    ]
+  },
+  "binary_locked_rescore_from": "results/full_c250_llama3_2_1b_smart_safe_gated",
+  "preserve_binary_decision": true
+}

@@ -1,0 +1,3927 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,errorlock_applied,gate_reason,retrieved_count,max_similarity,explanation,raw
+openai/gpt-oss-120b:free,train_baseline,125-7,False,CWE-125,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,train_baseline,415-9,False,CWE-415,[],False,,,True,,True,True,True,,,,0,,"The code correctly allocates, uses, and frees memory without out-of-bounds access or other security flaws.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly allocates, uses, and frees memory without out-of-bounds access or other security flaws.""
+}"
+openai/gpt-oss-120b:free,train_baseline,787-3,True,CWE-787,[18],True,CWE-120,"strcpy(OSusername,user)",True,,True,False,False,wrong_cwe,,,0,,Unbounded copy of environment variable into a 10-byte buffer can cause a stack buffer overflow.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""strcpy(OSusername,user)"",
+  ""explanation"": ""Unbounded copy of environment variable into a 10-byte buffer can cause a stack buffer overflow.""
+}"
+openai/gpt-oss-120b:free,train_baseline,674-7,False,CWE-674,[],False,,,True,,True,True,True,,,,0,,"The code safely accesses array elements within bounds and has limited recursion depth, presenting no evident vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely accesses array elements within bounds and has limited recursion depth, presenting no evident vulnerability.""
+}"
+openai/gpt-oss-120b:free,train_baseline,835-8,False,CWE-835,[],False,,,True,,True,True,True,,,,0,,The code contains no memory safety or other security issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or other security issues.""
+}"
+openai/gpt-oss-120b:free,train_baseline,822-8,False,CWE-822,[],False,,,True,,True,True,True,,,,0,,"The code correctly allocates, checks, uses, and frees memory without any unsafe operations.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly allocates, checks, uses, and frees memory without any unsafe operations.""
+}"
+openai/gpt-oss-120b:free,train_baseline,822-7,False,CWE-822,[],True,CWE-330,getRandom function,True,,False,False,False,wrong_binary_label,,,0,,"Uses a predictable pseudo‑random number generator seeded with the current time, making the 'trusted' value guessable.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-330"",
+  ""location"": ""getRandom function"",
+  ""explanation"": ""Uses a predictable pseudo‑random number generator seeded with the current time, making the 'trusted' value guessable.""
+}"
+openai/gpt-oss-120b:free,train_baseline,787-7,False,CWE-787,[],False,,,True,,True,True,True,,,,0,,"The code correctly allocates, accesses within bounds, and frees memory without unsafe operations.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly allocates, accesses within bounds, and frees memory without unsafe operations.""
+}"
+openai/gpt-oss-120b:free,train_baseline,125-3,True,CWE-125,[8],True,CWE-125,second loop reading nondet[i] up to 40000000,True,,True,True,False,,,,0,,"The code reads far beyond the allocated array bounds, causing an out-of-bounds memory access.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-125"",
+  ""location"": ""second loop reading nondet[i] up to 40000000"",
+  ""explanation"": ""The code reads far beyond the allocated array bounds, causing an out-of-bounds memory access.""
+}"
+openai/gpt-oss-120b:free,train_baseline,843-7,False,CWE-843,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,train_baseline,798-3,True,CWE-798,"[13, 24]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,train_baseline,628-1,True,CWE-628,[18],,,,False,Expecting ':' delimiter: line 1 column 22 (char 21),False,False,False,parse_error,,,0,,,"{""vulnerable':false,""cwe':null,""location':null,""explanation':'The code misorders arguments when calling write_to_file, causing incorrect file handling but no security vulnerability.'} (Oops JSON invalid){""vulnerable': false, ""cwe': null, ""location': null, ""explanation': ""The argument order is swapped when calling write_to_file, leading to incorrect behavior but no security flaw.""} (still wrong){""vulnerable': false, ""cwe': null, ""location': null, ""explanation': ""The argument order is swapped when calling write_to_file, leading to incorrect behavior but no security flaw.""} (Oops)"
+openai/gpt-oss-120b:free,train_baseline,190-3,True,CWE-190,[9],True,CWE-190,"printf(""%d\n"", n + 1);",True,,True,True,False,,,,0,,"Adding 1 to INT_MAX causes signed integer overflow, which is undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-190"",
+  ""location"": ""printf(\""%d\\n\"", n + 1);"",
+  ""explanation"": ""Adding 1 to INT_MAX causes signed integer overflow, which is undefined behavior.""
+}"
+openai/gpt-oss-120b:free,train_baseline,89-10,False,CWE-89,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,"{""vulnerable':false,""c
+
+Oops need true JSON. 
+
+{
+  ""t"""
+openai/gpt-oss-120b:free,train_baseline,761-3,True,CWE-761,[23],False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code correctly allocates, accesses within bounds, and frees memory without undefined behavior.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly allocates, accesses within bounds, and frees memory without undefined behavior.""
+}"
+openai/gpt-oss-120b:free,train_baseline,401-3,True,CWE-401,"[6, 14]",True,CWE-120,addStrLength: use of strcat without length check,True,,True,False,False,wrong_cwe,,,0,,strcat may overflow the 2048-byte buffer if inputs are larger than expected,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""addStrLength: use of strcat without length check"",
+  ""explanation"": ""strcat may overflow the 2048-byte buffer if inputs are larger than expected""
+}"
+openai/gpt-oss-120b:free,train_baseline,134-3,True,CWE-134,"[4, 13]",True,CWE-134,logger function,True,,True,True,False,,,,0,,"printf is called with a user-controlled string as the format, allowing format string attacks","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""logger function"",
+  ""explanation"": ""printf is called with a user-controlled string as the format, allowing format string attacks""
+}"
+openai/gpt-oss-120b:free,train_baseline,369-8,False,CWE-369,[],True,CWE-369,printf line in main(),True,,False,False,False,wrong_binary_label,,,0,,"The expression 1/(b-a) divides by zero because b-a equals -1, but if values change it can cause a divide-by-zero error.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-369"",
+  ""location"": ""printf line in main()"",
+  ""explanation"": ""The expression 1/(b-a) divides by zero because b-a equals -1, but if values change it can cause a divide-by-zero error.""
+}"
+openai/gpt-oss-120b:free,train_baseline,770-6,True,CWE-770,[31],,,,False,Expecting property name enclosed in double quotes: line 3 column 3 (char 410),False,False,False,parse_error,,,0,,,"{
+  ""adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadad"": null,
+  0: null,
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""No exploitable memory safety or logic flaw is present.""
+}"
+openai/gpt-oss-120b:free,train_baseline,617-4,True,CWE-617,[12],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,train_baseline,78-5,True,CWE-78,[10],True,CWE-78,"main: strcat(sys, buff) then system(sys)",True,,True,True,False,,,,0,,"User-controlled input is concatenated into a command string and executed with system(), allowing command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""main: strcat(sys, buff) then system(sys)"",
+  ""explanation"": ""User-controlled input is concatenated into a command string and executed with system(), allowing command injection.""
+}"
+openai/gpt-oss-120b:free,train_baseline,401-4,True,CWE-401,"[8, 31]",False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code correctly allocates memory, bounds checks, and avoids division by zero, showing no evident vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly allocates memory, bounds checks, and avoids division by zero, showing no evident vulnerability.""
+}"
+openai/gpt-oss-120b:free,train_baseline,362-9,False,CWE-362,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,train_baseline,78-2,True,CWE-78,"[9, 10]",True,CWE-78,strncat and system call with unvalidated argv[1],True,,True,True,False,,,,0,,"User-controlled input is concatenated into a command string and passed to system(), enabling command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""strncat and system call with unvalidated argv[1]"",
+  ""explanation"": ""User-controlled input is concatenated into a command string and passed to system(), enabling command injection.""
+}"
+openai/gpt-oss-120b:free,train_baseline,628-7,False,CWE-628,[],True,CWE-680,malloc size calculation (n * m * sizeof(int)),True,,False,False,False,wrong_binary_label,,,0,,Potential integer overflow in the allocation size can lead to a buffer overflow when writing to the array.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-680"",
+  ""location"": ""malloc size calculation (n * m * sizeof(int))"",
+  ""explanation"": ""Potential integer overflow in the allocation size can lead to a buffer overflow when writing to the array.""
+}"
+openai/gpt-oss-120b:free,train_baseline,253-1,True,CWE-253,"[6, 11, 12]",True,CWE-476,if (p < 0) check,True,,True,False,False,wrong_cwe,,,0,,"Incorrectly checks pointer against 0 instead of NULL, leading to possible NULL dereference","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""if (p < 0) check"",
+  ""explanation"": ""Incorrectly checks pointer against 0 instead of NULL, leading to possible NULL dereference""
+}"
+openai/gpt-oss-120b:free,train_baseline,253-10,False,CWE-253,[],False,,,True,,True,True,True,,,,0,,The code safely reads input with fgets into a properly sized buffer and does not contain known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely reads input with fgets into a properly sized buffer and does not contain known vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,train_baseline,761-10,False,CWE-761,[],False,,,True,,True,True,True,,,,0,,"The program correctly allocates, uses, and frees memory without unsafe operations.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program correctly allocates, uses, and frees memory without unsafe operations.""
+}"
+openai/gpt-oss-120b:free,train_baseline,327-9,False,CWE-327,[],False,,,True,,True,True,True,,,,0,,"The code properly validates inputs, manages memory, and uses OpenSSL APIs without obvious security flaws.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly validates inputs, manages memory, and uses OpenSSL APIs without obvious security flaws.""
+}"
+openai/gpt-oss-120b:free,train_baseline,327-5,True,CWE-327,[65],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: 'choices'
+openai/gpt-oss-120b:free,train_baseline,415-5,True,CWE-415,[19],True,CWE-415,double free of pointer a after CHECK_NULL(a),True,,True,True,False,,,,0,,"The pointer a is freed inside CHECK_NULL and then freed again, causing a double free vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""double free of pointer a after CHECK_NULL(a)"",
+  ""explanation"": ""The pointer a is freed inside CHECK_NULL and then freed again, causing a double free vulnerability.""
+}"
+openai/gpt-oss-120b:free,train_baseline,822-4,True,CWE-822,"[20, 25, 29, 35]",True,CWE-587,return (int*)val; in getPointer(),True,,True,False,False,wrong_cwe,,,0,,"An unvalidated integer from a file is cast to a pointer and dereferenced, allowing arbitrary memory access.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-587"",
+  ""location"": ""return (int*)val; in getPointer()"",
+  ""explanation"": ""An unvalidated integer from a file is cast to a pointer and dereferenced, allowing arbitrary memory access.""
+}"
+openai/gpt-oss-120b:free,train_baseline,617-9,False,CWE-617,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,train_baseline,327-1,True,CWE-327,"[24, 32, 38, 44]",True,CWE-121,main: saltedPassword buffer overflow,True,,True,False,False,wrong_cwe,,,0,,"strncat can write past the 65-byte saltedPassword buffer, causing a stack overflow","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-121"",
+  ""location"": ""main: saltedPassword buffer overflow"",
+  ""explanation"": ""strncat can write past the 65-byte saltedPassword buffer, causing a stack overflow""
+}"
+openai/gpt-oss-120b:free,train_baseline,835-1,True,CWE-835,[4],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code only contains an infinite{ },"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only contains an infinite{ }"" }"
+openai/gpt-oss-120b:free,train_baseline,674-4,True,CWE-674,"[9, 10]",True,CWE-674,recursivePrintArray call with index++ causing infinite recursion,True,,True,True,False,,,,0,,"Post-increment returns the original index, so the recursive call never advances, leading to uncontrolled recursion and stack overflow","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-674"",
+  ""location"": ""recursivePrintArray call with index++ causing infinite recursion"",
+  ""explanation"": ""Post-increment returns the original index, so the recursive call never advances, leading to uncontrolled recursion and stack overflow""
+}"
+openai/gpt-oss-120b:free,train_baseline,476-8,False,CWE-476,[],,,,False,Expecting ':' delimiter: line 1 column 22 (char 21),False,False,False,parse_error,,,0,,,"{""vulnerable':false,""cwe':null,""location':null,""explanation':'The code dereferences a valid pointer; no null or unsafe memory access occurs.'}""}"
+openai/gpt-oss-120b:free,train_baseline,89-7,False,CWE-89,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,train_baseline,843-6,True,CWE-843,"[3, 14]",True,CWE-843,printNum(CHECK_AND_RETURN(b)),True,,True,True,False,,,,0,,Casting a float to int via pointer dereference violates strict aliasing and causes undefined behavior.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-843"",
+  ""location"": ""printNum(CHECK_AND_RETURN(b))"",
+  ""explanation"": ""Casting a float to int via pointer dereference violates strict aliasing and causes undefined behavior.""
+}"
+openai/gpt-oss-120b:free,train_baseline,770-8,False,CWE-770,[],False,,,True,,True,True,True,,,,0,,"The code properly bounds input, handles child processes, and lacks typical memory safety flaws.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds input, handles child processes, and lacks typical memory safety flaws.""
+}"
+openai/gpt-oss-120b:free,train_baseline,362-1,True,CWE-362,[10],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: 'choices'
+openai/gpt-oss-120b:free,train_baseline,78-10,False,CWE-78,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,train_baseline,22-7,False,CWE-22,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,train_baseline,798-9,False,CWE-798,[],True,CWE-457,Printing entire ciphertext buffer,True,,False,False,False,wrong_binary_label,,,0,,"The code prints the full 2048-byte ciphertext array, exposing uninitialized bytes beyond the actual encrypted data","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-457"",
+  ""location"": ""Printing entire ciphertext buffer"",
+  ""explanation"": ""The code prints the full 2048-byte ciphertext array, exposing uninitialized bytes beyond the actual encrypted data""
+}"
+openai/gpt-oss-120b:free,train_baseline,674-3,True,CWE-674,"[4, 7, 9]",True,CWE-674,fibonacci function recursion depth,True,,True,True,False,,,,0,,Unbounded recursion can cause stack overflow for large input values,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-674"",
+  ""location"": ""fibonacci function recursion depth"",
+  ""explanation"": ""Unbounded recursion can cause stack overflow for large input values""
+}"
+openai/gpt-oss-120b:free,train_baseline,369-6,True,CWE-369,[21],True,CWE-369,printf in main,True,,True,True,False,,,,0,,"Denominator can be zero when fibonacci(b) equals sqr(b), causing division by zero","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-369"",
+  ""location"": ""printf in main"",
+  ""explanation"": ""Denominator can be zero when fibonacci(b) equals sqr(b), causing division by zero""
+}"
+openai/gpt-oss-120b:free,train_baseline,369-3,True,CWE-369,[13],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,train_baseline,415-2,True,CWE-415,[31],True,CWE-416,free(p) after swapping a freed pointer,True,,True,False,False,wrong_cwe,,,0,,"The code frees a pointer in square, then swaps it with a stack pointer and later frees the dangling pointer, causing use-after-free and double free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""free(p) after swapping a freed pointer"",
+  ""explanation"": ""The code frees a pointer in square, then swaps it with a stack pointer and later frees the dangling pointer, causing use-after-free and double free.""
+}"
+openai/gpt-oss-120b:free,train_baseline,134-10,False,CWE-134,[],True,CWE-134,printf(argv[1]) in main,True,,False,False,False,wrong_binary_label,,,0,,"User-controlled input is passed directly as the format string, enabling a format string attack.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""printf(argv[1]) in main"",
+  ""explanation"": ""User-controlled input is passed directly as the format string, enabling a format string attack.""
+}"
+openai/gpt-oss-120b:free,train_baseline,89-1,True,CWE-89,"[25, 28]",True,CWE-89,"snprintf(sql, sizeof(sql), ""SELECT * FROM existential_crises WHERE id = '%s'"", id);",True,,True,True,False,,,,0,,"User-controlled input is directly concatenated into an SQL query, allowing SQL injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-89"",
+  ""location"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM existential_crises WHERE id = '%s'\"", id);"",
+  ""explanation"": ""User-controlled input is directly concatenated into an SQL query, allowing SQL injection.""
+}"
+openai/gpt-oss-120b:free,train_baseline,78-7,False,CWE-78,[],False,,,True,,True,True,True,,,,0,,"Input is strictly numeric and safely incorporated into the command via snprintf, preventing injection.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input is strictly numeric and safely incorporated into the command via snprintf, preventing injection.""
+}"
+openai/gpt-oss-120b:free,train_baseline,401-10,False,CWE-401,[],False,,,True,,True,True,True,,,,0,,"The code correctly allocates, uses, and frees memory without out-of-bounds access or other security flaws.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly allocates, uses, and frees memory without out-of-bounds access or other security flaws.""
+}"
+openai/gpt-oss-120b:free,train_baseline,787-1,True,CWE-787,[7],True,CWE-120,"scanf(""%s"", reg_name) line",True,,True,False,False,wrong_cwe,,,0,,Unbounded %s input can overflow the fixed-size reg_name buffer,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""scanf(\""%s\"", reg_name) line"",
+  ""explanation"": ""Unbounded %s input can overflow the fixed-size reg_name buffer""
+}"
+openai/gpt-oss-120b:free,train_baseline,843-10,False,CWE-843,[],False,,,True,,True,True,True,,,,0,,The code only performs a standard float-to-int conversion without undefined behavior or security issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only performs a standard float-to-int conversion without undefined behavior or security issues.""
+}"
+openai/gpt-oss-120b:free,train_baseline,770-3,True,CWE-770,[26],False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code validates input size and allocates exact memory, avoiding out-of-bounds writes.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code validates input size and allocates exact memory, avoiding out-of-bounds writes.""
+}"
+openai/gpt-oss-120b:free,train_baseline,761-2,True,CWE-761,[12],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,train_baseline,125-5,True,CWE-125,"[9, 11]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,train_baseline,362-7,False,CWE-362,[],False,,,True,,True,True,True,,,,0,,"The code correctly uses a mutex to protect the shared resource, avoiding race conditions and other typical concurrency vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly uses a mutex to protect the shared resource, avoiding race conditions and other typical concurrency vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,train_baseline,787-9,False,CWE-787,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,train_baseline,416-7,False,CWE-416,[],True,CWE-416,"swap(&a, &b) after free(a)",True,,False,False,False,wrong_binary_label,,,0,,"The pointer a is freed then its value is read in swap, causing use-after-free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""swap(&a, &b) after free(a)"",
+  ""explanation"": ""The pointer a is freed then its value is read in swap, causing use-after-free.""
+}"
+openai/gpt-oss-120b:free,train_baseline,253-3,True,CWE-253,[10],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: 'choices'
+openai/gpt-oss-120b:free,train_baseline,22-8,False,CWE-22,[],False,,,True,,True,True,True,,,,0,,"Input is strictly validated and safely used, preventing injection or overflow vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input is strictly validated and safely used, preventing injection or overflow vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,train_baseline,476-1,True,CWE-476,"[5, 8]",True,CWE-476,A[i] = i; dereferences possibly NULL pointer,True,,True,True,False,,,,0,,malloc return value is not checked before using the pointer,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""A[i] = i; dereferences possibly NULL pointer"",
+  ""explanation"": ""malloc return value is not checked before using the pointer""
+}"
+openai/gpt-oss-120b:free,train_baseline,22-3,True,CWE-22,"[12, 23, 32]",True,CWE-22,validatePath function allowing directory traversal,True,,True,True,False,,,,0,,"The prefix check does not prevent '../' sequences, enabling path traversal outside the intended directory","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""validatePath function allowing directory traversal"",
+  ""explanation"": ""The prefix check does not prevent '../' sequences, enabling path traversal outside the intended directory""
+}"
+openai/gpt-oss-120b:free,train_baseline,798-7,False,CWE-798,[],False,,,True,,True,True,True,,,,0,,The code safely uses bounded functions and does not contain obvious memory safety issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely uses bounded functions and does not contain obvious memory safety issues.""
+}"
+openai/gpt-oss-120b:free,train_baseline,522-3,True,CWE-522,"[112, 123]",False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code properly bounds input sizes and checks allocations, showing no evident memory safety flaws.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds input sizes and checks allocations, showing no evident memory safety flaws.""
+}"
+openai/gpt-oss-120b:free,train_baseline,628-4,True,CWE-628,"[10, 12, 58]",True,CWE-120,sha256_hash_string writes to outputBuffer (argv[1]) which may be too small,True,,True,False,False,wrong_cwe,,,0,,"Arguments to sha256 are swapped, causing the output buffer to point to the input string and potentially overflow it","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""sha256_hash_string writes to outputBuffer (argv[1]) which may be too small"",
+  ""explanation"": ""Arguments to sha256 are swapped, causing the output buffer to point to the input string and potentially overflow it""
+}"
+openai/gpt-oss-120b:free,train_baseline,835-3,True,CWE-835,[4],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains an infinite loop but no security-relevant vulnerability such as memory corruption.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains an infinite loop but no security-relevant vulnerability such as memory corruption.""
+}"
+openai/gpt-oss-120b:free,train_baseline,617-8,False,CWE-617,[],False,,,True,,True,True,True,,,,0,,The code contains no memory safety or logic vulnerabilities; the assertions evaluate to true and execution proceeds normally.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or logic vulnerabilities; the assertions evaluate to true and execution proceeds normally.""
+}"
+openai/gpt-oss-120b:free,train_baseline,674-9,False,CWE-674,[],True,CWE-674,print function recursive call,True,,False,False,False,wrong_binary_label,,,0,,Unbounded recursion can cause a stack overflow leading to a crash.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-674"",
+  ""location"": ""print function recursive call"",
+  ""explanation"": ""Unbounded recursion can cause a stack overflow leading to a crash.""
+}"
+openai/gpt-oss-120b:free,train_baseline,522-7,False,CWE-522,[],False,,,True,,True,True,True,,,,0,,"The code uses prepared statements and proper bounds checking, avoiding typical buffer overflows or injection flaws.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code uses prepared statements and proper bounds checking, avoiding typical buffer overflows or injection flaws.""
+}"
+openai/gpt-oss-120b:free,train_baseline,89-2,True,CWE-89,"[40, 43]",True,CWE-89,"snprintf(sql, sizeof(sql), ""SELECT * FROM tokens WHERE id = %s"", id);",True,,True,True,False,,,,0,,"User-controlled input is concatenated into an SQL query without validation, enabling SQL injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-89"",
+  ""location"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM tokens WHERE id = %s\"", id);"",
+  ""explanation"": ""User-controlled input is concatenated into an SQL query without validation, enabling SQL injection.""
+}"
+openai/gpt-oss-120b:free,train_baseline,770-7,False,CWE-770,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,train_baseline,415-8,False,CWE-415,[],False,,,True,,True,True,True,,,,0,,"The code contains a memory leak but no exploitable vulnerability such as use-after-free, double free, or overflow.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains a memory leak but no exploitable vulnerability such as use-after-free, double free, or overflow.""
+}"
+openai/gpt-oss-120b:free,train_baseline,416-9,False,CWE-416,[],,,,False,Unterminated string starting at: line 1 column 2 (char 1),False,False,False,parse_error,,,0,,,"{""vulnerable\"":false,\""cwe\"":null,\""location\"":null,\""explanation\"":\""The code correctly allocates, uses, and frees memory without out-of-bounds access or other unsafe operations.\""}   (Note: JSON must be valid)"
+openai/gpt-oss-120b:free,train_baseline,401-8,False,CWE-401,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,train_baseline,190-2,True,CWE-190,[6],True,CWE-190,"long long int APPLE = atoi(""3000000000"") + 1;",True,,True,True,False,,,,0,,"atoi converts the string to an int, causing overflow before the addition.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-190"",
+  ""location"": ""long long int APPLE = atoi(\""3000000000\"") + 1;"",
+  ""explanation"": ""atoi converts the string to an int, causing overflow before the addition.""
+}"
+openai/gpt-oss-120b:free,train_baseline,253-9,False,CWE-253,[],False,,,True,,True,True,True,,,,0,,"Memory is allocated, checked, used, and freed correctly without any unsafe operations.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Memory is allocated, checked, used, and freed correctly without any unsafe operations.""
+}"
+openai/gpt-oss-120b:free,train_baseline,327-8,False,CWE-327,[],False,,,True,,True,True,True,,,,0,,"The code properly checks return values and bounds, with no evident memory safety or cryptographic misuse.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly checks return values and bounds, with no evident memory safety or cryptographic misuse.""
+}"
+openai/gpt-oss-120b:free,train_baseline,134-8,False,CWE-134,[],False,,,True,,True,True,True,,,,0,,"The code safely reads input with fgets and prints it using a fixed format string, avoiding buffer overflow and format string issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely reads input with fgets and prints it using a fixed format string, avoiding buffer overflow and format string issues.""
+}"
+openai/gpt-oss-120b:free,train_baseline,416-6,True,CWE-416,[32],True,CWE-416,array[0] = size after free,True,,True,True,False,,,,0,,"The code writes to memory after it has been freed, causing a use‑after‑free vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""array[0] = size after free"",
+  ""explanation"": ""The code writes to memory after it has been freed, causing a use‑after‑free vulnerability.""
+}"
+openai/gpt-oss-120b:free,train_baseline,822-6,True,CWE-822,[61],True,CWE-587,"int* input = (int*)strtoul(buffer, &endptr, 10); dereferencing input",True,,True,False,False,wrong_cwe,,,0,,"User-controlled data is cast to a pointer and dereferenced, leading to arbitrary memory access.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-587"",
+  ""location"": ""int* input = (int*)strtoul(buffer, &endptr, 10); dereferencing input"",
+  ""explanation"": ""User-controlled data is cast to a pointer and dereferenced, leading to arbitrary memory access.""
+}"
+openai/gpt-oss-120b:free,train_baseline,628-8,False,CWE-628,[],True,CWE-120,url_decode function lacks destination buffer size check,True,,False,False,False,wrong_binary_label,,,0,,Unbounded copy into dest can overflow decodedUrl if src is longer than the buffer,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""url_decode function lacks destination buffer size check"",
+  ""explanation"": ""Unbounded copy into dest can overflow decodedUrl if src is longer than the buffer""
+}"
+openai/gpt-oss-120b:free,train_baseline,476-3,True,CWE-476,[19],,,,False,Expecting ':' delimiter: line 1 column 21 (char 20),False,False,False,parse_error,,,0,,,"{""vulnerable':true,""cwe':'CWE-476"",""location':'main: third call to min(&a,&a) dereferences NULL','explanation':'min returns NULL when values are equal, and the caller dereferences the result causing a null pointer dereference.'}  "
+openai/gpt-oss-120b:free,train_baseline,190-10,False,CWE-190,[],True,CWE-190,result = (result * base) % mod; and base = (base * base) % mod; in power_mod,True,,False,False,False,wrong_binary_label,,,0,,"Signed 64-bit multiplication can overflow before the modulo, causing undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-190"",
+  ""location"": ""result = (result * base) % mod; and base = (base * base) % mod; in power_mod"",
+  ""explanation"": ""Signed 64-bit multiplication can overflow before the modulo, causing undefined behavior.""
+}"
+openai/gpt-oss-120b:free,train_baseline,843-4,True,CWE-843,[19],,,,False,Expecting ':' delimiter: line 1 column 22 (char 21),False,False,False,parse_error,,,0,,,"{""vulnerable\"":true,""cwe\"":\""CWE-704\"",\""location\"":\""printNum(b.integer) after b.real assignment\"",\""explanation\"":\""Reading the integer member of a union after storing a float creates undefined behavior due to type punning.\""}   (Note: JSON must be valid)"
+openai/gpt-oss-120b:free,train_baseline,761-7,False,CWE-761,[],False,,,True,,True,True,True,,,,0,,"The code correctly allocates, copies, and frees memory without out-of-bounds access or other security flaws.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly allocates, copies, and frees memory without out-of-bounds access or other security flaws.""
+}"
+openai/gpt-oss-120b:free,train_baseline,522-9,False,CWE-522,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,"{""v
+
+"
+openai/gpt-oss-120b:free,train_baseline,798-4,True,CWE-798,[13],,,,False,Invalid control character at: line 1 column 23 (char 22),False,False,False,parse_error,,,0,,,"{""vulnerable\"":true,\""
+
+cwe\"":\""CWE-798\"",\""location\"":\""hardcoded token in curl_slist_append\"",\""explanation\"":\""The code embeds a secret GitHub token directly in the source, leading to credential exposure.\""}]"
+openai/gpt-oss-120b:free,train_baseline,125-9,False,CWE-125,[],False,,,True,,True,True,True,,,,0,,All array accesses stay within the allocated bounds of a[300].,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""All array accesses stay within the allocated bounds of a[300].""
+}"
+openai/gpt-oss-120b:free,train_baseline,22-6,True,CWE-22,"[10, 49]",True,CWE-119,main: fileNames[255] = '\0';,True,,True,False,False,wrong_cwe,,,0,,"Writes a null terminator to the wrong array element, causing out-of-bounds memory write.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-119"",
+  ""location"": ""main: fileNames[255] = '\\0';"",
+  ""explanation"": ""Writes a null terminator to the wrong array element, causing out-of-bounds memory write.""
+}"
+openai/gpt-oss-120b:free,train_baseline,134-6,True,CWE-134,"[17, 18]",False,,,True,,False,False,False,wrong_binary_label,,,0,,"The format string is constructed from a fixed pattern and a numeric argument, preventing uncontrolled format string exploits.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The format string is constructed from a fixed pattern and a numeric argument, preventing uncontrolled format string exploits.""
+}"
+openai/gpt-oss-120b:free,train_baseline,416-3,True,CWE-416,[34],True,CWE-416,printf after swap dereferencing *b,True,,True,True,False,,,,0,,"A freed pointer is swapped into b and then dereferenced, causing use‑after‑free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""printf after swap dereferencing *b"",
+  ""explanation"": ""A freed pointer is swapped into b and then dereferenced, causing use‑after‑free.""
+}"
+openai/gpt-oss-120b:free,train_baseline,617-2,True,CWE-617,"[8, 19]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains no memory safety or undefined behavior vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or undefined behavior vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,train_baseline,522-1,True,CWE-522,"[70, 74]",False,,,True,,False,False,False,wrong_binary_label,,,0,,"Input is validated and safely incorporated into the query, preventing injection or overflow.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input is validated and safely incorporated into the query, preventing injection or overflow.""
+}"
+openai/gpt-oss-120b:free,train_baseline,476-7,False,CWE-476,[],False,,,True,,True,True,True,,,,0,,The code accesses only valid indices within the allocated array and correctly frees the memory.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code accesses only valid indices within the allocated array and correctly frees the memory.""
+}"
+openai/gpt-oss-120b:free,train_baseline,835-10,False,CWE-835,[],False,,,True,,True,True,True,,,,0,,"The code contains no memory safety, arithmetic, or input validation issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety, arithmetic, or input validation issues.""
+}"
+openai/gpt-oss-120b:free,train_baseline,190-9,False,CWE-190,[],False,,,True,,True,True,True,,,,0,,The code contains no memory safety or undefined behavior issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or undefined behavior issues.""
+}"
+openai/gpt-oss-120b:free,train_baseline,369-7,False,CWE-369,[],False,,,True,,True,True,True,,,,0,,The code does not contain any exploitable memory or arithmetic errors.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain any exploitable memory or arithmetic errors.""
+}"
+openai/gpt-oss-120b:free,train_baseline,362-2,True,CWE-362,"[9, 17]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code has no memory safety or injection issues; concurrent file appends may interleave but are not a security vulnerability.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code has no memory safety or injection issues; concurrent file appends may interleave but are not a security vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,78-6,True,CWE-78,[29],True,CWE-78,validation loop before system() call in main,True,,True,True,False,,,,0,,Insufficient input sanitization allows command injection despite simple character checks,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""validation loop before system() call in main"",
+  ""explanation"": ""Insufficient input sanitization allows command injection despite simple character checks""
+}"
+openai/gpt-oss-120b:free,baseline,674-2,True,CWE-674,[9],True,CWE-121,countdown function recursion,True,,True,False,False,wrong_cwe,,,0,,"Recursive call uses i-- causing the same value to be passed, leading to infinite recursion and stack overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-121"",
+  ""location"": ""countdown function recursion"",
+  ""explanation"": ""Recursive call uses i-- causing the same value to be passed, leading to infinite recursion and stack overflow.""
+}"
+openai/gpt-oss-120b:free,baseline,476-4,True,CWE-476,[51],True,CWE-416,printAndFree function loop,True,,True,False,False,wrong_cwe,,,0,,"Frees a node then dereferences its next pointer, causing use‑after‑free and possible null pointer access.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""printAndFree function loop"",
+  ""explanation"": ""Frees a node then dereferences its next pointer, causing use‑after‑free and possible null pointer access.""
+}"
+openai/gpt-oss-120b:free,baseline,416-1,True,CWE-416,[20],True,CWE-416,"square function frees pointer, then main dereferences it",True,,True,True,False,,,,0,,"The pointer is freed in square() and later accessed in main, causing a use-after-free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""square function frees pointer, then main dereferences it"",
+  ""explanation"": ""The pointer is freed in square() and later accessed in main, causing a use-after-free.""
+}"
+openai/gpt-oss-120b:free,baseline,327-2,True,CWE-327,"[11, 26, 34, 40, 46]",True,CWE-327,Macro EVP_sha_256 redefined as EVP_md5,True,,True,True,False,,,,0,,"The code substitutes SHA-256 with MD5, using a weak cryptographic hash for password storage.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-327"",
+  ""location"": ""Macro EVP_sha_256 redefined as EVP_md5"",
+  ""explanation"": ""The code substitutes SHA-256 with MD5, using a weak cryptographic hash for password storage.""
+}"
+openai/gpt-oss-120b:free,baseline,822-2,True,CWE-822,"[5, 6, 24, 27]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,baseline,415-1,True,CWE-415,[22],True,CWE-415,double free of pointer 'a' in square() and main(),True,,True,True,False,,,,0,,"The pointer allocated in main is freed inside square() and then freed again in main, causing a double free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""double free of pointer 'a' in square() and main()"",
+  ""explanation"": ""The pointer allocated in main is freed inside square() and then freed again in main, causing a double free.""
+}"
+openai/gpt-oss-120b:free,baseline,401-6,True,CWE-401,"[22, 39]",False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code correctly handles memory allocation, deallocation, and pointer swapping without dereferencing freed pointers.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly handles memory allocation, deallocation, and pointer swapping without dereferencing freed pointers.""
+}"
+openai/gpt-oss-120b:free,baseline,674-1,True,CWE-674,[5],True,CWE-674,print function recursion,True,,True,True,False,,,,0,,"The function calls itself unconditionally, causing infinite recursion and a stack overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-674"",
+  ""location"": ""print function recursion"",
+  ""explanation"": ""The function calls itself unconditionally, causing infinite recursion and a stack overflow.""
+}"
+openai/gpt-oss-120b:free,baseline,770-1,True,CWE-770,[68],False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code properly bounds reads and null-terminates the buffer, avoiding overflow or other common C vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds reads and null-terminates the buffer, avoiding overflow or other common C vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,baseline,843-8,False,CWE-843,[],False,,,True,,True,True,True,,,,0,,The code only performs a harmless implicit conversion from float to int when calling printNum.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only performs a harmless implicit conversion from float to int when calling printNum.""
+}"
+openai/gpt-oss-120b:free,baseline,134-7,False,CWE-134,[],False,,,True,,True,True,True,,,,0,,"The program uses a fixed format string with printf, avoiding format string vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program uses a fixed format string with printf, avoiding format string vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,baseline,617-5,True,CWE-617,[8],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains no memory safety or logic vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or logic vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,baseline,628-5,True,CWE-628,"[23, 27, 32, 36, 41, 48]",,,,False,Expecting ':' delimiter: line 1 column 21 (char 20),False,False,False,parse_error,,,0,,,"{""vulnerable':true,""cwe':'CWE-121',""location':'url_decode(decodedUrl, url) call in main','explanation':'Arguments are swapped, causing writes into a string literal and potential buffer overflow.'}]}}{""vulnerable':true,""cwe':'CWE-121',""location':'url_decode(decodedUrl, url) call in main','explanation':'Arguments are swapped, causing writes into a string literal and potential buffer overflow.'}"
+openai/gpt-oss-120b:free,baseline,822-10,False,CWE-822,[],,,,False,Expecting ':' delimiter: line 1 column 22 (char 21),False,False,False,parse_error,,,0,,,"{""vulnerable':false,""c
+
+""}"
+openai/gpt-oss-120b:free,baseline,401-2,True,CWE-401,"[14, 15, 22, 36]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code validates inputs and uses proper memory allocation without out-of-bounds access.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code validates inputs and uses proper memory allocation without out-of-bounds access.""
+}"
+openai/gpt-oss-120b:free,baseline,761-9,False,CWE-761,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,baseline,327-7,False,CWE-327,[],True,CWE-120,saltedPassword buffer handling with strncpy/strncat,True,,False,False,False,wrong_binary_label,,,0,,"strncpy may not null‑terminate saltedPassword, causing strncat to read/write past the buffer","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""saltedPassword buffer handling with strncpy/strncat"",
+  ""explanation"": ""strncpy may not null‑terminate saltedPassword, causing strncat to read/write past the buffer""
+}"
+openai/gpt-oss-120b:free,baseline,253-6,True,CWE-253,"[5, 9, 16]",True,CWE-690,if (file == FILE_OPEN_ERROR) check after fopen,True,,True,False,False,wrong_cwe,,,0,,"The code incorrectly compares fopen's return to -1 instead of NULL, leading to possible NULL dereference.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-690"",
+  ""location"": ""if (file == FILE_OPEN_ERROR) check after fopen"",
+  ""explanation"": ""The code incorrectly compares fopen's return to -1 instead of NULL, leading to possible NULL dereference.""
+}"
+openai/gpt-oss-120b:free,baseline,843-9,False,CWE-843,[],False,,,True,,True,True,True,,,,0,,"The code only performs safe type conversions and prints a value, with no memory safety or other security issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only performs safe type conversions and prints a value, with no memory safety or other security issues.""
+}"
+openai/gpt-oss-120b:free,baseline,617-1,True,CWE-617,[28],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains logical errors but no memory safety or security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains logical errors but no memory safety or security vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,baseline,89-9,False,CWE-89,[],False,,,True,,True,True,True,,,,0,,"The code properly escapes input and allocates sufficient buffer space before using sprintf, avoiding injection and overflow vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly escapes input and allocates sufficient buffer space before using sprintf, avoiding injection and overflow vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,baseline,415-6,True,CWE-415,[32],True,CWE-415,double free of array in cleanup() and main(),True,,True,True,False,,,,0,,"Memory is freed in cleanup() and then freed again in main(), causing a double free vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""double free of array in cleanup() and main()"",
+  ""explanation"": ""Memory is freed in cleanup() and then freed again in main(), causing a double free vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,787-5,True,CWE-787,[51],True,CWE-120,"scanf(""%s"", str2) without length limit",True,,True,False,False,wrong_cwe,,,0,,Unbounded %s input can overflow the 20‑byte str2 buffer,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""scanf(\""%s\"", str2) without length limit"",
+  ""explanation"": ""Unbounded %s input can overflow the 20‑byte str2 buffer""
+}"
+openai/gpt-oss-120b:free,baseline,617-10,False,CWE-617,[],False,,,True,,True,True,True,,,,0,,"The code safely bounds reads and writes to fixed-size buffers, avoiding overflow or other classic memory safety issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds reads and writes to fixed-size buffers, avoiding overflow or other classic memory safety issues.""
+}"
+openai/gpt-oss-120b:free,baseline,362-5,True,CWE-362,"[8, 15, 19]",True,CWE-362,write_to_file function concurrent writes to logs.txt,True,,True,True,False,,,,0,,"Multiple threads write to the same file without synchronization, causing a race condition.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-362"",
+  ""location"": ""write_to_file function concurrent writes to logs.txt"",
+  ""explanation"": ""Multiple threads write to the same file without synchronization, causing a race condition.""
+}"
+openai/gpt-oss-120b:free,baseline,327-10,False,CWE-327,[],False,,,True,,True,True,True,,,,0,,"The code properly bounds all buffers and uses safe library calls, showing no evident memory safety issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds all buffers and uses safe library calls, showing no evident memory safety issues.""
+}"
+openai/gpt-oss-120b:free,baseline,190-1,True,CWE-190,[6],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,770-9,False,CWE-770,[],False,,,True,,True,True,True,,,,0,,"All inputs are bounded and memory allocations are size-checked, preventing buffer overflows or other typical C vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""All inputs are bounded and memory allocations are size-checked, preventing buffer overflows or other typical C vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,baseline,253-7,False,CWE-253,[],False,,,True,,True,True,True,,,,0,,The code correctly checks malloc result and frees memory without any unsafe operations.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly checks malloc result and frees memory without any unsafe operations.""
+}"
+openai/gpt-oss-120b:free,baseline,628-6,True,CWE-628,[53],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains no memory safety or other security flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or other security flaws.""
+}"
+openai/gpt-oss-120b:free,baseline,798-10,False,CWE-798,[],True,CWE-259,const char *googleMapsApiKey = ...,True,,False,False,False,wrong_binary_label,,,0,,"The API key is hardcoded in the source, exposing a secret credential.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-259"",
+  ""location"": ""const char *googleMapsApiKey = ..."",
+  ""explanation"": ""The API key is hardcoded in the source, exposing a secret credential.""
+}"
+openai/gpt-oss-120b:free,baseline,22-5,True,CWE-22,"[8, 28]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code safely bounds input with fgets and does not contain exploitable memory or format string issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds input with fgets and does not contain exploitable memory or format string issues.""
+}"
+openai/gpt-oss-120b:free,baseline,415-10,False,CWE-415,[],False,,,True,,True,True,True,,,,0,,"The program correctly checks allocation, uses the memory, and frees it without any unsafe operations.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program correctly checks allocation, uses the memory, and frees it without any unsafe operations.""
+}"
+openai/gpt-oss-120b:free,baseline,770-2,True,CWE-770,"[30, 37]",False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code validates all system calls and does not contain buffer overflows, injection, or other typical C vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code validates all system calls and does not contain buffer overflows, injection, or other typical C vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,baseline,369-9,False,CWE-369,[],False,,,True,,True,True,True,,,,0,,The program only performs a safe floating-point calculation and prints it with a constant format string.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program only performs a safe floating-point calculation and prints it with a constant format string.""
+}"
+openai/gpt-oss-120b:free,baseline,253-4,True,CWE-253,[11],False,,,True,,False,False,False,wrong_binary_label,,,0,,"The snprintf size calculation ensures the buffer is not overflowed, so no vulnerability is present.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The snprintf size calculation ensures the buffer is not overflowed, so no vulnerability is present.""
+}"
+openai/gpt-oss-120b:free,baseline,628-10,False,CWE-628,[],,,,False,Expecting ':' delimiter: line 1 column 21 (char 20),False,False,False,parse_error,,,0,,,"{""vulnerable':true,""cwe':'CWE-120"",""location':'sha256_hash_string loop writing to outputBuffer','explanation':'If hash_len exceeds 32 (up to EVP_MAX_MD_SIZE), sprintf writes beyond the 65‑byte outputBuffer, causing a buffer overflow.'}   (Oops){""vulnerable\"":true,""cwe\"":\""CWE-120"",""location\"":\""sha256_hash_string loop\"",\""explanation\"":\""If hash_len can be up to EVP_MAX_MD_SIZE, the sprintf writes more than 65 bytes into outputBuffer, causing a buffer overflow.\""}   (Oops){""vulnerable\"":true,""cwe\"":\""CWE-120"",""location\"":\""sha256_hash_string loop\"",\""explanation\"":\""If hash_len can be up to EVP_MAX_MD_SIZE, the sprintf writes more than 65 bytes into outputBuffer, causing a buffer overflow.\""}   (Oops)"
+openai/gpt-oss-120b:free,baseline,787-6,True,CWE-787,"[10, 17]",True,CWE-119,"fillArray(a, sizeof(a) / sizeof(float), mySin);",True,,True,False,False,wrong_cwe,,,0,,"Using sizeof(float) instead of sizeof(double) doubles the element count, causing out-of-bounds writes to array a.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-119"",
+  ""location"": ""fillArray(a, sizeof(a) / sizeof(float), mySin);"",
+  ""explanation"": ""Using sizeof(float) instead of sizeof(double) doubles the element count, causing out-of-bounds writes to array a.""
+}"
+openai/gpt-oss-120b:free,baseline,125-2,True,CWE-125,[8],True,CWE-125,second loop reading nondet[i] up to 40000,True,,True,True,False,,,,0,,"The loop accesses indices beyond the allocated array size, causing an out-of-bounds read.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-125"",
+  ""location"": ""second loop reading nondet[i] up to 40000"",
+  ""explanation"": ""The loop accesses indices beyond the allocated array size, causing an out-of-bounds read.""
+}"
+openai/gpt-oss-120b:free,baseline,835-6,True,CWE-835,[13],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,476-5,True,CWE-476,[10],,,,False,Invalid control character at: line 1 column 60 (char 59),False,False,False,parse_error,,,0,,,"{""vulnerable\"":true,\""cwe\"":\""CWE-476\"",\""location\"":\""dere
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"",""explanation"":""The pointer returned by generateAlwaysNon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"",""explanation"":""Dereferencing pointer a without checking for NULL can cause a null pointer dereference vulnerability.""}"
+openai/gpt-oss-120b:free,baseline,522-5,True,CWE-522,[13],False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code safely reads a string with a bounded format specifier, avoiding buffer overflow or other common C vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely reads a string with a bounded format specifier, avoiding buffer overflow or other common C vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,baseline,78-8,False,CWE-78,[],False,,,True,,True,True,True,,,,0,,"The code safely bounds input and checks characters, and no buffer overflow or injection can occur.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds input and checks characters, and no buffer overflow or injection can occur.""
+}"
+openai/gpt-oss-120b:free,baseline,125-6,True,CWE-125,"[41, 50]",True,CWE-787,main loop iterating to 99 entries,True,,True,False,False,wrong_cwe,,,0,,"The loop accesses beyond the allocated 9-element array, causing out-of-bounds memory access.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-787"",
+  ""location"": ""main loop iterating to 99 entries"",
+  ""explanation"": ""The loop accesses beyond the allocated 9-element array, causing out-of-bounds memory access.""
+}"
+openai/gpt-oss-120b:free,baseline,134-2,True,CWE-134,[9],True,CWE-134,printf(buffer);,True,,True,True,False,,,,0,,"User-controlled input is passed directly as the format string, leading to a format string vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""printf(buffer);"",
+  ""explanation"": ""User-controlled input is passed directly as the format string, leading to a format string vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,416-8,False,CWE-416,[],True,CWE-416,Use-after-free when accessing pointer a after it has been freed,True,,False,False,False,wrong_binary_label,,,0,,"The program frees 'a' then later dereferences it via f(&a, &b) and *a = 3, leading to use-after-free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""Use-after-free when accessing pointer a after it has been freed"",
+  ""explanation"": ""The program frees 'a' then later dereferences it via f(&a, &b) and *a = 3, leading to use-after-free.""
+}"
+openai/gpt-oss-120b:free,baseline,416-10,False,CWE-416,[],True,CWE-415,free(a) after swap,True,,False,False,False,wrong_binary_label,,,0,,The program frees the same heap block twice due to swapping pointers that reference already freed memory.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""free(a) after swap"",
+  ""explanation"": ""The program frees the same heap block twice due to swapping pointers that reference already freed memory.""
+}"
+openai/gpt-oss-120b:free,baseline,770-4,True,CWE-770,[34],False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code correctly resizes the buffer before writing beyond the allocated size, preventing overflow.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly resizes the buffer before writing beyond the allocated size, preventing overflow.""
+}"
+openai/gpt-oss-120b:free,baseline,190-5,True,CWE-190,[13],True,CWE-190,e *= e inside the for loop,True,,True,True,False,,,,0,,"Multiplying e by itself can overflow a 32-bit int, causing undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-190"",
+  ""location"": ""e *= e inside the for loop"",
+  ""explanation"": ""Multiplying e by itself can overflow a 32-bit int, causing undefined behavior.""
+}"
+openai/gpt-oss-120b:free,baseline,327-4,True,CWE-327,[65],True,CWE-327,EVP_PKEY_CTX_set_rsa_padding with RSA_NO_PADDING,True,,True,True,False,,,,0,,Disabling RSA padding makes encryption deterministic and vulnerable to attacks.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-327"",
+  ""location"": ""EVP_PKEY_CTX_set_rsa_padding with RSA_NO_PADDING"",
+  ""explanation"": ""Disabling RSA padding makes encryption deterministic and vulnerable to attacks.""
+}"
+openai/gpt-oss-120b:free,baseline,253-5,True,CWE-253,"[8, 15]",True,CWE-476,readFile: incorrect fopen error check (file == -1),True,,True,False,False,wrong_cwe,,,0,,"The code checks fopen return against -1 instead of NULL, leading to possible NULL pointer dereference.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""readFile: incorrect fopen error check (file == -1)"",
+  ""explanation"": ""The code checks fopen return against -1 instead of NULL, leading to possible NULL pointer dereference.""
+}"
+openai/gpt-oss-120b:free,baseline,835-9,False,CWE-835,[],False,,,True,,True,True,True,,,,0,,The code contains no memory safety or undefined behavior issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or undefined behavior issues.""
+}"
+openai/gpt-oss-120b:free,baseline,89-5,True,CWE-89,"[55, 58]",True,CWE-89,"snprintf(sql, sizeof(sql), ""SELECT * FROM tokens WHERE id = %s"", id)",True,,True,True,False,,,,0,,"User input is concatenated into SQL without proper escaping or parameterization, enabling injection","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-89"",
+  ""location"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM tokens WHERE id = %s\"", id)"",
+  ""explanation"": ""User input is concatenated into SQL without proper escaping or parameterization, enabling injection""
+}"
+openai/gpt-oss-120b:free,baseline,125-1,True,CWE-125,[7],,,,False,Expecting ':' delimiter: line 1 column 21 (char 20),False,False,False,parse_error,,,0,,,"{""vulnerable':true,""cwe':'CWE-125"",""location':'for loop accessing array[5]','explanation':'The loop iterates i from 0 to 5 inclusive, causing an out-of-bounds read of array[5].""}]"
+openai/gpt-oss-120b:free,baseline,22-4,True,CWE-22,"[46, 66, 70]",True,CWE-22,"isValidPath allows "".."" enabling directory traversal",True,,True,True,False,,,,0,,"Path validation permits '..' sequences, allowing access to files outside the intended directory","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""isValidPath allows \""..\"" enabling directory traversal"",
+  ""explanation"": ""Path validation permits '..' sequences, allowing access to files outside the intended directory""
+}"
+openai/gpt-oss-120b:free,baseline,416-5,True,CWE-416,"[5, 7, 23]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,761-6,True,CWE-761,"[15, 18]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains no memory safety or undefined behavior issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or undefined behavior issues.""
+}"
+openai/gpt-oss-120b:free,baseline,416-4,True,CWE-416,[34],True,CWE-416,"printf after f(&a, &b) uses *b",True,,True,True,False,,,,0,,"The pointer b is swapped to reference memory that was freed earlier, leading to a use‑after‑free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""printf after f(&a, &b) uses *b"",
+  ""explanation"": ""The pointer b is swapped to reference memory that was freed earlier, leading to a use‑after‑free.""
+}"
+openai/gpt-oss-120b:free,baseline,369-4,True,CWE-369,[20],True,CWE-369,"printf(""Value now: %d\n"", input / rand);",True,,True,True,False,,,,0,,"rand can become zero, causing a divide‑by‑zero error.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-369"",
+  ""location"": ""printf(\""Value now: %d\\n\"", input / rand);"",
+  ""explanation"": ""rand can become zero, causing a divide‑by‑zero error.""
+}"
+openai/gpt-oss-120b:free,baseline,628-2,True,CWE-628,[18],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code performs simple integer comparisons without any unsafe operations.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code performs simple integer comparisons without any unsafe operations.""
+}"
+openai/gpt-oss-120b:free,baseline,798-6,True,CWE-798,[54],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains a logic error in password verification but no memory safety or exploitable vulnerability.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains a logic error in password verification but no memory safety or exploitable vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,476-2,True,CWE-476,"[7, 9, 13]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,190-4,True,CWE-190,[8],True,CWE-190,printf of n * 10 + 8,True,,True,True,False,,,,0,,"Signed integer overflow occurs when computing n * 10 + 8, exceeding INT_MAX.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-190"",
+  ""location"": ""printf of n * 10 + 8"",
+  ""explanation"": ""Signed integer overflow occurs when computing n * 10 + 8, exceeding INT_MAX.""
+}"
+openai/gpt-oss-120b:free,baseline,843-3,True,CWE-843,"[6, 11]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,89-4,True,CWE-89,"[123, 125]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: 'choices'
+openai/gpt-oss-120b:free,baseline,125-4,True,CWE-125,[13],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,787-4,True,CWE-787,[14],True,CWE-120,"fscanf(stdin, ""%s"", string_2)",True,,True,False,False,wrong_cwe,,,0,,Unbounded %s format specifier can overflow string_2,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""fscanf(stdin, \""%s\"", string_2)"",
+  ""explanation"": ""Unbounded %s format specifier can overflow string_2""
+}"
+openai/gpt-oss-120b:free,baseline,476-6,True,CWE-476,[35],True,CWE-476,dereferencing result.p in main when fibonacci returns NULL,True,,True,True,False,,,,0,,"fibonacci may return a NULL pointer for non‑positive input, which is then dereferenced, causing a null pointer dereference.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""dereferencing result.p in main when fibonacci returns NULL"",
+  ""explanation"": ""fibonacci may return a NULL pointer for non‑positive input, which is then dereferenced, causing a null pointer dereference.""
+}"
+openai/gpt-oss-120b:free,baseline,787-8,False,CWE-787,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,362-4,True,CWE-362,[8],True,CWE-362,increment function: counter++,True,,True,True,False,,,,0,,"Concurrent threads modify shared counter without synchronization, causing a race condition.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-362"",
+  ""location"": ""increment function: counter++"",
+  ""explanation"": ""Concurrent threads modify shared counter without synchronization, causing a race condition.""
+}"
+openai/gpt-oss-120b:free,baseline,843-1,True,CWE-843,"[15, 25]",True,CWE-124,printInfo function,True,,True,False,False,wrong_cwe,,,0,,"The function treats any void* as a Person and prints a name field, causing out-of-bounds reads when a Product is passed.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-124"",
+  ""location"": ""printInfo function"",
+  ""explanation"": ""The function treats any void* as a Person and prints a name field, causing out-of-bounds reads when a Product is passed.""
+}"
+openai/gpt-oss-120b:free,baseline,522-2,True,CWE-522,"[56, 68]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,baseline,798-1,True,CWE-798,"[40, 45]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code correctly handles buffer sizes and OpenSSL API usage without evident memory or logic flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly handles buffer sizes and OpenSSL API usage without evident memory or logic flaws.""
+}"
+openai/gpt-oss-120b:free,baseline,822-1,True,CWE-822,"[5, 20, 24, 27]",True,CWE-590,ptr = input;,True,,True,False,False,wrong_cwe,,,0,,"Assigns an integer to a pointer and later frees it, causing an invalid free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-590"",
+  ""location"": ""ptr = input;"",
+  ""explanation"": ""Assigns an integer to a pointer and later frees it, causing an invalid free.""
+}"
+openai/gpt-oss-120b:free,baseline,253-2,True,CWE-253,"[9, 14, 19, 20]",,,,False,Invalid control character at: line 5 column 106 (char 192),False,False,False,parse_error,,,0,,,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""checkIntPtr usage in main"",
+  ""explanation"": ""Incorrectly checks allocation failure by testing pointer oddness, leading to{NULL} dere
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  0
+
+  } 
+}   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   }   ""}  "
+openai/gpt-oss-120b:free,baseline,362-3,True,CWE-362,"[22, 25]",True,CWE-362,increment_counter: unsynchronized read-modify-write of global counter,True,,True,True,False,,,,0,,"Multiple threads update 'counter' without synchronization, causing a data race and incorrect final value","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-362"",
+  ""location"": ""increment_counter: unsynchronized read-modify-write of global counter"",
+  ""explanation"": ""Multiple threads update 'counter' without synchronization, causing a data race and incorrect final value""
+}"
+openai/gpt-oss-120b:free,baseline,761-5,True,CWE-761,[18],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code only increments a pointer within allocated bounds and does not exhibit undefined behavior or security flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only increments a pointer within allocated bounds and does not exhibit undefined behavior or security flaws.""
+}"
+openai/gpt-oss-120b:free,baseline,22-1,True,CWE-22,"[16, 19]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,baseline,798-5,True,CWE-798,[144],False,,,True,,False,False,False,wrong_binary_label,,,0,,"Input validation restricts characters, preventing SQL injection and buffer overflows.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input validation restricts characters, preventing SQL injection and buffer overflows.""
+}"
+openai/gpt-oss-120b:free,baseline,327-6,True,CWE-327,[22],False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code properly bounds all buffers and uses safe functions, showing no evident memory-safety or injection flaws.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds all buffers and uses safe functions, showing no evident memory-safety or injection flaws.""
+}"
+openai/gpt-oss-120b:free,baseline,78-9,False,CWE-78,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,401-9,False,CWE-401,[],True,CWE-476,function f null pointer dereference after safeFree,True,,False,False,False,wrong_binary_label,,,0,,f dereferences a NULL pointer when swapping pointers after a has been freed and set to NULL,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""function f null pointer dereference after safeFree"",
+  ""explanation"": ""f dereferences a NULL pointer when swapping pointers after a has been freed and set to NULL""
+}"
+openai/gpt-oss-120b:free,baseline,415-3,True,CWE-415,[31],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: 'choices'
+openai/gpt-oss-120b:free,baseline,416-2,True,CWE-416,"[10, 31, 32]",True,CWE-416,printf after negate(p) dereferencing freed or NULL pointer,True,,True,True,False,,,,0,,"The code frees the pointer in negate() and then dereferences it, causing a use‑after‑free or null‑pointer dereference.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""printf after negate(p) dereferencing freed or NULL pointer"",
+  ""explanation"": ""The code frees the pointer in negate() and then dereferences it, causing a use‑after‑free or null‑pointer dereference.""
+}"
+openai/gpt-oss-120b:free,baseline,78-3,True,CWE-78,"[23, 25]",True,CWE-78,command constructed from argv[1] and passed to system(),True,,True,True,False,,,,0,,"User-controlled input is concatenated into a shell command without validation, enabling command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""command constructed from argv[1] and passed to system()"",
+  ""explanation"": ""User-controlled input is concatenated into a shell command without validation, enabling command injection.""
+}"
+openai/gpt-oss-120b:free,baseline,89-3,True,CWE-89,"[121, 122]",True,CWE-89,"sprintf(query, fmtString, argv[1])",True,,True,True,False,,,,0,,"User-controlled input is directly inserted into an SQL query without sanitization, leading to SQL injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-89"",
+  ""location"": ""sprintf(query, fmtString, argv[1])"",
+  ""explanation"": ""User-controlled input is directly inserted into an SQL query without sanitization, leading to SQL injection.""
+}"
+openai/gpt-oss-120b:free,baseline,628-9,False,CWE-628,[],True,CWE-120,url_decode function lacks destination buffer size check,True,,False,False,False,wrong_binary_label,,,0,,"The function copies data into dest without verifying it fits, allowing a buffer overflow if src is longer than the destination array","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""url_decode function lacks destination buffer size check"",
+  ""explanation"": ""The function copies data into dest without verifying it fits, allowing a buffer overflow if src is longer than the destination array""
+}"
+openai/gpt-oss-120b:free,baseline,798-8,False,CWE-798,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,369-10,False,CWE-369,[],False,,,True,,True,True,True,,,,0,,The code contains no exploitable memory or logic vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no exploitable memory or logic vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,baseline,617-3,True,CWE-617,[7],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains a logical error but no security-relevant vulnerability.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains a logical error but no security-relevant vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,89-8,False,CWE-89,[],False,,,True,,True,True,True,,,,0,,"Input is validated to contain only digits before being used in the SQL query, preventing injection and other memory issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input is validated to contain only digits before being used in the SQL query, preventing injection and other memory issues.""
+}"
+openai/gpt-oss-120b:free,baseline,415-7,False,CWE-415,[],False,,,True,,True,True,True,,,,0,,"The code does not contain a memory safety flaw such as use-after-free, double free, or buffer overflow.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain a memory safety flaw such as use-after-free, double free, or buffer overflow.""
+}"
+openai/gpt-oss-120b:free,baseline,674-5,True,CWE-674,"[9, 10]",True,CWE-674,recursivePrintArray recursion condition,True,,True,True,False,,,,0,,"The function never reaches the base case due to modulo indexing, leading to infinite recursion and potential stack overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-674"",
+  ""location"": ""recursivePrintArray recursion condition"",
+  ""explanation"": ""The function never reaches the base case due to modulo indexing, leading to infinite recursion and potential stack overflow.""
+}"
+openai/gpt-oss-120b:free,baseline,843-2,True,CWE-843,"[5, 13]",,,,False,Expecting ':' delimiter: line 1 column 20 (char 19),False,False,False,parse_error,,,0,,,"{""vulnerable':true"",""cwe':'CWE-704"",""location':'call to printNum(&b) in/main','explanation':'Passing a float pointer to a function expecting an int pointer causes undefined behavior due to incorrect type conversion.'} (Oops JSONformat){""vulnerable':true,""cwe':'CWE-704"",""location':'printNum(&b) call in main','explanation':'Passing a float pointer to a function expecting an int pointer causes undefined behavior due to incorrect type conversion.'} (Oops){""vulnerable\"":true,""cwe\"":\""CWE-704"",""location\"":\""printNum(&b) call in main"",""explanation\"":\""Passing a float pointer to a function expecting an int pointer causes undefined behavior due to incorrect type conversion.\""}{""vulnerable\"":true,""cwe\"":\""CWE-704"",""location\"":\""printNum(&b) call in main"",""explanation\"":\""Passing a float pointer to a function expecting an int pointer causes undefined behavior due to incorrect type conversion.\""}"
+openai/gpt-oss-120b:free,baseline,125-10,False,CWE-125,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,baseline,522-6,True,CWE-522,[17],False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code safely reads input with size limits and uses a fixed format string, avoiding typical memory safety issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely reads input with size limits and uses a fixed format string, avoiding typical memory safety issues.""
+}"
+openai/gpt-oss-120b:free,baseline,787-2,True,CWE-787,[7],True,CWE-120,"strcpy(username, ""Is_this_too_long_for_this_array_buffer?"");",True,,True,False,False,wrong_cwe,,,0,,"Copies a string larger than the 10-byte buffer, causing a stack-based buffer overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""strcpy(username, \""Is_this_too_long_for_this_array_buffer?\"");"",
+  ""explanation"": ""Copies a string larger than the 10-byte buffer, causing a stack-based buffer overflow.""
+}"
+openai/gpt-oss-120b:free,baseline,787-10,False,CWE-787,[],False,,,True,,True,True,True,,,,0,,All array accesses stay within the allocated bounds of a[300].,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""All array accesses stay within the allocated bounds of a[300].""
+}"
+openai/gpt-oss-120b:free,baseline,761-8,False,CWE-761,[],False,,,True,,True,True,True,,,,0,,"The code correctly manages memory without out-of-bounds access, double free, or use-after-free.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly manages memory without out-of-bounds access, double free, or use-after-free.""
+}"
+openai/gpt-oss-120b:free,baseline,476-9,False,CWE-476,[],True,CWE-476,"dereferencing result of min() in{printf(""min(%d, %d) = %d\n"", a, b, *min(&a, &b));}",True,,False,False,False,wrong_binary_label,,,0,,"min() can return NULL when values are equal, and the code dereferences it without a null check.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""dereferencing result of min() in{printf(\""min(%d, %d) = %d\\n\"", a, b, *min(&a, &b));}"",
+  ""explanation"": ""min() can return NULL when values are equal, and the code dereferences it without a null check.""
+}"
+openai/gpt-oss-120b:free,baseline,761-1,True,CWE-761,"[15, 19, 22]",,,,False,Extra data: line 6 column 5 (char 227),False,False,False,parse_error,,,0,,,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-761"",
+  ""location"": ""contains_char: freeing pointer after it has been incremented"",
+  ""explanation"": ""The code frees a pointer that no longer points to the start of the allocated{}  }""
+}   ]}  "
+openai/gpt-oss-120b:free,baseline,401-7,False,CWE-401,[],False,,,True,,True,True,True,,,,0,,"The code validates inputs, allocates correct size, and accesses within bounds.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code validates inputs, allocates correct size, and accesses within bounds.""
+}"
+openai/gpt-oss-120b:free,baseline,190-8,False,CWE-190,[],,,,False,Expecting ':' delimiter: line 1 column 23 (char 22),False,False,False,parse_error,,,0,,,"{""vulnerable':,false,""cwe':null,""location':null,""explanation':'The code performs bounds‑checked array accesses and does not contain memory‑corruption bugs such as buffer overflows or use‑after‑free.'}"
+openai/gpt-oss-120b:free,baseline,253-8,False,CWE-253,[],False,,,True,,True,True,True,,,,0,,The code safely bounds input with fgets and does not contain exploitable memory or format string issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds input with fgets and does not contain exploitable memory or format string issues.""
+}"
+openai/gpt-oss-120b:free,baseline,190-7,False,CWE-190,[],False,,,True,,True,True,True,,,,0,,"The code uses fixed-size arrays and proper bounds, with no external input, so no memory safety issues are present.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code uses fixed-size arrays and proper bounds, with no external input, so no memory safety issues are present.""
+}"
+openai/gpt-oss-120b:free,baseline,522-8,False,CWE-522,[],False,,,True,,True,True,True,,,,0,,"snprintf limits the output to the buffer size, preventing overflow.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""snprintf limits the output to the buffer size, preventing overflow.""
+}"
+openai/gpt-oss-120b:free,baseline,125-8,False,CWE-125,[],True,CWE-125,str[MY_SECRET_CHAR] in printf,True,,False,False,False,wrong_binary_label,,,0,,"Index 442 may exceed the string's bounds, causing an out-of-bounds read.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-125"",
+  ""location"": ""str[MY_SECRET_CHAR] in printf"",
+  ""explanation"": ""Index 442 may exceed the string's bounds, causing an out-of-bounds read.""
+}"
+openai/gpt-oss-120b:free,baseline,89-6,True,CWE-89,"[126, 128]",True,CWE-89,"sprintf(query, fmtString, argv[1]);",True,,True,True,False,,,,0,,"User-controlled argv[1] is inserted into SQL query via sprintf without sanitization, enabling SQL injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-89"",
+  ""location"": ""sprintf(query, fmtString, argv[1]);"",
+  ""explanation"": ""User-controlled argv[1] is inserted into SQL query via sprintf without sanitization, enabling SQL injection.""
+}"
+openai/gpt-oss-120b:free,baseline,674-10,False,CWE-674,[],True,CWE-674,fibonacci function recursion,True,,False,False,False,wrong_binary_label,,,0,,Unbounded recursive calls can cause stack overflow for large input values,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-674"",
+  ""location"": ""fibonacci function recursion"",
+  ""explanation"": ""Unbounded recursive calls can cause stack overflow for large input values""
+}"
+openai/gpt-oss-120b:free,baseline,78-4,True,CWE-78,"[11, 12]",True,CWE-78,"snprintf(command, sizeof(command), ""ls -l | head -n %s"", userInput);",True,,True,True,False,,,,0,,"User-controlled input is inserted into a shell command without validation, leading to command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""snprintf(command, sizeof(command), \""ls -l | head -n %s\"", userInput);"",
+  ""explanation"": ""User-controlled input is inserted into a shell command without validation, leading to command injection.""
+}"
+openai/gpt-oss-120b:free,baseline,415-4,True,CWE-415,[13],True,CWE-415,double free of pointer 'a' after first free,True,,True,True,False,,,,0,,"The code frees the same allocated pointer twice, leading to a double-free vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""double free of pointer 'a' after first free"",
+  ""explanation"": ""The code frees the same allocated pointer twice, leading to a double-free vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,674-8,False,CWE-674,[],False,,,True,,True,True,True,,,,0,,The code correctly bounds-checks array access and contains no evident security flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly bounds-checks array access and contains no evident security flaws.""
+}"
+openai/gpt-oss-120b:free,baseline,22-9,False,CWE-22,[],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,522-4,True,CWE-522,"[105, 120]",False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code properly bounds all memory operations and uses safe functions, showing no evident security flaw.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds all memory operations and uses safe functions, showing no evident security flaw.""
+}"
+openai/gpt-oss-120b:free,baseline,617-7,False,CWE-617,[],False,,,True,,True,True,True,,,,0,,The code safely bounds reads and writes and contains no exploitable memory safety flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds reads and writes and contains no exploitable memory safety flaws.""
+}"
+openai/gpt-oss-120b:free,baseline,78-1,True,CWE-78,"[13, 16]",True,CWE-78,system(command) call,True,,True,True,False,,,,0,,"User input is concatenated into a command string without validation, allowing command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""system(command) call"",
+  ""explanation"": ""User input is concatenated into a command string without validation, allowing command injection.""
+}"
+openai/gpt-oss-120b:free,baseline,134-1,True,CWE-134,[9],True,CWE-134,printf(argv[1]);,True,,True,True,False,,,,0,,"User-controlled input is passed as the format string to printf, leading to a format string vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""printf(argv[1]);"",
+  ""explanation"": ""User-controlled input is passed as the format string to printf, leading to a format string vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,835-5,True,CWE-835,"[11, 14]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains no memory safety or undefined behavior issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or undefined behavior issues.""
+}"
+openai/gpt-oss-120b:free,baseline,617-6,True,CWE-617,[10],False,,,True,,False,False,False,wrong_binary_label,,,0,,"The code contains no exploitable memory or logic flaws such as buffer overflows, use-after-free, or unchecked inputs.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no exploitable memory or logic flaws such as buffer overflows, use-after-free, or unchecked inputs.""
+}"
+openai/gpt-oss-120b:free,baseline,835-2,True,CWE-835,[6],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains an infinite loop but no security vulnerability such as memory corruption.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains an infinite loop but no security vulnerability such as memory corruption.""
+}"
+openai/gpt-oss-120b:free,baseline,401-1,True,CWE-401,"[5, 16]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code accesses only allocated indices within bounds and has no obvious security flaw.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code accesses only allocated indices within bounds and has no obvious security flaw.""
+}"
+openai/gpt-oss-120b:free,baseline,369-2,True,CWE-369,[7],,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,843-5,True,CWE-843,"[12, 14, 15]",True,CWE-843,Q_rsqrt: casting float pointer to long pointer for type‑punning,True,,True,True,False,,,,0,,"The code violates strict aliasing by reinterpreting a float as a long via pointer casts, causing undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-843"",
+  ""location"": ""Q_rsqrt: casting float pointer to long pointer for type‑punning"",
+  ""explanation"": ""The code violates strict aliasing by reinterpreting a float as a long via pointer casts, causing undefined behavior.""
+}"
+openai/gpt-oss-120b:free,baseline,770-10,False,CWE-770,[],,,,False,Expecting ':' delimiter: line 1 column 22 (char 21),False,False,False,parse_error,,,0,,,"{""vulnerable':false,""cwe':null,""location':null,""explanation':'The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.'} (Note: JSON keys must be double quotes){""vulnerable':false,""cwe':null,""location':null,""explanation':'The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.'} (Oops){""vulnerable\"":false,\""cwe\"":null,\""location\"":null,\""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""} (Oops){""vulnerable\"":false,""cwe\"":null,""location\"":null,""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""}{""vulnerable\"":false,""cwe\"":null,""location\"":null,""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""} (Oops){""vulnerable\"":false,""cwe\"":null,""location\"":null,""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""} (Oops){""vulnerable\"":false,""cwe\"":null,""location\"":null,""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""} (Note: This is the final answer.){""vulnerable\"":false,""cwe\"":null,""location\"":null,""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""} (Note: This is the final answer.){""vulnerable\"":false,""cwe\"":null,""location\"":null,""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""} (Note: This is the final answer.){""vulnerable\"":false,""cwe\"":null,""location\"":null,""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""} (Note: This is the final answer.){""vulnerable\"":false,""cwe\"":null,""location\"":null,""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""} (Note: This is the final answer.)  {""vulnerable\"":false,""cwe\"":null,""location\"":null,""explanation\"":\""The code correctly limits recv to the allocated buffer size and frees memory, showing no evident vulnerability.\""}   (Note: This is the final answer.)  "
+openai/gpt-oss-120b:free,baseline,22-10,False,CWE-22,[],False,,,True,,True,True,True,,,,0,,"The code does not contain buffer overflows, format string issues, or unsafe memory accesses.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain buffer overflows, format string issues, or unsafe memory accesses.""
+}"
+openai/gpt-oss-120b:free,baseline,822-9,False,CWE-822,[],False,,,True,,True,True,True,,,,0,,"The code correctly allocates, uses, and frees memory without any out-of-bounds or use-after-free errors.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly allocates, uses, and frees memory without any out-of-bounds or use-after-free errors.""
+}"
+openai/gpt-oss-120b:free,baseline,835-4,True,CWE-835,"[6, 8]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains a logical infinite loop but no memory safety or security flaw.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains a logical infinite loop but no memory safety or security flaw.""
+}"
+openai/gpt-oss-120b:free,baseline,134-9,False,CWE-134,[],False,,,True,,True,True,True,,,,0,,"snprintf limits output to buffer size, preventing overflow and there is no format string vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""snprintf limits output to buffer size, preventing overflow and there is no format string vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,401-5,True,CWE-401,"[22, 39]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code does not contain any memory safety or other security flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain any memory safety or other security flaws.""
+}"
+openai/gpt-oss-120b:free,baseline,362-10,False,CWE-362,[],False,,,True,,True,True,True,,,,0,,The code has a race condition but no memory safety or security flaw such as buffer overflow or use-after-free.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code has a race condition but no memory safety or security flaw such as buffer overflow or use-after-free.""
+}"
+openai/gpt-oss-120b:free,baseline,369-1,True,CWE-369,[10],True,CWE-369,int test = 17 / (hello+20+b);,True,,True,True,False,,,,0,,"The divisor can evaluate to zero, causing a divide‑by‑zero error.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-369"",
+  ""location"": ""int test = 17 / (hello+20+b);"",
+  ""explanation"": ""The divisor can evaluate to zero, causing a divide‑by‑zero error.""
+}"
+openai/gpt-oss-120b:free,baseline,134-5,True,CWE-134,"[6, 7]",True,CWE-134,"snprintf(buffer, sizeof(buffer), argv[1])",True,,True,True,False,,,,0,,"User-supplied argv[1] is used as the format string, leading to an uncontrolled format string vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""snprintf(buffer, sizeof(buffer), argv[1])"",
+  ""explanation"": ""User-supplied argv[1] is used as the format string, leading to an uncontrolled format string vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,476-10,False,CWE-476,[],False,,,True,,True,True,True,,,,0,,"The code correctly checks malloc result and frees allocated memory, no evident vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly checks malloc result and frees allocated memory, no evident vulnerability.""
+}"
+openai/gpt-oss-120b:free,baseline,22-2,True,CWE-22,"[8, 20, 29]",,,,False,Expecting ':' delimiter: line 1 column 21 (char 20),False,False,False,parse_error,,,0,,,"{""vulnerable':true,""cwe':'CWE-22"",""location':'validatePath always returns true allowing path traversal','explanation':'The stub validatePath does not actually restrict the constructed path, enabling directory traversal attacks'}]"
+openai/gpt-oss-120b:free,baseline,327-3,True,CWE-327,"[16, 19, 28]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,822-5,True,CWE-822,"[16, 21, 25, 31]",,,,False,no JSON object found,False,False,False,parse_error,,,0,,,
+openai/gpt-oss-120b:free,baseline,761-4,True,CWE-761,[30],True,CWE-761,free(a) after swapping pointers,True,,True,True,False,,,,0,,"The pointer passed to free is not the original malloc address due to pointer swap, leading to undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-761"",
+  ""location"": ""free(a) after swapping pointers"",
+  ""explanation"": ""The pointer passed to free is not the original malloc address due to pointer swap, leading to undefined behavior.""
+}"
+openai/gpt-oss-120b:free,baseline,190-6,True,CWE-190,[6],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code only performs floating-point arithmetic and comparisons without any memory safety issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only performs floating-point arithmetic and comparisons without any memory safety issues.""
+}"
+openai/gpt-oss-120b:free,baseline,134-4,True,CWE-134,"[6, 21, 23]",True,CWE-134,logger function uses printf(msg) without format string,True,,True,True,False,,,,0,,Passing user-controlled input directly to printf allows a format string attack,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""logger function uses printf(msg) without format string"",
+  ""explanation"": ""Passing user-controlled input directly to printf allows a format string attack""
+}"
+openai/gpt-oss-120b:free,baseline,369-5,True,CWE-369,[11],True,CWE-369,"division by i in loop, i can be zero",True,,True,True,False,,,,0,,"The loop iterates i down to 0, causing a division by zero when i equals 0","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-369"",
+  ""location"": ""division by i in loop, i can be zero"",
+  ""explanation"": ""The loop iterates i down to 0, causing a division by zero when i equals 0""
+}"
+openai/gpt-oss-120b:free,baseline,628-3,True,CWE-628,[36],True,CWE-190,result = (result * base) % mod; and base = (base * base) % mod; in power_mod,True,,True,False,False,wrong_cwe,,,0,,"Multiplying two long long values can overflow before the modulo, causing undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-190"",
+  ""location"": ""result = (result * base) % mod; and base = (base * base) % mod; in power_mod"",
+  ""explanation"": ""Multiplying two long long values can overflow before the modulo, causing undefined behavior.""
+}"
+openai/gpt-oss-120b:free,baseline,362-8,False,CWE-362,[],True,CWE-758,signal_handler uses pthread_mutex_lock,True,,False,False,False,wrong_binary_label,,,0,,Calling non-async-signal-safe functions like pthread_mutex_lock inside a signal handler can cause undefined behavior and deadlocks.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-758"",
+  ""location"": ""signal_handler uses pthread_mutex_lock"",
+  ""explanation"": ""Calling non-async-signal-safe functions like pthread_mutex_lock inside a signal handler can cause undefined behavior and deadlocks.""
+}"
+openai/gpt-oss-120b:free,baseline,822-3,True,CWE-822,"[15, 26, 28, 30]",True,CWE-761,ptr += number; then dereference and free(ptr),True,,True,False,False,wrong_cwe,,,0,,"Pointer is offset beyond the allocated block, leading to out-of-bounds access and freeing a non-starting address.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-761"",
+  ""location"": ""ptr += number; then dereference and free(ptr)"",
+  ""explanation"": ""Pointer is offset beyond the allocated block, leading to out-of-bounds access and freeing a non-starting address.""
+}"
+openai/gpt-oss-120b:free,baseline,362-6,True,CWE-362,"[14, 16, 25]",True,CWE-362,signal_flag accessed in signal_sequencer without synchronization,True,,True,True,False,,,,0,,Concurrent unsynchronized reads/writes to signal_flag cause a data race leading to undefined behavior,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-362"",
+  ""location"": ""signal_flag accessed in signal_sequencer without synchronization"",
+  ""explanation"": ""Concurrent unsynchronized reads/writes to signal_flag cause a data race leading to undefined behavior""
+}"
+openai/gpt-oss-120b:free,baseline,522-10,False,CWE-522,[],False,,,True,,True,True,True,,,,0,,"Uses prepared statements with bound parameters, preventing injection and no obvious memory safety issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Uses prepared statements with bound parameters, preventing injection and no obvious memory safety issues.""
+}"
+openai/gpt-oss-120b:free,baseline,674-6,True,CWE-674,"[5, 8, 9]",True,CWE-121,sumArray function recursion,True,,True,False,False,wrong_cwe,,,0,,"The function lacks a proper termination condition, causing infinite recursion and potential stack overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-121"",
+  ""location"": ""sumArray function recursion"",
+  ""explanation"": ""The function lacks a proper termination condition, causing infinite recursion and potential stack overflow.""
+}"
+openai/gpt-oss-120b:free,baseline,770-5,True,CWE-770,[26],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code contains no exploitable memory or resource handling flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no exploitable memory or resource handling flaws.""
+}"
+openai/gpt-oss-120b:free,baseline,835-7,False,CWE-835,[],False,,,True,,True,True,True,,,,0,,The program contains no unsafe operations or exploitable behavior.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program contains no unsafe operations or exploitable behavior.""
+}"
+openai/gpt-oss-120b:free,baseline,798-2,True,CWE-798,[10],False,,,True,,False,False,False,wrong_binary_label,,,0,,The code safely reads input with fgets into a properly sized buffer and performs a straightforward string comparison.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely reads input with fgets into a properly sized buffer and performs a straightforward string comparison.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,78-6,True,CWE-78,[29],True,CWE-78,validation loop before system() call in main,True,,True,True,False,,False,baseline_has_cwe,25,0.6511532858210712,Insufficient input sanitization allows command injection despite simple character checks,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""validation loop before system() call in main"",
+  ""explanation"": ""Insufficient input sanitization allows command injection despite simple character checks""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,674-2,True,CWE-674,[9],True,CWE-121,countdown function recursion,True,,True,False,False,wrong_cwe,False,baseline_has_cwe,25,0.1982110223770435,"Recursive call uses i-- causing the same value to be passed, leading to infinite recursion and stack overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-121"",
+  ""location"": ""countdown function recursion"",
+  ""explanation"": ""Recursive call uses i-- causing the same value to be passed, leading to infinite recursion and stack overflow.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,476-4,True,CWE-476,[51],True,CWE-416,printAndFree function loop,True,,True,False,False,wrong_cwe,False,baseline_has_cwe,25,0.21913616975218403,"Frees a node then dereferences its next pointer, causing use‑after‑free and possible null pointer access.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""printAndFree function loop"",
+  ""explanation"": ""Frees a node then dereferences its next pointer, causing use‑after‑free and possible null pointer access.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,416-1,True,CWE-416,[20],True,CWE-416,"square function frees pointer, then main dereferences it",True,,True,True,False,,True,cwe_recheck,25,0.9316111587009612,"The pointer is freed in square() and later accessed in main, causing a use-after-free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""square function frees pointer, then main dereferences it"",
+  ""explanation"": ""The pointer is freed in square() and later accessed in main, causing a use-after-free.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,327-2,True,CWE-327,"[11, 26, 34, 40, 46]",True,CWE-327,Macro EVP_sha_256 redefined as EVP_md5,True,,True,True,False,,False,baseline_has_cwe,25,1.0,"The code substitutes SHA-256 with MD5, using a weak cryptographic hash for password storage.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-327"",
+  ""location"": ""Macro EVP_sha_256 redefined as EVP_md5"",
+  ""explanation"": ""The code substitutes SHA-256 with MD5, using a weak cryptographic hash for password storage.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,822-2,True,CWE-822,"[5, 6, 24, 27]",True,CWE-590,ptr = arr[1]; and free(ptr);,True,,True,False,False,wrong_cwe,True,applied,25,0.39868799978636826,"An integer is assigned to a pointer, leading to dereference and free of an invalid address.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-590"",
+  ""location"": ""ptr = arr[1]; and free(ptr);"",
+  ""explanation"": ""An integer is assigned to a pointer, leading to dereference and free of an invalid address.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,415-1,True,CWE-415,[22],True,CWE-415,double free of pointer 'a' in square() and main(),True,,True,True,False,,False,baseline_has_cwe,25,0.8849724017121281,"The pointer allocated in main is freed inside square() and then freed again in main, causing a double free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""double free of pointer 'a' in square() and main()"",
+  ""explanation"": ""The pointer allocated in main is freed inside square() and then freed again in main, causing a double free.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,401-6,True,CWE-401,"[22, 39]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.9487773823109271,"The code correctly handles memory allocation, deallocation, and pointer swapping without dereferencing freed pointers.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly handles memory allocation, deallocation, and pointer swapping without dereferencing freed pointers.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,674-1,True,CWE-674,[5],True,CWE-674,print function recursion,True,,True,True,False,,True,cwe_recheck,25,0.5358190662550443,"Binary decision preserved from baseline. The function calls itself unconditionally, causing infinite recursion and a stack overflow.","{""vulnerable"":true,""cwe"":""CWE-674"",""location"":""print function recursion"",""explanation"":""The function calls itself unconditionally, causing infinite recursion and a stack overflow.""}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,770-1,True,CWE-770,[68],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.5621849660141263,"The code properly bounds reads and null-terminates the buffer, avoiding overflow or other common C vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds reads and null-terminates the buffer, avoiding overflow or other common C vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,843-8,False,CWE-843,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.4791066538671773,The code only performs a harmless implicit conversion from float to int when calling printNum.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only performs a harmless implicit conversion from float to int when calling printNum.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,134-7,False,CWE-134,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.6211533451554616,"The program uses a fixed format string with printf, avoiding format string vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program uses a fixed format string with printf, avoiding format string vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,617-5,True,CWE-617,[8],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.9662667945147331,The code contains no memory safety or logic vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or logic vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,628-5,True,CWE-628,"[23, 27, 32, 36, 41, 48]",True,CWE-120,url_decode function lacks bounds checking on dest,True,,True,False,False,wrong_cwe,True,applied,25,0.9958679700859686,"The decoder writes to dest without verifying the buffer size, allowing potential overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""url_decode function lacks bounds checking on dest"",
+  ""explanation"": ""The decoder writes to dest without verifying the buffer size, allowing potential overflow.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,822-10,False,CWE-822,[],False,,,True,,True,True,True,,True,applied,25,0.9886785795321067,"The code properly bounds reads, null-terminates the buffer, and does not contain unsafe memory or logic errors.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds reads, null-terminates the buffer, and does not contain unsafe memory or logic errors.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,401-2,True,CWE-401,"[14, 15, 22, 36]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.4109849467994475,The code validates inputs and uses proper memory allocation without out-of-bounds access.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code validates inputs and uses proper memory allocation without out-of-bounds access.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,761-9,False,CWE-761,[],False,,,True,,True,True,True,,True,applied,25,0.7958076297508323,"The program correctly frees the allocated memory without double free, use-after-free, or out-of-bounds access.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program correctly frees the allocated memory without double free, use-after-free, or out-of-bounds access.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,327-7,False,CWE-327,[],True,CWE-120,saltedPassword buffer handling with strncpy/strncat,True,,False,False,False,wrong_binary_label,True,cwe_recheck,25,1.0,"Binary decision preserved from baseline. strncpy may leave saltedPassword without null terminator, causing strncat to write past the 65‑byte buffer","{""vulnerable"":true,""cwe"":""CWE-120"",""location"":""saltedPassword buffer handling with strncpy/strncat"",""explanation"":""strncpy may leave saltedPassword without null terminator, causing strncat to write past the 65‑byte buffer""}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,253-6,True,CWE-253,"[5, 9, 16]",True,CWE-690,if (file == FILE_OPEN_ERROR) check after fopen,True,,True,False,False,wrong_cwe,True,cwe_recheck,25,0.5628814828867952,"Binary decision preserved from baseline. The code compares fopen's return to -1 instead of NULL, so a failed open can lead to NULL pointer dereference.","{""vulnerable"":true,""cwe"":""CWE-690"",""location"":""if (file == FILE_OPEN_ERROR) check after fopen"",""explanation"":""The code compares fopen's return to -1 instead of NULL, so a failed open can lead to NULL pointer dereference.""}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,843-9,False,CWE-843,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.42804564691861036,"The code only performs safe type conversions and prints a value, with no memory safety or other security issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only performs safe type conversions and prints a value, with no memory safety or other security issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,617-1,True,CWE-617,[28],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.19557834988692538,The code contains logical errors but no memory safety or security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains logical errors but no memory safety or security vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,89-9,False,CWE-89,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.48389127414853883,"The code properly escapes input and allocates sufficient buffer space before using sprintf, avoiding injection and overflow vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly escapes input and allocates sufficient buffer space before using sprintf, avoiding injection and overflow vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,415-6,True,CWE-415,[32],True,CWE-415,double free: cleanup() frees ptr then main() frees same pointer,True,,True,True,False,,True,cwe_recheck,25,0.38241192093228454,"Binary decision preserved from baseline. Memory is freed in cleanup() and then freed again in main(), causing a double free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""double free: cleanup() frees ptr then main() frees same pointer"",
+  ""explanation"": ""Memory is freed in cleanup() and then freed again in main(), causing a double free.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,787-5,True,CWE-787,[51],True,CWE-120,"scanf(""%s"", str2) without length limit",True,,True,False,False,wrong_cwe,False,baseline_has_cwe,25,0.2937428257041884,Unbounded %s input can overflow the 20‑byte str2 buffer,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""scanf(\""%s\"", str2) without length limit"",
+  ""explanation"": ""Unbounded %s input can overflow the 20‑byte str2 buffer""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,617-10,False,CWE-617,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.9814195721242074,"The code safely bounds reads and writes to fixed-size buffers, avoiding overflow or other classic memory safety issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds reads and writes to fixed-size buffers, avoiding overflow or other classic memory safety issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,362-5,True,CWE-362,"[8, 15, 19]",True,CWE-362,write_to_file function concurrent writes to logs.txt,True,,True,True,False,,False,baseline_has_cwe,25,0.7239223225667352,"Multiple threads write to the same file without synchronization, causing a race condition.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-362"",
+  ""location"": ""write_to_file function concurrent writes to logs.txt"",
+  ""explanation"": ""Multiple threads write to the same file without synchronization, causing a race condition.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,327-10,False,CWE-327,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.35028575866654893,"The code properly bounds all buffers and uses safe library calls, showing no evident memory safety issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds all buffers and uses safe library calls, showing no evident memory safety issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,190-1,True,CWE-190,[6],False,,,True,,False,False,False,wrong_binary_label,True,applied,25,0.27981107937759647,"The program performs only integer arithmetic and printing, with no unsafe memory or resource handling.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program performs only integer arithmetic and printing, with no unsafe memory or resource handling.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,770-9,False,CWE-770,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.7725927629508793,"All inputs are bounded and memory allocations are size-checked, preventing buffer overflows or other typical C vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""All inputs are bounded and memory allocations are size-checked, preventing buffer overflows or other typical C vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,253-7,False,CWE-253,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.6752592342109887,The code correctly checks malloc result and frees memory without any unsafe operations.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly checks malloc result and frees memory without any unsafe operations.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,628-6,True,CWE-628,[53],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.5710925549600308,The code contains no memory safety or other security flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or other security flaws.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,798-10,False,CWE-798,[],True,CWE-259,const char *googleMapsApiKey = ...,True,,False,False,False,wrong_binary_label,False,low_similarity,25,0.1487397131309246,"The API key is hardcoded in the source, exposing a secret credential.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-259"",
+  ""location"": ""const char *googleMapsApiKey = ..."",
+  ""explanation"": ""The API key is hardcoded in the source, exposing a secret credential.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,22-5,True,CWE-22,"[8, 28]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.5958149309831213,The code safely bounds input with fgets and does not contain exploitable memory or format string issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds input with fgets and does not contain exploitable memory or format string issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,415-10,False,CWE-415,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.7539360336068083,"The program correctly checks allocation, uses the memory, and frees it without any unsafe operations.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program correctly checks allocation, uses the memory, and frees it without any unsafe operations.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,770-2,True,CWE-770,"[30, 37]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.6398943126015438,"The code validates all system calls and does not contain buffer overflows, injection, or other typical C vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code validates all system calls and does not contain buffer overflows, injection, or other typical C vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,369-9,False,CWE-369,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.29478351478039355,The program only performs a safe floating-point calculation and prints it with a constant format string.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program only performs a safe floating-point calculation and prints it with a constant format string.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,253-4,True,CWE-253,[11],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.4787404604425376,"The snprintf size calculation ensures the buffer is not overflowed, so no vulnerability is present.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The snprintf size calculation ensures the buffer is not overflowed, so no vulnerability is present.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,628-10,False,CWE-628,[],,,,False,no JSON object found,False,False,False,parse_error,True,applied,25,0.9969875284449896,,
+openai/gpt-oss-120b:free,errorlock_rag_gated,787-6,True,CWE-787,"[10, 17]",True,CWE-119,"fillArray(a, sizeof(a) / sizeof(float), mySin);",True,,True,False,False,wrong_cwe,False,baseline_has_cwe,25,0.4171129088120704,"Using sizeof(float) instead of sizeof(double) doubles the element count, causing out-of-bounds writes to array a.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-119"",
+  ""location"": ""fillArray(a, sizeof(a) / sizeof(float), mySin);"",
+  ""explanation"": ""Using sizeof(float) instead of sizeof(double) doubles the element count, causing out-of-bounds writes to array a.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,125-2,True,CWE-125,[8],True,CWE-125,second loop reading nondet[i] up to 40000,True,,True,True,False,,False,baseline_has_cwe,25,0.22362331336575508,"The loop accesses indices beyond the allocated array size, causing an out-of-bounds read.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-125"",
+  ""location"": ""second loop reading nondet[i] up to 40000"",
+  ""explanation"": ""The loop accesses indices beyond the allocated array size, causing an out-of-bounds read.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,835-6,True,CWE-835,[13],False,,,True,,False,False,False,wrong_binary_label,True,applied,25,0.24229899616371647,"The code contains no memory or security flaws, only a harmless infinite loop.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory or security flaws, only a harmless infinite loop.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,476-5,True,CWE-476,[10],,,,False,Invalid control character at: line 1 column 60 (char 59),False,False,False,parse_error,False,low_similarity,25,0.15489499970765908,,"{""vulnerable\"":true,\""cwe\"":\""CWE-476\"",\""location\"":\""dere
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"",""explanation"":""The pointer returned by generateAlwaysNon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"",""explanation"":""Dereferencing pointer a without checking for NULL can cause a null pointer dereference vulnerability.""}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,522-5,True,CWE-522,[13],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.36299274546609683,"The code safely reads a string with a bounded format specifier, avoiding buffer overflow or other common C vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely reads a string with a bounded format specifier, avoiding buffer overflow or other common C vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,78-8,False,CWE-78,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.6520957884462856,"The code safely bounds input and checks characters, and no buffer overflow or injection can occur.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds input and checks characters, and no buffer overflow or injection can occur.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,125-6,True,CWE-125,"[41, 50]",True,CWE-787,main loop iterating to 99 entries,True,,True,False,False,wrong_cwe,False,low_similarity,25,0.16552257409083368,"The loop accesses beyond the allocated 9-element array, causing out-of-bounds memory access.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-787"",
+  ""location"": ""main loop iterating to 99 entries"",
+  ""explanation"": ""The loop accesses beyond the allocated 9-element array, causing out-of-bounds memory access.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,134-2,True,CWE-134,[9],True,CWE-134,printf(buffer);,True,,True,True,False,,True,cwe_recheck,25,0.35750382048925017,"Binary decision preserved from baseline. User input is used as the format string in printf, causing a format string vulnerability.","{""vulnerable"":true,""cwe"":""CWE-134"",""location"":""printf(buffer);"",""explanation"":""User input is used as the format string in printf, causing a format string vulnerability.""}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,416-8,False,CWE-416,[],True,CWE-416,Use-after-free when accessing pointer a after it has been freed,True,,False,False,False,wrong_binary_label,False,near_duplicate_false_positive,25,1.0,"The program frees 'a' then later dereferences it via f(&a, &b) and *a = 3, leading to use-after-free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""Use-after-free when accessing pointer a after it has been freed"",
+  ""explanation"": ""The program frees 'a' then later dereferences it via f(&a, &b) and *a = 3, leading to use-after-free.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,416-10,False,CWE-416,[],True,CWE-415,free(a) after swap,True,,False,False,False,wrong_binary_label,False,baseline_has_cwe,25,0.9837045172590535,The program frees the same heap block twice due to swapping pointers that reference already freed memory.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""free(a) after swap"",
+  ""explanation"": ""The program frees the same heap block twice due to swapping pointers that reference already freed memory.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,770-4,True,CWE-770,[34],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.9608887464774425,"The code correctly resizes the buffer before writing beyond the allocated size, preventing overflow.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly resizes the buffer before writing beyond the allocated size, preventing overflow.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,190-5,True,CWE-190,[13],True,CWE-190,e *= e inside the for loop,True,,True,True,False,,False,baseline_has_cwe,25,0.3484537866200449,"Multiplying e by itself can overflow a 32-bit int, causing undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-190"",
+  ""location"": ""e *= e inside the for loop"",
+  ""explanation"": ""Multiplying e by itself can overflow a 32-bit int, causing undefined behavior.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,327-4,True,CWE-327,[65],True,CWE-327,EVP_PKEY_CTX_set_rsa_padding with RSA_NO_PADDING,True,,True,True,False,,False,baseline_has_cwe,25,1.0,Disabling RSA padding makes encryption deterministic and vulnerable to attacks.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-327"",
+  ""location"": ""EVP_PKEY_CTX_set_rsa_padding with RSA_NO_PADDING"",
+  ""explanation"": ""Disabling RSA padding makes encryption deterministic and vulnerable to attacks.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,253-5,True,CWE-253,"[8, 15]",True,CWE-476,readFile: fopen error check uses -1 instead of NULL,True,,True,False,False,wrong_cwe,True,cwe_recheck,25,0.5909257007508655,"Binary decision preserved from baseline. The code checks fopen return against -1, so a NULL file pointer may be used, causing a null pointer dereference.","{""vulnerable"":true,""cwe"":""CWE-476"",""location"":""readFile: fopen error check uses -1 instead of NULL"",""explanation"":""The code checks fopen return against -1, so a NULL file pointer may be used, causing a null pointer dereference.""}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,835-9,False,CWE-835,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.2178808307914489,The code contains no memory safety or undefined behavior issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or undefined behavior issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,89-5,True,CWE-89,"[55, 58]",True,CWE-89,"snprintf(sql, sizeof(sql), ""SELECT * FROM tokens WHERE id = %s"", id)",True,,True,True,False,,True,cwe_recheck,25,0.9341277416605747,"User input is concatenated into SQL without proper escaping or parameterization, enabling injection","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-89"",
+  ""location"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM tokens WHERE id = %s\"", id)"",
+  ""explanation"": ""User input is concatenated into SQL without proper escaping or parameterization, enabling injection""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,125-1,True,CWE-125,[7],True,CWE-125,for loop with i<=5 accessing array[5],True,,True,True,False,,True,applied,25,0.35075583804999044,"The loop iterates one element beyond the array bounds, causing an out-of-bounds read.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-125"",
+  ""location"": ""for loop with i<=5 accessing array[5]"",
+  ""explanation"": ""The loop iterates one element beyond the array bounds, causing an out-of-bounds read.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,22-4,True,CWE-22,"[46, 66, 70]",True,CWE-22,"isValidPath allows "".."" enabling directory traversal",True,,True,True,False,,False,baseline_has_cwe,25,0.5304462153359567,"Path validation permits '..' sequences, allowing access to files outside the intended directory","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""isValidPath allows \""..\"" enabling directory traversal"",
+  ""explanation"": ""Path validation permits '..' sequences, allowing access to files outside the intended directory""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,416-5,True,CWE-416,"[5, 7, 23]",True,CWE-415,doCalcWithoutFree(p) double free of same pointer,True,,True,False,False,wrong_cwe,True,applied,25,0.4649013533575097,The same allocated pointer is freed twice via consecutive calls to doCalcWithoutFree,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""doCalcWithoutFree(p) double free of same pointer"",
+  ""explanation"": ""The same allocated pointer is freed twice via consecutive calls to doCalcWithoutFree""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,761-6,True,CWE-761,"[15, 18]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.35782238492210444,The code contains no memory safety or undefined behavior issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or undefined behavior issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,416-4,True,CWE-416,[34],True,CWE-416,"printf after f(&a, &b) uses *b",True,,True,True,False,,False,near_duplicate_false_positive,25,1.0,"The pointer b is swapped to reference memory that was freed earlier, leading to a use‑after‑free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""printf after f(&a, &b) uses *b"",
+  ""explanation"": ""The pointer b is swapped to reference memory that was freed earlier, leading to a use‑after‑free.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,369-4,True,CWE-369,[20],True,CWE-369,"printf(""Value now: %d\n"", input / rand);",True,,True,True,False,,False,baseline_has_cwe,25,0.35351291559632697,"rand can become zero, causing a divide‑by‑zero error.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-369"",
+  ""location"": ""printf(\""Value now: %d\\n\"", input / rand);"",
+  ""explanation"": ""rand can become zero, causing a divide‑by‑zero error.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,628-2,True,CWE-628,[18],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.30014801334675567,The code performs simple integer comparisons without any unsafe operations.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code performs simple integer comparisons without any unsafe operations.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,798-6,True,CWE-798,[54],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.8723542673986028,The code contains a logic error in password verification but no memory safety or exploitable vulnerability.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains a logic error in password verification but no memory safety or exploitable vulnerability.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,476-2,True,CWE-476,"[7, 9, 13]",False,,,True,,False,False,False,wrong_binary_label,True,applied,25,0.3554890796846485,"The program correctly checks allocation, uses bounded input, and frees memory without further use.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program correctly checks allocation, uses bounded input, and frees memory without further use.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,190-4,True,CWE-190,[8],True,CWE-190,printf of n * 10 + 8,True,,True,True,False,,True,cwe_recheck,25,0.3515768575107828,"Binary decision preserved from baseline. Signed integer overflow occurs when computing n * 10 + 8, exceeding INT_MAX.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-190"",
+  ""location"": ""printf of n * 10 + 8"",
+  ""explanation"": ""Signed integer overflow occurs when computing n * 10 + 8, exceeding INT_MAX.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,843-3,True,CWE-843,"[6, 11]",,,,False,no JSON object found,False,False,False,parse_error,True,applied,25,0.2582671520196336,,
+openai/gpt-oss-120b:free,errorlock_rag_gated,89-4,True,CWE-89,"[123, 125]",True,CWE-89,"sprintf(query, fmtString, argv[i])",True,,True,True,False,,True,applied,25,0.5250767866984907,"User input is directly formatted into an SQL query without sanitization, enabling SQL injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-89"",
+  ""location"": ""sprintf(query, fmtString, argv[i])"",
+  ""explanation"": ""User input is directly formatted into an SQL query without sanitization, enabling SQL injection.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,125-4,True,CWE-125,[13],True,CWE-125,second for loop accesses a[i] with i ranging below 0,True,,True,True,False,,True,applied,25,0.29090772152925465,"Loop iterates past the start of the array, causing out-of-bounds reads.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-125"",
+  ""location"": ""second for loop accesses a[i] with i ranging below 0"",
+  ""explanation"": ""Loop iterates past the start of the array, causing out-of-bounds reads.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,787-4,True,CWE-787,[14],True,CWE-120,"fscanf(stdin, ""%s"", string_2)",True,,True,False,False,wrong_cwe,False,baseline_has_cwe,25,0.2710744616248523,Unbounded %s format specifier can overflow string_2,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""fscanf(stdin, \""%s\"", string_2)"",
+  ""explanation"": ""Unbounded %s format specifier can overflow string_2""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,476-6,True,CWE-476,[35],True,CWE-476,dereferencing result.p in main when fibonacci returns NULL,True,,True,True,False,,False,baseline_has_cwe,25,0.2063032622469448,"fibonacci may return a NULL pointer for non‑positive input, which is then dereferenced, causing a null pointer dereference.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""dereferencing result.p in main when fibonacci returns NULL"",
+  ""explanation"": ""fibonacci may return a NULL pointer for non‑positive input, which is then dereferenced, causing a null pointer dereference.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,787-8,False,CWE-787,[],,,,False,Expecting ':' delimiter: line 1 column 22 (char 21),False,False,False,parse_error,True,applied,25,0.3582548845587936,,"{""vulnerable':false,""cwe':null,""location':null,""explanation':'The program correctly allocates, uses, and frees memory without out-of-bounds or use-after-free errors.'}""}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,362-4,True,CWE-362,[8],True,CWE-362,increment function: counter++,True,,True,True,False,,False,baseline_has_cwe,25,0.9307695127560102,"Concurrent threads modify shared counter without synchronization, causing a race condition.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-362"",
+  ""location"": ""increment function: counter++"",
+  ""explanation"": ""Concurrent threads modify shared counter without synchronization, causing a race condition.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,843-1,True,CWE-843,"[15, 25]",True,CWE-124,printInfo function,True,,True,False,False,wrong_cwe,False,low_similarity,25,0.12692227272335077,"The function treats any void* as a Person and prints a name field, causing out-of-bounds reads when a Product is passed.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-124"",
+  ""location"": ""printInfo function"",
+  ""explanation"": ""The function treats any void* as a Person and prints a name field, causing out-of-bounds reads when a Product is passed.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,522-2,True,CWE-522,"[56, 68]",False,,,True,,False,False,False,wrong_binary_label,True,applied,25,0.8829164105058316,"The code validates inputs and uses prepared statements with bound parameters, avoiding injection and memory safety issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code validates inputs and uses prepared statements with bound parameters, avoiding injection and memory safety issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,798-1,True,CWE-798,"[40, 45]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.7422640877611244,The code correctly handles buffer sizes and OpenSSL API usage without evident memory or logic flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly handles buffer sizes and OpenSSL API usage without evident memory or logic flaws.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,822-1,True,CWE-822,"[5, 20, 24, 27]",True,CWE-590,ptr = input;,True,,True,False,False,wrong_cwe,False,baseline_has_cwe,25,0.30823635861958676,"Assigns an integer to a pointer and later frees it, causing an invalid free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-590"",
+  ""location"": ""ptr = input;"",
+  ""explanation"": ""Assigns an integer to a pointer and later frees it, causing an invalid free.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,253-2,True,CWE-253,"[9, 14, 19, 20]",False,,,True,,False,False,False,wrong_binary_label,True,applied,25,0.5186966206481114,The code only mischecks allocation but does not cause a memory safety flaw.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only mischecks allocation but does not cause a memory safety flaw.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,362-3,True,CWE-362,"[22, 25]",True,CWE-362,increment_counter: unsynchronized read-modify-write of global counter,True,,True,True,False,,False,baseline_has_cwe,25,0.6977498280364304,"Multiple threads update 'counter' without synchronization, causing a data race and incorrect final value","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-362"",
+  ""location"": ""increment_counter: unsynchronized read-modify-write of global counter"",
+  ""explanation"": ""Multiple threads update 'counter' without synchronization, causing a data race and incorrect final value""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,761-5,True,CWE-761,[18],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.3772453806957523,The code only increments a pointer within allocated bounds and does not exhibit undefined behavior or security flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only increments a pointer within allocated bounds and does not exhibit undefined behavior or security flaws.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,22-1,True,CWE-22,"[16, 19]",True,CWE-22,snprintf/fopen path concatenation without validation,True,,True,True,False,,True,applied,25,0.37443977764064273,"User-controlled filename is concatenated to a fixed directory and opened, allowing directory traversal attacks","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""snprintf/fopen path concatenation without validation"",
+  ""explanation"": ""User-controlled filename is concatenated to a fixed directory and opened, allowing directory traversal attacks""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,798-5,True,CWE-798,[144],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.8374395911956202,"Input validation restricts characters, preventing SQL injection and buffer overflows.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input validation restricts characters, preventing SQL injection and buffer overflows.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,327-6,True,CWE-327,[22],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.3519526215537373,"The code properly bounds all buffers and uses safe functions, showing no evident memory-safety or injection flaws.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds all buffers and uses safe functions, showing no evident memory-safety or injection flaws.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,78-9,False,CWE-78,[],False,,,True,,True,True,True,,True,applied,25,0.3373665874383989,"Input is restricted to alphanumeric characters before being used in system(), preventing command injection.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input is restricted to alphanumeric characters before being used in system(), preventing command injection.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,401-9,False,CWE-401,[],True,CWE-476,function f null pointer dereference after safeFree,True,,False,False,False,wrong_binary_label,False,near_duplicate_false_positive,25,0.9694914524795619,f dereferences a NULL pointer when swapping pointers after a has been freed and set to NULL,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""function f null pointer dereference after safeFree"",
+  ""explanation"": ""f dereferences a NULL pointer when swapping pointers after a has been freed and set to NULL""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,415-3,True,CWE-415,[31],True,CWE-416,free(p) after swapping a freed pointer,True,,True,False,False,wrong_cwe,True,applied,25,0.9348835420907974,"The pointer freed in square() is later swapped and freed again, causing a double/invalid free.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""free(p) after swapping a freed pointer"",
+  ""explanation"": ""The pointer freed in square() is later swapped and freed again, causing a double/invalid free.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,416-2,True,CWE-416,"[10, 31, 32]",True,CWE-416,printf after negate(p) dereferencing freed or NULL pointer,True,,True,True,False,,False,near_duplicate_false_positive,25,0.9740266537845663,"The code frees the pointer in negate() and then dereferences it, causing a use‑after‑free or null‑pointer dereference.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-416"",
+  ""location"": ""printf after negate(p) dereferencing freed or NULL pointer"",
+  ""explanation"": ""The code frees the pointer in negate() and then dereferences it, causing a use‑after‑free or null‑pointer dereference.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,78-3,True,CWE-78,"[23, 25]",True,CWE-78,command constructed from argv[1] and passed to system(),True,,True,True,False,,False,baseline_has_cwe,25,0.24869882601994392,"User-controlled input is concatenated into a shell command without validation, enabling command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""command constructed from argv[1] and passed to system()"",
+  ""explanation"": ""User-controlled input is concatenated into a shell command without validation, enabling command injection.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,89-3,True,CWE-89,"[121, 122]",True,CWE-89,"sprintf(query, fmtString, argv[1])",True,,True,True,False,,True,cwe_recheck,25,0.523996524877803,"User-controlled input is directly inserted into an SQL query without sanitization, leading to SQL injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-89"",
+  ""location"": ""sprintf(query, fmtString, argv[1])"",
+  ""explanation"": ""User-controlled input is directly inserted into an SQL query without sanitization, leading to SQL injection.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,628-9,False,CWE-628,[],True,CWE-120,url_decode function lacks destination buffer size check,True,,False,False,False,wrong_binary_label,False,near_duplicate_false_positive,25,1.0,"The function copies data into dest without verifying it fits, allowing a buffer overflow if src is longer than the destination array","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""url_decode function lacks destination buffer size check"",
+  ""explanation"": ""The function copies data into dest without verifying it fits, allowing a buffer overflow if src is longer than the destination array""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,798-8,False,CWE-798,[],True,CWE-120,sha256_hash_string buffer overflow,True,,False,False,False,wrong_binary_label,True,applied,25,0.8339545552059686,sprintf writes beyond outputBuffer when hash_len exceeds 32 bytes,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""sha256_hash_string buffer overflow"",
+  ""explanation"": ""sprintf writes beyond outputBuffer when hash_len exceeds 32 bytes""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,369-10,False,CWE-369,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.3738982212296279,The code contains no exploitable memory or logic vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no exploitable memory or logic vulnerabilities.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,617-3,True,CWE-617,[7],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.4055346551963944,The code contains a logical error but no security-relevant vulnerability.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains a logical error but no security-relevant vulnerability.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,89-8,False,CWE-89,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.9276984874311069,"Input is validated to contain only digits before being used in the SQL query, preventing injection and other memory issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input is validated to contain only digits before being used in the SQL query, preventing injection and other memory issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,415-7,False,CWE-415,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.8958904057100305,"The code does not contain a memory safety flaw such as use-after-free, double free, or buffer overflow.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain a memory safety flaw such as use-after-free, double free, or buffer overflow.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,674-5,True,CWE-674,"[9, 10]",True,CWE-674,recursivePrintArray recursion condition,True,,True,True,False,,False,baseline_has_cwe,25,0.28349666413611396,"The function never reaches the base case due to modulo indexing, leading to infinite recursion and potential stack overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-674"",
+  ""location"": ""recursivePrintArray recursion condition"",
+  ""explanation"": ""The function never reaches the base case due to modulo indexing, leading to infinite recursion and potential stack overflow.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,843-2,True,CWE-843,"[5, 13]",True,CWE-843,printNum(&b) call,True,,True,True,False,,True,applied,25,0.45067726000210395,Passing a float pointer to a function expecting an int pointer causes type confusion and undefined behavior,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-843"",
+  ""location"": ""printNum(&b) call"",
+  ""explanation"": ""Passing a float pointer to a function expecting an int pointer causes type confusion and undefined behavior""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,125-10,False,CWE-125,[],,,,False,no JSON object found,False,False,False,parse_error,False,low_similarity,25,0.1470047826763639,,API_ERROR: request exceeded 60s
+openai/gpt-oss-120b:free,errorlock_rag_gated,522-6,True,CWE-522,[17],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.49808001617984193,"The code safely reads input with size limits and uses a fixed format string, avoiding typical memory safety issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely reads input with size limits and uses a fixed format string, avoiding typical memory safety issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,787-2,True,CWE-787,[7],True,CWE-121,"strcpy(username,""Is_this_too_long_for_this_array_buffer?"");",True,,True,False,False,wrong_cwe,True,cwe_recheck,25,0.4686275576615342,"Binary decision preserved from baseline. Copies a string larger than the 10-byte buffer, causing a stack-based buffer overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-121"",
+  ""location"": ""strcpy(username,\""Is_this_too_long_for_this_array_buffer?\"");"",
+  ""explanation"": ""Copies a string larger than the 10-byte buffer, causing a stack-based buffer overflow.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,787-10,False,CWE-787,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.43011262605902156,All array accesses stay within the allocated bounds of a[300].,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""All array accesses stay within the allocated bounds of a[300].""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,761-8,False,CWE-761,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.8185940725302903,"The code correctly manages memory without out-of-bounds access, double free, or use-after-free.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly manages memory without out-of-bounds access, double free, or use-after-free.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,476-9,False,CWE-476,[],True,CWE-476,dereferencing result of min() in printf,True,,False,False,False,wrong_binary_label,True,cwe_recheck,25,1.0,"Binary decision preserved from baseline. min() may return NULL when values are equal, and the code dereferences it without a null check.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-476"",
+  ""location"": ""dereferencing result of min() in printf"",
+  ""explanation"": ""min() may return NULL when values are equal, and the code dereferences it without a null check.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,761-1,True,CWE-761,"[15, 19, 22]",True,CWE-761,contains_char function frees pointer after it has been incremented,True,,True,True,False,,True,applied,25,0.3817852882478121,"The code frees a pointer that no longer points to the start of the allocated block, causing invalid free","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-761"",
+  ""location"": ""contains_char function frees pointer after it has been incremented"",
+  ""explanation"": ""The code frees a pointer that no longer points to the start of the allocated block, causing invalid free""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,401-7,False,CWE-401,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.41145623299716494,"The code validates inputs, allocates correct size, and accesses within bounds.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code validates inputs, allocates correct size, and accesses within bounds.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,190-8,False,CWE-190,[],,,,False,Expecting ':' delimiter: line 1 column 23 (char 22),False,False,False,parse_error,False,low_similarity,25,0.13157074771642893,,"{""vulnerable':,false,""cwe':null,""location':null,""explanation':'The code performs bounds‑checked array accesses and does not contain memory‑corruption bugs such as buffer overflows or use‑after‑free.'}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,253-8,False,CWE-253,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.5919058055148579,The code safely bounds input with fgets and does not contain exploitable memory or format string issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds input with fgets and does not contain exploitable memory or format string issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,190-7,False,CWE-190,[],False,,,True,,True,True,True,,False,low_similarity,25,0.16777638555387808,"The code uses fixed-size arrays and proper bounds, with no external input, so no memory safety issues are present.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code uses fixed-size arrays and proper bounds, with no external input, so no memory safety issues are present.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,522-8,False,CWE-522,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.6617443314627732,"snprintf limits the output to the buffer size, preventing overflow.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""snprintf limits the output to the buffer size, preventing overflow.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,125-8,False,CWE-125,[],True,CWE-125,str[MY_SECRET_CHAR] in printf,True,,False,False,False,wrong_binary_label,False,low_similarity,25,0.14194499599705426,"Index 442 may exceed the string's bounds, causing an out-of-bounds read.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-125"",
+  ""location"": ""str[MY_SECRET_CHAR] in printf"",
+  ""explanation"": ""Index 442 may exceed the string's bounds, causing an out-of-bounds read.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,89-6,True,CWE-89,"[126, 128]",True,CWE-89,"sprintf(query, fmtString, argv[1]);",True,,True,True,False,,True,cwe_recheck,25,0.5367723407607213,"User-controlled argv[1] is inserted into SQL query via sprintf without sanitization, enabling SQL injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-89"",
+  ""location"": ""sprintf(query, fmtString, argv[1]);"",
+  ""explanation"": ""User-controlled argv[1] is inserted into SQL query via sprintf without sanitization, enabling SQL injection.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,674-10,False,CWE-674,[],True,CWE-674,fibonacci function recursion,True,,False,False,False,wrong_binary_label,False,baseline_has_cwe,25,0.19681716650087422,Unbounded recursive calls can cause stack overflow for large input values,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-674"",
+  ""location"": ""fibonacci function recursion"",
+  ""explanation"": ""Unbounded recursive calls can cause stack overflow for large input values""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,78-4,True,CWE-78,"[11, 12]",True,CWE-78,"snprintf(command, sizeof(command), ""ls -l | head -n %s"", userInput);",True,,True,True,False,,False,low_similarity,25,0.14837947093632195,"User-controlled input is inserted into a shell command without validation, leading to command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""snprintf(command, sizeof(command), \""ls -l | head -n %s\"", userInput);"",
+  ""explanation"": ""User-controlled input is inserted into a shell command without validation, leading to command injection.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,415-4,True,CWE-415,[13],True,CWE-415,double free of pointer 'a' after first free,True,,True,True,False,,True,cwe_recheck,25,0.6979564328740646,"The code frees the same allocated pointer twice, leading to a double-free vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-415"",
+  ""location"": ""double free of pointer 'a' after first free"",
+  ""explanation"": ""The code frees the same allocated pointer twice, leading to a double-free vulnerability.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,674-8,False,CWE-674,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.29949447323787487,The code correctly bounds-checks array access and contains no evident security flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly bounds-checks array access and contains no evident security flaws.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,22-9,False,CWE-22,[],False,,,True,,True,True,True,,True,applied,25,0.5567283781559323,"Input is strictly alphanumeric and length-limited, and paths are validated, preventing command injection or path traversal.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Input is strictly alphanumeric and length-limited, and paths are validated, preventing command injection or path traversal.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,522-4,True,CWE-522,"[105, 120]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.9861813373831931,"The code properly bounds all memory operations and uses safe functions, showing no evident security flaw.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code properly bounds all memory operations and uses safe functions, showing no evident security flaw.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,617-7,False,CWE-617,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.9818605646653074,The code safely bounds reads and writes and contains no exploitable memory safety flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely bounds reads and writes and contains no exploitable memory safety flaws.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,78-1,True,CWE-78,"[13, 16]",True,CWE-78,system(command) call,True,,True,True,False,,False,baseline_has_cwe,25,0.1821670999428169,"User input is concatenated into a command string without validation, allowing command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""system(command) call"",
+  ""explanation"": ""User input is concatenated into a command string without validation, allowing command injection.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,134-1,True,CWE-134,[9],True,CWE-134,printf(argv[1]);,True,,True,True,False,,False,baseline_has_cwe,25,0.7785878288102783,"User-controlled input is passed as the format string to printf, leading to a format string vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""printf(argv[1]);"",
+  ""explanation"": ""User-controlled input is passed as the format string to printf, leading to a format string vulnerability.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,835-5,True,CWE-835,"[11, 14]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.2209500919983842,The code contains no memory safety or undefined behavior issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no memory safety or undefined behavior issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,617-6,True,CWE-617,[10],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.3909699421461408,"The code contains no exploitable memory or logic flaws such as buffer overflows, use-after-free, or unchecked inputs.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no exploitable memory or logic flaws such as buffer overflows, use-after-free, or unchecked inputs.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,835-2,True,CWE-835,[6],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.46802447702366856,The code contains an infinite loop but no security vulnerability such as memory corruption.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains an infinite loop but no security vulnerability such as memory corruption.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,401-1,True,CWE-401,"[5, 16]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.4123365761561128,The code accesses only allocated indices within bounds and has no obvious security flaw.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code accesses only allocated indices within bounds and has no obvious security flaw.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,369-2,True,CWE-369,[7],,,,False,no JSON object found,False,False,False,parse_error,False,low_similarity,25,0.16388117404732008,,
+openai/gpt-oss-120b:free,errorlock_rag_gated,843-5,True,CWE-843,"[12, 14, 15]",True,CWE-843,Q_rsqrt: casting float pointer to long pointer for type‑punning,True,,True,True,False,,False,baseline_has_cwe,25,0.26959480027288774,"The code violates strict aliasing by reinterpreting a float as a long via pointer casts, causing undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-843"",
+  ""location"": ""Q_rsqrt: casting float pointer to long pointer for type‑punning"",
+  ""explanation"": ""The code violates strict aliasing by reinterpreting a float as a long via pointer casts, causing undefined behavior.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,770-10,False,CWE-770,[],False,,,True,,True,True,True,,True,applied,25,0.9976898664754869,"The code allocates a fixed-size buffer and uses recv without exceeding that size, handling errors appropriately, so no evident vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code allocates a fixed-size buffer and uses recv without exceeding that size, handling errors appropriately, so no evident vulnerability.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,22-10,False,CWE-22,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.3729404798267018,"The code does not contain buffer overflows, format string issues, or unsafe memory accesses.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain buffer overflows, format string issues, or unsafe memory accesses.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,822-9,False,CWE-822,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.3732162300017806,"The code correctly allocates, uses, and frees memory without any out-of-bounds or use-after-free errors.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly allocates, uses, and frees memory without any out-of-bounds or use-after-free errors.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,835-4,True,CWE-835,"[6, 8]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.4537700763856858,The code contains a logical infinite loop but no memory safety or security flaw.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains a logical infinite loop but no memory safety or security flaw.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,134-9,False,CWE-134,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.3594813124450012,"snprintf limits output to buffer size, preventing overflow and there is no format string vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""snprintf limits output to buffer size, preventing overflow and there is no format string vulnerability.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,401-5,True,CWE-401,"[22, 39]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.9800577145743816,The code does not contain any memory safety or other security flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain any memory safety or other security flaws.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,362-10,False,CWE-362,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.9914918288654175,The code has a race condition but no memory safety or security flaw such as buffer overflow or use-after-free.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code has a race condition but no memory safety or security flaw such as buffer overflow or use-after-free.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,369-1,True,CWE-369,[10],True,CWE-369,int test = 17 / (hello+20+b);,True,,True,True,False,,False,baseline_has_cwe,25,0.2900133056336136,"The divisor can evaluate to zero, causing a divide‑by‑zero error.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-369"",
+  ""location"": ""int test = 17 / (hello+20+b);"",
+  ""explanation"": ""The divisor can evaluate to zero, causing a divide‑by‑zero error.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,134-5,True,CWE-134,"[6, 7]",True,CWE-134,"snprintf(buffer, sizeof(buffer), argv[1])",True,,True,True,False,,False,baseline_has_cwe,25,0.4485618109286299,"User-supplied argv[1] is used as the format string, leading to an uncontrolled format string vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""snprintf(buffer, sizeof(buffer), argv[1])"",
+  ""explanation"": ""User-supplied argv[1] is used as the format string, leading to an uncontrolled format string vulnerability.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,476-10,False,CWE-476,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.3293898995088732,"The code correctly checks malloc result and frees allocated memory, no evident vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code correctly checks malloc result and frees allocated memory, no evident vulnerability.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,22-2,True,CWE-22,"[8, 20, 29]",True,CWE-22,"validatePath always returns true, allowing path traversal",True,,True,True,False,,True,applied,25,0.40076833676817547,"The program trusts user-controlled input for file paths without proper validation, enabling directory traversal attacks.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""validatePath always returns true, allowing path traversal"",
+  ""explanation"": ""The program trusts user-controlled input for file paths without proper validation, enabling directory traversal attacks.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,327-3,True,CWE-327,"[16, 19, 28]",True,CWE-327,des_encrypt uses DES_ecb_encrypt (ECB mode) with weak DES algorithm,True,,True,True,False,,True,applied,25,0.4489770138246645,"The code employs DES in ECB mode, which is a weak cryptographic practice.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-327"",
+  ""location"": ""des_encrypt uses DES_ecb_encrypt (ECB mode) with weak DES algorithm"",
+  ""explanation"": ""The code employs DES in ECB mode, which is a weak cryptographic practice.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,822-5,True,CWE-822,"[16, 21, 25, 31]",,,,False,Expecting ':' delimiter: line 1 column 21 (char 20),False,False,False,parse_error,True,applied,25,0.7535714138832563,,"{""vulnerable':true,""cwe':'CWE-822',""location':'dereferencing pointer returned from getTrustedPointer()','explanation':'An untrusted environment variable is cast to a pointer and dereferenced, leading to unsafe pointer use.'}]}}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,761-4,True,CWE-761,[30],True,CWE-761,free(a) after swapping pointers,True,,True,True,False,,False,baseline_has_cwe,25,0.8257622636874017,"The pointer passed to free is not the original malloc address due to pointer swap, leading to undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-761"",
+  ""location"": ""free(a) after swapping pointers"",
+  ""explanation"": ""The pointer passed to free is not the original malloc address due to pointer swap, leading to undefined behavior.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,190-6,True,CWE-190,[6],False,,,True,,False,False,False,wrong_binary_label,False,low_similarity,25,0.09492807525433553,The code only performs floating-point arithmetic and comparisons without any memory safety issues.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code only performs floating-point arithmetic and comparisons without any memory safety issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,134-4,True,CWE-134,"[6, 21, 23]",True,CWE-134,logger function uses printf(msg) without format string,True,,True,True,False,,False,baseline_has_cwe,25,0.26540718718243006,Passing user-controlled input directly to printf allows a format string attack,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""logger function uses printf(msg) without format string"",
+  ""explanation"": ""Passing user-controlled input directly to printf allows a format string attack""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,369-5,True,CWE-369,[11],True,CWE-369,"division by i in loop, i can be zero",True,,True,True,False,,False,baseline_has_cwe,25,0.36870841834675583,"The loop iterates i down to 0, causing a division by zero when i equals 0","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-369"",
+  ""location"": ""division by i in loop, i can be zero"",
+  ""explanation"": ""The loop iterates i down to 0, causing a division by zero when i equals 0""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,628-3,True,CWE-628,[36],True,CWE-190,result = (result * base) % mod; and base = (base * base) % mod; in power_mod,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,25,1.0,"Multiplying two long long values can overflow before the modulo, causing undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-190"",
+  ""location"": ""result = (result * base) % mod; and base = (base * base) % mod; in power_mod"",
+  ""explanation"": ""Multiplying two long long values can overflow before the modulo, causing undefined behavior.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,362-8,False,CWE-362,[],True,CWE-758,signal_handler uses pthread_mutex_lock,True,,False,False,False,wrong_binary_label,True,cwe_recheck,25,0.45573483382476054,Binary decision preserved from baseline. Calling pthread_mutex_lock inside a signal handler is not async-signal-safe and can cause undefined behavior.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-758"",
+  ""location"": ""signal_handler uses pthread_mutex_lock"",
+  ""explanation"": ""Calling pthread_mutex_lock inside a signal handler is not async-signal-safe and can cause undefined behavior.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,822-3,True,CWE-822,"[15, 26, 28, 30]",True,CWE-761,ptr += number; then dereference and free(ptr),True,,True,False,False,wrong_cwe,True,cwe_recheck,25,0.37489684185762406,"Binary decision preserved from baseline. Pointer is offset beyond the allocated block, leading to out-of-bounds access and freeing a non-starting address.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-761"",
+  ""location"": ""ptr += number; then dereference and free(ptr)"",
+  ""explanation"": ""Pointer is offset beyond the allocated block, leading to out-of-bounds access and freeing a non-starting address.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,362-6,True,CWE-362,"[14, 16, 25]",True,CWE-362,signal_flag accessed in signal_sequencer without synchronization,True,,True,True,False,,False,baseline_has_cwe,25,0.47466534324607956,Concurrent unsynchronized reads/writes to signal_flag cause a data race leading to undefined behavior,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-362"",
+  ""location"": ""signal_flag accessed in signal_sequencer without synchronization"",
+  ""explanation"": ""Concurrent unsynchronized reads/writes to signal_flag cause a data race leading to undefined behavior""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,522-10,False,CWE-522,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.811199952001203,"Uses prepared statements with bound parameters, preventing injection and no obvious memory safety issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Uses prepared statements with bound parameters, preventing injection and no obvious memory safety issues.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,674-6,True,CWE-674,"[5, 8, 9]",True,CWE-121,sumArray function recursion,True,,True,False,False,wrong_cwe,False,baseline_has_cwe,25,0.2508126866656553,"The function lacks a proper termination condition, causing infinite recursion and potential stack overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-121"",
+  ""location"": ""sumArray function recursion"",
+  ""explanation"": ""The function lacks a proper termination condition, causing infinite recursion and potential stack overflow.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,770-5,True,CWE-770,[26],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.8340977622728787,The code contains no exploitable memory or resource handling flaws.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code contains no exploitable memory or resource handling flaws.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,835-7,False,CWE-835,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,25,0.9367079506225955,The program contains no unsafe operations or exploitable behavior.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The program contains no unsafe operations or exploitable behavior.""
+}"
+openai/gpt-oss-120b:free,errorlock_rag_gated,798-2,True,CWE-798,[10],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,25,0.3392488734830606,The code safely reads input with fgets into a properly sized buffer and performs a straightforward string comparison.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code safely reads input with fgets into a properly sized buffer and performs a straightforward string comparison.""
+}"

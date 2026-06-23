@@ -1,0 +1,193 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,errorlock_applied,gate_reason,retrieved_count,max_similarity,explanation,raw
+qwen2.5-coder:0.5b,train_baseline,22-10,False,CWE-22,[],True,CWE-123,Create a directory for the website,True,,False,False,False,wrong_binary_label,,,0,,This code creates a directory named `/var/www/html` using `mkdir -p`. It checks if the command is successful and prints the file content if it succeeds.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Create a directory for the website"",
+  ""explanation"": ""This code creates a directory named `/var/www/html` using `mkdir -p`. It checks if the command is successful and prints the file content if it succeeds.""
+}"
+qwen2.5-coder:0.5b,train_baseline,78-8,False,CWE-78,[],True,CWE-123,/bin/cat command,True,,False,False,False,wrong_binary_label,,,0,,"The code contains a buffer overflow vulnerability in the `system` function, which can lead to arbitrary code execution.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""/bin/cat command"",
+  ""explanation"": ""The code contains a buffer overflow vulnerability in the `system` function, which can lead to arbitrary code execution.""
+}"
+qwen2.5-coder:0.5b,train_baseline,22-3,True,CWE-22,"[12, 23, 32]",True,CWE-123,Validate path function,True,,True,False,False,wrong_cwe,,,0,,"The `validatePath` function checks if a given file name starts with the specified root directory. If not, it prints an error message.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Validate path function"",
+  ""explanation"": ""The `validatePath` function checks if a given file name starts with the specified root directory. If not, it prints an error message.""
+}"
+qwen2.5-coder:0.5b,train_baseline,78-2,True,CWE-78,"[9, 10]",True,CWE-293,"The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.",True,,True,False,False,wrong_cwe,,,0,,"This code attempts to execute a command using the `system` function, which can be dangerous if the command contains untrusted input. The `strncat` function is used to concatenate the command with the argument, ensuring that any trailing characters are not included in the final command.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input."",
+  ""explanation"": ""This code attempts to execute a command using the `system` function, which can be dangerous if the command contains untrusted input. The `strncat` function is used to concatenate the command with the argument, ensuring that any trailing characters are not included in the final command.""
+}"
+qwen2.5-coder:0.5b,train_baseline,22-2,True,CWE-22,"[8, 20, 29]",True,CWE-123,Validate path and open file,True,,True,False,False,wrong_cwe,,,0,,"This code checks if a given filename is valid by validating the path using `validatePath` function. If the path is invalid, it prints an error message.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Validate path and open file"",
+  ""explanation"": ""This code checks if a given filename is valid by validating the path using `validatePath` function. If the path is invalid, it prints an error message.""
+}"
+qwen2.5-coder:0.5b,train_baseline,78-4,True,CWE-78,"[11, 12]",True,CWE-123,List files using ls and head command,True,,True,False,False,wrong_cwe,,,0,,This code uses the `ls` command to list files in a directory and then pipes the output to the `head` command to display the first few lines of the file.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""List files using ls and head command"",
+  ""explanation"": ""This code uses the `ls` command to list files in a directory and then pipes the output to the `head` command to display the first few lines of the file.""
+}"
+qwen2.5-coder:0.5b,train_baseline,78-10,False,CWE-78,[],False,,fgets() is used to read input from the standard input,True,,True,True,True,,,,0,,"fgets() is a function in C that reads a line of text from the standard input and stores it in a buffer. It returns a pointer to the first character of the buffer, which can be useful for further processing or manipulation.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""fgets() is used to read input from the standard input"",
+  ""explanation"": ""fgets() is a function in C that reads a line of text from the standard input and stores it in a buffer. It returns a pointer to the first character of the buffer, which can be useful for further processing or manipulation.""
+}"
+qwen2.5-coder:0.5b,train_baseline,22-9,False,CWE-22,[],True,CWE-293,Check for directory traversal vulnerabilities in the search path.,True,,False,False,False,wrong_binary_label,,,0,,The code checks if a file exists and if it has permission to access it. It also validates that the query is not empty.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""Check for directory traversal vulnerabilities in the search path."",
+  ""explanation"": ""The code checks if a file exists and if it has permission to access it. It also validates that the query is not empty.""
+}"
+qwen2.5-coder:0.5b,baseline,22-6,True,CWE-22,"[10, 49]",True,CWE-123,The function `printFile` is called with a non-readable file name.,True,,True,False,False,wrong_cwe,,,0,,"This code attempts to open a file in the command line, but it fails because the file does not exist or cannot be read.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""The function `printFile` is called with a non-readable file name."",
+  ""explanation"": ""This code attempts to open a file in the command line, but it fails because the file does not exist or cannot be read.""
+}"
+qwen2.5-coder:0.5b,baseline,22-1,True,CWE-22,"[16, 19]",True,CWE-123,Create a directory for the specified filename in /var/www/html,True,,True,False,False,wrong_cwe,,,0,,This code attempts to create a directory using `mkdir` with the specified file name. It includes error handling for file opening and closing.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Create a directory for the specified filename in /var/www/html"",
+  ""explanation"": ""This code attempts to create a directory using `mkdir` with the specified file name. It includes error handling for file opening and closing.""
+}"
+qwen2.5-coder:0.5b,baseline,78-7,False,CWE-78,[],True,CWE-134,List files in directory,True,,False,False,False,wrong_binary_label,,,0,,The code uses `system` to execute a command that lists the contents of a directory. It checks if the input is a valid number and then executes the command with the specified number.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""List files in directory"",
+  ""explanation"": ""The code uses `system` to execute a command that lists the contents of a directory. It checks if the input is a valid number and then executes the command with the specified number.""
+}"
+qwen2.5-coder:0.5b,baseline,22-7,False,CWE-22,[],True,CWE-123,Reading from a directory traversal attempt in ./CASTLE-46,True,,False,False,False,wrong_binary_label,,,0,,"The code attempts to read from a directory that is not allowed, which could lead to security vulnerabilities.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Reading from a directory traversal attempt in ./CASTLE-46"",
+  ""explanation"": ""The code attempts to read from a directory that is not allowed, which could lead to security vulnerabilities.""
+}"
+qwen2.5-coder:0.5b,baseline,78-3,True,CWE-78,"[23, 25]",True,CWE-293,"The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.",True,,True,False,False,wrong_cwe,,,0,,"This code attempts to execute a command using the `system` function, which can be dangerous if the command contains untrusted input. The `CWE-293` is a common vulnerability in Unix-like operating systems that allows attackers to execute arbitrary commands.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input."",
+  ""explanation"": ""This code attempts to execute a command using the `system` function, which can be dangerous if the command contains untrusted input. The `CWE-293` is a common vulnerability in Unix-like operating systems that allows attackers to execute arbitrary commands.""
+}"
+qwen2.5-coder:0.5b,baseline,22-8,False,CWE-22,[],True,CWE-293,Check for illegal characters in file path and search term.,True,,False,False,False,wrong_binary_label,,,0,,"The code checks if the file path and search term contain any illegal characters, which can lead to errors when using `grep`.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""Check for illegal characters in file path and search term."",
+  ""explanation"": ""The code checks if the file path and search term contain any illegal characters, which can lead to errors when using `grep`.""
+}"
+qwen2.5-coder:0.5b,baseline,78-6,True,CWE-78,[29],True,CWE-123,/bin/cat command,True,,True,False,False,wrong_cwe,,,0,,"The code contains a buffer overflow vulnerability in the `system()` function, which can lead to arbitrary code execution.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""/bin/cat command"",
+  ""explanation"": ""The code contains a buffer overflow vulnerability in the `system()` function, which can lead to arbitrary code execution.""
+}"
+qwen2.5-coder:0.5b,baseline,78-9,False,CWE-78,[],True,CWE-293,Check for null pointer dereference in /bin/echo,True,,False,False,False,wrong_binary_label,,,0,,"The function `test` checks if the input string is not null before attempting to use it with `system`. If the string is null, an error message is printed.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""Check for null pointer dereference in /bin/echo"",
+  ""explanation"": ""The function `test` checks if the input string is not null before attempting to use it with `system`. If the string is null, an error message is printed.""
+}"
+qwen2.5-coder:0.5b,baseline,78-1,True,CWE-78,"[13, 16]",True,CWE-293,"The `system` function is used to execute a command, which can lead to security vulnerabilities.",True,,True,False,False,wrong_cwe,,,0,,This code uses the `system` function to ping an IP address. The `system` function is vulnerable because it does not properly handle user input and can be exploited by malicious users.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""The `system` function is used to execute a command, which can lead to security vulnerabilities."",
+  ""explanation"": ""This code uses the `system` function to ping an IP address. The `system` function is vulnerable because it does not properly handle user input and can be exploited by malicious users.""
+}"
+qwen2.5-coder:0.5b,baseline,78-5,True,CWE-78,[10],True,CWE-483,fgets() failed,True,,True,False,False,wrong_cwe,,,0,,"fgets() is used to read a line from the standard input, but it does not handle errors gracefully. If an error occurs during the reading process, it will terminate the program.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-483"",
+  ""location"": ""fgets() failed"",
+  ""explanation"": ""fgets() is used to read a line from the standard input, but it does not handle errors gracefully. If an error occurs during the reading process, it will terminate the program.""
+}"
+qwen2.5-coder:0.5b,baseline,22-4,True,CWE-22,"[46, 66, 70]",True,CWE-293,Check for directory traversal and path traversal vulnerabilities in the code.,True,,True,False,False,wrong_cwe,,,0,,"The code checks if a file exists, validates query parameters, and constructs a grep command to search for a specific term within a given path. If any of these conditions are not met, it prints an error message.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""Check for directory traversal and path traversal vulnerabilities in the code."",
+  ""explanation"": ""The code checks if a file exists, validates query parameters, and constructs a grep command to search for a specific term within a given path. If any of these conditions are not met, it prints an error message.""
+}"
+qwen2.5-coder:0.5b,baseline,22-5,True,CWE-22,"[8, 28]",False,,The `printFile` function in the `main` function does not handle file reading correctly.,True,,False,False,False,wrong_binary_label,,,0,,"The function checks if the provided argument is a readable file using `fopen`, but it does not read the entire file content. This can lead to buffer overflows or incorrect data handling.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The `printFile` function in the `main` function does not handle file reading correctly."",
+  ""explanation"": ""The function checks if the provided argument is a readable file using `fopen`, but it does not read the entire file content. This can lead to buffer overflows or incorrect data handling.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,22-6,True,CWE-22,"[10, 49]",True,CWE-22,Open a directory for the website,True,,True,True,False,,True,cwe_recheck,3,0.43756081035093897,"The code attempts to open a directory using `open` and then reads from it. However, this is not a valid operation in C and will result in undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""Open a directory for the website"",
+  ""explanation"": ""The code attempts to open a directory using `open` and then reads from it. However, this is not a valid operation in C and will result in undefined behavior.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,22-1,True,CWE-22,"[16, 19]",True,CWE-123,Create a directory for the specified filename in /var/www/html,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,1.0,This code attempts to create a directory using `mkdir` with the specified file name. It includes error handling for file opening and closing.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Create a directory for the specified filename in /var/www/html"",
+  ""explanation"": ""This code attempts to create a directory using `mkdir` with the specified file name. It includes error handling for file opening and closing.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,78-7,False,CWE-78,[],True,CWE-134,List files in directory,True,,False,False,False,wrong_binary_label,False,baseline_has_cwe,3,0.7849982577737218,The code uses `system` to execute a command that lists the contents of a directory. It checks if the input is a valid number and then executes the command with the specified number.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-134"",
+  ""location"": ""List files in directory"",
+  ""explanation"": ""The code uses `system` to execute a command that lists the contents of a directory. It checks if the input is a valid number and then executes the command with the specified number.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,22-7,False,CWE-22,[],True,CWE-293,Check for directory traversal vulnerabilities in the search path.,True,,False,False,False,wrong_binary_label,True,cwe_recheck,3,0.5600998874429342,The code checks if a file exists and opens it securely to prevent directory traversal attacks.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""Check for directory traversal vulnerabilities in the search path."",
+  ""explanation"": ""The code checks if a file exists and opens it securely to prevent directory traversal attacks.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,78-3,True,CWE-78,"[23, 25]",True,CWE-78,"[9, 10]",True,,True,True,False,,True,cwe_recheck,3,0.44564309327939733,"The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""[9, 10]"",
+  ""explanation"": ""The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,22-8,False,CWE-22,[],True,CWE-293,Validate path function,True,,False,False,False,wrong_binary_label,True,cwe_recheck,3,0.9460939034779068,"The code contains a logical error in the `isValidPath` function. The condition `input[i] != '.' && input[i] != '` is incorrect because it checks if the character is not a dot or a space, which is not necessary for validating paths.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""Validate path function"",
+  ""explanation"": ""The code contains a logical error in the `isValidPath` function. The condition `input[i] != '.' && input[i] != '` is incorrect because it checks if the character is not a dot or a space, which is not necessary for validating paths.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,78-6,True,CWE-78,[29],True,CWE-78,[],True,,True,True,False,,True,cwe_recheck,3,0.9424982461987643,"The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": [],
+  ""explanation"": ""The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,78-9,False,CWE-78,[],True,CWE-78,[],True,,False,False,False,wrong_binary_label,True,cwe_recheck,3,0.3722429264592474,"The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": [],
+  ""explanation"": ""The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,78-1,True,CWE-78,"[13, 16]",True,CWE-78,"The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.",True,,True,True,False,,True,cwe_recheck,3,0.441533986259538,"The code uses `system` to ping an IP address, which can be vulnerable if the IP address contains untrusted input.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input."",
+  ""explanation"": ""The code uses `system` to ping an IP address, which can be vulnerable if the IP address contains untrusted input.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,78-5,True,CWE-78,[10],True,CWE-78,/bin/cat command,True,,True,True,False,,True,cwe_recheck,3,0.7848151765636645,"The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""/bin/cat command"",
+  ""explanation"": ""The `system` function is used to execute a command, which can lead to security vulnerabilities if the command contains untrusted input.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,22-4,True,CWE-22,"[46, 66, 70]",True,CWE-293,Validate path function,True,,True,False,False,wrong_cwe,True,cwe_recheck,3,0.9379086945620447,"The code contains a logical error in the `isValidPath` function. The condition `input[i] != '/' && input[i] != '.'` is incorrect because it checks for both forward slashes and periods, which are not valid characters in file paths.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""Validate path function"",
+  ""explanation"": ""The code contains a logical error in the `isValidPath` function. The condition `input[i] != '/' && input[i] != '.'` is incorrect because it checks for both forward slashes and periods, which are not valid characters in file paths.""
+}"
+qwen2.5-coder:0.5b,errorlock_gated,22-5,True,CWE-22,"[8, 28]",False,,The `printFile` function in the `main` function does not handle file reading correctly.,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4431776465392373,"The function checks if the provided argument is a readable file using `fopen`, but it does not read the entire file content. This can lead to buffer overflows or incorrect data handling.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The `printFile` function in the `main` function does not handle file reading correctly."",
+  ""explanation"": ""The function checks if the provided argument is a readable file using `fopen`, but it does not read the entire file content. This can lead to buffer overflows or incorrect data handling.""
+}"

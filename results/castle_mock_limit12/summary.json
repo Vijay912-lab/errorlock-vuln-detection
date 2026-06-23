@@ -1,0 +1,85 @@
+{
+  "model": "mock-rule-detector",
+  "dataset": "data/CASTLE-C250.min.json",
+  "n_total": 12,
+  "n_train": 4,
+  "n_test": 8,
+  "top_k": 3,
+  "baseline": {
+    "n": 8,
+    "accuracy": 0.75,
+    "precision": 0.8,
+    "recall": 0.8,
+    "f1": 0.8,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.75,
+    "cwe_correct_rate": 0.25,
+    "location_correct_rate": 0.25,
+    "failure_counts": {
+      "correct": 2,
+      "wrong_cwe": 4,
+      "wrong_binary_label": 2
+    },
+    "confusion_matrix": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        4
+      ]
+    ]
+  },
+  "errorlock": {
+    "n": 8,
+    "accuracy": 0.75,
+    "precision": 0.8,
+    "recall": 0.8,
+    "f1": 0.8,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.75,
+    "cwe_correct_rate": 0.25,
+    "location_correct_rate": 0.25,
+    "failure_counts": {
+      "correct": 2,
+      "wrong_cwe": 4,
+      "wrong_binary_label": 2
+    },
+    "confusion_matrix": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        4
+      ]
+    ]
+  },
+  "train_baseline_for_memory": {
+    "n": 4,
+    "accuracy": 0.25,
+    "precision": 0.5,
+    "recall": 0.3333333333333333,
+    "f1": 0.4,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.25,
+    "cwe_correct_rate": 0.0,
+    "location_correct_rate": 0.0,
+    "failure_counts": {
+      "wrong_binary_label": 3,
+      "wrong_cwe": 1
+    },
+    "confusion_matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  }
+}

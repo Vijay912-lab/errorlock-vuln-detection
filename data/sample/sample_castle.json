@@ -1,0 +1,23 @@
+[
+  {
+    "id": "sample-001",
+    "cwe": "CWE-120",
+    "vulnerable": true,
+    "location": "line 6",
+    "code": "#include <string.h>\nvoid f(char *src) {\n  char buf[8];\n  strcpy(buf, src);\n}\n"
+  },
+  {
+    "id": "sample-002",
+    "cwe": "CWE-120",
+    "vulnerable": false,
+    "location": "",
+    "code": "#include <string.h>\nvoid f(char *src) {\n  char buf[8];\n  strncpy(buf, src, sizeof(buf)-1);\n  buf[7] = '\\0';\n}\n"
+  },
+  {
+    "id": "sample-003",
+    "cwe": "CWE-89",
+    "vulnerable": true,
+    "location": "line 4",
+    "code": "void query(char *user) {\n  char sql[512];\n  sprintf(sql, \"SELECT * FROM users WHERE name='%s'\", user);\n  db_exec(sql);\n}\n"
+  }
+]

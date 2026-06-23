@@ -1,0 +1,79 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,errorlock_applied,gate_reason,retrieved_count,max_similarity,explanation,raw
+gemini-2.5-flash-lite,train_baseline,22-7,False,CWE-22,[],True,CWE-22,is_valid_path function,True,,False,False,False,wrong_binary_label,,,0,,"The `realpath` function can be tricked into resolving a path outside the intended directory if the symlink is created before `realpath` is called, allowing for directory traversal.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""is_valid_path function"",
+  ""explanation"": ""The `realpath` function can be tricked into resolving a path outside the intended directory if the symlink is created before `realpath` is called, allowing for directory traversal.""
+}"
+gemini-2.5-flash-lite,train_baseline,22-4,True,CWE-22,"[46, 66, 70]",True,CWE-78,main function,True,,True,False,False,wrong_cwe,,,0,,"The program constructs a shell command by concatenating user-controlled input (path and search_term) without proper sanitization, leading to command injection vulnerabilities.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""main function"",
+  ""explanation"": ""The program constructs a shell command by concatenating user-controlled input (path and search_term) without proper sanitization, leading to command injection vulnerabilities.""
+}"
+gemini-2.5-flash-lite,train_baseline,22-6,True,CWE-22,"[10, 49]",True,CWE-120,"strncpy(fileNames[i], argv[i+1], 255);",True,,True,False,False,wrong_cwe,,,0,,"The strncpy function can lead to a buffer overflow if the source string is larger than or equal to the specified size, as it does not guarantee null termination.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-120"",
+  ""location"": ""strncpy(fileNames[i], argv[i+1], 255);"",
+  ""explanation"": ""The strncpy function can lead to a buffer overflow if the source string is larger than or equal to the specified size, as it does not guarantee null termination.""
+}"
+gemini-2.5-flash-lite,baseline,22-2,True,CWE-22,"[8, 20, 29]",True,CWE-22,"snprintf(file_name_buffer, sizeof(file_name_buffer), ""%s/%s"", public_root, argv[1]);",True,,True,True,False,,,,0,,"The code is vulnerable to directory traversal because the user-supplied filename is directly concatenated with the public root without proper sanitization, allowing access to files outside the intended directory.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);"",
+  ""explanation"": ""The code is vulnerable to directory traversal because the user-supplied filename is directly concatenated with the public root without proper sanitization, allowing access to files outside the intended directory.""
+}"
+gemini-2.5-flash-lite,baseline,22-5,True,CWE-22,"[8, 28]",False,,,True,,False,False,False,wrong_binary_label,,,0,,The code does not contain any apparent vulnerabilities as it correctly handles file operations and buffer sizes.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain any apparent vulnerabilities as it correctly handles file operations and buffer sizes.""
+}"
+gemini-2.5-flash-lite,baseline,22-3,True,CWE-22,"[12, 23, 32]",True,CWE-22,"snprintf(file_name_buffer, sizeof(file_name_buffer), ""%s/%s"", public_root, argv[1]);",True,,True,True,False,,,,0,,"The program is vulnerable to directory traversal because the input filename is not properly sanitized before being appended to the public root directory, allowing an attacker to access files outside the intended directory.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);"",
+  ""explanation"": ""The program is vulnerable to directory traversal because the input filename is not properly sanitized before being appended to the public root directory, allowing an attacker to access files outside the intended directory.""
+}"
+gemini-2.5-flash-lite,baseline,22-1,True,CWE-22,"[16, 19]",True,CWE-22,"snprintf(file_name_buffer, sizeof(file_name_buffer), ""%s/%s"", public_root, argv[1]);",True,,True,True,False,,,,0,,"The program is vulnerable to directory traversal because it directly concatenates user-supplied input (argv[1]) into a file path without proper sanitization, allowing attackers to access files outside the intended directory.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);"",
+  ""explanation"": ""The program is vulnerable to directory traversal because it directly concatenates user-supplied input (argv[1]) into a file path without proper sanitization, allowing attackers to access files outside the intended directory.""
+}"
+gemini-2.5-flash-lite,baseline,22-8,False,CWE-22,[],True,CWE-78,main function,True,,False,False,False,wrong_binary_label,,,0,,"The program constructs a shell command by concatenating user-controlled input (search term and file path) without proper sanitization, leading to command injection vulnerabilities.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""main function"",
+  ""explanation"": ""The program constructs a shell command by concatenating user-controlled input (search term and file path) without proper sanitization, leading to command injection vulnerabilities.""
+}"
+gemini-2.5-flash-lite,errorlock_gated,22-2,True,CWE-22,"[8, 20, 29]",True,CWE-22,"snprintf(file_name_buffer, sizeof(file_name_buffer), ""%s/%s"", public_root, argv[1]);",True,,True,True,False,,False,baseline_has_cwe,3,0.5529943198716953,"The code is vulnerable to directory traversal because the user-supplied filename is directly concatenated with the public root without proper sanitization, allowing access to files outside the intended directory.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);"",
+  ""explanation"": ""The code is vulnerable to directory traversal because the user-supplied filename is directly concatenated with the public root without proper sanitization, allowing access to files outside the intended directory.""
+}"
+gemini-2.5-flash-lite,errorlock_gated,22-5,True,CWE-22,"[8, 28]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.6166092164120042,The code does not contain any apparent vulnerabilities as it correctly handles file operations and buffer sizes.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The code does not contain any apparent vulnerabilities as it correctly handles file operations and buffer sizes.""
+}"
+gemini-2.5-flash-lite,errorlock_gated,22-3,True,CWE-22,"[12, 23, 32]",True,CWE-22,"snprintf(file_name_buffer, sizeof(file_name_buffer), ""%s/%s"", public_root, argv[1]);",True,,True,True,False,,False,baseline_has_cwe,3,0.5232878717183282,"The program is vulnerable to directory traversal because the input filename is not properly sanitized before being appended to the public root directory, allowing an attacker to access files outside the intended directory.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);"",
+  ""explanation"": ""The program is vulnerable to directory traversal because the input filename is not properly sanitized before being appended to the public root directory, allowing an attacker to access files outside the intended directory.""
+}"
+gemini-2.5-flash-lite,errorlock_gated,22-1,True,CWE-22,"[16, 19]",True,CWE-22,"snprintf(file_name_buffer, sizeof(file_name_buffer), ""%s/%s"", public_root, argv[1]);",True,,True,True,False,,False,baseline_has_cwe,3,0.5515155815288328,"The program is vulnerable to directory traversal because it directly concatenates user-supplied input (argv[1]) into a file path without proper sanitization, allowing attackers to access files outside the intended directory.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);"",
+  ""explanation"": ""The program is vulnerable to directory traversal because it directly concatenates user-supplied input (argv[1]) into a file path without proper sanitization, allowing attackers to access files outside the intended directory.""
+}"
+gemini-2.5-flash-lite,errorlock_gated,22-8,False,CWE-22,[],True,CWE-20,main function,True,,False,False,False,wrong_binary_label,True,cwe_recheck,3,1.0,"The program constructs a command string using user-controlled input (argv[2] and argv[1]) and executes it via system(), which is vulnerable to command injection if the input is not properly sanitized.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-20"",
+  ""location"": ""main function"",
+  ""explanation"": ""The program constructs a command string using user-controlled input (argv[2] and argv[1]) and executes it via system(), which is vulnerable to command injection if the input is not properly sanitized.""
+}"

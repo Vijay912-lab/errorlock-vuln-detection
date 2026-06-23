@@ -1,0 +1,85 @@
+{
+  "model": "qwen2.5-coder:0.5b",
+  "dataset": "data/CASTLE-C250.min.json",
+  "n_total": 20,
+  "n_train": 8,
+  "n_test": 12,
+  "top_k": 1,
+  "baseline": {
+    "n": 12,
+    "accuracy": 0.5833333333333334,
+    "precision": 0.6363636363636364,
+    "recall": 0.875,
+    "f1": 0.7368421052631579,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.5833333333333334,
+    "cwe_correct_rate": 0.0,
+    "location_correct_rate": 0.0,
+    "failure_counts": {
+      "wrong_cwe": 7,
+      "wrong_binary_label": 5
+    },
+    "confusion_matrix": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        7
+      ]
+    ]
+  },
+  "errorlock": {
+    "n": 12,
+    "accuracy": 0.6666666666666666,
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1": 0.8,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.6666666666666666,
+    "cwe_correct_rate": 0.5833333333333334,
+    "location_correct_rate": 0.0,
+    "failure_counts": {
+      "correct": 7,
+      "wrong_binary_label": 4,
+      "wrong_cwe": 1
+    },
+    "confusion_matrix": [
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        8
+      ]
+    ]
+  },
+  "train_baseline_for_memory": {
+    "n": 8,
+    "accuracy": 0.625,
+    "precision": 0.5714285714285714,
+    "recall": 1.0,
+    "f1": 0.7272727272727273,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.625,
+    "cwe_correct_rate": 0.125,
+    "location_correct_rate": 0.125,
+    "failure_counts": {
+      "wrong_binary_label": 3,
+      "wrong_cwe": 4,
+      "correct": 1
+    },
+    "confusion_matrix": [
+      [
+        1,
+        3
+      ],
+      [
+        0,
+        4
+      ]
+    ]
+  }
+}

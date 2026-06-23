@@ -1,0 +1,99 @@
+{
+  "model": "qwen2.5-coder:0.5b",
+  "dataset": "data/CASTLE-C250.min.json",
+  "n_total": 250,
+  "n_train": 100,
+  "n_test": 150,
+  "top_k": 3,
+  "gated": true,
+  "min_similarity": 0.18,
+  "cwe_recheck_similarity": 0.35,
+  "near_duplicate_similarity": 0.95,
+  "preserve_binary_decision": true,
+  "selective_binary_override": false,
+  "binary_override_similarity": 0.62,
+  "binary_override_votes": 2,
+  "skip_if_baseline_not_vulnerable": true,
+  "skip_if_baseline_vulnerable": false,
+  "skip_if_baseline_has_cwe": true,
+  "baseline": {
+    "n": 150,
+    "accuracy": 0.41333333333333333,
+    "precision": 0.6071428571428571,
+    "recall": 0.34,
+    "f1": 0.4358974358974359,
+    "parse_failure_rate": 0.013333333333333334,
+    "binary_correct_rate": 0.4,
+    "cwe_correct_rate": 0.17333333333333334,
+    "location_correct_rate": 0.17333333333333334,
+    "failure_counts": {
+      "wrong_cwe": 34,
+      "wrong_binary_label": 88,
+      "correct": 26,
+      "parse_error": 2
+    },
+    "confusion_matrix": [
+      [
+        28,
+        22
+      ],
+      [
+        66,
+        34
+      ]
+    ]
+  },
+  "errorlock": {
+    "n": 150,
+    "accuracy": 0.4066666666666667,
+    "precision": 0.5964912280701754,
+    "recall": 0.34,
+    "f1": 0.43312101910828027,
+    "parse_failure_rate": 0.006666666666666667,
+    "binary_correct_rate": 0.4,
+    "cwe_correct_rate": 0.21333333333333335,
+    "location_correct_rate": 0.18,
+    "failure_counts": {
+      "wrong_cwe": 28,
+      "wrong_binary_label": 89,
+      "correct": 32,
+      "parse_error": 1
+    },
+    "confusion_matrix": [
+      [
+        27,
+        23
+      ],
+      [
+        66,
+        34
+      ]
+    ]
+  },
+  "train_baseline_for_memory": {
+    "n": 100,
+    "accuracy": 0.44,
+    "precision": 0.4,
+    "recall": 0.24,
+    "f1": 0.3,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.44,
+    "cwe_correct_rate": 0.32,
+    "location_correct_rate": 0.32,
+    "failure_counts": {
+      "wrong_binary_label": 56,
+      "correct": 32,
+      "wrong_cwe": 12
+    },
+    "confusion_matrix": [
+      [
+        32,
+        18
+      ],
+      [
+        38,
+        12
+      ]
+    ]
+  }
+}

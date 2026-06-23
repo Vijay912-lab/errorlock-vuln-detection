@@ -1,0 +1,80 @@
+{
+  "model": "mock-rule-detector",
+  "dataset": "data/sample/sample_castle.json",
+  "n_total": 3,
+  "n_train": 1,
+  "n_test": 2,
+  "top_k": 3,
+  "baseline": {
+    "n": 2,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 1.0,
+    "cwe_correct_rate": 1.0,
+    "location_correct_rate": 0.5,
+    "failure_counts": {
+      "correct": 2
+    },
+    "confusion_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "errorlock": {
+    "n": 2,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 1.0,
+    "cwe_correct_rate": 1.0,
+    "location_correct_rate": 0.5,
+    "failure_counts": {
+      "correct": 2
+    },
+    "confusion_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "train_baseline_for_memory": {
+    "n": 1,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 1.0,
+    "cwe_correct_rate": 1.0,
+    "location_correct_rate": 0.0,
+    "failure_counts": {
+      "correct": 1
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  }
+}

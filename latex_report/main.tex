@@ -1,0 +1,91 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Course:      CS541: Database Systems
+% Project:     ErrorLock
+% Team Member: Shizhen Yang
+% Date:        Spring 2026
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[sigconf, nonacm]{acmart}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\sc i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\usepackage{subcaption}
+\usepackage{cleveref}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\newcommand\todo[1]{\textcolor{red}{#1}}
+\newcommand{\system}{ErrorLock }
+
+\newcommand\vldbavailabilityurl{https://github.com/vishalgajavelly/CS541-Course-Project-Error-Lock}
+\newcommand\colabnotebookurl{https://colab.research.google.com/drive/1I9lRf8JgRAuGf4C1lUF-5VX0Ry68GTpO?usp=sharing}
+\newcommand\vldbpagestyle{plain}
+
+\begin{document}
+
+\title{\system: Database-Backed Mistake Memory for LLM Vulnerability Detection \\
+\large A Project for CS541-2026 Spring}
+
+\author{Shizhen Yang}
+\affiliation{%
+  \institution{Purdue University}
+  \city{West Lafayette}
+  \state{Indiana}
+  \country{USA}
+}
+\email{yang3068@purdue.edu}
+
+\begin{abstract}
+\input{0abstract}
+\end{abstract}
+
+\maketitle
+
+%%% Course report reference block start %%%
+\pagestyle{\vldbpagestyle}
+\begingroup\small\noindent\raggedright\textbf{Reference Format:}\\
+Shizhen Yang. \system: Database-Backed Mistake Memory for LLM Vulnerability Detection.
+CS541 Course Project Report, Purdue University, Spring 2026.
+\endgroup
+%%% Course report reference block end %%%
+
+%%% Artifact availability block start %%%
+\ifdefempty{\vldbavailabilityurl}{}{
+\vspace{.3cm}
+\begingroup\small\noindent\raggedright\textbf{Artifact Availability:}\\
+The source code, experimental notebook, generated result files, and SQLite mistake databases have been made available at \url{\vldbavailabilityurl}. 
+The executable Google Colab notebook is also available at \url{\colabnotebookurl}.
+\endgroup
+}
+%%% Artifact availability block end %%%
+
+\section{Introduction}
+\input{1intro}
+
+\section{Related Work}
+\input{2related}
+
+\section{Methodology}
+\input{3overview}
+
+\section{Evaluation}
+\input{4eval}
+
+\section{Conclusion}
+\input{5conclusion}
+
+\begin{acks}
+This work was completed as a course project for CS541 at Purdue University.
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{ref}
+
+\end{document}
+\endinput

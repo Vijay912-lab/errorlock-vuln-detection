@@ -1,0 +1,115 @@
+\label{sec:eval}
+
+This section evaluates whether \system improves LLM-based CWE vulnerability detection. Our experiments are designed to answer the following questions:
+\begin{enumerate}
+    \item How does \system compare with the standard LLM baseline on the original CASTLE benchmark?
+    \item Does \system generalize to a different CWE benchmark when the mistake database is built only from CASTLE mistakes?
+    \item How does mistake retrieval change the model's behavior in terms of false positives and false negatives?
+\end{enumerate}
+
+\subsection{Experimental Setup}
+
+\noindent\textbf{Hardware and Software.}
+All experiments were run in a Google Colab notebook using a T4 GPU runtime. The prototype was implemented in Python. We used Hugging Face Transformers for model loading and generation, SQLite for mistake storage, pandas for data processing, and scikit-learn for evaluation metrics and TF-IDF retrieval. The implementation, generated result files, and SQLite mistake databases are available in our public artifact repository.
+
+\noindent\textbf{Base Models.}
+The original CASTLE/Juliet experiments use Qwen2.5-Coder-7B-Instruct as the base LLM. We originally planned to evaluate multiple models, but due to runtime constraints before the project deadline, we chose to evaluate one code-specialized model more completely across multiple datasets and experiment settings. This lets us focus on the main question of the project: whether a persistent mistake database can change and improve the behavior of an LLM vulnerability detector. We also include a supplemental full-C250 experiment using OpenRouter's \texttt{openai/gpt-oss-120b:free} model with compact RAG memory, to test whether stronger retrieval and a stronger model improve the held-out CASTLE result.
+
+\noindent\textbf{Datasets.}
+We evaluate \system on two CWE-based C/C++ vulnerability benchmarks. The first dataset is CASTLE-C250, which is our main controlled benchmark. CASTLE is a benchmark for evaluating vulnerability detection methods, including static analyzers, LLMs, and formal verification tools. It contains 250 hand-crafted C micro-benchmark programs covering 25 common CWE categories~\cite{castle,castle_github}. The second dataset is a sampled subset of the Juliet C/C++ Test Suite. Juliet is a larger NIST test suite organized under 118 different CWE categories~\cite{juliet_nist}. In our experiment, we sample 250 Juliet cases whose CWE categories overlap with CASTLE. This gives us an external benchmark for testing whether an ErrorLock database built from CASTLE mistakes can transfer to a different CWE dataset.
+
+\noindent\textbf{Methods Compared.}
+We compare two methods:
+\begin{itemize}
+    \item \textbf{Baseline:} The base LLM receives the benchmark prompt and the code sample, then predicts whether the sample is vulnerable.
+    \item \textbf{\system:} The same base LLM receives an augmented prompt containing retrieved past mistakes from the SQLite mistake database.
+\end{itemize}
+
+We evaluate \system in three original settings. First, we split CASTLE into a training split and a held-out test split. The ErrorLock database is built from mistakes on the CASTLE training split, then evaluated on the held-out CASTLE test split. Second, we run an in-dataset memory analysis where the mistake database is built from all CASTLE mistakes and tested on all CASTLE samples. This setting is less strict, but it shows how mistake memory changes behavior within the original benchmark. Third, we test cross-benchmark generalization by building the mistake database from CASTLE mistakes and evaluating on the sampled Juliet subset. Finally, we add a supplemental full-C250 OpenRouter experiment with compact RAG retrieval. This supplemental setting uses 100 CASTLE samples to build the mistake database and 150 held-out samples for testing, matching the fair train/test protocol used by the local full-C250 runs.
+
+\noindent\textbf{Metrics.}
+We report parsed prediction rate, accuracy, macro F1, weighted F1, false positives, and false negatives. Accuracy measures the fraction of correct predictions among parsed outputs. F1 is the harmonic mean of precision and recall, with best value 1 and worst value 0~\cite{sklearn_f1}. Macro F1 treats both classes equally, while weighted F1 accounts for class support. False positives are safe samples incorrectly predicted as vulnerable, while false negatives are vulnerable samples incorrectly predicted as safe. For vulnerability detection, both are important: false positives waste developer time, while false negatives may leave real vulnerabilities undetected. Precision and recall are also important because precision measures the ability not to label negative samples as positive, while recall measures the ability to find positive samples~\cite{sklearn_prfs}.
+
+\subsection{Overall Results}
+
+Table~\ref{tab:main_results} summarizes the original Qwen2.5-Coder-7B-Instruct results. The results show that \system does not uniformly improve performance in every setting. Instead, it changes the model's behavior in a clear direction: it often reduces false positives, but sometimes increases false negatives.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Baseline vs. \system results for Qwen2.5-Coder-7B-Instruct. Positive change means \system is higher than the baseline. For FP and FN, negative change is better.}
+\label{tab:main_results}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llrrr}
+\toprule
+Setting & Metric & Base & \system & Change \\
+\midrule
+Held-out & Accuracy & 68.09\% & 58.00\% & -10.09 pp \\
+Held-out & Macro F1 & 67.13\% & 57.85\% & -9.28 pp \\
+Held-out & Weighted F1 & 67.49\% & 57.85\% & -9.64 pp \\
+Held-out & FP & 10 & 9 & -1 \\
+Held-out & FN & 5 & 12 & +7 \\
+Held-out & Parsed & 94.00\% & 100.00\% & +6.00 pp \\
+\midrule
+CASTLE all & Accuracy & 64.98\% & 63.20\% & -1.78 pp \\
+CASTLE all & Macro F1 & 60.96\% & 62.96\% & +2.00 pp \\
+CASTLE all & Weighted F1 & 63.76\% & 63.56\% & -0.21 pp \\
+CASTLE all & FP & 53 & 31 & -22 \\
+CASTLE all & FN & 30 & 61 & +31 \\
+CASTLE all & Parsed & 94.80\% & 100.00\% & +5.20 pp \\
+\midrule
+Juliet & Accuracy & 68.67\% & 82.40\% & +13.73 pp \\
+Juliet & Macro F1 & 66.23\% & 82.18\% & +15.95 pp \\
+Juliet & Weighted F1 & 66.19\% & 82.18\% & +15.98 pp \\
+Juliet & FP & 73 & 36 & -37 \\
+Juliet & FN & 5 & 8 & +3 \\
+Juliet & Parsed & 99.60\% & 100.00\% & +0.40 pp \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Supplemental OpenRouter RAG Result}
+
+Table~\ref{tab:openrouter_rag} reports the supplemental full-C250 result using \texttt{openai/gpt-oss-120b:free} through OpenRouter. This experiment uses compact RAG retrieval rather than sending the entire mistake table to the model. The mistake database is built from 100 CASTLE samples, and evaluation is performed on 150 held-out CASTLE samples. The RAG retriever considers 25 candidate mistakes and sends 6 selected evidence rows to the ErrorLock prompt.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Supplemental full-C250 OpenRouter compact-RAG result. Both rows use the same 150 held-out CASTLE test samples.}
+\label{tab:openrouter_rag}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Method & Accuracy & Precision & Recall & F1 & CWE Correct & Parse Fail \\
+\midrule
+Baseline & 0.593 & 0.831 & 0.490 & 0.616 & 0.433 & 0.207 \\
+RAG \system & 0.667 & 0.847 & 0.610 & 0.709 & 0.520 & 0.053 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+Unlike the original held-out CASTLE result, compact RAG improves the main binary metric. F1 increases from 0.616 to 0.709, accuracy increases from 0.593 to 0.667, and recall increases from 0.490 to 0.610. CWE correctness also improves from 0.433 to 0.520. The RAG ErrorLock pass is applied to 43 of the 150 test samples, so the improvement comes from selective use of the mistake database rather than rewriting every prediction. The OpenRouter free endpoint produced some slow or failed responses; the run used a 60-second API deadline, and those failures are counted in the parse-failure metric rather than hidden.
+
+\subsection{CASTLE Results}
+
+On the held-out CASTLE split, \system performs worse than the baseline. Accuracy decreases from 68.09\% to 58.00\%, macro F1 decreases from 67.13\% to 57.85\%, and weighted F1 decreases from 67.49\% to 57.85\%. The main cause is that false negatives increase from 5 to 12. This means that ErrorLock made the model more conservative on the held-out CASTLE samples. Instead of over-reporting vulnerabilities, the model became more likely to predict that a sample was safe, which caused it to miss more real vulnerable cases.
+
+The full CASTLE in-dataset analysis shows a similar but more nuanced pattern. Accuracy slightly decreases from 64.98\% to 63.20\%, and weighted F1 slightly decreases from 63.76\% to 63.56\%. However, macro F1 improves from 60.96\% to 62.96\%. More importantly, false positives decrease from 53 to 31, while false negatives increase from 30 to 61. This means that \system corrected many over-reporting mistakes, but it also introduced many under-reporting mistakes. In other words, it shifted the model toward safer-code predictions.
+
+This behavior is understandable given the design of the current prompt. If many retrieved mistakes are false positives, the augmented prompt repeatedly warns the model not to over-report vulnerabilities. This can improve specificity on safe code, but it can also reduce sensitivity on vulnerable code. Therefore, the CASTLE result shows both the benefit and risk of mistake-memory prompting: it can reduce one kind of error while increasing another.
+
+\subsection{Juliet Generalization Results}
+
+The strongest result appears on the external Juliet subset. The baseline achieves 68.67\% accuracy, 66.23\% macro F1, and 66.19\% weighted F1. With the CASTLE-built ErrorLock database, accuracy improves to 82.40\%, macro F1 improves to 82.18\%, and weighted F1 improves to 82.18\%. False positives decrease from 73 to 36, while false negatives only increase from 5 to 8.
+
+This result is important because the Juliet samples were not used to build the mistake database. The database was built from CASTLE mistakes, then applied to a different CWE benchmark. Therefore, the Juliet experiment directly addresses benchmark scope and generalizability. It suggests that \system is not only memorizing individual CASTLE examples. Instead, at least for this sampled Juliet subset, the retrieved CASTLE mistakes provide useful warnings that transfer to another CWE-labeled dataset.
+
+The improvement on Juliet is mainly caused by the reduction in false positives. The baseline over-reports many Juliet safe samples as vulnerable. ErrorLock reduces this behavior by retrieving past false-positive mistakes and telling the model to be careful with similar code patterns. Unlike the held-out CASTLE result, this correction does not cause a large false-negative penalty on Juliet. This suggests that ErrorLock can be useful when the baseline model has a strong tendency to over-report vulnerabilities.
+
+\subsection{Discussion}
+
+Overall, the results support a mixed but useful conclusion. \system is not a guaranteed improvement over the baseline in every setting. On the original Qwen CASTLE experiments, it can make the model overly conservative and increase false negatives. However, on the external Juliet subset, the CASTLE-built mistake database substantially improves accuracy and F1. The supplemental OpenRouter result further shows that better retrieval can change the conclusion on the full CASTLE benchmark itself: compact RAG with a stronger model improves both F1 and CWE correctness on the held-out split. Together, these results suggest that database-backed mistake memory is useful, but its benefit depends strongly on retrieval quality, prompt design, and the base model.
+
+The current prototype has two main limitations. First, retrieval uses TF-IDF similarity, which mainly captures lexical overlap. A stronger code embedding model might retrieve semantically similar mistakes more effectively. Second, the prompt does not balance false-positive and false-negative mistakes in a principled way. Future versions could retrieve separate sets of false-positive and false-negative records, or use a weighting strategy that prevents the model from becoming too conservative.

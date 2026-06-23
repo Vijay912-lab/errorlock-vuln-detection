@@ -1,0 +1,191 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,errorlock_applied,gate_reason,retrieved_count,max_similarity,explanation,raw
+llama3.2:1b,train_baseline,22-10,False,CWE-22,[],True,,Error opening file,True,,False,False,False,wrong_binary_label,,,0,,Failed to open a file,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Error opening file"",
+  ""explanation"": ""Failed to open a file""
+}"
+llama3.2:1b,train_baseline,78-8,False,CWE-78,[],True,,stdin,True,,False,False,False,wrong_binary_label,,,0,,The program reads from stdin without checking the input for validity.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""stdin"",
+  ""explanation"": ""The program reads from stdin without checking the input for validity.""
+}"
+llama3.2:1b,train_baseline,22-3,True,CWE-22,"[12, 23, 32]",False,,Invalid path: /var/www/html,True,,False,False,False,wrong_binary_label,,,0,,The program attempts to create a directory at an invalid location.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Invalid path: /var/www/html"",
+  ""explanation"": ""The program attempts to create a directory at an invalid location.""
+}"
+llama3.2:1b,train_baseline,78-2,True,CWE-78,"[9, 10]",True,,system call,True,,True,False,False,wrong_cwe,,,0,,uses the system to execute a command,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""system call"",
+  ""explanation"": ""uses the system to execute a command""
+}"
+llama3.2:1b,train_baseline,22-2,True,CWE-22,"[8, 20, 29]",False,,Invalid path: /var/www/html,True,,False,False,False,wrong_binary_label,,,0,,The program attempts to create a directory with a non-existent parent directory.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Invalid path: /var/www/html"",
+  ""explanation"": ""The program attempts to create a directory with a non-existent parent directory.""
+}"
+llama3.2:1b,train_baseline,78-4,True,CWE-78,"[11, 12]",False,,Enter the number of files to list: ,True,,False,False,False,wrong_binary_label,,,0,,This C code does not contain any potential security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Enter the number of files to list: "",
+  ""explanation"": ""This C code does not contain any potential security vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,78-10,False,CWE-78,[],False,,fgets,True,,True,True,True,,,,0,,"The fgets function is used to read input from the standard input stream, but it does not properly handle errors and can lead to buffer overflows if not used carefully.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""fgets"",
+  ""explanation"": ""The fgets function is used to read input from the standard input stream, but it does not properly handle errors and can lead to buffer overflows if not used carefully.""
+}"
+llama3.2:1b,train_baseline,22-9,False,CWE-22,[],False,,main function,True,,True,True,True,,,,0,,"The program does not check for errors when accessing the file or performing system calls, which can lead to security vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for errors when accessing the file or performing system calls, which can lead to security vulnerabilities.""
+}"
+llama3.2:1b,baseline,22-6,True,CWE-22,"[10, 49]",True,,file open,True,,True,False,False,wrong_cwe,,,0,,The program attempts to open a file in read mode without checking if the file exists or can be opened.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""file open"",
+  ""explanation"": ""The program attempts to open a file in read mode without checking if the file exists or can be opened.""
+}"
+llama3.2:1b,baseline,22-1,True,CWE-22,"[16, 19]",True,,Error opening file,True,,True,False,False,wrong_cwe,,,0,,Failed to open a file due to lack of permissions.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Error opening file"",
+  ""explanation"": ""Failed to open a file due to lack of permissions.""
+}"
+llama3.2:1b,baseline,78-7,False,CWE-78,[],False,,main function,True,,True,True,True,,,,0,,The program does not check if the input is a valid number before executing it.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check if the input is a valid number before executing it.""
+}"
+llama3.2:1b,baseline,22-7,False,CWE-22,[],False,,The function `is_valid_path` does not check for directory traversal attacks.,True,,True,True,True,,,,0,,"This function does not perform any checks to prevent directory traversal attacks, such as checking if the file is within a specific base directory or using a secure filename.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The function `is_valid_path` does not check for directory traversal attacks."",
+  ""explanation"": ""This function does not perform any checks to prevent directory traversal attacks, such as checking if the file is within a specific base directory or using a secure filename."" }"
+llama3.2:1b,baseline,78-3,True,CWE-78,"[23, 25]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Potential buffer overflow vulnerability due to insufficient input validation.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Potential buffer overflow vulnerability due to insufficient input validation.""
+}"
+llama3.2:1b,baseline,22-8,False,CWE-22,[],False,,main function,True,,True,True,True,,,,0,,The program does not check for errors when accessing the file path or performing system calls.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for errors when accessing the file path or performing system calls.""
+}"
+llama3.2:1b,baseline,78-6,True,CWE-78,[29],True,,main function,True,,True,False,False,wrong_cwe,,,0,,The program does not check the validity of user input before using it to execute system commands.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check the validity of user input before using it to execute system commands.""
+}"
+llama3.2:1b,baseline,78-9,False,CWE-78,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program does not check for potential security vulnerabilities such as SQL injection or command injection.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for potential security vulnerabilities such as SQL injection or command injection.""
+}"
+llama3.2:1b,baseline,78-1,True,CWE-78,"[13, 16]",False,,System call,True,,False,False,False,wrong_binary_label,,,0,,"The program uses a system call to execute a command, which is not secure.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""System call"",
+  ""explanation"": ""The program uses a system call to execute a command, which is not secure.""
+}"
+llama3.2:1b,baseline,78-5,True,CWE-78,[10],True,,main function,True,,True,False,False,wrong_cwe,,,0,,The program does not check the return value of fgets() before using it to read from stdin.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check the return value of fgets() before using it to read from stdin.""
+}"
+llama3.2:1b,baseline,22-4,True,CWE-22,"[46, 66, 70]",False,,grep command,True,,False,False,False,wrong_binary_label,,,0,,"The system call `system` is used to execute a shell command, which can be vulnerable to command injection attacks if not properly sanitized.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""grep command"",
+  ""explanation"": ""The system call `system` is used to execute a shell command, which can be vulnerable to command injection attacks if not properly sanitized.""
+}"
+llama3.2:1b,baseline,22-5,True,CWE-22,"[8, 28]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,The program does not check if the provided file exists before attempting to open it.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check if the provided file exists before attempting to open it.""
+}"
+llama3.2:1b,errorlock_gated,22-6,True,CWE-22,"[10, 49]",True,,,True,,True,False,False,wrong_cwe,True,applied,3,0.393857480977952,"The provided code attempts to open a file in read mode, but it does not handle errors properly. If the file cannot be opened, an error message is printed, and the program continues running without stopping or providing any indication of failure.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The provided code attempts to open a file in read mode, but it does not handle errors properly. If the file cannot be opened, an error message is printed, and the program continues running without stopping or providing any indication of failure.""
+}"
+llama3.2:1b,errorlock_gated,22-1,True,CWE-22,"[16, 19]",True,,Error opening file,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,1.0,Failed to open a file due to lack of permissions.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Error opening file"",
+  ""explanation"": ""Failed to open a file due to lack of permissions.""
+}"
+llama3.2:1b,errorlock_gated,78-7,False,CWE-78,[],False,,main function,True,,True,True,True,,False,baseline_not_vulnerable,3,0.7811502715141745,The program does not check if the input is a valid number before executing it.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check if the input is a valid number before executing it.""
+}"
+llama3.2:1b,errorlock_gated,22-7,False,CWE-22,[],False,,The function `is_valid_path` does not check for directory traversal attacks.,True,,True,True,True,,False,baseline_not_vulnerable,3,0.4786396278491959,"This function does not perform any checks to prevent directory traversal attacks, such as checking if the file is within a specific base directory or using a secure filename.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The function `is_valid_path` does not check for directory traversal attacks."",
+  ""explanation"": ""This function does not perform any checks to prevent directory traversal attacks, such as checking if the file is within a specific base directory or using a secure filename."" }"
+llama3.2:1b,errorlock_gated,78-3,True,CWE-78,"[23, 25]",True,,Error opening file,True,,True,False,False,wrong_cwe,True,applied,3,0.4030500131820835,The program attempts to open a file without checking if the file exists or is accessible.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Error opening file"",
+  ""explanation"": ""The program attempts to open a file without checking if the file exists or is accessible.""
+}"
+llama3.2:1b,errorlock_gated,22-8,False,CWE-22,[],False,,main function,True,,True,True,True,,False,baseline_not_vulnerable,3,0.430858186202806,The program does not check for errors when accessing the file path or performing system calls.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for errors when accessing the file path or performing system calls.""
+}"
+llama3.2:1b,errorlock_gated,78-6,True,CWE-78,[29],True,,,True,,True,False,False,wrong_cwe,True,applied,3,0.87608437553649,The input is not validated properly. It can contain any characters except ';' and '&' which are used for system calls.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The input is not validated properly. It can contain any characters except ';' and '&' which are used for system calls.""
+}"
+llama3.2:1b,errorlock_gated,78-9,False,CWE-78,[],True,,,True,,False,False,False,wrong_binary_label,True,applied,3,0.3702538597494805,The provided code does not demonstrate any vulnerabilities.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The provided code does not demonstrate any vulnerabilities.""
+}"
+llama3.2:1b,errorlock_gated,78-1,True,CWE-78,"[13, 16]",False,,System call,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4817999626218105,"The program uses a system call to execute a command, which is not secure.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""System call"",
+  ""explanation"": ""The program uses a system call to execute a command, which is not secure.""
+}"
+llama3.2:1b,errorlock_gated,78-5,True,CWE-78,[10],True,,,True,,True,False,False,wrong_cwe,True,applied,3,0.7748186955051425,Error opening file,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""Error opening file""
+}"
+llama3.2:1b,errorlock_gated,22-4,True,CWE-22,"[46, 66, 70]",False,,grep command,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.42444247309355493,"The system call `system` is used to execute a shell command, which can be vulnerable to command injection attacks if not properly sanitized.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""grep command"",
+  ""explanation"": ""The system call `system` is used to execute a shell command, which can be vulnerable to command injection attacks if not properly sanitized.""
+}"
+llama3.2:1b,errorlock_gated,22-5,True,CWE-22,"[8, 28]",True,,Invalid path: /var/www/html,True,,True,False,False,wrong_cwe,True,applied,3,0.49713682989064745,"The code attempts to open a file in the root directory of the web server, which is not allowed.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Invalid path: /var/www/html"",
+  ""explanation"": ""The code attempts to open a file in the root directory of the web server, which is not allowed.""
+}"

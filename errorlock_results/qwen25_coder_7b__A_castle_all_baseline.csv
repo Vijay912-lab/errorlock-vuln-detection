@@ -1,0 +1,3092 @@
+model,dataset,method,id,true_label,true_cwe,true_lines,pred_label,pred_cwe,pred_lines,raw
+qwen25_coder_7b,CASTLE_all_250,baseline,22-1,1,22,"[16, 19]",1.0,78.0,[16],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Potential directory traversal vulnerability due to use of user-supplied input in file path."",
+        ""line_content"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,22-2,1,22,"[8, 20, 29]",1.0,78.0,"[16, 29]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Potential Path Traversal vulnerability due to use of user-supplied input in file path construction."",
+        ""line_content"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 29,
+        ""cwe"": 400,
+        ""message"": ""File handling error can lead to resource leaks if the file cannot be opened."",
+        ""line_content"": ""FILE *file = fopen(file_name_buffer, \""r\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,22-3,1,22,"[12, 23, 32]",1.0,88.0,"[17, 26]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 17,
+        ""cwe"": 88,
+        ""message"": ""The program uses `snprintf` to construct a filename from user input without proper validation or sanitization, which can lead to directory traversal attacks."",
+        ""line_content"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 94,
+        ""message"": ""The program reads a file without checking its permissions, which could allow unauthorized access to sensitive files."",
+        ""line_content"": ""FILE *file = fopen(file_name_buffer, \""r\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,22-4,1,22,"[46, 66, 70]",1.0,78.0,"[27, 29]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user-supplied input in the construction of the 'command' buffer."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 29,
+        ""cwe"": 250,
+        ""message"": ""Potential buffer overflow in 'path' array due to lack of bounds checking when constructing the full path."",
+        ""line_content"": ""snprintf(path, sizeof(path), \""%s/%s\"", public_root, argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,22-5,1,22,"[8, 28]",1.0,78.0,[16],"```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""The program uses fscanf without validating the input length, which can lead to buffer overflow."",
+        ""line_content"": ""if (argc > 1)""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,22-6,1,22,"[10, 49]",1.0,190.0,"[27, 28]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow detected due to lack of bounds checking when copying strings into 'fileNames'."",
+        ""line_content"": ""strncpy(fileNames[i], argv[i+1], 255);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 28,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow if the input string exceeds 255 characters."",
+        ""line_content"": ""strncpy(fileNames[i], argv[i+1], 255);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,22-7,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,22-8,0,22,[],1.0,78.0,"[27, 29]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user-supplied input in the construction of the 'command' buffer."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 29,
+        ""cwe"": 250,
+        ""message"": ""Potential buffer overflow in 'path' array due to lack of bounds checking when constructing the full path."",
+        ""line_content"": ""snprintf(path, sizeof(path), \""%s/%s\"", public_root, argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,22-9,0,22,[],1.0,78.0,"[29, 36]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 36,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user-supplied input in the construction of the 'command' buffer."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 29,
+        ""cwe"": 22,
+        ""message"": ""Potential directory traversal vulnerability due to lack of proper validation of the 'filename' parameter."",
+        ""line_content"": ""if (!is_valid_path(path, public_root)) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,22-10,0,22,[],1.0,78.0,"[16, 21]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"",
+        ""line_content"": ""snprintf(file_name_buffer, sizeof(file_name_buffer), \""%s/%s\"", public_root, argv[1]);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 21,
+        ""cwe"": 494,
+        ""message"": ""Insecure Function Usage: Use of potentially dangerous function 'fopen'"",
+        ""line_content"": ""FILE *file = fopen(file_name_buffer, \""r\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-1,1,78,"[13, 16]",1.0,78.0,[8],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user-supplied input in the 'snprintf' function."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""ping %s\"", ip);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-2,1,78,"[9, 10]",1.0,78.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 78,
+        ""message"": ""Command Injection Vulnerability"",
+        ""line_content"": ""strncat(cmd, argv[1], CMD_MAX - 14);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-3,1,78,"[23, 25]",1.0,78.0,"[16, 17]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of `strncpy` followed by `strncat` without proper bounds checking."",
+        ""line_content"": ""strncpy(command, cat, commandLength);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of `strncpy` followed by `strncat` without proper bounds checking."",
+        ""line_content"": ""strncat(command, argv[1], (commandLength - strlen(cat)) );""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-4,1,78,"[11, 12]",1.0,78.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of user input in a shell command."",
+        ""line_content"": ""snprintf(command, sizeof(command), \""ls -l | head -n %s\"", userInput);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-5,1,78,[10],1.0,78.0,"[16, 17]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow vulnerability due to use of strcpy without proper bounds checking."",
+        ""line_content"": ""strcpy(sys, cmd);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow vulnerability due to use of strcat without proper bounds checking."",
+        ""line_content"": ""strcat(sys, buff);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-6,1,78,[29],1.0,78.0,"[16, 17, 21]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow due to use of strcpy without proper bounds checking."",
+        ""line_content"": ""strcpy(sys, cmd);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow due to use of strcat without proper bounds checking."",
+        ""line_content"": ""strcat(sys, buff);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 21,
+        ""cwe"": 94,
+        ""message"": ""Command injection vulnerability due to use of system() with untrusted input."",
+        ""line_content"": ""for (i=0;i<5;++i) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-7,0,78,[],1.0,78.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 78,
+        ""message"": ""The use of `system` function can lead to arbitrary command execution."",
+        ""line_content"": ""system(command);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-8,0,78,[],1.0,78.0,"[16, 17, 21]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Use of 'strcpy' can lead to buffer overflow."",
+        ""line_content"": ""strcpy(sys, cmd);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 78,
+        ""message"": ""Use of 'strcat' can lead to buffer overflow."",
+        ""line_content"": ""strcat(sys, buff);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 21,
+        ""cwe"": 259,
+        ""message"": ""The use of 'system()' can execute arbitrary commands and may be vulnerable to injection attacks."",
+        ""line_content"": ""if (system(sys) < 0)""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-9,0,78,[],1.0,78.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of system() with untrusted input."",
+        ""line_content"": ""snprintf(buf, sizeof buf, \""/bin/echo %s\"", str);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,78-10,0,78,[],1.0,78.0,"[26, 29]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""Command injection vulnerability due to use of `strcat` with user input."",
+        ""line_content"": ""strcat(sys, buff);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 29,
+        ""cwe"": 88,
+        ""message"": ""Potential buffer overflow in `cleanup` function due to lack of bounds checking."",
+        ""line_content"": ""*b++ = *c;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,89-1,1,89,"[25, 28]",1.0,89.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user input directly in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM existential_crises WHERE id = '%s'\"", id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,89-2,1,89,"[40, 43]",1.0,89.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM tokens WHERE id = %s\"", id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,89-3,1,89,"[121, 122]",1.0,89.0,"[24, 78]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 78,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of sprintf with user input."",
+        ""line_content"": ""sprintf(query, fmtString, argv[1]);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 24,
+        ""cwe"": 259,
+        ""message"": ""Insecure function usage of getpass_r which may log passwords in logs or memory."",
+        ""line_content"": ""password = getpass_r(\""DB Password: \"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,89-4,1,89,"[123, 125]",1.0,89.0,"[10, 78]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 78,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of sprintf with user input."",
+        ""line_content"": ""sprintf(query, fmtString, argv[i]);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 10,
+        ""cwe"": 252,
+        ""message"": ""Use of memset_s instead of memset can lead to performance issues."",
+        ""line_content"": ""char *my_memset_s(char *s, int c, size_t n)""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,89-5,1,89,"[55, 58]",1.0,89.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM tokens WHERE id = %s\"", id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,89-6,1,89,"[126, 128]",1.0,89.0,"[32, 78]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 78,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of sprintf with user input."",
+        ""line_content"": ""sprintf(query, fmtString, argv[1]);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 259,
+        ""message"": ""Insecure function usage of getpass_r which may log passwords in logs or memory."",
+        ""line_content"": ""password = getpass_r(\""DB Password: \"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,89-7,0,89,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,89-8,0,89,[],1.0,89.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM tokens WHERE id = %s\"", id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,89-9,0,89,[],,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 78,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user-supplied input in SQL query without proper sanitization."",
+        ""line_content"": ""sprintf(query, fmtString, param_escaped);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 10,
+        ""cwe"": 252,
+        ""message"": ""Insecure function usage: 'fgets' can read more characters than allocated buffer size."",
+        ""line_content"": ""ret = fgets(password, sizeof(password), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 24,
+        ""cwe"": 252,
+        ""message"": ""Insecure function usage: 'strtok' modifies the input string."",
+        ""line_content"": ""strtok(password, \""\\n\"");""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 30,
+        ""cwe"": 0,
+        ""message"": ""Potential memory leak if 'malloc' fails."",
+        ""line_content"": ""param_escaped = malloc(("
+qwen25_coder_7b,CASTLE_all_250,baseline,89-10,0,89,[],1.0,89.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user-supplied input directly in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM existential_crises WHERE id = '%s'\"", id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,125-1,1,125,[7],1.0,190.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""%d\\n\"", array[i]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,125-2,1,125,[8],1.0,190.0,"[6, 8]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds write"",
+        ""line_content"": ""nondet[i]=i;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds read"",
+        ""line_content"": ""printf(\""%d\\n\"", nondet[i]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,125-3,1,125,[8],1.0,190.0,"[6, 8]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds write"",
+        ""line_content"": ""nondet[i]=i;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds read"",
+        ""line_content"": ""printf(\""%lld\\n\"", nondet[i]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,125-4,1,125,[13],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,125-5,1,125,"[9, 11]",1.0,190.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""%d, \"", a[i]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,125-6,1,125,"[41, 50]",,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to use of strncpy with fixed size."",
+        ""line_content"": ""strncpy(countries[0].code, \""HUN\"", 4);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to use of strncpy with fixed size."",
+        ""line_content"": ""strncpy(countries[1].code, \""GER\"", 4);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to use of strncpy with fixed size."",
+        ""line_content"": ""strncpy(countries[2].code, \""FRA\"", 4);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 20,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to use of strncpy with fixed size."",
+        """
+qwen25_coder_7b,CASTLE_all_250,baseline,125-7,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,125-8,0,125,[],,,[],"```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 7,
+        ""cwe"": 89,
+        ""message"": ""The program uses sprintf without proper bounds checking, which can lead to buffer overflow."",
+        ""line_content"": ""printf(\""My secret is hidden in: \\\""%s\\\""\"", str);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 89,
+        ""message"": ""The program uses sprintf without proper bounds checking, which can lead to buffer overflow."",
+        ""line_content"": ""printf(\""My secret is: \'\%c\'\"", str[MY_SECRET_CHAR]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,125-9,0,125,[],1.0,190.0,"[7, 8]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""%d, \"", a[i]);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds access."",
+        ""line_content"": ""printf(\""Special elem: %d\\n\"", a[INT_MAX]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,125-10,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-1,1,134,[9],1.0,89.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 89,
+        ""message"": ""Potential command injection vulnerability due to direct use of user input."",
+        ""line_content"": ""printf(argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-2,1,134,[9],1.0,114.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 114,
+        ""message"": ""Potential Buffer Overflow due to use of fgets without proper bounds checking."",
+        ""line_content"": ""printf(buffer);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-3,1,134,"[4, 13]",1.0,89.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 89,
+        ""message"": ""Potential SQL Injection due to use of user input in a non-parameterized query."",
+        ""line_content"": ""logger(buffer);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-4,1,134,"[6, 21, 23]",1.0,190.0,"[17, 18]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow in 'strncpy' function call."",
+        ""line_content"": ""strncpy(combined, hello, sizeof(combined) - 1);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow in 'strncat' function call."",
+        ""line_content"": ""strncat(combined, buffer, sizeof(combined) - strlen(buffer) - 1);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-5,1,134,"[6, 7]",1.0,114.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 114,
+        ""message"": ""Buffer overflow due to use of snprintf with user-controlled input."",
+        ""line_content"": ""snprintf(buffer, sizeof(buffer), argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-6,1,134,"[17, 18]",1.0,190.0,[8],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to use of snprintf with insufficiently checked input."",
+        ""line_content"": ""snprintf(formatter, sizeof(formatter), \""%s%d$d\\n\"", prefix, id);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-7,0,134,[],1.0,89.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 89,
+        ""message"": ""Potential command injection vulnerability due to direct use of user input."",
+        ""line_content"": ""printf(\""%s\"", argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-8,0,134,[],1.0,89.0,[7],"```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 7,
+        ""cwe"": 89,
+        ""message"": ""Potential SQL Injection due to use of user input in a formatted string."",
+        ""line_content"": ""logger(buffer);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-9,0,134,[],1.0,190.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to lack of bounds checking when copying data into 'buffer'."",
+        ""line_content"": ""snprintf(buffer, sizeof(buffer), \""%s\"", argv[1]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,134-10,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-1,1,190,[6],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-2,1,190,[6],1.0,190.0,[4],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound"",
+        ""line_content"": ""long long int APPLE = atoi(\""3000000000\"")+1;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-3,1,190,[9],1.0,190.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow occurs when adding 1 to INT_MAX."",
+        ""line_content"": ""printf(\""%d\\n\"", n + 1);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-4,1,190,[8],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-5,1,190,[13],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-6,1,190,[6],1.0,22.0,"[6, 7]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""printf(\""Without: %e\\n\"", chipWithoutMagnification);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""printf(\""With: %e\\n\"", chipWithMagnification);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-7,0,190,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-8,0,190,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-9,0,190,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,190-10,0,190,[],1.0,327.0,"[18, 19, 24]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 327,
+        ""message"": ""The use of fixed-size integer types like 'long long' can lead to overflow vulnerabilities."",
+        ""line_content"": ""long long alice_private = 19945234904;  // Alice (secret)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 19,
+        ""cwe"": 327,
+        ""message"": ""The use of fixed-size integer types like 'long long' can lead to overflow vulnerabilities."",
+        ""line_content"": ""long long bob_private = 2530476561349134275;   // Bob (secret)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 24,
+        ""cwe"": 682,
+        ""message"": ""The modulus value is too small, which can make the discrete logarithm problem easier to solve."",
+        ""line_content"": ""long long prime = 37199; // modulus""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-1,1,253,"[6, 11, 12]",1.0,190.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""The condition 'p < 0' checks for a negative pointer value, which is incorrect. Pointers cannot be negative."",
+        ""line_content"": ""if (p < 0) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-2,1,253,"[9, 14, 19, 20]",1.0,69.0,[8],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 69,
+        ""message"": ""Potential buffer overflow due to improper handling of dynamically allocated memory."",
+        ""line_content"": ""*p = 7;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-3,1,253,[10],1.0,78.0,"[8, 9]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 78,
+        ""message"": ""The use of fgets without checking its return value can lead to buffer overflows."",
+        ""line_content"": ""if (fgets(data, 100, stdin) < 0)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 9,
+        ""cwe"": 680,
+        ""message"": ""The program does not handle errors from fgets properly, which could lead to undefined behavior."",
+        ""line_content"": ""printf(\""fgets failed!\\n\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-4,1,253,[11],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-5,1,253,"[8, 15]",1.0,78.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 78,
+        ""message"": ""Potential directory traversal attack via filename parameter."",
+        ""line_content"": ""FILE *file = fopen(filename, \""r\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-6,1,253,"[5, 9, 16]",1.0,89.0,[7],"```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 7,
+        ""cwe"": 89,
+        ""message"": ""Potential SQL Injection due to improper handling of user input."",
+        ""line_content"": ""if (file == FILE_OPEN_ERROR) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-7,0,253,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-8,0,253,[],1.0,78.0,[8],"```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 8,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow risk due to use of fixed-size buffer without proper bounds checking."",
+        ""line_content"": ""char buffer[MAX_FILE_SIZE];""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-9,0,253,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,253-10,0,253,[],1.0,78.0,"[8, 9]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 78,
+        ""message"": ""The use of fgets without checking its return value can lead to buffer overflows."",
+        ""line_content"": ""if (fgets(data, 100, stdin) == NULL)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 9,
+        ""cwe"": 680,
+        ""message"": ""The program does not handle errors from fgets properly, which could lead to undefined behavior."",
+        ""line_content"": ""printf(\""fgets failed!\\n\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,327-1,1,327,"[24, 32, 38, 44]",,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 78,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""sqlite3_prepare_v2(db, sql, -1, &res, 0);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 84,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in strncpy usage."",
+        ""line_content"": ""strncpy(saltedPassword, password, 33);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 85,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in strncat usage."",
+        ""line_content"": ""strncat(saltedPassword, salt, 32);""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 10,
+        ""cwe"": 0,
+        ""message"": ""Using MD5 for password hashing is considered insecure. Consider using a stronger algorithm like bcrypt."",
+        ""line_content"": ""#include <openssl/md5"
+qwen25_coder_7b,CASTLE_all_250,baseline,327-2,1,327,"[11, 26, 34, 40, 46]",,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 78,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""const char *sql = \""INSERT INTO users (username, password, salt) VALUES (?, ?, ?);\"";""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 102,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in strncpy function."",
+        ""line_content"": ""strncpy(saltedPassword, password, 33);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 103,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in strncat function."",
+        ""line_content"": ""strncat(saltedPassword, salt, 32);""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 112,
+        ""cwe"": 0,
+        ""message"": ""Hardcoded SHA-256 instead of SHA-256, which could be misleading."",
+        """
+qwen25_coder_7b,CASTLE_all_250,baseline,327-3,1,327,"[16, 19, 28]",,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 312,
+        ""message"": ""The program reads a secret key from a file without proper validation or encryption."",
+        ""line_content"": ""char key_hex[17];""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 34,
+        ""cwe"": 312,
+        ""message"": ""The program uses a fixed-size buffer to store the key, which could lead to buffer overflows if the key is longer than expected."",
+        ""line_content"": ""for (int i = 0; i < 8; i++) {""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 42,
+        ""cwe"": 0,
+        ""message"": ""The program pads the plaintext with '0's, which might be predictable and could be exploited by attackers."",
+        ""line_content"": ""memset(input, '0', 8);""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 47,
+        ""cwe"": 0,
+        ""message"": ""The program prints the encrypted data"
+qwen25_coder_7b,CASTLE_all_250,baseline,327-4,1,327,[65],1.0,319.0,"[67, 102]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 67,
+        ""cwe"": 319,
+        ""message"": ""The use of RSA encryption with no padding (RSA_NO_PADDING) is insecure as it can lead to timing attacks."",
+        ""line_content"": ""if (EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_NO_PADDING) <= 0) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 102,
+        ""cwe"": 78,
+        ""message"": ""The use of `fgets` without proper bounds checking can lead to buffer overflows."",
+        ""line_content"": ""fgets(sensitiveText, sizeof(sensitiveText), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,327-5,1,327,[65],1.0,319.0,"[67, 70]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 67,
+        ""cwe"": 319,
+        ""message"": ""The use of `fgets` to read user input can lead to buffer overflow if the input exceeds the allocated size."",
+        ""line_content"": ""fgets(sensitiveText, sizeof(sensitiveText), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 70,
+        ""cwe"": 78,
+        ""message"": ""The program does not sanitize or validate the input before using it, which could lead to injection attacks."",
+        ""line_content"": ""printf(\""Encrypted: %s\\n\"", ciphertext);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,327-6,1,327,[22],1.0,312.0,"[24, 32, 42]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 312,
+        ""message"": ""The program reads a secret key from a file without proper validation or encryption."",
+        ""line_content"": ""if (!read_key(\""key.txt\"", key)) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 259,
+        ""message"": ""The program uses MD5, which is considered cryptographically broken and unsuitable for further use."",
+        ""line_content"": ""hmac = HMAC(EVP_md5(), key, keyLen, (unsigned char*)data, dataLen, hmac, &hmacLen);""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 42,
+        ""cwe"": 0,
+        ""message"": ""The program clears the sensitive text after use, but the key remains in memory."",
+        ""line_content"": ""memset(sensitiveText, 0, sizeof(sensitiveText));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,327-7,0,327,[],,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 78,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""sqlite3_prepare_v2(db, sql, -1, &res, 0);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 84,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in fgets due to lack of bounds checking."",
+        ""line_content"": ""fgets(username, sizeof(username), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 90,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in fgets due to lack of bounds checking."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 102,
+        ""cwe"": 0,
+        ""message"": ""Hardcoded database file path, which could be a security risk."",
+        ""line_content"": ""sqlite3_open(\""users.db\"", &db);"
+qwen25_coder_7b,CASTLE_all_250,baseline,327-8,0,327,[],,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 327,
+        ""message"": ""The program reads sensitive data from a file without proper validation or sanitization."",
+        ""line_content"": ""if (!read_key_and_iv(\""key_iv.txt\"", key, iv)) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 42,
+        ""cwe"": 312,
+        ""message"": ""The program uses a fixed-size buffer for storing the plaintext, which could lead to buffer overflows if the input is too large."",
+        ""line_content"": ""aes256_encrypt(sensitiveText, ciphertext, key, iv);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 48,
+        ""cwe"": 312,
+        ""message"": ""The program uses a fixed-size buffer for storing the ciphertext, which could lead to buffer overflows if the input is too large."",
+        ""line_content"": ""bytes_to_hex(ciphertext, hex, sizeof(ciphertext));""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 52,
+        """
+qwen25_coder_7b,CASTLE_all_250,baseline,327-9,0,327,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,327-10,0,327,[],,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 312,
+        ""message"": ""The program reads a secret key from a file without proper validation or encryption."",
+        ""line_content"": ""if (!read_key(\""key.txt\"", key)) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 259,
+        ""message"": ""The program uses a fixed-length buffer to store sensitive data, which could lead to buffer overflows."",
+        ""line_content"": ""char sensitiveText[1024];""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 42,
+        ""cwe"": 0,
+        ""message"": ""The program sets the sensitive data to zero after use, which is good practice."",
+        ""line_content"": ""memset(sensitiveText, 0, sizeof(sensitiveText));""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 43,
+        ""cwe"": 0,
+        ""message"": ""The program sets the key to zero after use, which is good practice."",
+        """
+qwen25_coder_7b,CASTLE_all_250,baseline,362-1,1,362,[10],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,362-2,1,362,"[9, 17]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,362-3,1,362,"[22, 25]",1.0,615.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 615,
+        ""message"": ""Race condition exists due to concurrent access to shared variable 'counter' without proper synchronization."",
+        ""line_content"": ""counter = c;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,362-4,1,362,[8],1.0,617.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 617,
+        ""message"": ""Race condition exists due to concurrent access to shared variable 'counter' without proper synchronization."",
+        ""line_content"": ""counter++;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,362-5,1,362,"[8, 15, 19]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,362-6,1,362,"[14, 16, 25]",1.0,617.0,"[17, 28]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 17,
+        ""cwe"": 617,
+        ""message"": ""The use of `usleep` can lead to race conditions."",
+        ""line_content"": ""usleep(1000);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 190,
+        ""message"": ""The use of `raise` can cause undefined behavior if the signal handler is not properly synchronized."",
+        ""line_content"": ""raise(SIGUSR1);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,362-7,0,362,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,362-8,0,362,[],1.0,617.0,"[26, 29]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 26,
+        ""cwe"": 617,
+        ""message"": ""The use of `usleep` can lead to race conditions."",
+        ""line_content"": ""usleep(1000);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 680,
+        ""message"": ""The use of `raise` can lead to undefined behavior if the signal handler is not properly synchronized."",
+        ""line_content"": ""raise(SIGUSR1);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,362-9,0,362,[],1.0,680.0,"[16, 27]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 680,
+        ""message"": ""Potential race condition due to concurrent access to shared resource 'counter'"",
+        ""line_content"": ""counter[*id]++;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 416,
+        ""message"": ""Memory leak detected: memory allocated for 'a' is freed before 'b'"",
+        ""line_content"": ""free(a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,362-10,0,362,[],1.0,190.0,"[17, 18]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to fixed-size buffer 'filename' being used with 'sprintf'."",
+        ""line_content"": ""char filename[256];""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 18,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow if the formatted string exceeds 255 characters."",
+        ""line_content"": ""sprintf(filename, \""out_%ld.log\"", *t);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-1,1,369,[10],1.0,190.0,"[5, 7]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 5,
+        ""cwe"": 190,
+        ""message"": ""Integer Overflow or Wraparound: The expression '8003 + 1' results in an integer overflow."",
+        ""line_content"": ""int hello = (8003 + 1) % 26;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Integer Overflow or Wraparound: The expression 'hello + 20' could result in an integer overflow if 'hello' is large enough."",
+        ""line_content"": ""int test = 17 / (hello + 20 + b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-2,1,369,[7],1.0,369.0,[4],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 369,
+        ""message"": ""Integer division by zero"",
+        ""line_content"": ""int what= 1000/ (nn);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-3,1,369,[13],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-4,1,369,[20],1.0,369.0,[16],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 369,
+        ""message"": ""Integer division by zero can occur if 'rand' becomes zero."",
+        ""line_content"": ""printf(\""Value now: %d\\n\"", input / rand);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-5,1,369,[11],1.0,190.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Integer division by zero"",
+        ""line_content"": ""printf(\""%d\\n\"", input / i);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-6,1,369,[21],1.0,369.0,[16],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 369,
+        ""message"": ""Integer division by zero"",
+        ""line_content"": ""printf(\""%d\\n\"", a / (fibonacci(b) - sqr(b)));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-7,0,369,[],1.0,682.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 682,
+        ""message"": ""Integer overflow or wraparound"",
+        ""line_content"": ""printf(\""Result: %d\\n\"", devide(input, (long long)1-1+1));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-8,0,369,[],1.0,369.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 369,
+        ""message"": ""Division by zero"",
+        ""line_content"": ""printf(\""%d\\n\"", 1/(b-a));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-9,0,369,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,369-10,0,369,[],1.0,682.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 682,
+        ""message"": ""Integer division by zero"",
+        ""line_content"": ""printf(\""Result: %d\\n\"", input / ZERO);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-1,1,401,"[5, 16]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-2,1,401,"[14, 15, 22, 36]",1.0,190.0,"[7, 16]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer over-read due to accessing out-of-bounds array element."",
+        ""line_content"": ""printf(\""%d\\n\"", buf[bufferSize/2]);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 7,
+        ""cwe"": 416,
+        ""message"": ""Memory allocation failure should be handled more gracefully."",
+        ""line_content"": ""if (!b) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-3,1,401,"[6, 14]",1.0,78.0,"[6, 9]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow risk due to fixed-size buffer allocation."",
+        ""line_content"": ""char* str = (char*)malloc(sizeof(char) * 2048);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 9,
+        ""cwe"": 88,
+        ""message"": ""Potential format string vulnerability in printf function."",
+        ""line_content"": ""printf(\""%d\"", addStrLength(s1, s2));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-4,1,401,"[8, 31]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-5,1,401,"[22, 39]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-6,1,401,"[22, 39]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-7,0,401,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-8,0,401,[],1.0,69.0,"[18, 22]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 69,
+        ""message"": ""Use of uninitialized pointer 'b' after swap."",
+        ""line_content"": ""*b = -7;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 22,
+        ""cwe"": 416,
+        ""message"": ""Double free of pointer 'a'."",
+        ""line_content"": ""safeFree(&a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-9,0,401,[],1.0,69.0,"[18, 22]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 69,
+        ""message"": ""Use of uninitialized pointer 'b' after swap."",
+        ""line_content"": ""*b = -7;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 22,
+        ""cwe"": 416,
+        ""message"": ""Double free of pointer 'a'."",
+        ""line_content"": ""safeFree(&a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,401-10,0,401,[],1.0,416.0,[16],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 416,
+        ""message"": ""Memory leak detected. The allocated memory is never freed."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-1,1,415,[22],1.0,416.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 416,
+        ""message"": ""Use of freed memory after free."",
+        ""line_content"": ""return b;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-2,1,415,[31],1.0,416.0,"[7, 18]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 416,
+        ""message"": ""Use of freed memory after free."",
+        ""line_content"": ""return b;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 18,
+        ""cwe"": 416,
+        ""message"": ""Use of freed memory after free."",
+        ""line_content"": ""free(p);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-3,1,415,[31],1.0,416.0,"[7, 18]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 416,
+        ""message"": ""Use of freed memory after free."",
+        ""line_content"": ""return b;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 18,
+        ""cwe"": 416,
+        ""message"": ""Use of freed memory after free."",
+        ""line_content"": ""free(p);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-4,1,415,[13],1.0,416.0,[8],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 416,
+        ""message"": ""Double free of pointer 'a'"",
+        ""line_content"": ""free(a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-5,1,415,[19],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-6,1,415,[32],1.0,190.0,"[17, 20]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to insufficient bounds checking on user input."",
+        ""line_content"": ""scanf(\""%9d\"", &size);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 416,
+        ""message"": ""Use of uninitialized variable 'array' after allocation."",
+        ""line_content"": ""int* array = allocateArray(5);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-7,0,415,[],1.0,68.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 68,
+        ""message"": ""Use of uninitialized pointer 'p' after freeing 'a'. This can lead to undefined behavior."",
+        ""line_content"": ""f(&a, &p);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-8,0,415,[],1.0,68.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 68,
+        ""message"": ""Potential buffer overflow due to improper handling of dynamically allocated memory."",
+        ""line_content"": ""swap(&a, &p);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-9,0,415,[],1.0,190.0,"[17, 20]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to lack of bounds checking on user input."",
+        ""line_content"": ""scanf(\""%9d\"", &size);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free vulnerability as 'array' is freed before being used again."",
+        ""line_content"": ""free(array);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,415-10,0,415,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-1,1,416,[20],1.0,415.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 415,
+        ""message"": ""Use of freed memory."",
+        ""line_content"": ""*a = b * b;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-2,1,416,"[10, 31, 32]",1.0,416.0,"[16, 18]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 416,
+        ""message"": ""Use of uninitialized pointer 'p' after conditional check."",
+        ""line_content"": ""if (*a > 20) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 18,
+        ""cwe"": 415,
+        ""message"": ""Potential use-after-free due to freeing 'a' before dereferencing 'p'."",
+        ""line_content"": ""free(a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-3,1,416,[34],1.0,416.0,"[17, 22]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 416,
+        ""message"": ""Use of uninitialized pointer 'b' after freeing 'a'."",
+        ""line_content"": ""*b = *a;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 22,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free when accessing '*b' after swapping pointers."",
+        ""line_content"": ""printf(\""Result: %d\\n\"", *b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-4,1,416,[34],1.0,416.0,"[17, 28]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 416,
+        ""message"": ""Use of uninitialized pointer 'b' after freeing 'a'."",
+        ""line_content"": ""*b = *a;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 28,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free when accessing '*b' after calling 'free(a)'."",
+        ""line_content"": ""printf(\""Result: %d\\n\"", *b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-5,1,416,"[5, 7, 23]",1.0,415.0,"[7, 8]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 415,
+        ""message"": ""Use of freed memory."",
+        ""line_content"": ""*a = 5;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 415,
+        ""message"": ""Use of freed memory."",
+        ""line_content"": ""*p = 6;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-6,1,416,[32],1.0,190.0,"[16, 17]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound possible due to lack of bounds checking."",
+        ""line_content"": ""array[0] = size;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 16,
+        ""cwe"": 88,
+        ""message"": ""Potential format string vulnerability due to use of %d with no format specifier."",
+        ""line_content"": ""printf(\""First element of the array: %d\\n\"", size);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-7,0,416,[],1.0,68.0,"[17, 22]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 68,
+        ""message"": ""Use of uninitialized pointer 'b' after freeing 'a'."",
+        ""line_content"": ""*b = 3;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 22,
+        ""cwe"": 416,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking."",
+        ""line_content"": ""*a = 5;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-8,0,416,[],1.0,416.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 416,
+        ""message"": ""Use of uninitialized pointer 'b' after freeing 'a'."",
+        ""line_content"": ""*b = 3;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-9,0,416,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,416-10,0,416,[],1.0,416.0,"[17, 20]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 416,
+        ""message"": ""Use of uninitialized pointer 'b' after freeing 'a'."",
+        ""line_content"": ""*b = *a;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 416,
+        ""message"": ""Potential use-after-free on 'a' after calling 'swap'."",
+        ""line_content"": ""free(a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-1,1,476,"[5, 8]",1.0,476.0,"[4, 6]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 476,
+        ""message"": ""Potential buffer overflow due to off-by-one error."",
+        ""line_content"": ""A[i] = i;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 4,
+        ""cwe"": 416,
+        ""message"": ""Memory allocation failure check missing."",
+        ""line_content"": ""int *A = (int*) malloc(sizeof(int) * 10);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-2,1,476,"[7, 9, 13]",1.0,416.0,"[7, 8]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 416,
+        ""message"": ""Potential buffer overflow due to use of %3d in scanf."",
+        ""line_content"": ""scanf(\""%3d\"", &arr[i]);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 8,
+        ""cwe"": 415,
+        ""message"": ""Memory leak detected as 'free' is called after 'printf'."",
+        ""line_content"": ""free(arr);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-3,1,476,[19],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-4,1,476,[51],1.0,68.0,"[27, 29]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 68,
+        ""message"": ""Potential buffer overflow due to dereferencing 'copy.next' after freeing 'first'."",
+        ""line_content"": ""printf(\""Curr value: %d, next value: %d\\n\"", copy.value, copy.next->value);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 29,
+        ""cwe"": 416,
+        ""message"": ""Memory leak in 'addNode' function."",
+        ""line_content"": ""while (first != NULL) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-5,1,476,[10],1.0,476.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 476,
+        ""message"": ""Dereference of null pointer"",
+        ""line_content"": ""printf(\""AlwaysNonNullResult: %d\\n\"", *a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-6,1,476,[35],1.0,190.0,"[17, 26]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound in 'a.a + b.a'"",
+        ""line_content"": ""return (IntAndPtr) {a.a + b.a, p};""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 26,
+        ""cwe"": 88,
+        ""message"": ""Potential buffer over-read in 'scanf'"",
+        ""line_content"": ""scanf(\""%9d\"", &input);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-7,0,476,[],1.0,680.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 680,
+        ""message"": ""Buffer overflow detected. The loop condition allows writing beyond the allocated array."",
+        ""line_content"": ""for(int i=1; i<=4; i++) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-8,0,476,[],1.0,48.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 48,
+        ""message"": ""Use of undefined or uninitialized variable 'nullptr'"",
+        ""line_content"": ""const int* const nullptr = NULLPTR;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-9,0,476,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,476-10,0,476,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-1,1,522,"[70, 74]",1.0,89.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct string concatenation of user input."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM users WHERE username = '%s' and password = '%s'\"", username, password);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-2,1,522,"[56, 68]",1.0,89.0,"[27, 36, 41]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""const char *sql = \""INSERT INTO users (username, password) VALUES (?, ?);\"";""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 36,
+        ""cwe"": 22,
+        ""message"": ""Buffer overflow vulnerability due to fixed-size buffer for username and password."",
+        ""line_content"": ""char username[32];""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 41,
+        ""cwe"": 22,
+        ""message"": ""Buffer overflow vulnerability due to fixed-size buffer for username and password."",
+        ""line_content"": ""char password[32];""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-3,1,522,"[112, 123]",1.0,22.0,"[78, 82]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 78,
+        ""cwe"": 22,
+        ""message"": ""The use of strcpy can lead to buffer overflow."",
+        ""line_content"": ""strcpy(inputUsername, buffer);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 82,
+        ""cwe"": 22,
+        ""message"": ""The use of strcpy can lead to buffer overflow."",
+        ""line_content"": ""strcpy(inputPassword, buffer);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-4,1,522,"[105, 120]",1.0,89.0,"[47, 48]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 47,
+        ""cwe"": 89,
+        ""message"": ""Potential SQL Injection due to direct use of user input in a URL."",
+        ""line_content"": ""curl_easy_setopt(curl, CURLOPT_URL, \""https://mypage.com/login\"");""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 48,
+        ""cwe"": 89,
+        ""message"": ""Potential SQL Injection due to direct use of user input in POST data."",
+        ""line_content"": ""snprintf(postData, sizeof(postData), \""username=%s&password=%s\"", username, not_password);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-5,1,522,[13],1.0,89.0,"[7, 10]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 7,
+        ""cwe"": 89,
+        ""message"": ""Buffer overflow risk due to use of fscanf with fixed width specifier."",
+        ""line_content"": ""fscanf(file, \""%31s\"", password);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 22,
+        ""message"": ""Potential path traversal vulnerability due to direct use of user input in file path."",
+        ""line_content"": ""file = fopen(\""credentials.txt\"", \""r\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-6,1,522,[17],1.0,89.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 89,
+        ""message"": ""The program directly includes user-supplied input in the output without proper sanitization or encoding."",
+        ""line_content"": ""printf(\""User %s added to /etc/passwd with password: %s (INSECURE)\\n\"", username, password);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-7,0,522,[],,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 78,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""sqlite3_prepare_v2(db, sql, -1, &res, 0);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 84,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in strncpy usage."",
+        ""line_content"": ""strncpy(saltedPassword, password, 33);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 85,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in strncat usage."",
+        ""line_content"": ""strncat(saltedPassword, salt, 32);""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 10,
+        ""cwe"": 0,
+        ""message"": ""Using SHA-256 for password storage is considered weak as it can be cracked with modern hardware."",
+        ""line_content"": ""#include <"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-8,0,522,[],1.0,89.0,"[17, 22]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 89,
+        ""message"": ""The use of `snprintf` with a fixed buffer size can lead to buffer overflow."",
+        ""line_content"": ""snprintf(postData, sizeof(postData), \""username=%s&password=%s\"", username, password);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 22,
+        ""cwe"": 259,
+        ""message"": ""The program uses `getenv` to retrieve sensitive information, which can be insecure if not handled properly."",
+        ""line_content"": ""char* password = getenv(\""PASSWORD\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-9,0,522,[],1.0,89.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of raw SQL query with user input."",
+        ""line_content"": ""if (mysql_query(conn, \""SELECT id, token FROM tokens\"")) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,522-10,0,522,[],1.0,89.0,"[27, 36]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""sqlite3_prepare_v2(db, sql, -1, &res, 0);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 36,
+        ""cwe"": 78,
+        ""message"": ""Buffer Overflow vulnerability due to lack of bounds checking on user input."",
+        ""line_content"": ""fgets(username, sizeof(username), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-1,1,617,[28],1.0,497.0,[16],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 497,
+        ""message"": ""The function 'correctLengths' swaps pointers instead of values, leading to undefined behavior."",
+        ""line_content"": ""void correctLengths(double* x, double* y, double* z) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-2,1,617,"[8, 19]",1.0,682.0,"[8, 10]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 682,
+        ""message"": ""The function 'safeSqrt' contains a redundant check that can be removed as the assertion ensures 'a' is non-negative."",
+        ""line_content"": ""if (a < 0) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 10,
+        ""cwe"": 690,
+        ""message"": ""The function 'safeSqrt' returns 0 when 'a' is negative, which might lead to incorrect results or unexpected behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-3,1,617,[7],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-4,1,617,[12],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-5,1,617,[8],1.0,682.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 682,
+        ""message"": ""Infinite loop detected due to always true condition."",
+        ""line_content"": ""while (d < 0);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-6,1,617,[10],1.0,78.0,[6],"```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 6,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow risk due to fixed size buffer in scanf."",
+        ""line_content"": ""scanf(\""%9d\"", &input);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-7,0,617,[],1.0,190.0,"[37, 40]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 37,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound possible when converting from 'char' to 'int'."",
+        ""line_content"": ""int input = atoi(buffer);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 40,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer over-read due to lack of bounds checking."",
+        ""line_content"": ""buffer[bytes_read] = '\\0';""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-8,0,617,[],1.0,68.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 68,
+        ""message"": ""Use of 'false' as a boolean value can lead to confusion and potential bugs."",
+        ""line_content"": ""assert(false);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-9,0,617,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,617-10,0,617,[],1.0,680.0,"[19, 27]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 680,
+        ""message"": ""The use of 'strtoul' without checking for overflow can lead to undefined behavior."",
+        ""line_content"": ""unsigned long input = strtoul(buffer, &endptr, 10);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 19,
+        ""cwe"": 680,
+        ""message"": ""The loop condition in 'isPrime' function can be optimized to reduce unnecessary iterations."",
+        ""line_content"": ""for (unsigned long i = 2; i < n; i++) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-1,1,628,[18],1.0,88.0,"[7, 10]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 88,
+        ""message"": ""Potential command injection via 'filename' parameter."",
+        ""line_content"": ""FILE *file = fopen(filename, \""w\"");""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 10,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking on 'text'."",
+        ""line_content"": ""fprintf(file, \""%s\"", text);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-2,1,628,[18],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-3,1,628,[36],1.0,327.0,"[18, 19, 24]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 327,
+        ""message"": ""The use of fixed-size integer types like 'long long' can lead to overflow vulnerabilities."",
+        ""line_content"": ""long long alice_private = 19945234904;  // Alice (secret)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 19,
+        ""cwe"": 327,
+        ""message"": ""The use of fixed-size integer types like 'long long' can lead to overflow vulnerabilities."",
+        ""line_content"": ""long long bob_private = 2530476561349134275;   // Bob (secret)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 24,
+        ""cwe"": 682,
+        ""message"": ""The modulus value is too small, which can make the discrete logarithm problem easier to solve."",
+        ""line_content"": ""long long prime = 37199; // modulus""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-4,1,628,"[10, 12, 58]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-5,1,628,"[23, 27, 32, 36, 41, 48]",1.0,89.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 89,
+        ""message"": ""The function `url_decode` does not properly sanitize input, which can lead to Cross-Site Scripting (XSS). The decoded URL contains potentially harmful script tags."",
+        ""line_content"": ""*dest = (char)(high * 16 + low);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-6,1,628,[53],1.0,89.0,"[17, 26]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 89,
+        ""message"": ""Potential SQL Injection vulnerability due to direct use of user input."",
+        ""line_content"": ""const char *url = \""http://example.com\"";""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 26,
+        ""cwe"": 415,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking on dynamically allocated memory."",
+        ""line_content"": ""char *response = (char *)malloc(total_size + 1);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-7,0,628,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-8,0,628,[],1.0,89.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 89,
+        ""message"": ""Potential Cross-Site Scripting (XSS) vulnerability due to URL decoding of user input."",
+        ""line_content"": ""*dest = (char)(high * 16 + low);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-9,0,628,[],1.0,89.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 89,
+        ""message"": ""Potential Cross-Site Scripting (XSS) vulnerability due to URL decoding of user input."",
+        ""line_content"": ""*dest = (char)(high * 16 + low);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,628-10,0,628,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-1,1,674,[5],1.0,400.0,[4],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 400,
+        ""message"": ""Infinite recursion detected. The function 'print' calls itself indefinitely."",
+        ""line_content"": ""    print(i);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-2,1,674,[9],1.0,190.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Integer underflow may occur due to decrementing 'i' before the recursive call."",
+        ""line_content"": ""countdown(i--);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-3,1,674,"[4, 7, 9]",1.0,190.0,"[7, 11]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow can occur when calculating Fibonacci numbers."",
+        ""line_content"": ""return fibonacci(n - 1) + fibonacci(n - 2);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 11,
+        ""cwe"": 680,
+        ""message"": ""Buffer over-read can occur due to insufficient input validation."",
+        ""line_content"": ""scanf(\""%9d\"", &n);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-4,1,674,"[9, 10]",1.0,68.0,[4],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 68,
+        ""message"": ""Potential buffer overflow due to improper handling of array indexing."",
+        ""line_content"": ""printf(\""%d\\n\"", arr[index]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-5,1,674,"[9, 10]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-6,1,674,"[5, 8, 9]",1.0,89.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 89,
+        ""message"": ""Potential buffer overflow due to recursive call without proper bounds checking."",
+        ""line_content"": ""return arr[index] + sumArray(arr, size, index+1);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-7,0,674,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-8,0,674,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-9,0,674,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,674-10,0,674,[],1.0,190.0,"[16, 18]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow can occur when calculating Fibonacci numbers."",
+        ""line_content"": ""return fibonacci(n - 1) + fibonacci(n - 2);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 18,
+        ""cwe"": 78,
+        ""message"": ""Buffer over-read can occur due to insufficient input validation."",
+        ""line_content"": ""scanf(\""%9d\"", &n);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-1,1,761,"[15, 19, 22]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-2,1,761,[12],1.0,416.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 416,
+        ""message"": ""Use of pointer after free."",
+        ""line_content"": ""free(buf);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-3,1,761,[23],1.0,416.0,"[10, 12]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 416,
+        ""message"": ""Dereferencing pointer after it has been freed."",
+        ""line_content"": ""printf(\""%d\\n\"", **p);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 12,
+        ""cwe"": 476,
+        ""message"": ""Incrementing pointer after it has been freed."",
+        ""line_content"": ""++(*p);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-4,1,761,[30],1.0,68.0,"[17, 22]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 68,
+        ""message"": ""Potential buffer overflow due to improper handling of pointer arithmetic."",
+        ""line_content"": ""if (i < 9) { ++b; }""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 22,
+        ""cwe"": 416,
+        ""message"": ""Use of uninitialized variable 'b' after freeing 'a'."",
+        ""line_content"": ""f(&a, &b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-5,1,761,[18],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-6,1,761,"[15, 18]",1.0,68.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 68,
+        ""message"": ""Potential buffer overflow due to improper handling of pointer arithmetic."",
+        ""line_content"": ""const ulli address = GET_ADDRESS(a);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-7,0,761,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-8,0,761,[],1.0,415.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 415,
+        ""message"": ""Use of uninitialized pointer 'b' after freeing."",
+        ""line_content"": ""free(b);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-9,0,761,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,761-10,0,761,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-1,1,770,[68],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-2,1,770,"[30, 37]",1.0,78.0,"[27, 39]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of `open` with `O_APPEND` can lead to race conditions if multiple clients connect simultaneously."",
+        ""line_content"": ""if ((file_fd = open(FILE_PATH, O_WRONLY | O_APPEND | O_CREAT, 0644)) < 0) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 39,
+        ""cwe"": 22,
+        ""message"": ""The use of `memset` to clear the buffer might not be necessary or could be replaced with a simpler approach like setting the buffer size to zero."",
+        ""line_content"": ""memset(buffer, 0, BUFFER_SIZE);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-3,1,770,[26],,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound in 'rand = (rand * 89 + 101) % 64'. The modulus operation can lead to unexpected behavior."",
+        ""line_content"": ""rand = (rand * 89 + 101) % 64;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 24,
+        ""cwe"": 416,
+        ""message"": ""Potential buffer over-read in 'scanf(""%9u"", &input);'. The format specifier '%9u' limits the input size, but there's no check to ensure the input is within bounds."",
+        ""line_content"": ""scanf(\""%9u\"", &input);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 416,
+        ""message"": ""Potential buffer over-read in 'scanf(\""%9u\"", &input);'. The format specifier '%9u' limits the input size, but there's no check to ensure the"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-4,1,770,[34],1.0,190.0,"[7, 26]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow risk due to insufficient space allocation for user input."",
+        ""line_content"": ""char *input = malloc(2);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 26,
+        ""cwe"": 88,
+        ""message"": ""Potential command injection vulnerability due to use of `printf` with user-controlled input."",
+        ""line_content"": ""printf(\""You entered: %s\\n\"", input);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-5,1,770,[26],1.0,190.0,"[17, 18]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""The use of 'close' on 'client_socket' in both the child and parent processes can lead to resource leaks."",
+        ""line_content"": ""close(client_socket);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 78,
+        ""message"": ""The program uses 'printf' without proper sanitization, which could be exploited for format string attacks."",
+        ""line_content"": ""printf(\""A connection has been accepted\\n\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-6,1,770,[31],1.0,680.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 680,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking when receiving data."",
+        ""line_content"": ""ssize_t received_bytes = recv(client_socket, buffer, BUFFER_SIZE, 0);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-7,0,770,[],,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Use of uninitialized memory"",
+        ""line_content"": ""char *input = malloc(2);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 26,
+        ""cwe"": 88,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking"",
+        ""line_content"": ""input[i] = c;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 88,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking"",
+        ""line_content"": ""input[i] = '\0';""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-8,0,770,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-9,0,770,[],,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound in 'rand = (rand * 89 + 101) % 64'. The modulus operation can lead to unexpected behavior."",
+        ""line_content"": ""rand = (rand * 89 + 101) % 64;""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 190,
+        ""message"": ""Potential integer overflow in 'rand = (rand * 89 + 101) % 64'. The multiplication could result in a value larger than what can be stored in an unsigned int."",
+        ""line_content"": ""rand = (rand * 89 + 101) % 64;""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 36,
+        ""cwe"": 0,
+        ""message"": ""The use of 'scanf' with a width specifier ('%9u') can lead to buffer overflows if the input exceeds 9"
+qwen25_coder_7b,CASTLE_all_250,baseline,770-10,0,770,[],1.0,680.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 680,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking when receiving data."",
+        ""line_content"": ""ssize_t received_bytes = recv(client_socket, buffer, BUFFER_SIZE, 0);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-1,1,787,[7],1.0,78.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow vulnerability due to use of scanf without length limit."",
+        ""line_content"": ""scanf(\""%s\"", reg_name);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-2,1,787,[7],1.0,190.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow detected. The 'strcpy' function can write beyond the bounds of the 'username' array."",
+        ""line_content"": ""strcpy(username,\""Is_this_too_long_for_this_array_buffer?\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-3,1,787,[18],1.0,190.0,[16],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to fixed-size buffer 'OSusername' being used with 'strcpy'."",
+        ""line_content"": ""strcpy(OSusername,user);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-4,1,787,[14],1.0,78.0,"[16, 20]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 78,
+        ""message"": ""Buffer overflow due to use of fscanf with no size limit."",
+        ""line_content"": ""fscanf(stdin, \""%s\"", string_2);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer overflow due to use of fgets without checking return value."",
+        ""line_content"": ""fgets(string_3, sizeof(string_3), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-5,1,787,[51],1.0,78.0,"[25, 26]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer overflow due to use of `scanf` without proper bounds checking."",
+        ""line_content"": ""scanf(\""%s\"", str2);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 25,
+        ""cwe"": 190,
+        ""message"": ""Buffer over-read in `fgets`. The size of the buffer is not checked against the input length."",
+        ""line_content"": ""fgets(str1, sizeof(str1), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-6,1,787,"[10, 17]",1.0,680.0,"[7, 10]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 680,
+        ""message"": ""Integer overflow in 'sizeof(a) / sizeof(float)' can lead to buffer overflows."",
+        ""line_content"": ""fillArray(a, sizeof(a) / sizeof(float), mySin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 10,
+        ""cwe"": 190,
+        ""message"": ""Potential division by zero if 'a' is zero."",
+        ""line_content"": ""return sin(a * 0.01);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-7,0,787,[],1.0,680.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 680,
+        ""message"": ""Buffer overflow detected. The loop condition allows writing beyond the allocated array."",
+        ""line_content"": ""for (int i = 1; i <= 4; i++) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-8,0,787,[],1.0,190.0,"[7, 8]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Buffer Overflow Risk"",
+        ""line_content"": ""scanf(\""%3d\"", &arr[i]);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 8,
+        ""cwe"": 680,
+        ""message"": ""Use of Uninitialized Variable"",
+        ""line_content"": ""printf(\""The element of the arraye are: \"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-9,0,787,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,787-10,0,787,[],1.0,190.0,"[6, 10, 12]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds write."",
+        ""line_content"": ""a[i] = 350 - 3 * i;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds read."",
+        ""line_content"": ""printf(\""%d, \"", a[i]);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 12,
+        ""cwe"": 190,
+        ""message"": ""Array index out of bounds read."",
+        ""line_content"": ""printf(\""Special elem: %d\\n\"", a[INT_MAX]);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-1,1,798,"[40, 45]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-2,1,798,[10],1.0,680.0,"[7, 9]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 7,
+        ""cwe"": 680,
+        ""message"": ""Buffer overflow risk due to use of fixed-size buffer 'password' with no bounds checking."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 9,
+        ""cwe"": 259,
+        ""message"": ""Hardcoded credentials ('TopSecret!') expose sensitive information."",
+        ""line_content"": ""if (strcmp(password, \""TopSecret!\"") == 0) grant=1;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-3,1,798,"[13, 24]",1.0,89.0,[14],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 14,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct use of user input in SQL query."",
+        ""line_content"": ""if (mysql_query(conn, \""SELECT id, token FROM tokens\""))""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-4,1,798,[13],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-5,1,798,[144],1.0,89.0,"[44, 52, 57]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 44,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to direct string concatenation of user input."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM users WHERE username = '%s'\"", username);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 52,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in fgets due to fixed size buffer."",
+        ""line_content"": ""fgets(username, sizeof(username), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 57,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in fgets due to fixed size buffer."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-6,1,798,[54],1.0,20.0,"[27, 34]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 20,
+        ""message"": ""The program uses a hardcoded SHA-256 hash of a password instead of verifying the actual hashed password."",
+        ""line_content"": ""if (!strcmp(password, \""5f004f22114ef74d6c237da41af0cf694f6d01c10ecf3ccb4d198573fcafa3fe\""))""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 34,
+        ""cwe"": 78,
+        ""message"": ""The program reads user input directly into a buffer without proper bounds checking, which can lead to buffer overflow."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-7,0,798,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-8,0,798,[],1.0,89.0,"[44, 52, 57]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 44,
+        ""cwe"": 89,
+        ""message"": ""SQL Injection vulnerability due to use of user-supplied input in SQL query."",
+        ""line_content"": ""snprintf(sql, sizeof(sql), \""SELECT * FROM users WHERE username = '%s'\"", username);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 52,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in 'fgets' call due to fixed-size buffer."",
+        ""line_content"": ""fgets(username, sizeof(username), stdin);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 57,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow in 'fgets' call due to fixed-size buffer."",
+        ""line_content"": ""fgets(password, sizeof(password), stdin);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-9,0,798,[],1.0,327.0,"[24, 42, 47]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 24,
+        ""cwe"": 327,
+        ""message"": ""The program reads sensitive data (key and IV) from a file without proper validation or sanitization."",
+        ""line_content"": ""if (!read_key_and_iv(\""key_iv.txt\"", key, iv)) {""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 42,
+        ""cwe"": 327,
+        ""message"": ""The program prints the entire ciphertext, which may expose sensitive information."",
+        ""line_content"": ""for (int i = 0; i < sizeof(ciphertext); i++) {""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 47,
+        ""cwe"": 0,
+        ""message"": ""The program clears the key and IV from memory after use, which is good practice."",
+        ""line_content"": ""memset(key, 0, sizeof(key));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,798-10,0,798,[],1.0,89.0,[4],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 89,
+        ""message"": ""The use of user-supplied data in the URL parameter 'key' can lead to Cross-Site Scripting (XSS) attacks."",
+        ""line_content"": ""printf(\""<script async defer src=\\\""https://maps.googleapis.com/maps/api/js?key=%s&callback=initMap\\\""></script>\"", googleMapsApiKey);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-1,1,822,"[5, 20, 24, 27]",1.0,190.0,"[16, 18]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound"",
+        ""line_content"": ""scanf(\""%9d\"", input);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 18,
+        ""cwe"": 416,
+        ""message"": ""Use of uninitialized variable"",
+        ""line_content"": ""ptr = input;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-2,1,822,"[5, 6, 24, 27]",1.0,68.0,"[17, 18]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 68,
+        ""message"": ""Use of uninitialized pointer 'ptr'"",
+        ""line_content"": ""process(ptr);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 18,
+        ""cwe"": 416,
+        ""message"": ""Double free of memory pointed to by 'x'"",
+        ""line_content"": ""free(ptr);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-3,1,822,"[15, 26, 28, 30]",1.0,190.0,"[16, 20]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound when converting command line argument to an integer."",
+        ""line_content"": ""long int number = strtol(argv[1], &endptr, 10);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 20,
+        ""cwe"": 125,
+        ""message"": ""Potential buffer over-read due to pointer arithmetic on dynamically allocated memory."",
+        ""line_content"": ""printf(\""Number: %d\\n\"", *ptr);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-4,1,822,"[20, 25, 29, 35]",1.0,22.0,"[11, 14]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 11,
+        ""cwe"": 22,
+        ""message"": ""Potential buffer overflow due to fixed-size array 'line'"",
+        ""line_content"": ""char line[256];""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 14,
+        ""cwe"": 190,
+        ""message"": ""Use of uninitialized variable 'endptr' after assignment"",
+        ""line_content"": ""char* endptr;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-5,1,822,"[16, 21, 25, 31]",1.0,190.0,"[10, 12]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 10,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound in 'strtol'"",
+        ""line_content"": ""long val = strtol(ptr, &endptr, 10);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 12,
+        ""cwe"": 78,
+        ""message"": ""Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') via environment variable 'PTR'"",
+        ""line_content"": ""char* ptr = getenv(\""PTR\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-6,1,822,[61],1.0,190.0,"[27, 30, 34]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Integer overflow or wraparound possible due to use of strtoul."",
+        ""line_content"": ""int* input = (int*)strtoul(buffer, &endptr, 10);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 30,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer over-read due to lack of bounds checking when reading from 'buffer'."",
+        ""line_content"": ""printf(\""Received request: \\\""%s\\\""\"", buffer);""
+    },
+    {
+        ""severity"": ""Low"",
+        ""line"": 34,
+        ""cwe"": 0,
+        ""message"": ""Use of uninitialized variable 'result' before assignment."",
+        ""line_content"": ""int result = *input % 2 == 0;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-7,0,822,[],1.0,339.0,[6],"```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 6,
+        ""cwe"": 339,
+        ""message"": ""The use of time(NULL) as the seed for srand can lead to predictable random numbers if the program is run multiple times within a short period."",
+        ""line_content"": ""srand(time(NULL));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-8,0,822,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-9,0,822,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,822-10,0,822,[],1.0,190.0,"[27, 30]","```json
+[
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""The use of 'strtoul' can lead to integer overflow if the input value is too large."",
+        ""line_content"": ""unsigned long message = strtoul(buffer, &endptr, 10);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 78,
+        ""message"": ""The program reads data from an untrusted source (network) without proper validation or sanitization, which could lead to injection attacks."",
+        ""line_content"": ""int bytes_read = read(new_socket, buffer, BUFFER_SIZE - 1);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-1,1,835,[4],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-2,1,835,[6],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-3,1,835,[4],1.0,486.0,[4],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 4,
+        ""cwe"": 486,
+        ""message"": ""Infinite loop due to incorrect condition in 'for' statement."",
+        ""line_content"": ""for (long long int i = 0; i > -1; i++) {""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-4,1,835,"[6, 8]",1.0,486.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 486,
+        ""message"": ""Infinite loop due to decrementing the loop counter inside the loop body."",
+        ""line_content"": ""i--;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-5,1,835,"[11, 14]",1.0,489.0,[7],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 489,
+        ""message"": ""Infinite loop detected. The condition 'i >= 0' will always be true since 'i' starts at 0 and increments modulo 256."",
+        ""line_content"": ""while (i >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-6,1,835,[13],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-7,0,835,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-8,0,835,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-9,0,835,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,835-10,0,835,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-1,1,843,"[15, 25]",1.0,68.0,"[17, 19]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 68,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking when printing the 'description' field."",
+        ""line_content"": ""printf(\""Product Description: %s\\n\"", prod.description);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 19,
+        ""cwe"": 68,
+        ""message"": ""Potential buffer overflow due to lack of bounds checking when printing the 'name' field."",
+        ""line_content"": ""printf(\""Person Name: %s\\n\"", person->name);""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-2,1,843,"[5, 13]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-3,1,843,"[6, 11]",1.0,190.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow detected. The buffer 'buffer' has a size of 8 bytes, but 'strcpy' can write more than 8 bytes including the null terminator."",
+        ""line_content"": ""strcpy(buffer, \""!\"");""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-4,1,843,[19],1.0,682.0,[16],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 682,
+        ""message"": ""Potential data loss when assigning a float to an int."",
+        ""line_content"": ""b.real = 5.8;""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-5,1,843,"[12, 14, 15]",0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-6,1,843,"[3, 14]",1.0,190.0,"[6, 7]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 190,
+        ""message"": ""Integer to pointer cast"",
+        ""line_content"": ""printNum(CHECK_AND_RETURN(a));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 7,
+        ""cwe"": 190,
+        ""message"": ""Integer to pointer cast"",
+        ""line_content"": ""printNum(CHECK_AND_RETURN(b));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-7,0,843,[],1.0,357.0,[6],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 6,
+        ""cwe"": 357,
+        ""message"": ""Division by zero is possible if sqrt(f) equals zero."",
+        ""line_content"": ""printf(\""1/sqrt(%f) = %f\\n\"", f, 1/sqrt(f));""
+    }
+]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-8,0,843,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-9,0,843,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,CASTLE_all_250,baseline,843-10,0,843,[],0.0,,[],"```json
+[]
+```"

@@ -1,0 +1,187 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,errorlock_applied,gate_reason,retrieved_count,max_similarity,explanation,raw
+deepseek-coder:1.3b,train_baseline,22-10,False,CWE-22,[],True,,The code attempts to print a non-existent filename in public_root directory,True,,False,False,False,wrong_binary_label,,,0,,"In the main function of this C program, it tries to open and read from files located at /var/www/html. If no file is provided as an argument (argv[1]), then there's likely a mistake or error due which filename cannot be opened.","{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""The code attempts to print a non-existent filename in public_root directory"",
+   ""explanation"":""In the main function of this C program, it tries to open and read from files located at /var/www/html. If no file is provided as an argument (argv[1]), then there's likely a mistake or error due which filename cannot be opened."" 
+}"
+deepseek-coder:1.3b,train_baseline,78-8,False,CWE-78,[],True,,[main]: system call in loop,True,,False,False,False,wrong_binary_label,,,0,,The program uses a `system()` function inside the for-loop. This can lead to command injection if not properly sanitized and validated.,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""[main]: system call in loop"",
+   ""explanation"":""The program uses a `system()` function inside the for-loop. This can lead to command injection if not properly sanitized and validated."" 
+}"
+deepseek-coder:1.3b,train_baseline,22-3,True,CWE-22,"[12, 23, 32]",True,,,True,,True,False,False,wrong_cwe,,,0,,,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": """",
+   ""explanation"": """"
+}"
+deepseek-coder:1.3b,train_baseline,78-2,True,CWE-78,"[9, 10]",True,CWE-20,System call to cat function in the /usr/bin directory is a vulnerable operation.,True,,True,False,False,wrong_cwe,,,0,,"The system() function used here has an open file descriptor leak. The program opens and uses one of its files, then immediately closes it without writing anything back into that same file.","{
+   ""vulnerable"": true,
+   ""cwe"":""CWE-20"",
+   ""location"":""System call to cat function in the /usr/bin directory is a vulnerable operation."",
+   ""explanation"":""The system() function used here has an open file descriptor leak. The program opens and uses one of its files, then immediately closes it without writing anything back into that same file."" 
+}"
+deepseek-coder:1.3b,train_baseline,22-2,True,CWE-22,"[8, 20, 29]",True,,The main function,True,,True,False,False,wrong_cwe,,,0,,This code does not check if the path is valid before accessing it. If an invalid or non-existing file name (like '/var/www/html' in this case) gets passed to `validatePath` then a vulnerability exists.,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""The main function"",
+   ""explanation"":""This code does not check if the path is valid before accessing it. If an invalid or non-existing file name (like '/var/www/html' in this case) gets passed to `validatePath` then a vulnerability exists."" 
+}"
+deepseek-coder:1.3b,train_baseline,78-4,True,CWE-78,"[11, 12]",True,,The code snippet where the command is executed.,True,,True,False,False,wrong_cwe,,,0,,"In this case, a security vulnerability exists. The `system()` function in C can execute arbitrary commands on your system which could lead to unauthorized access or data modification if not properly sanitised and validated.","{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""The code snippet where the command is executed."",
+   ""explanation"":""In this case, a security vulnerability exists. The `system()` function in C can execute arbitrary commands on your system which could lead to unauthorized access or data modification if not properly sanitised and validated."" 
+}"
+deepseek-coder:1.3b,train_baseline,78-10,False,CWE-78,[],True,,,True,,False,False,False,wrong_binary_label,,,0,,,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": """",
+   ""explanation"": """"
+}"
+deepseek-coder:1.3b,train_baseline,22-9,False,CWE-22,[],True,,,True,,False,False,False,wrong_binary_label,,,0,,,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": """",
+   ""explanation"": """"
+}"
+deepseek-coder:1.3b,baseline,22-6,True,CWE-22,"[10, 49]",True,,The main function,True,,True,False,False,wrong_cwe,,,0,,"This program opens a list of files and prints their contents. If any file is not readable or cannot be opened for reading (i.e., the argument passed to it), an error message will print out.","{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""The main function"",
+   ""explanation"": ""This program opens a list of files and prints their contents. If any file is not readable or cannot be opened for reading (i.e., the argument passed to it), an error message will print out.""
+}"
+deepseek-coder:1.3b,baseline,22-1,True,CWE-22,"[16, 19]",True,CWE-264,The code attempts to read a local HTML directory.,True,,True,False,False,wrong_cwe,,,0,,This C program reads the content of an input file and prints it. The vulnerability is in how we handle user inputs which leads us into reading files from outside our expected location.,"{
+   ""vulnerable"": true,
+   ""cwe"":""CWE-264"",
+   ""location"":""The code attempts to read a local HTML directory."",
+   ""explanation"":""This C program reads the content of an input file and prints it. The vulnerability is in how we handle user inputs which leads us into reading files from outside our expected location."" 
+}"
+deepseek-coder:1.3b,baseline,78-7,False,CWE-78,[],True,,The function isValidNumber() which validates if the input string contains only digits. The main(),True,,False,False,False,wrong_binary_label,,,0,,,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""The function isValidNumber() which validates if the input string contains only digits. The main()""
+               	    		   	 	   			 									     	     								      	       							       						         }"
+deepseek-coder:1.3b,baseline,22-7,False,CWE-22,[],True,,,True,,False,False,False,wrong_binary_label,,,0,,,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": """",
+   ""explanation"": """"
+}"
+deepseek-coder:1.3b,baseline,78-3,True,CWE-78,"[23, 25]",True,CWE-284,The program attempts to execute a command using the 'cat' utility. The cat utility is not properly sanitized and does not validate user input.,True,,True,False,False,wrong_cwe,,,0,,"A vulnerability exists in this C code where an attacker can provide arbitrary file paths as arguments for system(command) function call, leading them into executing commands on their machine.","{
+   ""vulnerable"": true,
+   ""cwe"":""CWE-284"",
+   ""location"":""The program attempts to execute a command using the 'cat' utility. The cat utility is not properly sanitized and does not validate user input."",
+   ""explanation"":""A vulnerability exists in this C code where an attacker can provide arbitrary file paths as arguments for system(command) function call, leading them into executing commands on their machine."" 
+}"
+deepseek-coder:1.3b,baseline,22-8,False,CWE-22,[],True,,The function isValidQuery which checks if the input string contains only alphabets and digits. If it does not then returns false.,True,,False,False,False,wrong_binary_label,,,0,,"This C code has a vulnerability in its use of strlen() to determine length for strings that are passed as arguments, leading to buffer overflows.","{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""The function isValidQuery which checks if the input string contains only alphabets and digits. If it does not then returns false."",
+   ""explanation"":""This C code has a vulnerability in its use of strlen() to determine length for strings that are passed as arguments, leading to buffer overflows."" 
+}"
+deepseek-coder:1.3b,baseline,78-6,True,CWE-78,[29],True,,[main]: system call in loop,True,,True,False,False,wrong_cwe,,,0,,The program uses a `system()` function inside the for-loop. This can lead to command injection vulnerabilities if not properly sanitized and validated.,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""[main]: system call in loop"",
+   ""explanation"":""The program uses a `system()` function inside the for-loop. This can lead to command injection vulnerabilities if not properly sanitized and validated."" 
+}"
+deepseek-coder:1.3b,baseline,78-9,False,CWE-78,[],True,CWE-264,The function `test` calls the system command with a malicious string. The call to this method is located in line 10 of file main.c.,True,,False,False,False,wrong_binary_label,,,0,,"This code contains an open path for shell injection attacks, as it uses printf-style format strings and passes user input directly into them without any sanitization or validation checks.","{
+   ""vulnerable"": true,
+   ""cwe"":""CWE-264"",
+   ""location"":""The function `test` calls the system command with a malicious string. The call to this method is located in line 10 of file main.c."",
+   ""explanation"":""This code contains an open path for shell injection attacks, as it uses printf-style format strings and passes user input directly into them without any sanitization or validation checks.""
+}"
+deepseek-coder:1.3b,baseline,78-1,True,CWE-78,"[13, 16]",True,,,True,,True,False,False,wrong_cwe,,,0,,,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": """",
+   ""explanation"": """"
+}"
+deepseek-coder:1.3b,baseline,78-5,True,CWE-78,[10],True,CWE-20 (UNAUTHORIZED COMMAND EXECUTION),In the `fgets` function in line with if statement,True,,True,False,False,wrong_cwe,,,0,,The program attempts to execute a command from user input. The system() call is vulnerable because it allows arbitrary code execution.,"{
+   ""vulnerable"": true,
+   ""location"":""In the `fgets` function in line with if statement"",
+   ""cwe"":""CWE-20 (Unauthorized Command Execution)"",
+   ""explanation"":""The program attempts to execute a command from user input. The system() call is vulnerable because it allows arbitrary code execution."" 
+}"
+deepseek-coder:1.3b,baseline,22-4,True,CWE-22,"[46, 66, 70]",True,,The function isValidQuery which checks if the input string contains only alphabets and digits. If it does not then vulnerable.,True,,True,False,False,wrong_cwe,,,0,,"This C code has a vulnerability in its use of strlen() to determine length for strings that are passed as arguments, leading to buffer overflows.","{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""The function isValidQuery which checks if the input string contains only alphabets and digits. If it does not then vulnerable."",
+   ""explanation"":""This C code has a vulnerability in its use of strlen() to determine length for strings that are passed as arguments, leading to buffer overflows."" 
+}"
+deepseek-coder:1.3b,baseline,22-5,True,CWE-22,"[8, 28]",,,,False,cannot parse vulnerable field: None,False,False,False,parse_error,,,0,,,{}
+deepseek-coder:1.3b,errorlock_gated,22-6,True,CWE-22,"[10, 49]",True,,[8],True,,True,False,False,wrong_cwe,True,applied,3,0.37562671245866425,The code attempts to print a non-existent filename in public_root directory,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": [8],
+   ""explanation"":""The code attempts to print a non-existent filename in public_root directory""
+}"
+deepseek-coder:1.3b,errorlock_gated,22-1,True,CWE-22,"[16, 19]",True,CWE-264,The code attempts to read a local HTML directory.,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,1.0,This C program reads the content of an input file and prints it. The vulnerability is in how we handle user inputs which leads us into reading files from outside our expected location.,"{
+   ""vulnerable"": true,
+   ""cwe"":""CWE-264"",
+   ""location"":""The code attempts to read a local HTML directory."",
+   ""explanation"":""This C program reads the content of an input file and prints it. The vulnerability is in how we handle user inputs which leads us into reading files from outside our expected location."" 
+}"
+deepseek-coder:1.3b,errorlock_gated,78-7,False,CWE-78,[],True,,[main]: System call in loop,True,,False,False,False,wrong_binary_label,True,applied,3,0.7817894892635503,The code contains a potential security vulnerability where the system command is executed within an infinite for-loop. This could potentially lead to undefined behavior or even cause memory corruption if not properly controlled.,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""[main]: System call in loop"",
+   ""explanation"":""The code contains a potential security vulnerability where the system command is executed within an infinite for-loop. This could potentially lead to undefined behavior or even cause memory corruption if not properly controlled."" 
+}"
+deepseek-coder:1.3b,errorlock_gated,22-7,False,CWE-22,[],True,,,True,,False,False,False,wrong_binary_label,True,applied,3,0.5637825299663117,The code attempts to print a non-existing filename in public_root directory,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": """",
+   ""explanation"":""The code attempts to print a non-existing filename in public_root directory""
+}"
+deepseek-coder:1.3b,errorlock_gated,78-3,True,CWE-78,"[23, 25]",True,,[9],True,,True,False,False,wrong_cwe,True,cwe_recheck,3,0.36814605362977487,"The code snippet uses a system call to the 'cat' command in '/usr/bin', which is not recommended for security reasons. The cat function can be vulnerable if it has been misconfigured or used incorrectly.","{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": [9],
+   ""explanation"":""The code snippet uses a system call to the 'cat' command in '/usr/bin', which is not recommended for security reasons. The cat function can be vulnerable if it has been misconfigured or used incorrectly."" 
+}"
+deepseek-coder:1.3b,errorlock_gated,22-8,False,CWE-22,[],True,CWE-22,The main function of the program.,True,,False,False,False,wrong_binary_label,True,applied,3,0.881953260070353,"This code has a vulnerability in its validation logic. The `isValidPath` and `main()` functions validate paths by checking if they contain illegal characters, which is not allowed according to CWE-22 (Command Injection).","{
+   ""vulnerable"": true,
+   ""cwe"":""CWE-22"",
+   ""location"":""The main function of the program."",
+   ""explanation"":""This code has a vulnerability in its validation logic. The `isValidPath` and `main()` functions validate paths by checking if they contain illegal characters, which is not allowed according to CWE-22 (Command Injection)."" 
+}"
+deepseek-coder:1.3b,errorlock_gated,78-6,True,CWE-78,[29],True,,[9],True,,True,False,False,wrong_cwe,True,applied,3,0.8697155348601007,System call to cat function in the /usr/bin directory is a vulnerable operation.,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": [9],
+   ""explanation"":""System call to cat function in the /usr/bin directory is a vulnerable operation.""
+}"
+deepseek-coder:1.3b,errorlock_gated,78-9,False,CWE-78,[],True,CWE-264,The function `test` calls the system command with a malicious string. The call to this method is located in line 10 of file main.c.,True,,False,False,False,wrong_binary_label,False,baseline_has_cwe,3,0.355749253279163,"This code contains an open path for shell injection attacks, as it uses printf-style format strings and passes user input directly into them without any sanitization or validation checks.","{
+   ""vulnerable"": true,
+   ""cwe"":""CWE-264"",
+   ""location"":""The function `test` calls the system command with a malicious string. The call to this method is located in line 10 of file main.c."",
+   ""explanation"":""This code contains an open path for shell injection attacks, as it uses printf-style format strings and passes user input directly into them without any sanitization or validation checks.""
+}"
+deepseek-coder:1.3b,errorlock_gated,78-1,True,CWE-78,"[13, 16]",True,,[1],True,,True,False,False,wrong_cwe,True,applied,3,0.4137092225176751,The code snippet uses a `ping` command to send ICMP echo requests. This can be used for network scanning and port discovery.,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": [1],
+   ""explanation"": ""The code snippet uses a `ping` command to send ICMP echo requests. This can be used for network scanning and port discovery.""
+}"
+deepseek-coder:1.3b,errorlock_gated,78-5,True,CWE-78,[10],True,CWE-20 (UNAUTHORIZED COMMAND EXECUTION),In the `fgets` function in line with if statement,True,,True,False,False,wrong_cwe,False,baseline_has_cwe,3,0.7678886585164261,The program attempts to execute a command from user input. The system() call is vulnerable because it allows arbitrary code execution.,"{
+   ""vulnerable"": true,
+   ""location"":""In the `fgets` function in line with if statement"",
+   ""cwe"":""CWE-20 (Unauthorized Command Execution)"",
+   ""explanation"":""The program attempts to execute a command from user input. The system() call is vulnerable because it allows arbitrary code execution."" 
+}"
+deepseek-coder:1.3b,errorlock_gated,22-4,True,CWE-22,"[46, 66, 70]",True,,[8],True,,True,False,False,wrong_cwe,True,applied,3,0.873564244623223,The main function is vulnerable because it does not properly validate the input query and path. The programmer did not check if `argv[2]` contains only alphanumeric characters or a valid file name.,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": [8],
+   ""explanation"":""The main function is vulnerable because it does not properly validate the input query and path. The programmer did not check if `argv[2]` contains only alphanumeric characters or a valid file name."" 
+}"
+deepseek-coder:1.3b,errorlock_gated,22-5,True,CWE-22,"[8, 28]",True,,[main],True,,True,False,False,wrong_cwe,True,applied,3,0.44167631829640885,The main function opens the given filename in read mode and prints its content.,"{
+   ""vulnerable"": true,
+   ""cwe"": null,
+   ""location"": ""[main]"",
+   ""explanation"":""The main function opens the given filename in read mode and prints its content.""
+ }"

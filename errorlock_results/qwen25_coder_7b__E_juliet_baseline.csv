@@ -1,0 +1,2698 @@
+model,dataset,method,id,true_label,true_cwe,true_lines,pred_label,pred_cwe,pred_lines,raw
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_ncat_08.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_ncat_08.cpp::bad,1,134,[],1.0,190.0,[36],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 36,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to wcsncat usage."",
+        ""line_content"": ""wcsncat(data, source, 100);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_31.c::good,0,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_31.c::bad,1,125,[],1.0,122.0,"[26, 37]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to copying more data than allocated."",
+        ""line_content"": ""for (i = 0; i < sourceLen + 1; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_53d.c::good,0,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation for the destination buffer."",
+        ""line_content"": ""memcpy(data, source, (strlen(source) + 1) * sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_53d.c::bad,1,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""memcpy(data, source, (strlen(source) + 1) * sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_54e.c::good,0,125,[],1.0,122.0,"[27, 36]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 36,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0 && data < (10))""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_54e.c::bad,1,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_65b.cpp::good,0,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_65b.cpp::bad,1,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_15.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_15.c::bad,1,78,[],1.0,253.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of fwscanf should be checked against EOF instead of 0."",
+        ""line_content"": ""if (fwscanf(stdin, L\""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_33.cpp::good,0,190,[],1.0,78.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND \""cmd.exe /c dir\""""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 31,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND \""ls -la\""""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_33.cpp::bad,1,190,[],1.0,78.0,"[27, 34]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The full path is not specified in the OS command, which can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 34,
+        ""cwe"": 78,
+        ""message"": ""The full path is not specified in the OS command, which can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""pipe = POPEN(data, \""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_66a.c::good,0,125,[],1.0,122.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_66a.c::bad,1,125,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Memory allocation size is incorrect; it should be 11 to accommodate the 10 characters plus the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_67a.cpp::good,0,89,[],1.0,590.0,[18],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""TwoIntsClass * structFirst;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_67a.cpp::bad,1,89,[],1.0,590.0,[28],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_18.c::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_18.c::bad,1,125,[],1.0,122.0,"[26, 27]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_18.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_18.cpp::bad,1,134,[],1.0,190.0,"[26, 30]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 190,
+        ""message"": ""Possible buffer overflow if data < 100."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_68a.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_68a.cpp::bad,1,89,[],1.0,590.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_54b.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_54b.c::bad,1,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fscanf_67b.c::good,0,125,[],1.0,122.0,"[38, 42]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 38,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 42,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fscanf_67b.c::bad,1,125,[],1.0,122.0,[28],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_54a.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_54a.c::bad,1,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory size is too small, which can lead to a buffer overflow."",
+        ""line_content"": ""data = (twoIntsStruct *)malloc(50*sizeof(twoIntsStruct));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_02.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_02.c::bad,1,78,[],1.0,253.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of sscanf should be checked against EOF instead of 0."",
+        ""line_content"": ""if (sscanf(SRC_STRING, \""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_11.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete[]'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_11.cpp::bad,1,89,[],1.0,590.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_alloca_54d.cpp::good,0,89,[],1.0,590.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocation error: 'data' was allocated on the stack with 'alloca()', which should be freed with 'free()' instead of 'delete'."",
+        ""line_content"": ""goodG2BSink_e(data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_alloca_54d.cpp::bad,1,89,[],1.0,78.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""The use of 'alloca' can lead to buffer overflows."",
+        ""line_content"": ""badSink_e(char * data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_listen_socket_54b.c::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_listen_socket_54b.c::bad,1,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_68b.c::good,0,125,[],1.0,122.0,"[37, 42]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 42,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_68b.c::bad,1,125,[],1.0,122.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_03.c::good,0,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the null terminator."",
+        ""line_content"": ""char *data = (char *)malloc(SRC_STRING);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_03.c::bad,1,125,[],1.0,190.0,"[26, 30]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory for 'data' is only 10 bytes, which is not enough to hold the 11 characters of 'source' including the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 30,
+        ""cwe"": 88,
+        ""message"": ""The use of strcpy can lead to buffer overflow if the source string is longer than the destination buffer."",
+        ""line_content"": ""strcpy(data, source);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_31.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_31.cpp::bad,1,89,[],1.0,78.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""The variable 'data' is being freed after being allocated on the stack."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_54e.c::good,0,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to incorrect loop condition."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_54e.c::bad,1,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking on 'data'"",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_05.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_05.c::bad,1,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""The function 'remove()' might fail, but the return value is checked against 0 instead of being compared to a non-zero value."",
+        ""line_content"": ""if (REMOVE(\""removemebad.txt\"") == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_02.c::good,0,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""The function call to CreateMutexW() lacks a proper error check."",
+        ""line_content"": ""hMutex = CreateMutexW(NULL, FALSE, L\""Global\\MyMutex\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_02.c::bad,1,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value should be checked against NULL instead of INVALID_HANDLE_VALUE."",
+        ""line_content"": ""if (hMutex == INVALID_HANDLE_VALUE)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_placement_new_41.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_placement_new_41.cpp::bad,1,89,[],,,[],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""The use of `new` operator inside a buffer on the stack can lead to undefined behavior."",
+        ""line_content"": ""char * dataBuffer = new(buffer) char;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of `new` operator inside a buffer on the stack can lead to undefined behavior."",
+        ""line_content"": ""*dataBuffer = 'A';""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 78,
+        ""message"": ""The use of `new` operator inside a buffer on the stack can lead to undefined behavior."",
+        ""line_content"": ""data = dataBuffer;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 32,
+        ""cwe"": 78,
+        ""message"": ""The use of `new` operator inside a buffer on the stack can lead to undefined behavior."",
+        ""line_content"": """
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_04.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_04.c::bad,1,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of fprintf() is checked against 0 instead of being compared with a negative value."",
+        ""line_content"": ""if (fprintf(stdout, \""%s\\n\"", \""string\"") == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_03.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_03.c::bad,1,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""The function ImpersonateSelf() returns 0 on failure, but the code checks if the return value is greater than zero."",
+        ""line_content"": ""if (ImpersonateSelf(SecurityImpersonation) > 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_memcpy_54c.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_memcpy_54c.cpp::bad,1,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_alloca_64b.cpp::good,0,89,[],1.0,590.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocated using 'delete' instead of 'free', which was allocated on the stack."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_alloca_64b.cpp::bad,1,89,[],1.0,590.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocated using 'delete' instead of 'free', which was allocated on the stack."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_74a.cpp::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_74a.cpp::bad,1,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory size is too small, leading to potential buffer overflow."",
+        ""line_content"": ""data = (int *)malloc(50*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_static_33.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete[]'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_static_33.cpp::bad,1,89,[],1.0,590.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_81_bad.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_81_bad.cpp::bad,1,134,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_11.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_11.c::bad,1,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of fwrite should be compared with the expected number of bytes written, not less than 0."",
+        ""line_content"": ""if (fwrite((wchar_t *)L\""string\"", sizeof(wchar_t), wcslen(L\""string\""), stdout) < 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_65b.c::good,0,125,[],1.0,122.0,"[27, 38]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 38,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0 && data < (10))""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_65b.c::bad,1,125,[],1.0,122.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_52b.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_52b.c::bad,1,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_04.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_04.cpp::bad,1,134,[],1.0,190.0,"[26, 37]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation."",
+        ""line_content"": ""data = new TwoIntsClass[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation."",
+        ""line_content"": ""data = new TwoIntsClass[50];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_static_53b.cpp::good,0,89,[],1.0,78.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""The function 'goodG2BSink_b' calls 'goodG2BSink_c', which then calls 'goodG2BSink_c' again, creating a potential infinite recursion."",
+        ""line_content"": ""goodG2BSink_c(data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_static_53b.cpp::bad,1,89,[],1.0,78.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""The function 'badSink_c' calls 'free' on a pointer that was allocated on the stack, which leads to undefined behavior."",
+        ""line_content"": ""void badSink_c(twoIntsStruct * data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_memcpy_54e.cpp::good,0,134,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying memory."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_memcpy_54e.cpp::bad,1,134,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying memory."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_06.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_06.cpp::bad,1,134,[],1.0,190.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 31,
+        ""cwe"": 190,
+        ""message"": ""Possible buffer overflow if data < 100."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_memcpy_05.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_memcpy_05.c::bad,1,22,[],1.0,190.0,"[26, 37]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation."",
+        ""line_content"": ""data = (twoIntsStruct *)malloc(50*sizeof(twoIntsStruct));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to incorrect use of memcpy."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(twoIntsStruct));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_alloca_53d.cpp::good,0,89,[],1.0,78.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer overflow due to use of alloca() which allocates memory on the stack."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_alloca_53d.cpp::bad,1,89,[],1.0,78.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""Potential buffer overflow due to use of alloca() which allocates memory on the stack."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_67a.cpp::good,0,134,[],1.0,122.0,[29],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[5];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_67a.cpp::bad,1,134,[],1.0,122.0,[29],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_01.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_01.cpp::bad,1,134,[],1.0,190.0,"[26, 30]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 190,
+        ""message"": ""Possible buffer overflow if data < 100."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_63b.cpp::good,0,89,[],1.0,590.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocated on the stack instead of the heap."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_declare_63b.cpp::bad,1,89,[],1.0,590.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocated on the stack instead of the heap."",
+        ""line_content"": ""delete [] data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_connect_socket_15.c::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_connect_socket_15.c::bad,1,125,[],1.0,122.0,"[80, 82]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 80,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 82,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_52c.cpp::good,0,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to incorrect loop condition."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_52c.cpp::bad,1,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_alloca_65a.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack with 'alloca' is being freed with 'delete[]'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_array_struct_alloca_65a.cpp::bad,1,89,[],1.0,590.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_08.c::good,0,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""The return value of wscanf() is not checked before being used."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_08.c::bad,1,78,[],1.0,253.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of wscanf() is checked against 0 instead of EOF."",
+        ""line_content"": ""if (wscanf(L\""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_01.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_01.c::bad,1,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value should be checked against INVALID_HANDLE_VALUE instead of NULL."",
+        ""line_content"": ""if (hPipe == NULL)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_listen_socket_65b.c::good,0,125,[],1.0,122.0,"[48, 52]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 48,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 52,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_listen_socket_65b.c::bad,1,125,[],1.0,122.0,[28],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_67a.c::good,0,190,[],1.0,78.0,"[28, 32]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND \""cmd.exe /c dir\""""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 32,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define GOOD_OS_COMMAND \""/usr/bin/ls -la\""""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_67a.c::bad,1,190,[],1.0,78.0,[28],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 78,
+        ""message"": ""The use of strcpy can lead to buffer overflow if the source string is longer than the destination buffer."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 28,
+        ""cwe"": 426,
+        ""message"": ""The OS command does not specify the full path, which can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_12.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_12.c::bad,1,22,[],1.0,190.0,"[26, 37]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (int *)malloc(50*sizeof(int));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_54e.c::good,0,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to incorrect loop condition."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_54e.c::bad,1,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking on 'data' before copying from 'source'."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_62b.cpp::good,0,125,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory size is insufficient to hold the string including the null terminator."",
+        ""line_content"": ""data = (char *)malloc((10+1)*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_62b.cpp::bad,1,125,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory for 'data' does not include space for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_82_bad.cpp::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_loop_82_bad.cpp::bad,1,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking on 'data'"",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_placement_new_12.cpp::good,0,89,[],1.0,590.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_placement_new_12.cpp::bad,1,89,[],1.0,590.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE131_memmove_04.c::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE131_memmove_04.c::bad,1,125,[],1.0,190.0,"[26, 30]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Memory allocation size is incorrect. It should use sizeof(int) instead of 10."",
+        ""line_content"": ""data = (int *)malloc(10);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 30,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""memmove(data, source, 10*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_13.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_13.c::bad,1,78,[],1.0,253.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of swscanf should be checked against EOF instead of 0."",
+        ""line_content"": ""if (swscanf(SRC_STRING, L\""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_declare_68a.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_char_declare_68a.cpp::bad,1,89,[],1.0,590.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_66b.cpp::good,0,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying memory."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_66b.cpp::bad,1,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_ncat_84a.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_wchar_t_ncat_84a.cpp::bad,1,134,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""The size of the buffer allocated with 'new[]' is not checked before copying data into it."",
+        ""line_content"": ""data = new wchar_t[10];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_62b.cpp::good,0,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential integer overflow when calculating the size of the buffer."",
+        ""line_content"": ""data = new int[100];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_62b.cpp::bad,1,134,[],1.0,190.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory size is too small compared to the size used in the sink."",
+        ""line_content"": ""data = new int[50];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memmove_63b.c::good,0,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying memory."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memmove_63b.c::bad,1,22,[],1.0,122.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_memmove_73a.cpp::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_memmove_73a.cpp::bad,1,22,[],1.0,122.0,[29],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 29,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (int64_t *)malloc(50*sizeof(int64_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fgets_66a.c::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fgets_66a.c::bad,1,125,[],1.0,122.0,"[27, 38]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking when reading input with fgets()."",
+        ""line_content"": ""if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 38,
+        ""cwe"": 0,
+        ""message"": ""Data is stored in an array without proper bounds checking."",
+        ""line_content"": ""dataArray[2] = data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_int64_t_alloca_44.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack with 'alloca' is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_int64_t_alloca_44.cpp::bad,1,89,[],1.0,78.0,"[28, 30]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 78,
+        ""message"": ""Use of potentially dangerous function 'ALLOCA'. This can lead to buffer overflows."",
+        ""line_content"": ""int64_t * dataBuffer = (int64_t *)ALLOCA(sizeof(int64_t));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 415,
+        ""message"": ""Memory allocated on the stack is being freed. This leads to undefined behavior."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_52c.c::good,0,125,[],1.0,122.0,"[26, 27]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_52c.c::bad,1,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE135_09.c::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE135_09.c::bad,1,125,[],1.0,119.0,"[26, 30]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 119,
+        ""message"": ""Potential buffer overflow due to use of strlen on a wide string."",
+        ""line_content"": ""size_t dataLen = strlen((char *)data);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 119,
+        ""message"": ""Potential buffer overflow due to use of wcscpy with incorrect destination type."",
+        ""line_content"": ""(void)wcscpy(dest, data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_loop_64b.c::good,0,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to copying more data than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_loop_64b.c::bad,1,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to copying more data than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_64a.c::good,0,190,[],1.0,78.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND \""cmd.exe /c dir\""""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 31,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND \""ls -la\""""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_64a.c::bad,1,190,[],1.0,78.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of strcpy can lead to buffer overflow if the source string is longer than the destination buffer."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 426,
+        ""message"": ""The OS command does not specify the full path, which can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE131_memmove_31.c::good,0,125,[],1.0,190.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Memory allocation size is incorrect. It should use sizeof(int) instead of a hardcoded value."",
+        ""line_content"": ""data = (int *)malloc(100);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE131_memmove_31.c::bad,1,125,[],1.0,190.0,"[17, 26]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Memory allocation size is incorrect. It should be 'sizeof(int)' instead of '10'. This can lead to buffer overflows."",
+        ""line_content"": ""data = (int *)malloc(10);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""The size parameter in memmove is incorrect. It should be '10 * sizeof(int)' instead of '10 * sizeof(int)'. This might cause buffer overflows or other issues."",
+        ""line_content"": ""memmove(data, source, 10*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_02.c::good,0,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""The function 'SNPRINTF' is called but its return value is not checked."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_02.c::bad,1,78,[],1.0,253.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 253,
+        ""message"": ""The function 'swprintf' might fail, but the return value is checked against 0 instead of being compared with a negative value."",
+        ""line_content"": ""if (SNPRINTF(data,100-wcslen(SRC_STRING)-1, L\""%s\\n\"", SRC_STRING) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_66b.c::good,0,125,[],1.0,122.0,"[27, 28]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 28,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_66b.c::bad,1,125,[],1.0,122.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_02.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memcpy_02.cpp::bad,1,134,[],1.0,190.0,"[26, 30]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 190,
+        ""message"": ""Possible buffer overflow if data < 100."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_74a.cpp::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_74a.cpp::bad,1,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory size is too small for the input data."",
+        ""line_content"": ""data = (wchar_t *)malloc(50*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_81a.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_81a.cpp::bad,1,89,[],1.0,590.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_memmove_53d.cpp::good,0,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int64_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_memmove_53d.cpp::bad,1,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int64_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_09.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_09.c::bad,1,78,[],1.0,253.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of return value for fgets(). The condition should check if the return value is NULL instead of less than 0."",
+        ""line_content"": ""if (fgets(data, 100, stdin) < 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fgets_82a.cpp::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fgets_82a.cpp::bad,1,125,[],1.0,122.0,"[26, 37]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking when reading from stdin."",
+        ""line_content"": ""if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 37,
+        ""cwe"": 0,
+        ""message"": ""The use of 'new' without corresponding 'delete' can lead to memory leaks."",
+        ""line_content"": ""baseObject = new CWE122_Heap_Based_Buffer_Overflow__c_CWE129_fgets_82_bad;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_10.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_10.c::bad,1,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to copying more elements than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 0,
+        ""message"": ""The condition 'i < 100' may lead to undefined behavior if 'data' is not large enough."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_11.c::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_rand_11.c::bad,1,125,[],1.0,122.0,"[26, 27]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 0,
+        ""message"": ""The use of 'RAND32()' as a source of randomness is not secure."",
+        ""line_content"": ""data = RAND32();""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_16.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_16.c::bad,1,78,[],1.0,253.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of wscanf should be checked against EOF instead of 0."",
+        ""line_content"": ""if (wscanf(L\""%99s\\0\"", data) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_84_goodB2G.cpp::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_84_goodB2G.cpp::bad,1,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memmove_17.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memmove_17.cpp::bad,1,134,[],1.0,190.0,"[26, 34]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation of memory."",
+        ""line_content"": ""data = new TwoIntsClass[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 34,
+        ""cwe"": 190,
+        ""message"": ""Possible buffer overflow if data < 100."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_08.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_08.c::bad,1,22,[],1.0,190.0,"[26, 27]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to copying more elements than allocated."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 26,
+        ""cwe"": 415,
+        ""message"": ""Memory allocation failure check missing."",
+        ""line_content"": ""data = (twoIntsStruct *)malloc(50*sizeof(twoIntsStruct));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_system_41.c::good,0,190,[],1.0,78.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of 'system' with untrusted input can lead to arbitrary command execution."",
+        ""line_content"": ""#define BAD_OS_COMMAND L\""cmd.exe /c dir\""""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 31,
+        ""cwe"": 78,
+        ""message"": ""The use of 'system' with untrusted input can lead to arbitrary command execution."",
+        ""line_content"": ""#define BAD_OS_COMMAND L\""ls -la\""""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_system_41.c::bad,1,190,[],1.0,78.0,"[37, 41]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 78,
+        ""message"": ""The use of _wsystem() with an untrusted input can lead to arbitrary command execution."",
+        ""line_content"": ""if (SYSTEM(data) <= 0)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 41,
+        ""cwe"": 0,
+        ""message"": ""The full path is not specified in the OS command, which may be insecure."",
+        ""line_content"": ""wcscpy(data, BAD_OS_COMMAND);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_83a.cpp::good,0,125,[],1.0,122.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation of memory for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_83a.cpp::bad,1,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Memory allocation for 'data' does not include space for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_73a.cpp::good,0,89,[],1.0,590.0,[16],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 16,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_73a.cpp::bad,1,89,[],1.0,590.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_66b.c::good,0,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_loop_66b.c::bad,1,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking on 'data'."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_08.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memcpy_08.cpp::bad,1,134,[],1.0,190.0,"[27, 36]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation of memory."",
+        ""line_content"": ""data = new TwoIntsClass[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 36,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to use of memcpy with incorrect size."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_18.c::good,0,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_18.c::bad,1,125,[],1.0,197.0,"[26, 32]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 197,
+        ""message"": ""Memory allocation size is incorrect; it should be 11 to accommodate the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 32,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient space allocated for the source string."",
+        ""line_content"": ""strcpy(data, source);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_31.c::good,0,190,[],1.0,78.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND \""cmd.exe /c dir\""""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 31,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND \""ls -la\""""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_31.c::bad,1,190,[],1.0,78.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of strcpy to copy the value of BAD_OS_COMMAND into data does not ensure that the destination buffer is large enough to hold the source string."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 31,
+        ""cwe"": 426,
+        ""message"": ""The use of popen with the variable 'data' does not specify the full path to the executable, which can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""pipe = POPEN(data, \""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_61a.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int_memcpy_61a.c::bad,1,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying memory."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_53d.c::good,0,125,[],1.0,122.0,"[26, 27]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""buffer[data] = 1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_53d.c::bad,1,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_54c.c::good,0,190,[],1.0,78.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND L\""cmd.exe /c dir\""""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 31,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND L\""ls -la\""""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_54c.c::bad,1,190,[],1.0,78.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND L\""cmd.exe /c dir\""""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 31,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND L\""ls -la\""""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_33.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_33.cpp::bad,1,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to insufficient bounds checking when copying elements from 'source' to 'data'."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_placement_new_32.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_placement_new_32.cpp::bad,1,89,[],1.0,78.0,"[26, 32]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 78,
+        ""message"": ""The use of 'new' with a buffer on the stack can lead to undefined behavior."",
+        ""line_content"": ""TwoIntsClass * dataBuffer = new(buffer) TwoIntsClass;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 32,
+        ""cwe"": 78,
+        ""message"": ""The use of 'delete' on a stack-allocated object can lead to undefined behavior."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_54e.c::good,0,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_struct_loop_54e.c::bad,1,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying elements from 'source' to 'data'."",
+        ""line_content"": ""for (i = 0; i < 100; i++)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_alloca_41.cpp::good,0,89,[],1.0,590.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 590,
+        ""message"": ""Memory deallocation using 'free' on a pointer allocated with 'alloca'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_alloca_41.cpp::bad,1,89,[],1.0,590.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""delete data;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_81a.cpp::good,0,125,[],1.0,122.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation of memory for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_81a.cpp::bad,1,125,[],1.0,122.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 122,
+        ""message"": ""Memory allocation for 'data' does not include space for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_01.c::good,0,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the null terminator."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_01.c::bad,1,125,[],1.0,197.0,"[26, 30]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 197,
+        ""message"": ""The allocated memory for 'data' is insufficient to hold the source string including the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 30,
+        ""cwe"": 88,
+        ""message"": ""The use of strcpy can lead to buffer overflow if the source string is longer than the destination buffer."",
+        ""line_content"": ""strcpy(data, source);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_66a.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int64_t_loop_66a.cpp::bad,1,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory size is too small compared to the intended use."",
+        ""line_content"": ""data = new int64_t[50];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_09.cpp::good,0,134,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_memmove_09.cpp::bad,1,134,[],1.0,122.0,"[26, 30]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = new int[50];""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 30,
+        ""cwe"": 122,
+        ""message"": ""Possible buffer overflow when copying data from source to data using memmove."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(int));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_81_bad.cpp::good,0,125,[],1.0,122.0,[17],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation of memory for the string."",
+        ""line_content"": ""data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_cpy_81_bad.cpp::bad,1,125,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""The allocated buffer 'data' may not have enough space to hold the source string including the null terminator."",
+        ""line_content"": ""strcpy(data, source);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_05.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_05.c::bad,1,22,[],1.0,190.0,"[26, 37]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (wchar_t *)malloc(50*sizeof(wchar_t));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to use of memcpy with potentially larger source buffer."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_52a.c::good,0,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""char *data = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_memcpy_52a.c::bad,1,125,[],1.0,197.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 197,
+        ""message"": ""Memory allocation size is incorrect; it does not account for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_14.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_14.c::bad,1,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""The function call to RpcImpersonateClient() is incorrectly checked. It should check for failure conditions instead of success."",
+        ""line_content"": ""if (RpcImpersonateClient(0) == RPC_S_OK)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_system_66a.c::good,0,190,[],1.0,78.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of 'system' with untrusted input can lead to arbitrary command execution."",
+        ""line_content"": ""#define BAD_OS_COMMAND \""cmd.exe /c dir\""""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 31,
+        ""cwe"": 78,
+        ""message"": ""The use of 'system' with untrusted input can lead to arbitrary command execution."",
+        ""line_content"": ""#define GOOD_OS_COMMAND \""c:\\windows\\system32\\cmd.exe /c dir\""""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_system_66a.c::bad,1,190,[],1.0,78.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of strcpy can lead to buffer overflow if the source string is longer than the destination buffer."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 426,
+        ""message"": ""The program uses an untrusted search path when executing the system command, which can lead to arbitrary command execution."",
+        ""line_content"": ""strcpy(data, BAD_OS_COMMAND);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_73b.cpp::good,0,190,[],1.0,78.0,[38],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 38,
+        ""cwe"": 78,
+        ""message"": ""The use of 'data' directly in the popen function call without ensuring it contains a full path can lead to an untrusted search path vulnerability."",
+        ""line_content"": ""pipe = POPEN(data, \""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__char_popen_73b.cpp::bad,1,190,[],1.0,78.0,[38],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 38,
+        ""cwe"": 78,
+        ""message"": ""The use of 'data' directly in the popen call without ensuring it contains a full path can lead to an untrusted search path vulnerability."",
+        ""line_content"": ""pipe = POPEN(data, \""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_18.c::good,0,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""The function return value from snprintf is not checked before use."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_18.c::bad,1,78,[],1.0,253.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of snprintf should be checked against a non-negative value to determine if the operation was successful."",
+        ""line_content"": ""if (SNPRINTF(data,100-strlen(SRC_STRING)-1, \""%s\\n\"", SRC_STRING) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_21.c::good,0,190,[],1.0,78.0,"[27, 31]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND L\""cmd.exe /c dir\""""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 31,
+        ""cwe"": 78,
+        ""message"": ""The use of 'cmd.exe' or 'ls' without specifying the full path can lead to untrusted search path vulnerabilities."",
+        ""line_content"": ""#define BAD_OS_COMMAND L\""ls -la\""""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_21.c::bad,1,190,[],1.0,78.0,"[37, 47]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 78,
+        ""message"": ""The full path is not specified in the OS command."",
+        ""line_content"": ""wcscpy(data, BAD_OS_COMMAND);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 47,
+        ""cwe"": 78,
+        ""message"": ""The full path is not specified in the OS command."",
+        ""line_content"": ""pipe = POPEN(data, L\""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_68a.cpp::good,0,134,[],1.0,190.0,"[17, 18]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 17,
+        ""cwe"": 190,
+        ""message"": ""Potential integer overflow when calculating the size of the allocated memory."",
+        ""line_content"": ""int * CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_68_badData;""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 190,
+        ""message"": ""Potential integer overflow when calculating the size of the allocated memory."",
+        ""line_content"": ""int * CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_68_goodG2BData;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_int_loop_68a.cpp::bad,1,134,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory size is too small for the intended use."",
+        ""line_content"": ""data = new int[50];""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_63b.c::good,0,190,[],1.0,78.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of wpopen without specifying the full path to the executable can lead to arbitrary command execution."",
+        ""line_content"": ""pipe = POPEN(data, L\""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE426_Untrusted_Search_Path/CWE426_Untrusted_Search_Path__wchar_t_popen_63b.c::bad,1,190,[],1.0,78.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 78,
+        ""message"": ""The use of wpopen with an untrusted search path can lead to arbitrary command execution."",
+        ""line_content"": ""pipe = POPEN(data, L\""wb\"");""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_14.c::good,0,78,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_14.c::bad,1,78,[],1.0,253.0,[18],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of putchar() should be checked against EOF instead of 0."",
+        ""line_content"": ""if (putchar((int)'A') == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memmove_54e.cpp::good,0,134,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s03/CWE122_Heap_Based_Buffer_Overflow__cpp_CWE805_class_memmove_54e.cpp::bad,1,134,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient bounds checking when copying data."",
+        ""line_content"": ""memmove(data, source, 100*sizeof(TwoIntsClass));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_01.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_memcpy_01.c::bad,1,22,[],1.0,190.0,"[26, 37]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to insufficient allocation size."",
+        ""line_content"": ""data = (wchar_t *)malloc(50*sizeof(wchar_t));""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 37,
+        ""cwe"": 190,
+        ""message"": ""Potential buffer overflow due to use of memcpy with potentially larger source buffer."",
+        ""line_content"": ""memcpy(data, source, 100*sizeof(wchar_t));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_45.c::good,0,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the string."",
+        ""line_content"": ""CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_45_badData = (char *)malloc(10);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE193_char_loop_45.c::bad,1,125,[],1.0,122.0,[36],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 36,
+        ""cwe"": 122,
+        ""message"": ""Heap-based buffer overflow due to insufficient allocation for the null terminator."",
+        ""line_content"": ""data = (char *)malloc(10*sizeof(char));""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_connect_socket_84a.cpp::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_connect_socket_84a.cpp::bad,1,125,[],1.0,122.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential buffer overflow due to improper bounds checking."",
+        ""line_content"": ""data = -1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_03.c::good,0,78,[],1.0,253.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 253,
+        ""message"": ""The function 'SNPRINTF' is called but its return value is not checked."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_03.c::bad,1,78,[],1.0,253.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 253,
+        ""message"": ""Incorrect check of function return value. The return value of snprintf should be checked against a non-negative value to determine if the operation was successful."",
+        ""line_content"": ""if (SNPRINTF(data,100-strlen(SRC_STRING)-1, \""%s\\n\"", SRC_STRING) == 0)""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_03.c::good,0,125,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__c_CWE129_large_03.c::bad,1,125,[],1.0,122.0,"[26, 27]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 122,
+        ""message"": ""Potential heap-based buffer overflow due to improper bounds checking."",
+        ""line_content"": ""if (data >= 0)""
+    },
+    {
+        ""severity"": ""Medium"",
+        ""line"": 27,
+        ""cwe"": 0,
+        ""message"": ""Improper initialization of 'data' variable."",
+        ""line_content"": ""data = -1;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE135_53d.c::good,0,125,[],1.0,190.0,"[27, 36]","```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""Using strlen on a pointer to a wide string can lead to buffer overflow."",
+        ""line_content"": ""size_t dataLen = strlen((char *)data);""
+    },
+    {
+        ""severity"": ""High"",
+        ""line"": 36,
+        ""cwe"": 190,
+        ""message"": ""Using wcslen on a pointer to a char string can lead to buffer overflow."",
+        ""line_content"": ""size_t dataLen = wcslen((wchar_t *)data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s06/CWE122_Heap_Based_Buffer_Overflow__CWE135_53d.c::bad,1,125,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Using strlen on a pointer of type wchar_t* can lead to buffer overflow."",
+        ""line_content"": ""size_t dataLen = strlen((char *)data);""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_72a.cpp::good,0,89,[],1.0,590.0,[18],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 18,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed with 'delete'. This can lead to undefined behavior."",
+        ""line_content"": ""return 0;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE590_Free_Memory_Not_on_Heap/s02/CWE590_Free_Memory_Not_on_Heap__delete_class_declare_72a.cpp::bad,1,89,[],1.0,590.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 590,
+        ""message"": ""Memory allocated on the stack is being freed."",
+        ""line_content"": ""data = &dataBuffer;""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_loop_74b.cpp::good,0,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to copying more data into 'data' than it can hold."",
+        ""line_content"": ""for (i = 0; i < 100; i++) {""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_wchar_t_loop_74b.cpp::bad,1,22,[],1.0,190.0,[26],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 26,
+        ""cwe"": 190,
+        ""message"": ""Buffer overflow due to copying more data into 'data' than it can hold."",
+        ""line_content"": ""for (i = 0; i < 100; i++) {""
+    }
+]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_memcpy_64a.c::good,0,22,[],0.0,,[],"```json
+[]
+```"
+qwen25_coder_7b,Juliet_overlap_250,baseline,juliet::testcases/CWE122_Heap_Based_Buffer_Overflow/s08/CWE122_Heap_Based_Buffer_Overflow__c_CWE805_int64_t_memcpy_64a.c::bad,1,22,[],1.0,190.0,[27],"```json
+[
+    {
+        ""severity"": ""High"",
+        ""line"": 27,
+        ""cwe"": 190,
+        ""message"": ""The allocated memory size is too small for the intended use."",
+        ""line_content"": ""data = (int64_t *)malloc(50*sizeof(int64_t));""
+    }
+]
+```"

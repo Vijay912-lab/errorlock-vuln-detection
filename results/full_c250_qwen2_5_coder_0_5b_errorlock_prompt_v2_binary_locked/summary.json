@@ -1,0 +1,97 @@
+{
+  "model": "qwen2.5-coder:0.5b",
+  "dataset": "data/CASTLE-C250.min.json",
+  "n_total": 250,
+  "n_train": 100,
+  "n_test": 150,
+  "top_k": 3,
+  "gated": true,
+  "min_similarity": 0.18,
+  "cwe_recheck_similarity": 0.35,
+  "near_duplicate_similarity": 0.95,
+  "preserve_binary_decision": true,
+  "selective_binary_override": false,
+  "binary_override_similarity": 0.62,
+  "binary_override_votes": 2,
+  "skip_if_baseline_not_vulnerable": true,
+  "skip_if_baseline_vulnerable": false,
+  "skip_if_baseline_has_cwe": true,
+  "baseline": {
+    "n": 150,
+    "accuracy": 0.44666666666666666,
+    "precision": 0.639344262295082,
+    "recall": 0.39,
+    "f1": 0.484472049689441,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.44666666666666666,
+    "cwe_correct_rate": 0.18666666666666668,
+    "location_correct_rate": 0.18666666666666668,
+    "failure_counts": {
+      "wrong_cwe": 39,
+      "wrong_binary_label": 83,
+      "correct": 28
+    },
+    "confusion_matrix": [
+      [
+        28,
+        22
+      ],
+      [
+        61,
+        39
+      ]
+    ]
+  },
+  "errorlock": {
+    "n": 150,
+    "accuracy": 0.44666666666666666,
+    "precision": 0.639344262295082,
+    "recall": 0.39,
+    "f1": 0.484472049689441,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.44666666666666666,
+    "cwe_correct_rate": 0.23333333333333334,
+    "location_correct_rate": 0.2,
+    "failure_counts": {
+      "wrong_cwe": 32,
+      "wrong_binary_label": 83,
+      "correct": 35
+    },
+    "confusion_matrix": [
+      [
+        28,
+        22
+      ],
+      [
+        61,
+        39
+      ]
+    ]
+  },
+  "train_baseline_for_memory": {
+    "n": 100,
+    "accuracy": 0.45,
+    "precision": 0.4358974358974359,
+    "recall": 0.34,
+    "f1": 0.38202247191011235,
+    "parse_failure_rate": 0.0,
+    "binary_correct_rate": 0.45,
+    "cwe_correct_rate": 0.28,
+    "location_correct_rate": 0.28,
+    "failure_counts": {
+      "wrong_binary_label": 55,
+      "correct": 28,
+      "wrong_cwe": 17
+    },
+    "confusion_matrix": [
+      [
+        28,
+        22
+      ],
+      [
+        33,
+        17
+      ]
+    ]
+  }
+}

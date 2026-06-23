@@ -1,0 +1,241 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,errorlock_applied,gate_reason,retrieved_count,max_similarity,explanation,raw
+qwen2.5-coder:0.5b,baseline_reused,78-6,True,CWE-78,[29],True,CWE-123,/bin/cat command,True,,True,False,False,wrong_cwe,,,0,,"The code contains a buffer overflow vulnerability in the `system()` function, which can lead to arbitrary code execution.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""/bin/cat command"",
+  ""explanation"": ""The code contains a buffer overflow vulnerability in the `system()` function, which can lead to arbitrary code execution.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,674-2,True,CWE-674,[9],True,CWE-123,countdown function,True,,True,False,False,wrong_cwe,,,0,,The `countdown` function decrements the input number `i` by one and prints a message indicating that the countdown is running.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""countdown function"",
+  ""explanation"": ""The `countdown` function decrements the input number `i` by one and prints a message indicating that the countdown is running.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,476-4,True,CWE-476,[51],True,CWE-79,The `addNode` function is responsible for adding a new node to the end of a linked list.,True,,True,False,False,wrong_cwe,,,0,,"This function correctly handles the creation and insertion of nodes into a singly linked list, ensuring that each node has a value and a pointer to the next node.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-79"",
+  ""location"": ""The `addNode` function is responsible for adding a new node to the end of a linked list."",
+  ""explanation"": ""This function correctly handles the creation and insertion of nodes into a singly linked list, ensuring that each node has a value and a pointer to the next node.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,416-1,True,CWE-416,[20],True,CWE-483,"The `square` function modifies the input pointer, which is not allowed in C.",True,,True,False,False,wrong_cwe,,,0,,This vulnerability occurs because the `square` function takes a pointer to an integer and attempts to modify it. This can lead to undefined behavior if the pointer is not properly managed.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-483"",
+  ""location"": ""The `square` function modifies the input pointer, which is not allowed in C."",
+  ""explanation"": ""This vulnerability occurs because the `square` function takes a pointer to an integer and attempts to modify it. This can lead to undefined behavior if the pointer is not properly managed.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,327-2,True,CWE-327,"[11, 26, 34, 40, 46]",True,CWE-28,Inserting user data into a database table,True,,True,False,False,wrong_cwe,,,0,,This code attempts to insert user data into a SQLite database using the `sqlite3` library. It includes error handling for database operations and password hashing.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-28"",
+  ""location"": ""Inserting user data into a database table"",
+  ""explanation"": ""This code attempts to insert user data into a SQLite database using the `sqlite3` library. It includes error handling for database operations and password hashing.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,822-2,True,CWE-822,"[5, 6, 24, 27]",True,CWE-293,"The `process` function modifies the input array, which is not safe for concurrent access.",True,,True,False,False,wrong_cwe,,,0,,"This vulnerability occurs because the `process` function modifies the input array, which can lead to undefined behavior if multiple threads or processes are accessing it simultaneously.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""The `process` function modifies the input array, which is not safe for concurrent access."",
+  ""explanation"": ""This vulnerability occurs because the `process` function modifies the input array, which can lead to undefined behavior if multiple threads or processes are accessing it simultaneously.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,415-1,True,CWE-415,[22],True,CWE-123,malloc function call,True,,True,False,False,wrong_cwe,,,0,,"The code uses `malloc` to allocate memory for an integer, which is not safe and can lead to undefined behavior if the memory allocation fails.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""malloc function call"",
+  ""explanation"": ""The code uses `malloc` to allocate memory for an integer, which is not safe and can lead to undefined behavior if the memory allocation fails.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,401-6,True,CWE-401,"[22, 39]",True,CWE-123,Function `square` in file `main.c` at line 45,True,,True,False,False,wrong_cwe,,,0,,"The function `square` modifies the value of the first argument, which is a pointer to an integer. This can lead to undefined behavior if not handled carefully.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Function `square` in file `main.c` at line 45"",
+  ""explanation"": ""The function `square` modifies the value of the first argument, which is a pointer to an integer. This can lead to undefined behavior if not handled carefully.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,674-1,True,CWE-674,[5],True,CWE-123,print function definition,True,,True,False,False,wrong_cwe,,,0,,"The `print` function is called recursively, which can lead to infinite recursion if not properly handled.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""print function definition"",
+  ""explanation"": ""The `print` function is called recursively, which can lead to infinite recursion if not properly handled.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,770-1,True,CWE-770,[68],True,CWE-293,The code does not handle client errors gracefully.,True,,True,False,False,wrong_cwe,,,0,,"The code does not check for and handle potential errors when accepting connections, such as invalid socket addresses or network issues.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""The code does not handle client errors gracefully."",
+  ""explanation"": ""The code does not check for and handle potential errors when accepting connections, such as invalid socket addresses or network issues.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,843-8,False,CWE-843,[],True,CWE-483,printNum function,True,,False,False,False,wrong_binary_label,,,0,,The `printNum` function is vulnerable to buffer overflows due to incorrect handling of integer values.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-483"",
+  ""location"": ""printNum function"",
+  ""explanation"": ""The `printNum` function is vulnerable to buffer overflows due to incorrect handling of integer values.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,134-7,False,CWE-134,[],True,CWE-482,The function `main` is vulnerable to buffer overflows.,True,,False,False,False,wrong_binary_label,,,0,,Buffer overflows occur when an application attempts to write more data than it has allocated for a buffer. This can lead to security vulnerabilities such as buffer overflow attacks.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-482"",
+  ""location"": ""The function `main` is vulnerable to buffer overflows."",
+  ""explanation"": ""Buffer overflows occur when an application attempts to write more data than it has allocated for a buffer. This can lead to security vulnerabilities such as buffer overflow attacks.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,617-5,True,CWE-617,[8],True,CWE-485,"The loop condition checks if the number is negative, which is not a valid condition for incrementing.",True,,True,False,False,wrong_cwe,,,0,,This code does not handle the case where the initial value of `d` is negative.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-485"",
+  ""location"": ""The loop condition checks if the number is negative, which is not a valid condition for incrementing."",
+  ""explanation"": ""This code does not handle the case where the initial value of `d` is negative.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,628-5,True,CWE-628,"[23, 27, 32, 36, 41, 48]",True,CWE-389,"The function `url_decode` replaces '+' with a space, which is not allowed in URLs.",True,,True,False,False,wrong_cwe,,,0,,This vulnerability occurs because the function does not properly handle the replacement of '+' with a space. The function assumes that the input string contains only valid characters and does not perform any validation or sanitization before replacing '+'.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-389"",
+  ""location"": ""The function `url_decode` replaces '+' with a space, which is not allowed in URLs."",
+  ""explanation"": ""This vulnerability occurs because the function does not properly handle the replacement of '+' with a space. The function assumes that the input string contains only valid characters and does not perform any validation or sanitization before replacing '+'.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,822-10,False,CWE-822,[],True,CWE-123,The function `main` is vulnerable to buffer overflows.,True,,False,False,False,wrong_binary_label,,,0,,"This code does not handle user input safely, which could lead to buffer overflow if the input exceeds the allocated buffer size.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""The function `main` is vulnerable to buffer overflows."",
+  ""explanation"": ""This code does not handle user input safely, which could lead to buffer overflow if the input exceeds the allocated buffer size.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,401-2,True,CWE-401,"[14, 15, 22, 36]",False,,Reserve memory for buffer,True,,False,False,False,wrong_binary_label,,,0,,"The function `createCleanBuffer` reserves memory for a buffer of size 12, but it fails to allocate the memory. The error message indicates that the memory could not be reserved.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Reserve memory for buffer"",
+  ""explanation"": ""The function `createCleanBuffer` reserves memory for a buffer of size 12, but it fails to allocate the memory. The error message indicates that the memory could not be reserved.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,761-9,False,CWE-761,[],True,CWE-123,The function `f` modifies the array `a` in place.,True,,False,False,False,wrong_binary_label,,,0,,"This code snippet demonstrates a simple modification of an array, which is considered a violation of the principle of least privilege (LPL). The use of `&a` and `&b` to pass by reference allows for direct manipulation of the array elements.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""The function `f` modifies the array `a` in place."",
+  ""explanation"": ""This code snippet demonstrates a simple modification of an array, which is considered a violation of the principle of least privilege (LPL). The use of `&a` and `&b` to pass by reference allows for direct manipulation of the array elements.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,327-7,False,CWE-327,[],True,CWE-28,Inserting user data into a database table,True,,False,False,False,wrong_binary_label,,,0,,This code attempts to insert user data into a SQLite database using the `sqlite3` library. It includes error handling for database operations and password hashing.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-28"",
+  ""location"": ""Inserting user data into a database table"",
+  ""explanation"": ""This code attempts to insert user data into a SQLite database using the `sqlite3` library. It includes error handling for database operations and password hashing.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,253-6,True,CWE-253,"[5, 9, 16]",True,CWE-123,Reading file 'example.txt',True,,True,False,False,wrong_cwe,,,0,,The code reads a file named 'example.txt' and prints its contents.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Reading file 'example.txt'"",
+  ""explanation"": ""The code reads a file named 'example.txt' and prints its contents.""
+}"
+qwen2.5-coder:0.5b,baseline_reused,843-9,False,CWE-843,[],True,CWE-483,The `main` function is not declared as the entry point of a program.,True,,False,False,False,wrong_binary_label,,,0,,"This code does not declare the `main` function as the entry point, which can lead to undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-483"",
+  ""location"": ""The `main` function is not declared as the entry point of a program."",
+  ""explanation"": ""This code does not declare the `main` function as the entry point, which can lead to undefined behavior.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,78-6,True,CWE-78,[29],True,CWE-78,/bin/cat command,True,,True,True,False,,True,cwe_recheck,96,0.7894874473279688,"Binary decision preserved from baseline. The code contains a buffer overflow vulnerability in the `system()` function, which can lead to arbitrary code execution if the input string contains untrusted input.","{
+    ""vulnerable"": true,
+    ""cwe"": ""CWE-78"",
+    ""location"": ""/bin/cat command"",
+    ""explanation"": ""The code contains a buffer overflow vulnerability in the `system()` function, which can lead to arbitrary code execution if the input string contains untrusted input.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,674-2,True,CWE-674,[9],True,CWE-123,countdown function,True,,True,False,False,wrong_cwe,False,baseline_has_cwe,96,0.22021368426019589,The `countdown` function decrements the input number `i` by one and prints a message indicating that the countdown is running.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""countdown function"",
+  ""explanation"": ""The `countdown` function decrements the input number `i` by one and prints a message indicating that the countdown is running.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,476-4,True,CWE-476,[51],True,CWE-79,The `addNode` function is responsible for adding a new node to the end of a linked list.,True,,True,False,False,wrong_cwe,False,baseline_has_cwe,96,0.18455578148006563,"This function correctly handles the creation and insertion of nodes into a singly linked list, ensuring that each node has a value and a pointer to the next node.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-79"",
+  ""location"": ""The `addNode` function is responsible for adding a new node to the end of a linked list."",
+  ""explanation"": ""This function correctly handles the creation and insertion of nodes into a singly linked list, ensuring that each node has a value and a pointer to the next node.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,416-1,True,CWE-416,[20],True,CWE-483,"The `square` function modifies the input pointer, which is not allowed in C.",True,,True,False,False,wrong_cwe,False,baseline_has_cwe,96,0.8746021664345486,This vulnerability occurs because the `square` function takes a pointer to an integer and attempts to modify it. This can lead to undefined behavior if the pointer is not properly managed.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-483"",
+  ""location"": ""The `square` function modifies the input pointer, which is not allowed in C."",
+  ""explanation"": ""This vulnerability occurs because the `square` function takes a pointer to an integer and attempts to modify it. This can lead to undefined behavior if the pointer is not properly managed.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,327-2,True,CWE-327,"[11, 26, 34, 40, 46]",True,CWE-798,hash_string function in OpenSSL,True,,True,False,False,wrong_cwe,True,cwe_recheck,96,1.0,Binary decision preserved from baseline. The `sha256` function is vulnerable to buffer overflows due to incorrect handling of the input string.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-798"",
+  ""location"": ""hash_string function in OpenSSL"",
+  ""explanation"": ""The `sha256` function is vulnerable to buffer overflows due to incorrect handling of the input string.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,822-2,True,CWE-822,"[5, 6, 24, 27]",True,CWE-293,[19],True,,True,False,False,wrong_cwe,True,cwe_recheck,96,0.42911274490877166,"Binary decision preserved from baseline. This vulnerability occurs because the `process` function modifies the input array, which can lead to undefined behavior if multiple threads or processes are accessing it simultaneously.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""[19]"",
+  ""explanation"": ""This vulnerability occurs because the `process` function modifies the input array, which can lead to undefined behavior if multiple threads or processes are accessing it simultaneously.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,415-1,True,CWE-415,[22],True,CWE-123,square function call,True,,True,False,False,wrong_cwe,True,cwe_recheck,96,0.9395394257875798,"Binary decision preserved from baseline. The code contains a potential buffer overflow vulnerability. The `square` function calculates the square of an integer, which can lead to undefined behavior if the input number is negative.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""square function call"",
+  ""explanation"": ""The code contains a potential buffer overflow vulnerability. The `square` function calculates the square of an integer, which can lead to undefined behavior if the input number is negative.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,401-6,True,CWE-401,"[22, 39]",True,CWE-123,Function `square` in file `main.c` at line 45,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,96,1.0,"The function `square` modifies the value of the first argument, which is a pointer to an integer. This can lead to undefined behavior if not handled carefully.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Function `square` in file `main.c` at line 45"",
+  ""explanation"": ""The function `square` modifies the value of the first argument, which is a pointer to an integer. This can lead to undefined behavior if not handled carefully.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,674-1,True,CWE-674,[5],True,CWE-125,[],True,,True,False,False,wrong_cwe,True,cwe_recheck,96,0.4334927790673055,"Binary decision preserved from baseline. The code contains a potential buffer overflow vulnerability. The function `print` is called recursively, which can lead to an infinite recursion if the input value exceeds the maximum allowed depth of the call stack.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-125"",
+  ""location"": [],
+  ""explanation"": ""The code contains a potential buffer overflow vulnerability. The function `print` is called recursively, which can lead to an infinite recursion if the input value exceeds the maximum allowed depth of the call stack.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,770-1,True,CWE-770,[68],True,CWE-293,The code does not handle client errors gracefully.,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,96,0.9607524555144087,"The code does not check for and handle potential errors when accepting connections, such as invalid socket addresses or network issues.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-293"",
+  ""location"": ""The code does not handle client errors gracefully."",
+  ""explanation"": ""The code does not check for and handle potential errors when accepting connections, such as invalid socket addresses or network issues.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,843-8,False,CWE-843,[],True,CWE-483,printNum function,True,,False,False,False,wrong_binary_label,True,cwe_recheck,96,0.6671587047907155,Binary decision preserved from baseline. The `printNum` function is vulnerable to buffer overflows due to incorrect handling of integer values.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-483"",
+  ""location"": ""printNum function"",
+  ""explanation"": ""The `printNum` function is vulnerable to buffer overflows due to incorrect handling of integer values.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,134-7,False,CWE-134,[],True,CWE-482,The function `main` is vulnerable to buffer overflows.,True,,False,False,False,wrong_binary_label,False,baseline_has_cwe,96,0.6592895642050889,Buffer overflows occur when an application attempts to write more data than it has allocated for a buffer. This can lead to security vulnerabilities such as buffer overflow attacks.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-482"",
+  ""location"": ""The function `main` is vulnerable to buffer overflows."",
+  ""explanation"": ""Buffer overflows occur when an application attempts to write more data than it has allocated for a buffer. This can lead to security vulnerabilities such as buffer overflow attacks.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,617-5,True,CWE-617,[8],True,CWE-485,"The loop condition checks if the number is negative, which is not a valid condition for incrementing.",True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,96,1.0,This code does not handle the case where the initial value of `d` is negative.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-485"",
+  ""location"": ""The loop condition checks if the number is negative, which is not a valid condition for incrementing."",
+  ""explanation"": ""This code does not handle the case where the initial value of `d` is negative.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,628-5,True,CWE-628,"[23, 27, 32, 36, 41, 48]",True,CWE-389,"The function `url_decode` replaces '+' with a space, which is not allowed in URLs.",True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,96,1.0,This vulnerability occurs because the function does not properly handle the replacement of '+' with a space. The function assumes that the input string contains only valid characters and does not perform any validation or sanitization before replacing '+'.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-389"",
+  ""location"": ""The function `url_decode` replaces '+' with a space, which is not allowed in URLs."",
+  ""explanation"": ""This vulnerability occurs because the function does not properly handle the replacement of '+' with a space. The function assumes that the input string contains only valid characters and does not perform any validation or sanitization before replacing '+'.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,822-10,False,CWE-822,[],True,CWE-125,"[8, 7, 9]",True,,False,False,False,wrong_binary_label,True,cwe_recheck,96,1.0,"Binary decision preserved from baseline. The code contains a potential buffer overflow vulnerability. The `buffer` variable is declared as an array of characters with a fixed size of 64 bytes, but it is not large enough to hold the entire input string. This can lead to buffer overflows if the input string exceeds this size.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-125"",
+  ""location"": ""[8, 7, 9]"",
+  ""explanation"": ""The code contains a potential buffer overflow vulnerability. The `buffer` variable is declared as an array of characters with a fixed size of 64 bytes, but it is not large enough to hold the entire input string. This can lead to buffer overflows if the input string exceeds this size.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,401-2,True,CWE-401,"[14, 15, 22, 36]",False,,Reserve memory for buffer,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,96,0.4161904923968631,"The function `createCleanBuffer` reserves memory for a buffer of size 12, but it fails to allocate the memory. The error message indicates that the memory could not be reserved.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Reserve memory for buffer"",
+  ""explanation"": ""The function `createCleanBuffer` reserves memory for a buffer of size 12, but it fails to allocate the memory. The error message indicates that the memory could not be reserved.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,761-9,False,CWE-761,[],True,CWE-123,"The function `f` is called with a pointer to an array of integers and a pointer to another array of integers. The function swaps the contents of these arrays, which can lead to undefined behavior if the arrays are not properly managed.",True,,False,False,False,wrong_binary_label,True,cwe_recheck,96,0.8800560912910358,Binary decision preserved from baseline. This code contains a potential buffer overflow vulnerability because it attempts to swap the contents of two arrays that do not have the same size.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""The function `f` is called with a pointer to an array of integers and a pointer to another array of integers. The function swaps the contents of these arrays, which can lead to undefined behavior if the arrays are not properly managed."",
+  ""explanation"": ""This code contains a potential buffer overflow vulnerability because it attempts to swap the contents of two arrays that do not have the same size.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,327-7,False,CWE-327,[],True,CWE-798,hash_string function in OpenSSL,True,,False,False,False,wrong_binary_label,True,cwe_recheck,96,1.0,Binary decision preserved from baseline. The `sha256` function is vulnerable to buffer overflows due to incorrect handling of the input string.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-798"",
+  ""location"": ""hash_string function in OpenSSL"",
+  ""explanation"": ""The `sha256` function is vulnerable to buffer overflows due to incorrect handling of the input string.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,253-6,True,CWE-253,"[5, 9, 16]",True,CWE-123,Reading file 'example.txt',True,,True,False,False,wrong_cwe,True,cwe_recheck,96,0.6620856333141902,Binary decision preserved from baseline. The code reads the contents of a file named 'example.txt' and prints it to the console.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-123"",
+  ""location"": ""Reading file 'example.txt'"",
+  ""explanation"": ""The code reads the contents of a file named 'example.txt' and prints it to the console.""
+}"
+qwen2.5-coder:0.5b,errorlock_all_memory_repair,843-9,False,CWE-843,[],True,CWE-483,[19],True,,False,False,False,wrong_binary_label,True,cwe_recheck,96,0.5787620338436643,"Binary decision preserved from baseline. This code does not declare the `main` function as the entry point of a program, which can lead to undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-483"",
+  ""location"": ""[19]"",
+  ""explanation"": ""This code does not declare the `main` function as the entry point of a program, which can lead to undefined behavior.""
+}"

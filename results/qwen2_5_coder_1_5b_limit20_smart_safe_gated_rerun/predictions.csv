@@ -1,0 +1,193 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,errorlock_applied,gate_reason,retrieved_count,max_similarity,explanation,raw
+qwen2.5-coder:1.5b,train_baseline,22-10,False,CWE-22,[],True,CWE-264,"line 17, function main",True,,False,False,False,wrong_binary_label,,,0,,The code does not properly validate the input file name before using it in `snprintf`. This can lead to a buffer overflow if the input file name is too long.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-264"",
+  ""location"": ""line 17, function main"",
+  ""explanation"": ""The code does not properly validate the input file name before using it in `snprintf`. This can lead to a buffer overflow if the input file name is too long.""
+}"
+qwen2.5-coder:1.5b,train_baseline,78-8,False,CWE-78,[],True,CWE-78,"line 24: strcat(sys, buff);",True,,False,False,False,wrong_binary_label,,,0,,"The code concatenates user input to a system command without proper validation or sanitization, allowing for command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 24: strcat(sys, buff);"",
+  ""explanation"": ""The code concatenates user input to a system command without proper validation or sanitization, allowing for command injection.""
+}"
+qwen2.5-coder:1.5b,train_baseline,22-3,True,CWE-22,"[12, 23, 32]",False,,line 17,True,,False,False,False,wrong_binary_label,,,0,,The code does not validate the path before using it to open a file. This can lead to directory traversal attacks if an attacker provides malicious input.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 17"",
+  ""explanation"": ""The code does not validate the path before using it to open a file. This can lead to directory traversal attacks if an attacker provides malicious input.""
+}"
+qwen2.5-coder:1.5b,train_baseline,78-2,True,CWE-78,"[9, 10]",True,CWE-78,"line 9: char cmd[CMD_MAX] = ""/usr/bin/cat "";",True,,True,True,False,,,,0,,"The code uses `strncat` to concatenate the command string with user input, which can lead to buffer overflow if the input is too long.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 9: char cmd[CMD_MAX] = \""/usr/bin/cat \"";"",
+  ""explanation"": ""The code uses `strncat` to concatenate the command string with user input, which can lead to buffer overflow if the input is too long.""
+}"
+qwen2.5-coder:1.5b,train_baseline,22-2,True,CWE-22,"[8, 20, 29]",False,,line 21,True,,False,False,False,wrong_binary_label,,,0,,The code does not validate the path before using it to open a file. This can lead to directory traversal attacks if an attacker provides malicious input.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 21"",
+  ""explanation"": ""The code does not validate the path before using it to open a file. This can lead to directory traversal attacks if an attacker provides malicious input.""
+}"
+qwen2.5-coder:1.5b,train_baseline,78-4,True,CWE-78,"[11, 12]",True,CWE-78,"line 12: snprintf(command, sizeof(command), ""ls -l | head -n %s"", userInput);",True,,True,True,False,,,,0,,The use of snprintf to format the command string with user input can lead to buffer overflow if the input is too long.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 12: snprintf(command, sizeof(command), \""ls -l | head -n %s\"", userInput);"",
+  ""explanation"": ""The use of snprintf to format the command string with user input can lead to buffer overflow if the input is too long.""
+}"
+qwen2.5-coder:1.5b,train_baseline,78-10,False,CWE-78,[],False,,main function,True,,True,True,True,,,,0,,"The code does not sanitize the input before using it in a system call, which can lead to command injection vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not sanitize the input before using it in a system call, which can lead to command injection vulnerabilities.""
+}"
+qwen2.5-coder:1.5b,train_baseline,22-9,False,CWE-22,[],False,,line 24,True,,True,True,True,,,,0,,The code does not validate the search term before using it in the `grep` command.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 24"",
+  ""explanation"": ""The code does not validate the search term before using it in the `grep` command.""
+}"
+qwen2.5-coder:1.5b,baseline,22-6,True,CWE-22,"[10, 49]",True,CWE-264,printFile function,True,,True,False,False,wrong_cwe,,,0,,"The printFile function does not check if the file pointer is NULL before attempting to read from it, which can lead to a buffer overflow if the file is not readable.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-264"",
+  ""location"": ""printFile function"",
+  ""explanation"": ""The printFile function does not check if the file pointer is NULL before attempting to read from it, which can lead to a buffer overflow if the file is not readable.""
+}"
+qwen2.5-coder:1.5b,baseline,22-1,True,CWE-22,"[16, 19]",True,CWE-264,"line 17, function main",True,,True,False,False,wrong_cwe,,,0,,The code does not properly validate the input file name before using it in `snprintf`. This can lead to a buffer overflow if the input file name is too long.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-264"",
+  ""location"": ""line 17, function main"",
+  ""explanation"": ""The code does not properly validate the input file name before using it in `snprintf`. This can lead to a buffer overflow if the input file name is too long.""
+}"
+qwen2.5-coder:1.5b,baseline,78-7,False,CWE-78,[],False,,line 17,True,,True,True,True,,,,0,,"The program does not validate the input before using it in a system command, which can lead to command injection vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 17"",
+  ""explanation"": ""The program does not validate the input before using it in a system command, which can lead to command injection vulnerabilities.""
+}"
+qwen2.5-coder:1.5b,baseline,22-7,False,CWE-22,[],True,CWE-264,is_valid_path function in main.c,True,,False,False,False,wrong_binary_label,,,0,,"The `is_valid_path` function checks if the provided file path is within the allowed base directory. However, it does not properly handle relative paths or paths outside the specified base directory, allowing for directory traversal attacks.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-264"",
+  ""location"": ""is_valid_path function in main.c"",
+  ""explanation"": ""The `is_valid_path` function checks if the provided file path is within the allowed base directory. However, it does not properly handle relative paths or paths outside the specified base directory, allowing for directory traversal attacks.""
+}"
+qwen2.5-coder:1.5b,baseline,78-3,True,CWE-78,"[23, 25]",True,CWE-78,line 23,True,,True,True,False,,,,0,,"The code does not properly sanitize the input file path, allowing an attacker to execute arbitrary commands.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 23"",
+  ""explanation"": ""The code does not properly sanitize the input file path, allowing an attacker to execute arbitrary commands.""
+}"
+qwen2.5-coder:1.5b,baseline,22-8,False,CWE-22,[],False,,line 24,True,,True,True,True,,,,0,,The code does not validate the search term before using it in the grep command.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 24"",
+  ""explanation"": ""The code does not validate the search term before using it in the grep command.""
+}"
+qwen2.5-coder:1.5b,baseline,78-6,True,CWE-78,[29],True,CWE-78,"line 24: strcat(sys, buff);",True,,True,True,False,,,,0,,"The code concatenates user input with a fixed command string using `strcat`, which can lead to buffer overflows if the input is too long.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 24: strcat(sys, buff);"",
+  ""explanation"": ""The code concatenates user input with a fixed command string using `strcat`, which can lead to buffer overflows if the input is too long.""
+}"
+qwen2.5-coder:1.5b,baseline,78-9,False,CWE-78,[],True,CWE-78,check function in the code,True,,False,False,False,wrong_binary_label,,,0,,"The check function does not properly validate user input, allowing for command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""check function in the code"",
+  ""explanation"": ""The check function does not properly validate user input, allowing for command injection.""
+}"
+qwen2.5-coder:1.5b,baseline,78-1,True,CWE-78,"[13, 16]",True,CWE-78,"line 12: snprintf(command, sizeof(command), ""ping %s"", ip);",True,,True,True,False,,,,0,,The use of snprintf to format the command string with user input can lead to buffer overflow if the input is too long.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 12: snprintf(command, sizeof(command), \""ping %s\"", ip);"",
+  ""explanation"": ""The use of snprintf to format the command string with user input can lead to buffer overflow if the input is too long.""
+}"
+qwen2.5-coder:1.5b,baseline,78-5,True,CWE-78,[10],True,CWE-78,"line 12: strcat(sys, buff);",True,,True,True,False,,,,0,,"The code concatenates user input (`buff`) to the command string `cmd`, which can lead to command injection if `buff` contains malicious characters.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 12: strcat(sys, buff);"",
+  ""explanation"": ""The code concatenates user input (`buff`) to the command string `cmd`, which can lead to command injection if `buff` contains malicious characters.""
+}"
+qwen2.5-coder:1.5b,baseline,22-4,True,CWE-22,"[46, 66, 70]",False,,"line 24: snprintf(command, sizeof(command), ""grep %s %s"", argv[2], path);",True,,False,False,False,wrong_binary_label,,,0,,The code uses `snprintf` to construct a command string that includes user input (`argv[2]`) directly into the buffer. This can lead to format string vulnerabilities if the input is not properly sanitized.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 24: snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);"",
+  ""explanation"": ""The code uses `snprintf` to construct a command string that includes user input (`argv[2]`) directly into the buffer. This can lead to format string vulnerabilities if the input is not properly sanitized.""
+}"
+qwen2.5-coder:1.5b,baseline,22-5,True,CWE-22,"[8, 28]",True,CWE-284,printFile function,True,,True,False,False,wrong_cwe,,,0,,"The printFile function does not handle errors when opening the file, which can lead to buffer overflows if the file name is invalid or too long.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-284"",
+  ""location"": ""printFile function"",
+  ""explanation"": ""The printFile function does not handle errors when opening the file, which can lead to buffer overflows if the file name is invalid or too long.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,22-6,True,CWE-22,"[10, 49]",True,CWE-22,"line 17, function main",True,,True,True,False,,True,cwe_recheck,3,0.46786792572112457,"The code attempts to open a file using `fopen` with the argument from the command line. However, it does not check if the file exists before attempting to read from it. This can lead to a denial of service attack by causing the program to hang indefinitely or crash if the file does not exist.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""line 17, function main"",
+  ""explanation"": ""The code attempts to open a file using `fopen` with the argument from the command line. However, it does not check if the file exists before attempting to read from it. This can lead to a denial of service attack by causing the program to hang indefinitely or crash if the file does not exist.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,22-1,True,CWE-22,"[16, 19]",True,CWE-264,"line 17, function main",True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,1.0,The code does not properly validate the input file name before using it in `snprintf`. This can lead to a buffer overflow if the input file name is too long.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-264"",
+  ""location"": ""line 17, function main"",
+  ""explanation"": ""The code does not properly validate the input file name before using it in `snprintf`. This can lead to a buffer overflow if the input file name is too long.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,78-7,False,CWE-78,[],False,,line 17,True,,True,True,True,,False,baseline_not_vulnerable,3,0.23402260070213857,"The program does not validate the input before using it in a system command, which can lead to command injection vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 17"",
+  ""explanation"": ""The program does not validate the input before using it in a system command, which can lead to command injection vulnerabilities.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,22-7,False,CWE-22,[],True,CWE-22,"line 17, function is_valid_path",True,,False,False,False,wrong_binary_label,True,cwe_recheck,3,0.5320562981028542,"The code does not properly validate the input file path to prevent directory traversal attacks. It uses `realpath` to resolve the absolute paths of both the filename and the base directory, but it does not check if the resolved path falls within the allowed base directory.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""line 17, function is_valid_path"",
+  ""explanation"": ""The code does not properly validate the input file path to prevent directory traversal attacks. It uses `realpath` to resolve the absolute paths of both the filename and the base directory, but it does not check if the resolved path falls within the allowed base directory.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,78-3,True,CWE-78,"[23, 25]",True,CWE-78,line 23,True,,True,True,False,,False,baseline_has_cwe,3,0.2952957702019723,"The code does not properly sanitize the input file path, allowing an attacker to execute arbitrary commands.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 23"",
+  ""explanation"": ""The code does not properly sanitize the input file path, allowing an attacker to execute arbitrary commands.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,22-8,False,CWE-22,[],False,,line 24,True,,True,True,True,,False,baseline_not_vulnerable,3,0.43538639875982293,The code does not validate the search term before using it in the grep command.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 24"",
+  ""explanation"": ""The code does not validate the search term before using it in the grep command.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,78-6,True,CWE-78,[29],True,CWE-78,"line 24: strcat(sys, buff);",True,,True,True,False,,False,near_duplicate_false_positive,3,0.9767529772492163,"The code concatenates user input with a fixed command string using `strcat`, which can lead to buffer overflows if the input is too long.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 24: strcat(sys, buff);"",
+  ""explanation"": ""The code concatenates user input with a fixed command string using `strcat`, which can lead to buffer overflows if the input is too long.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,78-9,False,CWE-78,[],True,CWE-78,check function in the code,True,,False,False,False,wrong_binary_label,False,baseline_has_cwe,3,0.4802000439798756,"The check function does not properly validate user input, allowing for command injection.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""check function in the code"",
+  ""explanation"": ""The check function does not properly validate user input, allowing for command injection.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,78-1,True,CWE-78,"[13, 16]",True,CWE-78,"line 12: snprintf(command, sizeof(command), ""ping %s"", ip);",True,,True,True,False,,False,baseline_has_cwe,3,0.26069585736843665,The use of snprintf to format the command string with user input can lead to buffer overflow if the input is too long.,"{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 12: snprintf(command, sizeof(command), \""ping %s\"", ip);"",
+  ""explanation"": ""The use of snprintf to format the command string with user input can lead to buffer overflow if the input is too long.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,78-5,True,CWE-78,[10],True,CWE-78,"line 12: strcat(sys, buff);",True,,True,True,False,,False,baseline_has_cwe,3,0.8720968301756886,"The code concatenates user input (`buff`) to the command string `cmd`, which can lead to command injection if `buff` contains malicious characters.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-78"",
+  ""location"": ""line 12: strcat(sys, buff);"",
+  ""explanation"": ""The code concatenates user input (`buff`) to the command string `cmd`, which can lead to command injection if `buff` contains malicious characters.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,22-4,True,CWE-22,"[46, 66, 70]",False,,"line 24: snprintf(command, sizeof(command), ""grep %s %s"", argv[2], path);",True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4287911003815556,The code uses `snprintf` to construct a command string that includes user input (`argv[2]`) directly into the buffer. This can lead to format string vulnerabilities if the input is not properly sanitized.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 24: snprintf(command, sizeof(command), \""grep %s %s\"", argv[2], path);"",
+  ""explanation"": ""The code uses `snprintf` to construct a command string that includes user input (`argv[2]`) directly into the buffer. This can lead to format string vulnerabilities if the input is not properly sanitized.""
+}"
+qwen2.5-coder:1.5b,errorlock_gated,22-5,True,CWE-22,"[8, 28]",True,CWE-22,"line 17, function printFile",True,,True,True,False,,True,cwe_recheck,3,0.5109099036108138,"The code attempts to open a file using `fopen` with the argument from the command line. If the file cannot be opened, it returns an error message instead of printing the contents of the file.","{
+  ""vulnerable"": true,
+  ""cwe"": ""CWE-22"",
+  ""location"": ""line 17, function printFile"",
+  ""explanation"": ""The code attempts to open a file using `fopen` with the argument from the command line. If the file cannot be opened, it returns an error message instead of printing the contents of the file.""
+}"

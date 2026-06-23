@@ -1,0 +1,2369 @@
+model,method,sample_id,true_vulnerable,true_cwe,true_location,pred_vulnerable,pred_cwe,pred_location,parsed,parse_error,binary_correct,cwe_correct,location_correct,failure_type,errorlock_applied,gate_reason,retrieved_count,max_similarity,explanation,raw
+llama3.2:1b,train_baseline,125-7,False,CWE-125,[],False,,C code,True,,True,True,True,,,,0,,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""C code"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,415-9,False,CWE-415,[],False,,main function,True,,True,True,True,,,,0,,No memory leaks or buffer overflows are detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No memory leaks or buffer overflows are detected.""
+}"
+llama3.2:1b,train_baseline,787-3,True,CWE-787,[18],True,,main function,True,,True,False,False,wrong_cwe,,,0,,The program does not check for potential security vulnerabilities such as SQL injection or cross-site scripting (XSS).,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for potential security vulnerabilities such as SQL injection or cross-site scripting (XSS).""
+}"
+llama3.2:1b,train_baseline,674-7,False,CWE-674,[],False,,main function,True,,True,True,True,,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,train_baseline,835-8,False,CWE-835,[],False,,while loop,True,,True,True,True,,,,0,,The variable 'a' is not initialized before being used in the while loop.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""while loop"",
+  ""explanation"": ""The variable 'a' is not initialized before being used in the while loop.""
+}"
+llama3.2:1b,train_baseline,822-8,False,CWE-822,[],False,,getPointer(),True,,True,True,True,,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""getPointer()"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,train_baseline,822-7,False,CWE-822,[],False,,main function,True,,True,True,True,,,,0,,The program does not use any external libraries or functions that could be exploited for security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not use any external libraries or functions that could be exploited for security vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,787-7,False,CWE-787,[],False,,malloc,True,,True,True,True,,,,0,,Memory allocation failed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory allocation failed""
+}"
+llama3.2:1b,train_baseline,125-3,True,CWE-125,[8],False,,C code,True,,False,False,False,wrong_binary_label,,,0,,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""C code"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,843-7,False,CWE-843,[],False,,line 2,True,,True,True,True,,,,0,,Division by zero is undefined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 2"",
+  ""explanation"": ""Division by zero is undefined""
+}"
+llama3.2:1b,train_baseline,798-3,True,CWE-798,"[13, 24]",False,,mysql_real_connect,True,,False,False,False,wrong_binary_label,,,0,,Security vulnerability: SQL injection via user input,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""mysql_real_connect"",
+  ""explanation"": ""Security vulnerability: SQL injection via user input""
+}"
+llama3.2:1b,train_baseline,628-1,True,CWE-628,[18],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The program does not attempt to read or write to a file, so it is not vulnerable.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not attempt to read or write to a file, so it is not vulnerable.""
+}"
+llama3.2:1b,train_baseline,190-3,True,CWE-190,[9],False,,line 2,True,,False,False,False,wrong_binary_label,,,0,,Using INT_MAX is not recommended due to integer overflow,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 2"",
+  ""explanation"": ""Using INT_MAX is not recommended due to integer overflow""
+}"
+llama3.2:1b,train_baseline,89-10,False,CWE-89,[],False,,sqlite3_prepare_v2,True,,True,True,True,,,,0,,SQL error or warning,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sqlite3_prepare_v2"",
+  ""explanation"": ""SQL error or warning"" }"
+llama3.2:1b,train_baseline,761-3,True,CWE-761,[23],True,,C code,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to incorrect use of dynamic memory allocation,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""C code"",
+  ""explanation"": ""Memory leak due to incorrect use of dynamic memory allocation""
+}"
+llama3.2:1b,train_baseline,401-3,True,CWE-401,"[6, 14]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory allocation and string concatenation are used to create a new string.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory allocation and string concatenation are used to create a new string.""
+}"
+llama3.2:1b,train_baseline,134-3,True,CWE-134,"[4, 13]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,train_baseline,369-8,False,CWE-369,[],True,,line 3,True,,False,False,False,wrong_binary_label,,,0,,Division by zero,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""line 3"",
+  ""explanation"": ""Division by zero""
+}"
+llama3.2:1b,train_baseline,770-6,True,CWE-770,[31],False,,accept() function,True,,False,False,False,wrong_binary_label,,,0,,"The accept() function is called repeatedly for each new connection, which can lead to a high number of socket creations and resource exhaustion.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""accept() function"",
+  ""explanation"": ""The accept() function is called repeatedly for each new connection, which can lead to a high number of socket creations and resource exhaustion.""
+}"
+llama3.2:1b,train_baseline,617-4,True,CWE-617,[12],False,,while loop,True,,False,False,False,wrong_binary_label,,,0,,The variable `i` is not checked for negative values before being used in the condition.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""while loop"",
+  ""explanation"": ""The variable `i` is not checked for negative values before being used in the condition.""
+}"
+llama3.2:1b,train_baseline,78-5,True,CWE-78,[10],True,,main function,True,,True,False,False,wrong_cwe,,,0,,The program does not check the return value of fgets() before using it to read from stdin.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check the return value of fgets() before using it to read from stdin.""
+}"
+llama3.2:1b,train_baseline,401-4,True,CWE-401,"[8, 31]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Potential buffer overflow vulnerability due to incorrect use of malloc,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Potential buffer overflow vulnerability due to incorrect use of malloc""
+}"
+llama3.2:1b,train_baseline,362-9,False,CWE-362,[],True,,malloc and free,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to unused memory allocation,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc and free"",
+  ""explanation"": ""Memory leak due to unused memory allocation""
+}"
+llama3.2:1b,train_baseline,78-2,True,CWE-78,"[9, 10]",True,,system call,True,,True,False,False,wrong_cwe,,,0,,uses the system to execute a command,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""system call"",
+  ""explanation"": ""uses the system to execute a command""
+}"
+llama3.2:1b,train_baseline,628-7,False,CWE-628,[],False,,main function,True,,True,True,True,,,,0,,No memory leaks or dangling pointers are detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No memory leaks or dangling pointers are detected.""
+}"
+llama3.2:1b,train_baseline,253-1,True,CWE-253,"[6, 11, 12]",False,,malloc,True,,False,False,False,wrong_binary_label,,,0,,Memory allocation failed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory allocation failed""
+}"
+llama3.2:1b,train_baseline,253-10,False,CWE-253,[],False,,main function,True,,True,True,True,,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,train_baseline,761-10,False,CWE-761,[],True,,malloc,True,,False,False,False,wrong_binary_label,,,0,,Memory allocation function,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory allocation function""
+}"
+llama3.2:1b,train_baseline,327-9,False,CWE-327,[],True,,OSSL_DECODER_CTX_new_for_pkey,True,,False,False,False,wrong_binary_label,,,0,,"The function OSSL_DECODER_CTX_new_for_pkey is used to create a new decoder context for RSA encryption, but it does not check if the key is valid or if the decryption process is successful. This could lead to a buffer overflow if an attacker provides an invalid key or if the decryption process fails.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""OSSL_DECODER_CTX_new_for_pkey"",
+  ""explanation"": ""The function OSSL_DECODER_CTX_new_for_pkey is used to create a new decoder context for RSA encryption, but it does not check if the key is valid or if the decryption process is successful. This could lead to a buffer overflow if an attacker provides an invalid key or if the decryption process fails.""
+}"
+llama3.2:1b,train_baseline,327-5,True,CWE-327,[65],False,,"OSSL_DECODER_CTX_new_for_pkey(&pkey, ""PEM"", NULL, ""RSA"", EVP_PKEY_PUBLIC_KEY, NULL, NULL)",True,,False,False,False,wrong_binary_label,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""OSSL_DECODER_CTX_new_for_pkey(&pkey, \""PEM\"", NULL, \""RSA\"", EVP_PKEY_PUBLIC_KEY, NULL, NULL)"",
+  ""explanation"": ""No security vulnerabilities detected."" }"
+llama3.2:1b,train_baseline,415-5,True,CWE-415,[19],True,,malloc,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to unmanaged memory allocation,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory leak due to unmanaged memory allocation""
+}"
+llama3.2:1b,train_baseline,822-4,True,CWE-822,"[20, 25, 29, 35]",True,,getPointer(),True,,True,False,False,wrong_cwe,,,0,,Error in strtol,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""getPointer()"",
+  ""explanation"": ""Error in strtol""
+}"
+llama3.2:1b,train_baseline,617-9,False,CWE-617,[],False,,while loop,True,,True,True,True,,,,0,,The variable 'd' is not checked for negative values before being used in an assertion.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""while loop"",
+  ""explanation"": ""The variable 'd' is not checked for negative values before being used in an assertion.""
+}"
+llama3.2:1b,train_baseline,327-1,True,CWE-327,"[24, 32, 38, 44]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,The main function does not check for SQL injection vulnerability. It directly binds user input to the SQL query without proper sanitization or parameterized queries.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The main function does not check for SQL injection vulnerability. It directly binds user input to the SQL query without proper sanitization or parameterized queries.""
+}"
+llama3.2:1b,train_baseline,835-1,True,CWE-835,[4],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,674-4,True,CWE-674,"[9, 10]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,train_baseline,476-8,False,CWE-476,[],True,,line 1,True,,False,False,False,wrong_binary_label,,,0,,Potential buffer overflow vulnerability,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""line 1"",
+  ""explanation"": ""Potential buffer overflow vulnerability""
+}"
+llama3.2:1b,train_baseline,89-7,False,CWE-89,[],False,,sqlite3_prepare_v2,True,,True,True,True,,,,0,,SQL injection vulnerability,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sqlite3_prepare_v2"",
+  ""explanation"": ""SQL injection vulnerability""
+}"
+llama3.2:1b,train_baseline,843-6,True,CWE-843,"[3, 14]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No CWE is defined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No CWE is defined""
+}"
+llama3.2:1b,train_baseline,770-8,False,CWE-770,[],True,,"In the `fork()` system call, the parent process does not wait for the child process to finish before closing the listening socket. This can lead to a resource leak if there are many connections.",True,,False,False,False,wrong_binary_label,,,0,,"The parent process closes the connected socket in the child process without waiting for it to finish, which can cause a resource leak and potentially lead to unexpected behavior or crashes.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""In the `fork()` system call, the parent process does not wait for the child process to finish before closing the listening socket. This can lead to a resource leak if there are many connections."",
+  ""explanation"": ""The parent process closes the connected socket in the child process without waiting for it to finish, which can cause a resource leak and potentially lead to unexpected behavior or crashes.""
+}"
+llama3.2:1b,train_baseline,362-1,True,CWE-362,[10],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The code does not demonstrate any potential security vulnerabilities such as buffer overflows or use of insecure data structures.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not demonstrate any potential security vulnerabilities such as buffer overflows or use of insecure data structures.""
+}"
+llama3.2:1b,train_baseline,78-10,False,CWE-78,[],False,,fgets,True,,True,True,True,,,,0,,"The fgets function is used to read input from the standard input stream, but it does not properly handle errors and can lead to buffer overflows if not used carefully.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""fgets"",
+  ""explanation"": ""The fgets function is used to read input from the standard input stream, but it does not properly handle errors and can lead to buffer overflows if not used carefully.""
+}"
+llama3.2:1b,train_baseline,22-7,False,CWE-22,[],False,,The function `is_valid_path` does not check for directory traversal attacks.,True,,True,True,True,,,,0,,"This function does not perform any checks to prevent directory traversal attacks, such as checking if the file is within a specific base directory or using a secure filename.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The function `is_valid_path` does not check for directory traversal attacks."",
+  ""explanation"": ""This function does not perform any checks to prevent directory traversal attacks, such as checking if the file is within a specific base directory or using a secure filename."" }"
+llama3.2:1b,train_baseline,798-9,False,CWE-798,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The program does not handle errors properly. If an error occurs during encryption, the program will exit immediately without providing any information about what went wrong.","{
+ ""vulnerable"": true,
+ ""cwe"": null,
+ ""location"": ""main function"",
+ ""explanation"": ""The program does not handle errors properly. If an error occurs during encryption, the program will exit immediately without providing any information about what went wrong.""
+}"
+llama3.2:1b,train_baseline,674-3,True,CWE-674,"[4, 7, 9]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program does not handle potential errors such as division by zero or invalid input.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle potential errors such as division by zero or invalid input.""
+}"
+llama3.2:1b,train_baseline,369-6,True,CWE-369,[21],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,Division by zero is not allowed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Division by zero is not allowed""
+}"
+llama3.2:1b,train_baseline,369-3,True,CWE-369,[13],True,,password manipulation,True,,True,False,False,wrong_cwe,,,0,,Password is manipulated using MD5 hash function,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""password manipulation"",
+  ""explanation"": ""Password is manipulated using MD5 hash function""
+}"
+llama3.2:1b,train_baseline,415-2,True,CWE-415,[31],True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to incorrect use of pointer arithmetic,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to incorrect use of pointer arithmetic""
+}"
+llama3.2:1b,train_baseline,134-10,False,CWE-134,[],False,,main function,True,,True,True,True,,,,0,,The program does not check for any potential security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for any potential security vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,89-1,True,CWE-89,"[25, 28]",False,,sqlite3_prepare_v2,True,,False,False,False,wrong_binary_label,,,0,,SQL injection vulnerability,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sqlite3_prepare_v2"",
+  ""explanation"": ""SQL injection vulnerability""
+}"
+llama3.2:1b,train_baseline,78-7,False,CWE-78,[],False,,main function,True,,True,True,True,,,,0,,The program does not check if the input is a valid number before executing it.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check if the input is a valid number before executing it.""
+}"
+llama3.2:1b,train_baseline,401-10,False,CWE-401,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to incorrect use of malloc,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to incorrect use of malloc""
+}"
+llama3.2:1b,train_baseline,787-1,True,CWE-787,[7],False,,User input,True,,False,False,False,wrong_binary_label,,,0,,User input is not sanitized or validated.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""User input"",
+  ""explanation"": ""User input is not sanitized or validated.""
+}"
+llama3.2:1b,train_baseline,843-10,False,CWE-843,[],False,,main function,True,,True,True,True,,,,0,,No CWE is defined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No CWE is defined""
+}"
+llama3.2:1b,train_baseline,770-3,True,CWE-770,[26],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program does not handle potential buffer overflow vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle potential buffer overflow vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,761-2,True,CWE-761,[12],True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to incorrect use of malloc,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to incorrect use of malloc""
+}"
+llama3.2:1b,train_baseline,125-5,True,CWE-125,"[9, 11]",False,,array initialization,True,,False,False,False,wrong_binary_label,,,0,,Array initialization is not a common security vulnerability.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""array initialization"",
+  ""explanation"": ""Array initialization is not a common security vulnerability.""
+}"
+llama3.2:1b,train_baseline,362-7,False,CWE-362,[],False,,pthread_create,True,,True,True,True,,,,0,,The function `threadFunction` is not thread-safe because it accesses and modifies the shared resource without proper synchronization.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""pthread_create"",
+  ""explanation"": ""The function `threadFunction` is not thread-safe because it accesses and modifies the shared resource without proper synchronization.""
+}"
+llama3.2:1b,train_baseline,787-9,False,CWE-787,[],False,,main function,True,,True,True,True,,,,0,,"The code does not use any external libraries that could be vulnerable to attacks, but it uses the OpenSSL library for generating random numbers which is a potential security risk if not used properly.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not use any external libraries that could be vulnerable to attacks, but it uses the OpenSSL library for generating random numbers which is a potential security risk if not used properly.""
+}"
+llama3.2:1b,train_baseline,416-7,False,CWE-416,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to missing `free` calls.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to missing `free` calls.""
+}"
+llama3.2:1b,train_baseline,253-3,True,CWE-253,[10],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,train_baseline,22-8,False,CWE-22,[],False,,main function,True,,True,True,True,,,,0,,The program does not check for errors when accessing the file path or performing system calls.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for errors when accessing the file path or performing system calls.""
+}"
+llama3.2:1b,train_baseline,476-1,True,CWE-476,"[5, 8]",True,,malloc,True,,True,False,False,wrong_cwe,,,0,,Potential buffer overflow vulnerability due to incorrect usage of malloc,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Potential buffer overflow vulnerability due to incorrect usage of malloc""
+}"
+llama3.2:1b,train_baseline,22-3,True,CWE-22,"[12, 23, 32]",False,,Invalid path: /var/www/html,True,,False,False,False,wrong_binary_label,,,0,,The program attempts to create a directory at an invalid location.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Invalid path: /var/www/html"",
+  ""explanation"": ""The program attempts to create a directory at an invalid location.""
+}"
+llama3.2:1b,train_baseline,798-7,False,CWE-798,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The main function is vulnerable to a buffer overflow in the `get_amz_date` function. The `strftime` function can write up to 17 characters to the `amz_date` string, but it does not check for buffer overflows. If an attacker can control the input to this function, they can potentially overwrite memory allocated by other parts of the program.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The main function is vulnerable to a buffer overflow in the `get_amz_date` function. The `strftime` function can write up to 17 characters to the `amz_date` string, but it does not check for buffer overflows. If an attacker can control the input to this function, they can potentially overwrite memory allocated by other parts of the program."" }"
+llama3.2:1b,train_baseline,522-3,True,CWE-522,"[112, 123]",True,,loadConfig,True,,True,False,False,wrong_cwe,,,0,,"The function loadConfig does not check if the file exists or is readable before attempting to open it, which could lead to a file descriptor leak.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""loadConfig"",
+  ""explanation"": ""The function loadConfig does not check if the file exists or is readable before attempting to open it, which could lead to a file descriptor leak.""
+}"
+llama3.2:1b,train_baseline,628-4,True,CWE-628,"[10, 12, 58]",False,,sha256_hash_string,True,,False,False,False,wrong_binary_label,,,0,,"The function sha256_hash_string uses the EVP_sha256() function to hash a string, which is not secure because it does not use a secure random number generator.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sha256_hash_string"",
+  ""explanation"": ""The function sha256_hash_string uses the EVP_sha256() function to hash a string, which is not secure because it does not use a secure random number generator.""
+}"
+llama3.2:1b,train_baseline,835-3,True,CWE-835,[4],True,,C code,True,,True,False,False,wrong_cwe,,,0,,"The loop is not terminated, which can cause a stack overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""C code"",
+  ""explanation"": ""The loop is not terminated, which can cause a stack overflow.""
+}"
+llama3.2:1b,train_baseline,617-8,False,CWE-617,[],False,,assert,True,,True,True,True,,,,0,,Assertion failed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""assert"",
+  ""explanation"": ""Assertion failed""
+}"
+llama3.2:1b,train_baseline,674-9,False,CWE-674,[],True,,print function,True,,False,False,False,wrong_binary_label,,,0,,Potential buffer overflow due to recursion limit exceeded,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""print function"",
+  ""explanation"": ""Potential buffer overflow due to recursion limit exceeded""
+}"
+llama3.2:1b,train_baseline,522-7,False,CWE-522,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The main function does not check for errors when opening the database, which can lead to resource leaks if an error occurs.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The main function does not check for errors when opening the database, which can lead to resource leaks if an error occurs.""
+}"
+llama3.2:1b,train_baseline,89-2,True,CWE-89,"[40, 43]",False,,mysql_real_connect,True,,False,False,False,wrong_binary_label,,,0,,"The function mysql_real_connect is used to establish a connection to the MySQL server, but it does not handle errors properly. It returns NULL if an error occurs, which can lead to unexpected behavior or crashes.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""mysql_real_connect"",
+  ""explanation"": ""The function mysql_real_connect is used to establish a connection to the MySQL server, but it does not handle errors properly. It returns NULL if an error occurs, which can lead to unexpected behavior or crashes.""
+}"
+llama3.2:1b,train_baseline,770-7,False,CWE-770,[],True,,"printf(""Enter text (type 'exit' to quit): "");",True,,False,False,False,wrong_binary_label,,,0,,Potential buffer overflow vulnerability due to insufficient memory allocation,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""printf(\""Enter text (type 'exit' to quit): \"");"",
+  ""explanation"": ""Potential buffer overflow vulnerability due to insufficient memory allocation""
+}"
+llama3.2:1b,train_baseline,415-8,False,CWE-415,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to repeated allocation and deallocation of memory,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to repeated allocation and deallocation of memory""
+}"
+llama3.2:1b,train_baseline,416-9,False,CWE-416,[],False,,main function,True,,True,True,True,,,,0,,Memory allocation failed.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory allocation failed.""
+}"
+llama3.2:1b,train_baseline,401-8,False,CWE-401,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to missing free() calls.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to missing free() calls.""
+}"
+llama3.2:1b,train_baseline,190-2,True,CWE-190,[6],True,,main function,True,,True,False,False,wrong_cwe,,,0,,Using atoi to convert a string to an integer without checking for overflow,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Using atoi to convert a string to an integer without checking for overflow""
+}"
+llama3.2:1b,train_baseline,253-9,False,CWE-253,[],False,,malloc,True,,True,True,True,,,,0,,Memory allocation failed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory allocation failed""
+}"
+llama3.2:1b,train_baseline,327-8,False,CWE-327,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The program does not handle errors properly. If an error occurs during encryption, the program will exit immediately without providing any information about what went wrong.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle errors properly. If an error occurs during encryption, the program will exit immediately without providing any information about what went wrong.""
+}"
+llama3.2:1b,train_baseline,134-8,False,CWE-134,[],False,,main function,True,,True,True,True,,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,train_baseline,416-6,True,CWE-416,[32],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No memory leaks or buffer overflows are detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No memory leaks or buffer overflows are detected.""
+}"
+llama3.2:1b,train_baseline,822-6,True,CWE-822,[61],False,,Server is running on port 8080,True,,False,False,False,wrong_binary_label,,,0,,"The server listens for incoming connections on a specified port, but does not attempt to handle any requests.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Server is running on port 8080"",
+  ""explanation"": ""The server listens for incoming connections on a specified port, but does not attempt to handle any requests.""
+}"
+llama3.2:1b,train_baseline,628-8,False,CWE-628,[],True,,url_decode,True,,False,False,False,wrong_binary_label,,,0,,"The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""url_decode"",
+  ""explanation"": ""The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.""
+}"
+llama3.2:1b,train_baseline,476-3,True,CWE-476,[19],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The function min() does not check for negative inputs and can lead to undefined behavior if a is less than b.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The function min() does not check for negative inputs and can lead to undefined behavior if a is less than b.""
+}"
+llama3.2:1b,train_baseline,190-10,False,CWE-190,[],False,,main function,True,,True,True,True,,,,0,,The code does not contain any obvious security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not contain any obvious security vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,843-4,True,CWE-843,[19],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No CWE is defined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No CWE is defined""
+}"
+llama3.2:1b,train_baseline,761-7,False,CWE-761,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program attempts to allocate memory for a string using malloc but fails due to insufficient memory. This is a potential buffer overflow vulnerability.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program attempts to allocate memory for a string using malloc but fails due to insufficient memory. This is a potential buffer overflow vulnerability.""
+}"
+llama3.2:1b,train_baseline,522-9,False,CWE-522,[],False,,mysql_real_connect,True,,True,True,True,,,,0,,This function is not vulnerable to SQL injection attacks because it uses prepared statements.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""mysql_real_connect"",
+  ""explanation"": ""This function is not vulnerable to SQL injection attacks because it uses prepared statements.""
+}"
+llama3.2:1b,train_baseline,798-4,True,CWE-798,[13],True,,curl_easy_perform(),True,,True,False,False,wrong_cwe,,,0,,GitHub requires a User-Agent header,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""curl_easy_perform()"",
+  ""explanation"": ""GitHub requires a User-Agent header""
+}"
+llama3.2:1b,train_baseline,125-9,False,CWE-125,[],False,,main function,True,,True,True,True,,,,0,,The array index is out of bounds.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The array index is out of bounds.""
+}"
+llama3.2:1b,train_baseline,22-6,True,CWE-22,"[10, 49]",True,,file open,True,,True,False,False,wrong_cwe,,,0,,The program attempts to open a file in read mode without checking if the file exists or can be opened.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""file open"",
+  ""explanation"": ""The program attempts to open a file in read mode without checking if the file exists or can be opened.""
+}"
+llama3.2:1b,train_baseline,134-6,True,CWE-134,"[17, 18]",True,,Invalid number: %s,True,,True,False,False,wrong_cwe,,,0,,The program does not validate the input number before using it to determine its value.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Invalid number: %s"",
+  ""explanation"": ""The program does not validate the input number before using it to determine its value.""
+}"
+llama3.2:1b,train_baseline,416-3,True,CWE-416,[34],True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to missing `free` calls.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to missing `free` calls.""
+}"
+llama3.2:1b,train_baseline,617-2,True,CWE-617,"[8, 19]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The sqrt function is used to calculate the square root of a number. It does not handle negative numbers.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The sqrt function is used to calculate the square root of a number. It does not handle negative numbers.""
+}"
+llama3.2:1b,train_baseline,522-1,True,CWE-522,"[70, 74]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program does not handle potential SQL injection attacks by directly inserting user input into the SQL query.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle potential SQL injection attacks by directly inserting user input into the SQL query.""
+}"
+llama3.2:1b,train_baseline,476-7,False,CWE-476,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to allocation of memory without freeing it,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to allocation of memory without freeing it""
+}"
+llama3.2:1b,train_baseline,835-10,False,CWE-835,[],False,,main function,True,,True,True,True,,,,0,,The code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,190-9,False,CWE-190,[],False,,main function,True,,True,True,True,,,,0,,The main function does not contain any potential vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The main function does not contain any potential vulnerabilities.""
+}"
+llama3.2:1b,train_baseline,369-7,False,CWE-369,[],False,,main function,True,,True,True,True,,,,0,,Division by zero is not allowed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Division by zero is not allowed""
+}"
+llama3.2:1b,train_baseline,362-2,True,CWE-362,"[9, 17]",False,,pthread_create,True,,False,False,False,wrong_binary_label,,,0,,"Thread creation is a system call, not a C function.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""pthread_create"",
+  ""explanation"": ""Thread creation is a system call, not a C function."" }"
+llama3.2:1b,baseline,78-6,True,CWE-78,[29],True,,main function,True,,True,False,False,wrong_cwe,,,0,,The program does not check the validity of user input before using it to execute system commands.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check the validity of user input before using it to execute system commands.""
+}"
+llama3.2:1b,baseline,674-2,True,CWE-674,[9],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The function does not check for input validation or error handling.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The function does not check for input validation or error handling.""
+}"
+llama3.2:1b,baseline,476-4,True,CWE-476,[51],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,baseline,416-1,True,CWE-416,[20],True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to incorrect usage of free() function,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to incorrect usage of free() function""
+}"
+llama3.2:1b,baseline,327-2,True,CWE-327,"[11, 26, 34, 40, 46]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No security vulnerabilities were found in this code snippet.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities were found in this code snippet."" }"
+llama3.2:1b,baseline,822-2,True,CWE-822,"[5, 6, 24, 27]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak""
+}"
+llama3.2:1b,baseline,415-1,True,CWE-415,[22],True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to incorrect use of malloc,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to incorrect use of malloc""
+}"
+llama3.2:1b,baseline,401-6,True,CWE-401,"[22, 39]",True,,malloc,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to missing free() calls,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory leak due to missing free() calls""
+}"
+llama3.2:1b,baseline,674-1,True,CWE-674,[5],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No CWE identifier,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No CWE identifier""
+}"
+llama3.2:1b,baseline,770-1,True,CWE-770,[68],False,,The server does not handle any errors that may occur during the execution of the code.,True,,False,False,False,wrong_binary_label,,,0,,"The server does not check if a connection is established before attempting to read from it, which can lead to a resource leak and potential security issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The server does not handle any errors that may occur during the execution of the code."",
+  ""explanation"": ""The server does not check if a connection is established before attempting to read from it, which can lead to a resource leak and potential security issues."" }"
+llama3.2:1b,baseline,843-8,False,CWE-843,[],False,,main function,True,,True,True,True,,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,baseline,134-7,False,CWE-134,[],False,,main function,True,,True,True,True,,,,0,,This C program does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C program does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,baseline,617-5,True,CWE-617,[8],True,,assert(d < 0);,True,,True,False,False,wrong_cwe,,,0,,"The assert statement is used to test the validity of a condition, but it does not check for errors in the code. It should be replaced with a proper error checking mechanism.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""assert(d < 0);"",
+  ""explanation"": ""The assert statement is used to test the validity of a condition, but it does not check for errors in the code. It should be replaced with a proper error checking mechanism.""
+}"
+llama3.2:1b,baseline,628-5,True,CWE-628,"[23, 27, 32, 36, 41, 48]",True,,url_decode,True,,True,False,False,wrong_cwe,,,0,,"The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""url_decode"",
+  ""explanation"": ""The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.""
+}"
+llama3.2:1b,baseline,822-10,False,CWE-822,[],False,,Server is running on port 8080,True,,True,True,True,,,,0,,"The server listens for incoming connections on a specified port, but does not handle any input from clients.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Server is running on port 8080"",
+  ""explanation"": ""The server listens for incoming connections on a specified port, but does not handle any input from clients.""
+}"
+llama3.2:1b,baseline,401-2,True,CWE-401,"[14, 15, 22, 36]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No buffer overflow vulnerability detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No buffer overflow vulnerability detected.""
+}"
+llama3.2:1b,baseline,761-9,False,CWE-761,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to dangling pointer,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to dangling pointer""
+}"
+llama3.2:1b,baseline,327-7,False,CWE-327,[],False,,main function,True,,True,True,True,,,,0,,No security vulnerabilities were found in this code snippet.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities were found in this code snippet."" }"
+llama3.2:1b,baseline,253-6,True,CWE-253,"[5, 9, 16]",False,,"Error opening file
+",True,,False,False,False,wrong_binary_label,,,0,,An error occurred while trying to open a file.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening file\n"",
+  ""explanation"": ""An error occurred while trying to open a file."" }"
+llama3.2:1b,baseline,843-9,False,CWE-843,[],False,,main function,True,,True,True,True,,,,0,,"Variable 'a' is declared as a float, but used as an int in the calculation.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Variable 'a' is declared as a float, but used as an int in the calculation.""
+}"
+llama3.2:1b,baseline,617-1,True,CWE-617,[28],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The `createUnitVector` function does not check for unit vector length before creating a new one.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The `createUnitVector` function does not check for unit vector length before creating a new one.""
+}"
+llama3.2:1b,baseline,89-9,False,CWE-89,[],True,,getpass_r,True,,False,False,False,wrong_binary_label,,,0,,"The getpass_r function does not properly handle the case where the user enters a password that is too long, causing it to overflow and potentially leading to buffer overflows.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""getpass_r"",
+  ""explanation"": ""The getpass_r function does not properly handle the case where the user enters a password that is too long, causing it to overflow and potentially leading to buffer overflows.""
+}"
+llama3.2:1b,baseline,415-6,True,CWE-415,[32],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No memory leaks or buffer overflows are detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No memory leaks or buffer overflows are detected.""
+}"
+llama3.2:1b,baseline,787-5,True,CWE-787,[51],False,,Function `levenshteinDistance`,True,,False,False,False,wrong_binary_label,,,0,,This function does not appear to be vulnerable to any known attacks or exploits.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Function `levenshteinDistance`"",
+  ""explanation"": ""This function does not appear to be vulnerable to any known attacks or exploits.""
+}"
+llama3.2:1b,baseline,617-10,False,CWE-617,[],False,,Server is running on port 8080,True,,True,True,True,,,,0,,"The server listens for incoming connections on port 8080, but does not attempt to authenticate or authorize clients.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Server is running on port 8080"",
+  ""explanation"": ""The server listens for incoming connections on port 8080, but does not attempt to authenticate or authorize clients.""
+}"
+llama3.2:1b,baseline,362-5,True,CWE-362,"[8, 15, 19]",False,,Thread creation,True,,False,False,False,wrong_binary_label,,,0,,No potential vulnerabilities detected,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Thread creation"",
+  ""explanation"": ""No potential vulnerabilities detected""
+}"
+llama3.2:1b,baseline,327-10,False,CWE-327,[],False,,main function,True,,True,True,True,,,,0,,The program does not read sensitive information from a file and store it in memory. This is a security risk as the data can be accessed by other parts of the program or even by an attacker if they gain access to the system.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not read sensitive information from a file and store it in memory. This is a security risk as the data can be accessed by other parts of the program or even by an attacker if they gain access to the system."" }"
+llama3.2:1b,baseline,190-1,True,CWE-190,[6],False,,line 3,True,,False,False,False,wrong_binary_label,,,0,,Division by zero is undefined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 3"",
+  ""explanation"": ""Division by zero is undefined""
+}"
+llama3.2:1b,baseline,770-9,False,CWE-770,[],False,,main function,True,,True,True,True,,,,0,,"The program does not handle errors properly, such as when the input is too large.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle errors properly, such as when the input is too large.""
+}"
+llama3.2:1b,baseline,253-7,False,CWE-253,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory allocation failed,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory allocation failed""
+}"
+llama3.2:1b,baseline,628-6,True,CWE-628,[53],False,,curl_easy_perform,True,,False,False,False,wrong_binary_label,,,0,,The function `onSuccess` is not defined in the provided code snippet.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""curl_easy_perform"",
+  ""explanation"": ""The function `onSuccess` is not defined in the provided code snippet.""
+}"
+llama3.2:1b,baseline,798-10,False,CWE-798,[],True,,Google Maps API,True,,False,False,False,wrong_binary_label,,,0,,"The script uses an untrusted source for the Google Maps API key, which is a security risk.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Google Maps API"",
+  ""explanation"": ""The script uses an untrusted source for the Google Maps API key, which is a security risk.""
+}"
+llama3.2:1b,baseline,22-5,True,CWE-22,"[8, 28]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,The program does not check if the provided file exists before attempting to open it.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check if the provided file exists before attempting to open it.""
+}"
+llama3.2:1b,baseline,415-10,False,CWE-415,[],True,,malloc,True,,False,False,False,wrong_binary_label,,,0,,Memory allocation failed,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory allocation failed""
+}"
+llama3.2:1b,baseline,770-2,True,CWE-770,"[30, 37]",False,,"In the `handle_client` function, a file descriptor is opened for appending to a file. This can lead to file descriptor leaks if not closed properly.",True,,False,False,False,wrong_binary_label,,,0,,"File descriptor leaks are a common vulnerability in C programs that use sockets. The file descriptor is used to write data to the socket, but it's not closed after use, leading to a resource leak.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""In the `handle_client` function, a file descriptor is opened for appending to a file. This can lead to file descriptor leaks if not closed properly."",
+  ""explanation"": ""File descriptor leaks are a common vulnerability in C programs that use sockets. The file descriptor is used to write data to the socket, but it's not closed after use, leading to a resource leak.""
+}"
+llama3.2:1b,baseline,369-9,False,CWE-369,[],False,,main function,True,,True,True,True,,,,0,,Division by zero is not allowed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Division by zero is not allowed""
+}"
+llama3.2:1b,baseline,253-4,True,CWE-253,[11],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No issues found,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No issues found""
+}"
+llama3.2:1b,baseline,628-10,False,CWE-628,[],False,,sha256_hash_string,True,,True,True,True,,,,0,,"The function sha256_hash_string uses the EVP_sha256() function to hash a string, which is not secure because it does not use a secure random number generator.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sha256_hash_string"",
+  ""explanation"": ""The function sha256_hash_string uses the EVP_sha256() function to hash a string, which is not secure because it does not use a secure random number generator.""
+}"
+llama3.2:1b,baseline,787-6,True,CWE-787,"[10, 17]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The `sin` function is not called with an integer argument, which could be a potential source of vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The `sin` function is not called with an integer argument, which could be a potential source of vulnerability.""
+}"
+llama3.2:1b,baseline,125-2,True,CWE-125,[8],False,,C code,True,,False,False,False,wrong_binary_label,,,0,,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""C code"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,baseline,835-6,True,CWE-835,[13],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program does not check for the existence of a second positive integer.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for the existence of a second positive integer.""
+}"
+llama3.2:1b,baseline,476-5,True,CWE-476,[10],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The function `generateAlwaysNonNullResult` is declared but not implemented.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The function `generateAlwaysNonNullResult` is declared but not implemented.""
+}"
+llama3.2:1b,baseline,522-5,True,CWE-522,[13],False,,Error opening file,True,,False,False,False,wrong_binary_label,,,0,,File not found,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening file"",
+  ""explanation"": ""File not found""
+}"
+llama3.2:1b,baseline,78-8,False,CWE-78,[],True,,stdin,True,,False,False,False,wrong_binary_label,,,0,,The program reads from stdin without checking the input for validity.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""stdin"",
+  ""explanation"": ""The program reads from stdin without checking the input for validity.""
+}"
+llama3.2:1b,baseline,125-6,True,CWE-125,"[41, 50]",False,,"The code allocates memory for an array of Country structures using malloc(), which is a system call. This can be considered a security risk if the allocated memory is not properly freed.",True,,False,False,False,wrong_binary_label,,,0,,"Memory allocation should always be done with caution and should never be left unmanaged, as it can lead to memory leaks or other security vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The code allocates memory for an array of Country structures using malloc(), which is a system call. This can be considered a security risk if the allocated memory is not properly freed."",
+  ""explanation"": ""Memory allocation should always be done with caution and should never be left unmanaged, as it can lead to memory leaks or other security vulnerabilities."" 
+}"
+llama3.2:1b,baseline,134-2,True,CWE-134,[9],False,,stdin,True,,False,False,False,wrong_binary_label,,,0,,No input is being read from the user.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""stdin"",
+  ""explanation"": ""No input is being read from the user.""
+}"
+llama3.2:1b,baseline,416-8,False,CWE-416,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to missing `free` calls.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to missing `free` calls.""
+}"
+llama3.2:1b,baseline,416-10,False,CWE-416,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to missing `free` calls.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to missing `free` calls.""
+}"
+llama3.2:1b,baseline,770-4,True,CWE-770,[34],False,,"printf(""Enter text (type 'exit' to quit): "");",True,,False,False,False,wrong_binary_label,,,0,,Potential buffer overflow vulnerability due to insufficient memory allocation,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""printf(\""Enter text (type 'exit' to quit): \"");"",
+  ""explanation"": ""Potential buffer overflow vulnerability due to insufficient memory allocation""
+}"
+llama3.2:1b,baseline,190-5,True,CWE-190,[13],True,,line 4,True,,True,False,False,wrong_cwe,,,0,,Using the XOR operator with a large number can cause integer overflow.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""line 4"",
+  ""explanation"": ""Using the XOR operator with a large number can cause integer overflow.""
+}"
+llama3.2:1b,baseline,327-4,True,CWE-327,[65],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The main function is not vulnerable to any known attacks.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The main function is not vulnerable to any known attacks.""
+}"
+llama3.2:1b,baseline,253-5,True,CWE-253,"[8, 15]",False,,"Error opening file
+",True,,False,False,False,wrong_binary_label,,,0,,File not found,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening file\n"",
+  ""explanation"": ""File not found""
+}"
+llama3.2:1b,baseline,835-9,False,CWE-835,[],False,,main function,True,,True,True,True,,,,0,,The program does not contain any obvious security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not contain any obvious security vulnerabilities.""
+}"
+llama3.2:1b,baseline,89-5,True,CWE-89,"[55, 58]",False,,main,True,,False,False,False,wrong_binary_label,,,0,,No security vulnerabilities were found in this C code.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main"",
+  ""explanation"": ""No security vulnerabilities were found in this C code.""
+}"
+llama3.2:1b,baseline,125-1,True,CWE-125,[7],False,,array declaration,True,,False,False,False,wrong_binary_label,,,0,,Array declarations are not typically considered a security risk.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""array declaration"",
+  ""explanation"": ""Array declarations are not typically considered a security risk.""
+}"
+llama3.2:1b,baseline,22-4,True,CWE-22,"[46, 66, 70]",False,,grep command,True,,False,False,False,wrong_binary_label,,,0,,"The system call `system` is used to execute a shell command, which can be vulnerable to command injection attacks if not properly sanitized.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""grep command"",
+  ""explanation"": ""The system call `system` is used to execute a shell command, which can be vulnerable to command injection attacks if not properly sanitized.""
+}"
+llama3.2:1b,baseline,416-5,True,CWE-416,"[5, 7, 23]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to repeated allocation and deallocation of memory,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to repeated allocation and deallocation of memory""
+}"
+llama3.2:1b,baseline,761-6,True,CWE-761,"[15, 18]",True,,malloc,True,,True,False,False,wrong_cwe,,,0,,Potential buffer overflow vulnerability due to incorrect use of GET_ADDRESS function,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Potential buffer overflow vulnerability due to incorrect use of GET_ADDRESS function""
+}"
+llama3.2:1b,baseline,416-4,True,CWE-416,[34],True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to incorrect usage of pointers,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to incorrect usage of pointers""
+}"
+llama3.2:1b,baseline,369-4,True,CWE-369,[20],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The code does not contain any obvious security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not contain any obvious security vulnerabilities.""
+}"
+llama3.2:1b,baseline,628-2,True,CWE-628,[18],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The gte function does not handle the case where a equals b, which could be considered an error.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The gte function does not handle the case where a equals b, which could be considered an error.""
+}"
+llama3.2:1b,baseline,798-6,True,CWE-798,[54],False,,sha256_hash_string,True,,False,False,False,wrong_binary_label,,,0,,"The function sha256_hash_string uses the EVP_sha256() function from OpenSSL, which is a secure hash function. However, it does not handle errors properly and can lead to security vulnerabilities if not used correctly.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sha256_hash_string"",
+  ""explanation"": ""The function sha256_hash_string uses the EVP_sha256() function from OpenSSL, which is a secure hash function. However, it does not handle errors properly and can lead to security vulnerabilities if not used correctly.""
+}"
+llama3.2:1b,baseline,476-2,True,CWE-476,"[7, 9, 13]",False,,The element of the arraye are: ,True,,False,False,False,wrong_binary_label,,,0,,No error handling or input validation is performed.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The element of the arraye are: "",
+  ""explanation"": ""No error handling or input validation is performed.""
+}"
+llama3.2:1b,baseline,190-4,True,CWE-190,[8],True,,line 3,True,,True,False,False,wrong_cwe,,,0,,Using a variable with an integer type to store a decimal number is not allowed in C.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""line 3"",
+  ""explanation"": ""Using a variable with an integer type to store a decimal number is not allowed in C.""
+}"
+llama3.2:1b,baseline,843-3,True,CWE-843,"[6, 11]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Writing an integer into a buffer without proper bounds checking is a security vulnerability.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Writing an integer into a buffer without proper bounds checking is a security vulnerability.""
+}"
+llama3.2:1b,baseline,89-4,True,CWE-89,"[123, 125]",True,,getpass_r,True,,True,False,False,wrong_cwe,,,0,,"The getpass_r function does not properly handle the case where the user enters a password that is too long, causing it to overflow and potentially leading to buffer overflows.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""getpass_r"",
+  ""explanation"": ""The getpass_r function does not properly handle the case where the user enters a password that is too long, causing it to overflow and potentially leading to buffer overflows.""
+}"
+llama3.2:1b,baseline,125-4,True,CWE-125,[13],False,,array initialization,True,,False,False,False,wrong_binary_label,,,0,,Array initialization is not explicitly checked for bounds.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""array initialization"",
+  ""explanation"": ""Array initialization is not explicitly checked for bounds.""
+}"
+llama3.2:1b,baseline,787-4,True,CWE-787,[14],False,,The program does not read from standard input.,True,,False,False,False,wrong_binary_label,,,0,,"This code does not attempt to read from standard input, which is a common vulnerability in untrusted or uncontrolled environments.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The program does not read from standard input."",
+  ""explanation"": ""This code does not attempt to read from standard input, which is a common vulnerability in untrusted or uncontrolled environments.""
+}"
+llama3.2:1b,baseline,476-6,True,CWE-476,[35],True,,main function,True,,True,False,False,wrong_cwe,,,0,,The program does not handle potential buffer overflow attacks by not checking the size of the input before using it to calculate fibonacci numbers.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle potential buffer overflow attacks by not checking the size of the input before using it to calculate fibonacci numbers.""
+}"
+llama3.2:1b,baseline,787-8,False,CWE-787,[],False,,The element of the arraye are: ,True,,True,True,True,,,,0,,Memory allocation failed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The element of the arraye are: "",
+  ""explanation"": ""Memory allocation failed""
+}"
+llama3.2:1b,baseline,362-4,True,CWE-362,[8],False,,C code,True,,False,False,False,wrong_binary_label,,,0,,The program does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""C code"",
+  ""explanation"": ""The program does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,baseline,843-1,True,CWE-843,"[15, 25]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No CWE is defined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No CWE is defined""
+}"
+llama3.2:1b,baseline,522-2,True,CWE-522,"[56, 68]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The program does not handle errors properly, which can lead to security vulnerabilities. For example, if an error occurs while reading user data from the standard input, it will be silently ignored and the program will continue running without any indication of failure.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle errors properly, which can lead to security vulnerabilities. For example, if an error occurs while reading user data from the standard input, it will be silently ignored and the program will continue running without any indication of failure.""
+}"
+llama3.2:1b,baseline,798-1,True,CWE-798,"[40, 45]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,"The program does not handle errors properly, which can lead to security issues.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle errors properly, which can lead to security issues.""
+}"
+llama3.2:1b,baseline,822-1,True,CWE-822,"[5, 20, 24, 27]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory allocation is performed using malloc() which can be a security risk if not used properly.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory allocation is performed using malloc() which can be a security risk if not used properly.""
+}"
+llama3.2:1b,baseline,253-2,True,CWE-253,"[9, 14, 19, 20]",False,,getIntPtr,True,,False,False,False,wrong_binary_label,,,0,,No memory allocation is performed.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""getIntPtr"",
+  ""explanation"": ""No memory allocation is performed.""
+}"
+llama3.2:1b,baseline,362-3,True,CWE-362,"[22, 25]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The program creates multiple threads to increment a counter, which can lead to concurrency issues and potential data corruption.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program creates multiple threads to increment a counter, which can lead to concurrency issues and potential data corruption.""
+}"
+llama3.2:1b,baseline,761-5,True,CWE-761,[18],True,,malloc,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to unmanaged memory allocation,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory leak due to unmanaged memory allocation""
+}"
+llama3.2:1b,baseline,22-1,True,CWE-22,"[16, 19]",True,,Error opening file,True,,True,False,False,wrong_cwe,,,0,,Failed to open a file due to lack of permissions.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Error opening file"",
+  ""explanation"": ""Failed to open a file due to lack of permissions.""
+}"
+llama3.2:1b,baseline,798-5,True,CWE-798,[144],True,,main,True,,True,False,False,wrong_cwe,,,0,,SQL injection vulnerability via user input,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main"",
+  ""explanation"": ""SQL injection vulnerability via user input""
+}"
+llama3.2:1b,baseline,327-6,True,CWE-327,[22],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program does not read sensitive information from a file and store it in memory. This is a security risk as the data can be accessed by other parts of the program or even by an attacker if they gain access to the system.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not read sensitive information from a file and store it in memory. This is a security risk as the data can be accessed by other parts of the program or even by an attacker if they gain access to the system."" }"
+llama3.2:1b,baseline,78-9,False,CWE-78,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program does not check for potential security vulnerabilities such as SQL injection or command injection.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for potential security vulnerabilities such as SQL injection or command injection.""
+}"
+llama3.2:1b,baseline,401-9,False,CWE-401,[],True,,malloc,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to missing free() calls,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory leak due to missing free() calls""
+}"
+llama3.2:1b,baseline,415-3,True,CWE-415,[31],True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to incorrect use of pointers,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to incorrect use of pointers""
+}"
+llama3.2:1b,baseline,416-2,True,CWE-416,"[10, 31, 32]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to free() call without checking for NULL pointer,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to free() call without checking for NULL pointer""
+}"
+llama3.2:1b,baseline,78-3,True,CWE-78,"[23, 25]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Potential buffer overflow vulnerability due to insufficient input validation.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Potential buffer overflow vulnerability due to insufficient input validation.""
+}"
+llama3.2:1b,baseline,89-3,True,CWE-89,"[121, 122]",False,,getpass_r,True,,False,False,False,wrong_binary_label,,,0,,"The getpass_r function does not properly handle the case where the user enters a password that is too long, causing it to overflow and potentially crash the program.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""getpass_r"",
+  ""explanation"": ""The getpass_r function does not properly handle the case where the user enters a password that is too long, causing it to overflow and potentially crash the program.""
+}"
+llama3.2:1b,baseline,628-9,False,CWE-628,[],True,,url_decode,True,,False,False,False,wrong_binary_label,,,0,,"The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""url_decode"",
+  ""explanation"": ""The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.""
+}"
+llama3.2:1b,baseline,798-8,False,CWE-798,[],False,,main,True,,True,True,True,,,,0,,"The code does not appear to be vulnerable to any known security issues. However, it is worth noting that the use of `fgets` and `snprintf` can lead to buffer overflows if not used carefully. Additionally, the `sha256_hash_string` function uses a fixed-size buffer for the hash output, which may not be sufficient for all possible input strings.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main"",
+  ""explanation"": ""The code does not appear to be vulnerable to any known security issues. However, it is worth noting that the use of `fgets` and `snprintf` can lead to buffer overflows if not used carefully. Additionally, the `sha256_hash_string` function uses a fixed-size buffer for the hash output, which may not be sufficient for all possible input strings."" 
+}"
+llama3.2:1b,baseline,369-10,False,CWE-369,[],False,,scanf function,True,,True,True,True,,,,0,,The use of scanf to read user input is insecure as it can be exploited by attackers.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""scanf function"",
+  ""explanation"": ""The use of scanf to read user input is insecure as it can be exploited by attackers.""
+}"
+llama3.2:1b,baseline,617-3,True,CWE-617,[7],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program asserts a condition that is always true.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program asserts a condition that is always true.""
+}"
+llama3.2:1b,baseline,89-8,False,CWE-89,[],False,,main,True,,True,True,True,,,,0,,No security vulnerabilities were found in this C code.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main"",
+  ""explanation"": ""No security vulnerabilities were found in this C code.""
+}"
+llama3.2:1b,baseline,415-7,False,CWE-415,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to repeated allocation and deallocation of memory,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to repeated allocation and deallocation of memory""
+}"
+llama3.2:1b,baseline,674-5,True,CWE-674,"[9, 10]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,baseline,843-2,True,CWE-843,"[5, 13]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,baseline,125-10,False,CWE-125,[],False,,"The code allocates memory for an array of Country structures using malloc(), which is a system call. This can be considered a security risk if the allocated memory is not properly freed.",True,,True,True,True,,,,0,,"Memory allocation should always be done with caution and should never be left unmanaged, as it can lead to memory leaks or other security vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The code allocates memory for an array of Country structures using malloc(), which is a system call. This can be considered a security risk if the allocated memory is not properly freed."",
+  ""explanation"": ""Memory allocation should always be done with caution and should never be left unmanaged, as it can lead to memory leaks or other security vulnerabilities."" 
+}"
+llama3.2:1b,baseline,522-6,True,CWE-522,[17],False,,Error opening /etc/passwd,True,,False,False,False,wrong_binary_label,,,0,,The program attempts to open a file without checking if the file exists or is accessible. This can be considered an insecure practice.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening /etc/passwd"",
+  ""explanation"": ""The program attempts to open a file without checking if the file exists or is accessible. This can be considered an insecure practice.""
+}"
+llama3.2:1b,baseline,787-2,True,CWE-787,[7],False,,string,True,,False,False,False,wrong_binary_label,,,0,,The string is too long for the buffer.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""string"",
+  ""explanation"": ""The string is too long for the buffer.""
+}"
+llama3.2:1b,baseline,787-10,False,CWE-787,[],False,,main function,True,,True,True,True,,,,0,,Array index out of bounds,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Array index out of bounds""
+}"
+llama3.2:1b,baseline,761-8,False,CWE-761,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory leak due to incorrect use of pointers,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to incorrect use of pointers""
+}"
+llama3.2:1b,baseline,476-9,False,CWE-476,[],False,,main function,True,,True,True,True,,,,0,,The function min() does not check for negative inputs.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The function min() does not check for negative inputs.""
+}"
+llama3.2:1b,baseline,761-1,True,CWE-761,"[15, 19, 22]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,The program attempts to allocate memory for a string using malloc but fails due to insufficient memory. This is a potential buffer overflow vulnerability.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program attempts to allocate memory for a string using malloc but fails due to insufficient memory. This is a potential buffer overflow vulnerability.""
+}"
+llama3.2:1b,baseline,401-7,False,CWE-401,[],False,,main function,True,,True,True,True,,,,0,,No buffer overflow vulnerability detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No buffer overflow vulnerability detected.""
+}"
+llama3.2:1b,baseline,190-8,False,CWE-190,[],True,,"The function `findPath` does not check for memory leaks. It dynamically allocates memory using `malloc`, but it is not freed in all cases.",True,,False,False,False,wrong_binary_label,,,0,,"The function `findPath` does not check if the queue is empty before accessing its elements, which can lead to undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""The function `findPath` does not check for memory leaks. It dynamically allocates memory using `malloc`, but it is not freed in all cases."",
+  ""explanation"": ""The function `findPath` does not check if the queue is empty before accessing its elements, which can lead to undefined behavior."" }"
+llama3.2:1b,baseline,253-8,False,CWE-253,[],False,,"Error opening file
+",True,,True,True,True,,,,0,,File not found,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening file\n"",
+  ""explanation"": ""File not found""
+}"
+llama3.2:1b,baseline,190-7,False,CWE-190,[],False,,main function,True,,True,True,True,,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,baseline,522-8,False,CWE-522,[],False,,main function,True,,True,True,True,,,,0,,"The program does not handle the case where the password is not set, which could be a security risk.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle the case where the password is not set, which could be a security risk.""
+}"
+llama3.2:1b,baseline,125-8,False,CWE-125,[],False,,short line/function description,True,,True,True,True,,,,0,,The string contains a hidden character.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""short line/function description"",
+  ""explanation"": ""The string contains a hidden character.""
+}"
+llama3.2:1b,baseline,89-6,True,CWE-89,"[126, 128]",True,,getpass_r,True,,True,False,False,wrong_cwe,,,0,,"The getpass_r function does not properly handle the case where the user enters a password that is too long, causing an integer overflow and potentially allowing an attacker to access sensitive information.","{
+ ""vulnerable"": true,
+ ""cwe"": null,
+ ""location"": ""getpass_r"",
+ ""explanation"": ""The getpass_r function does not properly handle the case where the user enters a password that is too long, causing an integer overflow and potentially allowing an attacker to access sensitive information.""
+}"
+llama3.2:1b,baseline,674-10,False,CWE-674,[],False,,main function,True,,True,True,True,,,,0,,The program does not handle potential division by zero errors.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle potential division by zero errors.""
+}"
+llama3.2:1b,baseline,78-4,True,CWE-78,"[11, 12]",False,,Enter the number of files to list: ,True,,False,False,False,wrong_binary_label,,,0,,This C code does not contain any potential security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Enter the number of files to list: "",
+  ""explanation"": ""This C code does not contain any potential security vulnerabilities.""
+}"
+llama3.2:1b,baseline,415-4,True,CWE-415,[13],True,,malloc,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to repeated allocation,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory leak due to repeated allocation""
+}"
+llama3.2:1b,baseline,674-8,False,CWE-674,[],False,,main function,True,,True,True,True,,,,0,,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,baseline,22-9,False,CWE-22,[],False,,main function,True,,True,True,True,,,,0,,"The program does not check for errors when accessing the file or performing system calls, which can lead to security vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for errors when accessing the file or performing system calls, which can lead to security vulnerabilities.""
+}"
+llama3.2:1b,baseline,522-4,True,CWE-522,"[105, 120]",True,,loadConfig,True,,True,False,False,wrong_cwe,,,0,,"The function loadConfig does not check if the file exists or is accessible before attempting to read it, which could lead to a denial of service vulnerability.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""loadConfig"",
+  ""explanation"": ""The function loadConfig does not check if the file exists or is accessible before attempting to read it, which could lead to a denial of service vulnerability.""
+}"
+llama3.2:1b,baseline,617-7,False,CWE-617,[],False,,main function,True,,True,True,True,,,,0,,"The program does not handle errors properly, which can lead to unexpected behavior or crashes.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle errors properly, which can lead to unexpected behavior or crashes.""
+}"
+llama3.2:1b,baseline,78-1,True,CWE-78,"[13, 16]",False,,System call,True,,False,False,False,wrong_binary_label,,,0,,"The program uses a system call to execute a command, which is not secure.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""System call"",
+  ""explanation"": ""The program uses a system call to execute a command, which is not secure.""
+}"
+llama3.2:1b,baseline,134-1,True,CWE-134,[9],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,This C program does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C program does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,baseline,835-5,True,CWE-835,"[11, 14]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The program does not handle the case where i is less than 0, which could lead to an out of bounds access.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle the case where i is less than 0, which could lead to an out of bounds access.""
+}"
+llama3.2:1b,baseline,617-6,True,CWE-617,[10],False,,line 4,True,,False,False,False,wrong_binary_label,,,0,,"The program uses the assert function to check if a number is divisible by 3. However, this is not a secure way to perform this check as it can be easily bypassed by a malicious user.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 4"",
+  ""explanation"": ""The program uses the assert function to check if a number is divisible by 3. However, this is not a secure way to perform this check as it can be easily bypassed by a malicious user.""
+}"
+llama3.2:1b,baseline,835-2,True,CWE-835,[6],False,,while loop,True,,False,False,False,wrong_binary_label,,,0,,The variable 'b' is not initialized before being used in the while loop.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""while loop"",
+  ""explanation"": ""The variable 'b' is not initialized before being used in the while loop.""
+}"
+llama3.2:1b,baseline,401-1,True,CWE-401,"[5, 16]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory allocation without checking for NULL pointer,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory allocation without checking for NULL pointer""
+}"
+llama3.2:1b,baseline,369-2,True,CWE-369,[7],False,,line 3,True,,False,False,False,wrong_binary_label,,,0,,Division by zero is undefined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 3"",
+  ""explanation"": ""Division by zero is undefined""
+}"
+llama3.2:1b,baseline,843-5,True,CWE-843,"[12, 14, 15]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,uses a non-standard implementation of the inverse square root algorithm,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""uses a non-standard implementation of the inverse square root algorithm""
+}"
+llama3.2:1b,baseline,770-10,False,CWE-770,[],False,,accept() function,True,,True,True,True,,,,0,,"The accept() function is called repeatedly for each new connection, which can lead to a high number of system calls and potentially cause performance issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""accept() function"",
+  ""explanation"": ""The accept() function is called repeatedly for each new connection, which can lead to a high number of system calls and potentially cause performance issues.""
+}"
+llama3.2:1b,baseline,22-10,False,CWE-22,[],True,,Error opening file,True,,False,False,False,wrong_binary_label,,,0,,Failed to open a file,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Error opening file"",
+  ""explanation"": ""Failed to open a file""
+}"
+llama3.2:1b,baseline,822-9,False,CWE-822,[],False,,getTrustedPointer,True,,True,True,True,,,,0,,"The function getTrustedPointer allocates memory for an integer, but does not check if the allocation was successful. This can lead to a buffer overflow vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""getTrustedPointer"",
+  ""explanation"": ""The function getTrustedPointer allocates memory for an integer, but does not check if the allocation was successful. This can lead to a buffer overflow vulnerability.""
+}"
+llama3.2:1b,baseline,835-4,True,CWE-835,"[6, 8]",False,,for loop,True,,False,False,False,wrong_binary_label,,,0,,"The for loop is not a function call, it's an infinite loop.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""for loop"",
+  ""explanation"": ""The for loop is not a function call, it's an infinite loop.""
+}"
+llama3.2:1b,baseline,134-9,False,CWE-134,[],False,,main function,True,,True,True,True,,,,0,,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,baseline,401-5,True,CWE-401,"[22, 39]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to missing free() calls,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to missing free() calls""
+}"
+llama3.2:1b,baseline,362-10,False,CWE-362,[],False,,pthread_create,True,,True,True,True,,,,0,,"Thread creation is a system call, not a function call. It's safe to use this in a multi-threaded environment.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""pthread_create"",
+  ""explanation"": ""Thread creation is a system call, not a function call. It's safe to use this in a multi-threaded environment.""
+}"
+llama3.2:1b,baseline,369-1,True,CWE-369,[10],True,,line 3,True,,True,False,False,wrong_cwe,,,0,,Division by zero,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""line 3"",
+  ""explanation"": ""Division by zero""
+}"
+llama3.2:1b,baseline,134-5,True,CWE-134,"[6, 7]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,baseline,476-10,False,CWE-476,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,Memory allocation without checking for NULL pointer,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory allocation without checking for NULL pointer""
+}"
+llama3.2:1b,baseline,22-2,True,CWE-22,"[8, 20, 29]",False,,Invalid path: /var/www/html,True,,False,False,False,wrong_binary_label,,,0,,The program attempts to create a directory with a non-existent parent directory.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Invalid path: /var/www/html"",
+  ""explanation"": ""The program attempts to create a directory with a non-existent parent directory.""
+}"
+llama3.2:1b,baseline,327-3,True,CWE-327,"[16, 19, 28]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The program does not read from a secure key file and stores the key in memory. This is a security risk as an attacker could obtain the key by reading the file or by exploiting a vulnerability in the program.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not read from a secure key file and stores the key in memory. This is a security risk as an attacker could obtain the key by reading the file or by exploiting a vulnerability in the program."" }"
+llama3.2:1b,baseline,822-5,True,CWE-822,"[16, 21, 25, 31]",True,,getTrustedPointer(),True,,True,False,False,wrong_cwe,,,0,,Error in strtol,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""getTrustedPointer()"",
+  ""explanation"": ""Error in strtol""
+}"
+llama3.2:1b,baseline,761-4,True,CWE-761,[30],True,,main function,True,,True,False,False,wrong_cwe,,,0,,Memory leak due to incorrect use of pointers,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to incorrect use of pointers""
+}"
+llama3.2:1b,baseline,190-6,True,CWE-190,[6],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,Division by zero,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Division by zero""
+}"
+llama3.2:1b,baseline,134-4,True,CWE-134,"[6, 21, 23]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Potential buffer overflow vulnerability,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Potential buffer overflow vulnerability""
+}"
+llama3.2:1b,baseline,369-5,True,CWE-369,[11],False,,Variable declaration,True,,False,False,False,wrong_binary_label,,,0,,Variable declarations are not checked for potential buffer overflows.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Variable declaration"",
+  ""explanation"": ""Variable declarations are not checked for potential buffer overflows.""
+}"
+llama3.2:1b,baseline,628-3,True,CWE-628,[36],False,,main function,True,,False,False,False,wrong_binary_label,,,0,,The code does not contain any obvious security vulnerabilities such as buffer overflows or use of insecure cryptographic functions.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not contain any obvious security vulnerabilities such as buffer overflows or use of insecure cryptographic functions.""
+}"
+llama3.2:1b,baseline,362-8,False,CWE-362,[],True,,main function,True,,False,False,False,wrong_binary_label,,,0,,No CWE identifier,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No CWE identifier""
+}"
+llama3.2:1b,baseline,822-3,True,CWE-822,"[15, 26, 28, 30]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,Invalid input,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Invalid input""
+}"
+llama3.2:1b,baseline,362-6,True,CWE-362,"[14, 16, 25]",False,,main function,True,,False,False,False,wrong_binary_label,,,0,,"The program does not handle the SIGUSR1 signal correctly. It should cancel the threads after sending the signal, but it doesn't do so.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle the SIGUSR1 signal correctly. It should cancel the threads after sending the signal, but it doesn't do so.""
+}"
+llama3.2:1b,baseline,522-10,False,CWE-522,[],False,,sqlite3_prepare_v2,True,,True,True,True,,,,0,,SQL injection vulnerability,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sqlite3_prepare_v2"",
+  ""explanation"": ""SQL injection vulnerability""
+}"
+llama3.2:1b,baseline,674-6,True,CWE-674,"[5, 8, 9]",True,,main function,True,,True,False,False,wrong_cwe,,,0,,No CWE identifier,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No CWE identifier""
+}"
+llama3.2:1b,baseline,770-5,True,CWE-770,[26],False,,accept function,True,,False,False,False,wrong_binary_label,,,0,,"The accept function is blocking, which can lead to a deadlock if the server socket is not closed properly.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""accept function"",
+  ""explanation"": ""The accept function is blocking, which can lead to a deadlock if the server socket is not closed properly.""
+}"
+llama3.2:1b,baseline,835-7,False,CWE-835,[],False,,main function,True,,True,True,True,,,,0,,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,baseline,798-2,True,CWE-798,[10],False,,Enter your password,True,,False,False,False,wrong_binary_label,,,0,,Password input is not secure,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Enter your password"",
+  ""explanation"": ""Password input is not secure""
+}"
+llama3.2:1b,errorlock_binary_locked,78-6,True,CWE-78,[29],True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.7834402351730554,The code does not validate the input command properly.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not validate the input command properly.""
+}"
+llama3.2:1b,errorlock_binary_locked,674-2,True,CWE-674,[9],False,,,True,,False,False,False,wrong_binary_label,False,low_similarity,3,0.1641707858758909,The function does not check for input validation or error handling.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The function does not check for input validation or error handling.""
+}"
+llama3.2:1b,errorlock_binary_locked,476-4,True,CWE-476,[51],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.1805045583171072,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,errorlock_binary_locked,416-1,True,CWE-416,[20],True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.8778766895644933,"The code does not allocate memory for the variable 'b' in the square function, which could lead to a buffer overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not allocate memory for the variable 'b' in the square function, which could lead to a buffer overflow.""
+}"
+llama3.2:1b,errorlock_binary_locked,327-2,True,CWE-327,"[11, 26, 34, 40, 46]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.9941592620185398,No security vulnerabilities were found in this code snippet.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities were found in this code snippet."" }"
+llama3.2:1b,errorlock_binary_locked,822-2,True,CWE-822,"[5, 6, 24, 27]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.4344500335729228,"The code does not allocate memory for the array, but it also does not check if the allocation was successful.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not allocate memory for the array, but it also does not check if the allocation was successful.""
+}"
+llama3.2:1b,errorlock_binary_locked,415-1,True,CWE-415,[22],True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.8825608641778628,"The code does not allocate memory for the variable 'b' in the square function, which could lead to a buffer overflow.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not allocate memory for the variable 'b' in the square function, which could lead to a buffer overflow.""
+}"
+llama3.2:1b,errorlock_binary_locked,401-6,True,CWE-401,"[22, 39]",True,,malloc,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,0.9899225907899978,Memory leak due to missing free() calls,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory leak due to missing free() calls""
+}"
+llama3.2:1b,errorlock_binary_locked,674-1,True,CWE-674,[5],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3996881944444934,No CWE identifier,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No CWE identifier""
+}"
+llama3.2:1b,errorlock_binary_locked,770-1,True,CWE-770,[68],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.9199253846227138,"The server does not check if a connection is established before attempting to read from it, which can lead to a resource leak and potential security issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The server does not handle any errors that may occur during the execution of the code."",
+  ""explanation"": ""The server does not check if a connection is established before attempting to read from it, which can lead to a resource leak and potential security issues."" }"
+llama3.2:1b,errorlock_binary_locked,843-8,False,CWE-843,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.6210346224091453,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,errorlock_binary_locked,134-7,False,CWE-134,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.408023880963252,This C program does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C program does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,617-5,True,CWE-617,[8],True,,while loop,True,,True,False,False,wrong_cwe,True,applied,3,0.6042607418678898,"The code contains a while loop that increments the variable 'd' until it is less than zero, which can cause an infinite loop if not properly checked.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""while loop"",
+  ""explanation"": ""The code contains a while loop that increments the variable 'd' until it is less than zero, which can cause an infinite loop if not properly checked.""
+}"
+llama3.2:1b,errorlock_binary_locked,628-5,True,CWE-628,"[23, 27, 32, 36, 41, 48]",True,,url_decode,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,1.0,"The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""url_decode"",
+  ""explanation"": ""The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.""
+}"
+llama3.2:1b,errorlock_binary_locked,822-10,False,CWE-822,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,1.0,"The server listens for incoming connections on a specified port, but does not handle any input from clients.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Server is running on port 8080"",
+  ""explanation"": ""The server listens for incoming connections on a specified port, but does not handle any input from clients.""
+}"
+llama3.2:1b,errorlock_binary_locked,401-2,True,CWE-401,"[14, 15, 22, 36]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4173903218193856,No buffer overflow vulnerability detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No buffer overflow vulnerability detected.""
+}"
+llama3.2:1b,errorlock_binary_locked,761-9,False,CWE-761,[],True,,main function,True,,False,False,False,wrong_binary_label,True,applied,3,0.8291759636305571,The code does not allocate memory for the variables a and b. It directly assigns values to them without checking if they are NULL.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not allocate memory for the variables a and b. It directly assigns values to them without checking if they are NULL.""
+}"
+llama3.2:1b,errorlock_binary_locked,327-7,False,CWE-327,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.9941543256656594,No security vulnerabilities were found in this code snippet.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities were found in this code snippet."" }"
+llama3.2:1b,errorlock_binary_locked,253-6,True,CWE-253,"[5, 9, 16]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.6096150513354579,An error occurred while trying to open a file.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening file\n"",
+  ""explanation"": ""An error occurred while trying to open a file."" }"
+llama3.2:1b,errorlock_binary_locked,843-9,False,CWE-843,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.5288140084302759,"Variable 'a' is declared as a float, but used as an int in the calculation.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Variable 'a' is declared as a float, but used as an int in the calculation.""
+}"
+llama3.2:1b,errorlock_binary_locked,617-1,True,CWE-617,[28],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.2485300158958377,The `createUnitVector` function does not check for unit vector length before creating a new one.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The `createUnitVector` function does not check for unit vector length before creating a new one.""
+}"
+llama3.2:1b,errorlock_binary_locked,89-9,False,CWE-89,[],True,,getpass_r,True,,False,False,False,wrong_binary_label,True,applied,3,0.4853143459552326,The code does not include any error checking or handling for potential security vulnerabilities such as SQL injection or cross-site scripting (XSS). It also lacks proper input validation and sanitization.,"{ ""vulnerable"": true, ""cwe"": null, ""location"": null, ""explanation"": ""The code does not include any error checking or handling for potential security vulnerabilities such as SQL injection or cross-site scripting (XSS). It also lacks proper input validation and sanitization."" }"
+llama3.2:1b,errorlock_binary_locked,415-6,True,CWE-415,[32],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.9870437759039814,No memory leaks or buffer overflows are detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No memory leaks or buffer overflows are detected.""
+}"
+llama3.2:1b,errorlock_binary_locked,787-5,True,CWE-787,[51],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.2344601447588717,This function does not appear to be vulnerable to any known attacks or exploits.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Function `levenshteinDistance`"",
+  ""explanation"": ""This function does not appear to be vulnerable to any known attacks or exploits.""
+}"
+llama3.2:1b,errorlock_binary_locked,617-10,False,CWE-617,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,1.0,"The server listens for incoming connections on port 8080, but does not attempt to authenticate or authorize clients.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Server is running on port 8080"",
+  ""explanation"": ""The server listens for incoming connections on port 8080, but does not attempt to authenticate or authorize clients.""
+}"
+llama3.2:1b,errorlock_binary_locked,362-5,True,CWE-362,"[8, 15, 19]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.730744991780039,No potential vulnerabilities detected,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Thread creation"",
+  ""explanation"": ""No potential vulnerabilities detected""
+}"
+llama3.2:1b,errorlock_binary_locked,327-10,False,CWE-327,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.4979676774008028,The program does not read sensitive information from a file and store it in memory. This is a security risk as the data can be accessed by other parts of the program or even by an attacker if they gain access to the system.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not read sensitive information from a file and store it in memory. This is a security risk as the data can be accessed by other parts of the program or even by an attacker if they gain access to the system."" }"
+llama3.2:1b,errorlock_binary_locked,190-1,True,CWE-190,[6],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.2886508257361528,Division by zero is undefined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 3"",
+  ""explanation"": ""Division by zero is undefined""
+}"
+llama3.2:1b,errorlock_binary_locked,770-9,False,CWE-770,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.7705255439508131,"The program does not handle errors properly, such as when the input is too large.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle errors properly, such as when the input is too large.""
+}"
+llama3.2:1b,errorlock_binary_locked,253-7,False,CWE-253,[],True,,"[6, 11, 12]",True,,False,False,False,wrong_binary_label,True,applied,3,0.6577001612104345,malloc failed to allocate memory,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""[6, 11, 12]"",
+  ""explanation"": ""malloc failed to allocate memory""
+}"
+llama3.2:1b,errorlock_binary_locked,628-6,True,CWE-628,[53],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.567901079001138,The function `onSuccess` is not defined in the provided code snippet.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""curl_easy_perform"",
+  ""explanation"": ""The function `onSuccess` is not defined in the provided code snippet.""
+}"
+llama3.2:1b,errorlock_binary_locked,798-10,False,CWE-798,[],True,,Google Maps API,True,,False,False,False,wrong_binary_label,False,low_similarity,3,0.150821903376963,"The script uses an untrusted source for the Google Maps API key, which is a security risk.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Google Maps API"",
+  ""explanation"": ""The script uses an untrusted source for the Google Maps API key, which is a security risk.""
+}"
+llama3.2:1b,errorlock_binary_locked,22-5,True,CWE-22,"[8, 28]",True,,file open,True,,True,False,False,wrong_cwe,True,applied,3,0.6329342469046619,The code opens a file in the command line without checking if it exists or is readable.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""file open"",
+  ""explanation"": ""The code opens a file in the command line without checking if it exists or is readable.""
+}"
+llama3.2:1b,errorlock_binary_locked,415-10,False,CWE-415,[],True,,main function,True,,False,False,False,wrong_binary_label,True,applied,3,0.7319588793368352,No vulnerability detected,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No vulnerability detected""
+}"
+llama3.2:1b,errorlock_binary_locked,770-2,True,CWE-770,"[30, 37]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.6757520937997777,"File descriptor leaks are a common vulnerability in C programs that use sockets. The file descriptor is used to write data to the socket, but it's not closed after use, leading to a resource leak.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""In the `handle_client` function, a file descriptor is opened for appending to a file. This can lead to file descriptor leaks if not closed properly."",
+  ""explanation"": ""File descriptor leaks are a common vulnerability in C programs that use sockets. The file descriptor is used to write data to the socket, but it's not closed after use, leading to a resource leak.""
+}"
+llama3.2:1b,errorlock_binary_locked,369-9,False,CWE-369,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.3322881124031665,Division by zero is not allowed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Division by zero is not allowed""
+}"
+llama3.2:1b,errorlock_binary_locked,253-4,True,CWE-253,[11],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.5089968982761521,No issues found,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No issues found""
+}"
+llama3.2:1b,errorlock_binary_locked,628-10,False,CWE-628,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,1.0,"The function sha256_hash_string uses the EVP_sha256() function to hash a string, which is not secure because it does not use a secure random number generator.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sha256_hash_string"",
+  ""explanation"": ""The function sha256_hash_string uses the EVP_sha256() function to hash a string, which is not secure because it does not use a secure random number generator.""
+}"
+llama3.2:1b,errorlock_binary_locked,787-6,True,CWE-787,"[10, 17]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3668516166918558,"The `sin` function is not called with an integer argument, which could be a potential source of vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The `sin` function is not called with an integer argument, which could be a potential source of vulnerability.""
+}"
+llama3.2:1b,errorlock_binary_locked,125-2,True,CWE-125,[8],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.7628478906115392,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""C code"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,835-6,True,CWE-835,[13],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.2823840012436496,The program does not check for the existence of a second positive integer.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for the existence of a second positive integer.""
+}"
+llama3.2:1b,errorlock_binary_locked,476-5,True,CWE-476,[10],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.1820426155998709,The function `generateAlwaysNonNullResult` is declared but not implemented.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The function `generateAlwaysNonNullResult` is declared but not implemented.""
+}"
+llama3.2:1b,errorlock_binary_locked,522-5,True,CWE-522,[13],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.402428144805101,File not found,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening file"",
+  ""explanation"": ""File not found""
+}"
+llama3.2:1b,errorlock_binary_locked,78-8,False,CWE-78,[],True,,short line/function description,True,,False,False,False,wrong_binary_label,True,applied,3,0.8066379358382554,The code does not contain any obvious security vulnerabilities.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""short line/function description"",
+  ""explanation"": ""The code does not contain any obvious security vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,125-6,True,CWE-125,"[41, 50]",False,,,True,,False,False,False,wrong_binary_label,False,low_similarity,3,0.1485117083526643,"Memory allocation should always be done with caution and should never be left unmanaged, as it can lead to memory leaks or other security vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The code allocates memory for an array of Country structures using malloc(), which is a system call. This can be considered a security risk if the allocated memory is not properly freed."",
+  ""explanation"": ""Memory allocation should always be done with caution and should never be left unmanaged, as it can lead to memory leaks or other security vulnerabilities."" 
+}"
+llama3.2:1b,errorlock_binary_locked,134-2,True,CWE-134,[9],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.768525847752557,No input is being read from the user.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""stdin"",
+  ""explanation"": ""No input is being read from the user.""
+}"
+llama3.2:1b,errorlock_binary_locked,416-8,False,CWE-416,[],True,,main function,True,,False,False,False,wrong_binary_label,False,near_duplicate_false_positive,3,1.0,Memory leak due to missing `free` calls.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to missing `free` calls.""
+}"
+llama3.2:1b,errorlock_binary_locked,416-10,False,CWE-416,[],True,,main function,True,,False,False,False,wrong_binary_label,True,applied,3,1.0,The code does not demonstrate any known vulnerabilities.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not demonstrate any known vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,770-4,True,CWE-770,[34],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.9621584369774758,Potential buffer overflow vulnerability due to insufficient memory allocation,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""printf(\""Enter text (type 'exit' to quit): \"");"",
+  ""explanation"": ""Potential buffer overflow vulnerability due to insufficient memory allocation""
+}"
+llama3.2:1b,errorlock_binary_locked,190-5,True,CWE-190,[13],True,,short line/function description,True,,True,False,False,wrong_cwe,True,applied,3,0.3976084315827267,"The code does not allocate memory, which is a common vulnerability in C.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""short line/function description"",
+  ""explanation"": ""The code does not allocate memory, which is a common vulnerability in C.""
+}"
+llama3.2:1b,errorlock_binary_locked,327-4,True,CWE-327,[65],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,1.0,The main function is not vulnerable to any known attacks.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The main function is not vulnerable to any known attacks.""
+}"
+llama3.2:1b,errorlock_binary_locked,253-5,True,CWE-253,"[8, 15]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.6384954561258731,File not found,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening file\n"",
+  ""explanation"": ""File not found""
+}"
+llama3.2:1b,errorlock_binary_locked,835-9,False,CWE-835,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.2397875090302051,The program does not contain any obvious security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not contain any obvious security vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,89-5,True,CWE-89,"[55, 58]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,1.0,No security vulnerabilities were found in this C code.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main"",
+  ""explanation"": ""No security vulnerabilities were found in this C code.""
+}"
+llama3.2:1b,errorlock_binary_locked,125-1,True,CWE-125,[7],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4403078553515506,Array declarations are not typically considered a security risk.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""array declaration"",
+  ""explanation"": ""Array declarations are not typically considered a security risk.""
+}"
+llama3.2:1b,errorlock_binary_locked,22-4,True,CWE-22,"[46, 66, 70]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3818888678816522,"The system call `system` is used to execute a shell command, which can be vulnerable to command injection attacks if not properly sanitized.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""grep command"",
+  ""explanation"": ""The system call `system` is used to execute a shell command, which can be vulnerable to command injection attacks if not properly sanitized.""
+}"
+llama3.2:1b,errorlock_binary_locked,416-5,True,CWE-416,"[5, 7, 23]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.4949014910539539,"The code does not allocate memory for the variables 'b' and 'p', which are used in the calculation.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not allocate memory for the variables 'b' and 'p', which are used in the calculation.""
+}"
+llama3.2:1b,errorlock_binary_locked,761-6,True,CWE-761,"[15, 18]",True,,malloc,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,0.9910189617711966,Potential buffer overflow vulnerability due to incorrect use of GET_ADDRESS function,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Potential buffer overflow vulnerability due to incorrect use of GET_ADDRESS function""
+}"
+llama3.2:1b,errorlock_binary_locked,416-4,True,CWE-416,[34],True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.9959321358881807,"The code does not attempt to access or modify any system resources, so it is likely vulnerable.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not attempt to access or modify any system resources, so it is likely vulnerable.""
+}"
+llama3.2:1b,errorlock_binary_locked,369-4,True,CWE-369,[20],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4120649835815227,The code does not contain any obvious security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not contain any obvious security vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,628-2,True,CWE-628,[18],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.2999782216343613,"The gte function does not handle the case where a equals b, which could be considered an error.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The gte function does not handle the case where a equals b, which could be considered an error.""
+}"
+llama3.2:1b,errorlock_binary_locked,798-6,True,CWE-798,[54],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.8953211044669984,"The function sha256_hash_string uses the EVP_sha256() function from OpenSSL, which is a secure hash function. However, it does not handle errors properly and can lead to security vulnerabilities if not used correctly.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sha256_hash_string"",
+  ""explanation"": ""The function sha256_hash_string uses the EVP_sha256() function from OpenSSL, which is a secure hash function. However, it does not handle errors properly and can lead to security vulnerabilities if not used correctly.""
+}"
+llama3.2:1b,errorlock_binary_locked,476-2,True,CWE-476,"[7, 9, 13]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3699243894076937,No error handling or input validation is performed.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The element of the arraye are: "",
+  ""explanation"": ""No error handling or input validation is performed.""
+}"
+llama3.2:1b,errorlock_binary_locked,190-4,True,CWE-190,[8],True,,short line/function description,True,,True,False,False,wrong_cwe,True,applied,3,0.6966321167131837,"This code does not attempt to access or modify memory beyond its declared size, so it is likely safe.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""short line/function description"",
+  ""explanation"": ""This code does not attempt to access or modify memory beyond its declared size, so it is likely safe.""
+}"
+llama3.2:1b,errorlock_binary_locked,843-3,True,CWE-843,"[6, 11]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.2960120081015805,The program does not contain any known vulnerabilities.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,89-4,True,CWE-89,"[123, 125]",True,,[13],True,,True,False,False,wrong_cwe,True,applied,3,0.5237577307563184,SQL injection vulnerability,"{ ""vulnerable"": true, ""cwe"": null, ""location"": ""[13]"", ""explanation"": ""SQL injection vulnerability"" }"
+llama3.2:1b,errorlock_binary_locked,125-4,True,CWE-125,[13],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.320938653083767,Array initialization is not explicitly checked for bounds.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""array initialization"",
+  ""explanation"": ""Array initialization is not explicitly checked for bounds.""
+}"
+llama3.2:1b,errorlock_binary_locked,787-4,True,CWE-787,[14],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.2150246435209485,"This code does not attempt to read from standard input, which is a common vulnerability in untrusted or uncontrolled environments.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The program does not read from standard input."",
+  ""explanation"": ""This code does not attempt to read from standard input, which is a common vulnerability in untrusted or uncontrolled environments.""
+}"
+llama3.2:1b,errorlock_binary_locked,476-6,True,CWE-476,[35],True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.3925642677842087,The code does not contain any obvious vulnerabilities.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not contain any obvious vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,787-8,False,CWE-787,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.3543383492802462,Memory allocation failed,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The element of the arraye are: "",
+  ""explanation"": ""Memory allocation failed""
+}"
+llama3.2:1b,errorlock_binary_locked,362-4,True,CWE-362,[8],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.9110069051318318,The program does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""C code"",
+  ""explanation"": ""The program does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,843-1,True,CWE-843,"[15, 25]",False,,,True,,False,False,False,wrong_binary_label,False,low_similarity,3,0.1561410539996277,No CWE is defined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No CWE is defined""
+}"
+llama3.2:1b,errorlock_binary_locked,522-2,True,CWE-522,"[56, 68]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.9278636302182028,"The program does not handle errors properly, which can lead to security vulnerabilities. For example, if an error occurs while reading user data from the standard input, it will be silently ignored and the program will continue running without any indication of failure.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle errors properly, which can lead to security vulnerabilities. For example, if an error occurs while reading user data from the standard input, it will be silently ignored and the program will continue running without any indication of failure.""
+}"
+llama3.2:1b,errorlock_binary_locked,798-1,True,CWE-798,"[40, 45]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.7766528948150879,"The code uses the OpenSSL library for encryption, which is a widely used and well-maintained library. However, there are several issues with the code that could potentially lead to vulnerabilities.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code uses the OpenSSL library for encryption, which is a widely used and well-maintained library. However, there are several issues with the code that could potentially lead to vulnerabilities.""
+
+}"
+llama3.2:1b,errorlock_binary_locked,822-1,True,CWE-822,"[5, 20, 24, 27]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3423358727123644,Memory allocation is performed using malloc() which can be a security risk if not used properly.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory allocation is performed using malloc() which can be a security risk if not used properly.""
+}"
+llama3.2:1b,errorlock_binary_locked,253-2,True,CWE-253,"[9, 14, 19, 20]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.5409880500951454,No memory allocation is performed.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""getIntPtr"",
+  ""explanation"": ""No memory allocation is performed.""
+}"
+llama3.2:1b,errorlock_binary_locked,362-3,True,CWE-362,"[22, 25]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.7132597534610251,"The program creates multiple threads to increment a counter, which can lead to concurrency issues and potential data corruption.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program creates multiple threads to increment a counter, which can lead to concurrency issues and potential data corruption.""
+}"
+llama3.2:1b,errorlock_binary_locked,761-5,True,CWE-761,[18],True,,malloc,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,1.0,Memory leak due to unmanaged memory allocation,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory leak due to unmanaged memory allocation""
+}"
+llama3.2:1b,errorlock_binary_locked,22-1,True,CWE-22,"[16, 19]",True,,short line/function description,True,,True,False,False,wrong_cwe,True,applied,3,0.869879552082373,"The code does not validate the input filename, which can lead to a security vulnerability if an attacker provides a malicious file name.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""short line/function description"",
+  ""explanation"": ""The code does not validate the input filename, which can lead to a security vulnerability if an attacker provides a malicious file name.""
+}"
+llama3.2:1b,errorlock_binary_locked,798-5,True,CWE-798,[144],True,,main,True,,True,False,False,wrong_cwe,True,applied,3,0.9377810051038996,SQL injection vulnerability via user input,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main"",
+  ""explanation"": ""SQL injection vulnerability via user input""
+}"
+llama3.2:1b,errorlock_binary_locked,327-6,True,CWE-327,[22],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.489203426832377,The program does not read sensitive information from a file and store it in memory. This is a security risk as the data can be accessed by other parts of the program or even by an attacker if they gain access to the system.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not read sensitive information from a file and store it in memory. This is a security risk as the data can be accessed by other parts of the program or even by an attacker if they gain access to the system."" }"
+llama3.2:1b,errorlock_binary_locked,78-9,False,CWE-78,[],True,,main function,True,,False,False,False,wrong_binary_label,True,applied,3,0.3267824998738381,The code does not contain any obvious security vulnerabilities.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not contain any obvious security vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,401-9,False,CWE-401,[],True,,malloc,True,,False,False,False,wrong_binary_label,False,near_duplicate_false_positive,3,1.0,Memory leak due to missing free() calls,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""malloc"",
+  ""explanation"": ""Memory leak due to missing free() calls""
+}"
+llama3.2:1b,errorlock_binary_locked,415-3,True,CWE-415,[31],True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.974444922548708,"The code does not attempt to access or modify any system resources, so it is likely vulnerable.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not attempt to access or modify any system resources, so it is likely vulnerable.""
+}"
+llama3.2:1b,errorlock_binary_locked,416-2,True,CWE-416,"[10, 31, 32]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.8814200701822055,"The code does not allocate memory for the variable 'b' in the square function, which can lead to undefined behavior if it is used later.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not allocate memory for the variable 'b' in the square function, which can lead to undefined behavior if it is used later.""
+}"
+llama3.2:1b,errorlock_binary_locked,78-3,True,CWE-78,"[23, 25]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.2637434709751464,"The program attempts to open a file using the 'cat' command, which is not a standard Unix command and may be vulnerable to attacks.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program attempts to open a file using the 'cat' command, which is not a standard Unix command and may be vulnerable to attacks.""
+}"
+llama3.2:1b,errorlock_binary_locked,89-3,True,CWE-89,"[121, 122]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.5630594274409453,"The getpass_r function does not properly handle the case where the user enters a password that is too long, causing it to overflow and potentially crash the program.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""getpass_r"",
+  ""explanation"": ""The getpass_r function does not properly handle the case where the user enters a password that is too long, causing it to overflow and potentially crash the program.""
+}"
+llama3.2:1b,errorlock_binary_locked,628-9,False,CWE-628,[],True,,url_decode,True,,False,False,False,wrong_binary_label,False,near_duplicate_false_positive,3,1.0,"The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""url_decode"",
+  ""explanation"": ""The function hex_to_int does not handle invalid input correctly, potentially allowing for arbitrary code execution.""
+}"
+llama3.2:1b,errorlock_binary_locked,798-8,False,CWE-798,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.8914974050507878,"The code does not appear to be vulnerable to any known security issues. However, it is worth noting that the use of `fgets` and `snprintf` can lead to buffer overflows if not used carefully. Additionally, the `sha256_hash_string` function uses a fixed-size buffer for the hash output, which may not be sufficient for all possible input strings.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main"",
+  ""explanation"": ""The code does not appear to be vulnerable to any known security issues. However, it is worth noting that the use of `fgets` and `snprintf` can lead to buffer overflows if not used carefully. Additionally, the `sha256_hash_string` function uses a fixed-size buffer for the hash output, which may not be sufficient for all possible input strings."" 
+}"
+llama3.2:1b,errorlock_binary_locked,369-10,False,CWE-369,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.3733384287639676,The use of scanf to read user input is insecure as it can be exploited by attackers.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""scanf function"",
+  ""explanation"": ""The use of scanf to read user input is insecure as it can be exploited by attackers.""
+}"
+llama3.2:1b,errorlock_binary_locked,617-3,True,CWE-617,[7],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4505393573079441,The program asserts a condition that is always true.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program asserts a condition that is always true.""
+}"
+llama3.2:1b,errorlock_binary_locked,89-8,False,CWE-89,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,1.0,No security vulnerabilities were found in this C code.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main"",
+  ""explanation"": ""No security vulnerabilities were found in this C code.""
+}"
+llama3.2:1b,errorlock_binary_locked,415-7,False,CWE-415,[],True,,main function,True,,False,False,False,wrong_binary_label,False,near_duplicate_false_positive,3,0.9777645033996294,Memory leak due to repeated allocation and deallocation of memory,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to repeated allocation and deallocation of memory""
+}"
+llama3.2:1b,errorlock_binary_locked,674-5,True,CWE-674,"[9, 10]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,1.0,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,errorlock_binary_locked,843-2,True,CWE-843,"[5, 13]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.5977858408781233,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,errorlock_binary_locked,125-10,False,CWE-125,[],False,,,True,,True,True,True,,False,low_similarity,3,0.1485088644095303,"Memory allocation should always be done with caution and should never be left unmanaged, as it can lead to memory leaks or other security vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""The code allocates memory for an array of Country structures using malloc(), which is a system call. This can be considered a security risk if the allocated memory is not properly freed."",
+  ""explanation"": ""Memory allocation should always be done with caution and should never be left unmanaged, as it can lead to memory leaks or other security vulnerabilities."" 
+}"
+llama3.2:1b,errorlock_binary_locked,522-6,True,CWE-522,[17],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4958726652530775,The program attempts to open a file without checking if the file exists or is accessible. This can be considered an insecure practice.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening /etc/passwd"",
+  ""explanation"": ""The program attempts to open a file without checking if the file exists or is accessible. This can be considered an insecure practice.""
+}"
+llama3.2:1b,errorlock_binary_locked,787-2,True,CWE-787,[7],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3640138485485282,The string is too long for the buffer.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""string"",
+  ""explanation"": ""The string is too long for the buffer.""
+}"
+llama3.2:1b,errorlock_binary_locked,787-10,False,CWE-787,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.4516186666057106,Array index out of bounds,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Array index out of bounds""
+}"
+llama3.2:1b,errorlock_binary_locked,761-8,False,CWE-761,[],True,,main function,True,,False,False,False,wrong_binary_label,True,applied,3,0.8144366638133304,The code does not allocate memory for the variable b in the swap function.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not allocate memory for the variable b in the swap function.""
+}"
+llama3.2:1b,errorlock_binary_locked,476-9,False,CWE-476,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,1.0,The function min() does not check for negative inputs.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The function min() does not check for negative inputs.""
+}"
+llama3.2:1b,errorlock_binary_locked,761-1,True,CWE-761,"[15, 19, 22]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.8318975451079256,The function contains_char allocates memory for the target string and then copies it into the allocated memory. This is a common vulnerability in buffer overflow attacks.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": null,
+  ""explanation"": ""The function contains_char allocates memory for the target string and then copies it into the allocated memory. This is a common vulnerability in buffer overflow attacks.""
+}"
+llama3.2:1b,errorlock_binary_locked,401-7,False,CWE-401,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.4178634104234149,No buffer overflow vulnerability detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No buffer overflow vulnerability detected.""
+}"
+llama3.2:1b,errorlock_binary_locked,190-8,False,CWE-190,[],True,,"The function `findPath` does not check for memory leaks. It dynamically allocates memory using `malloc`, but it is not freed in all cases.",True,,False,False,False,wrong_binary_label,False,low_similarity,3,0.115715807726873,"The function `findPath` does not check if the queue is empty before accessing its elements, which can lead to undefined behavior.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""The function `findPath` does not check for memory leaks. It dynamically allocates memory using `malloc`, but it is not freed in all cases."",
+  ""explanation"": ""The function `findPath` does not check if the queue is empty before accessing its elements, which can lead to undefined behavior."" }"
+llama3.2:1b,errorlock_binary_locked,253-8,False,CWE-253,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.6394403954452642,File not found,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Error opening file\n"",
+  ""explanation"": ""File not found""
+}"
+llama3.2:1b,errorlock_binary_locked,190-7,False,CWE-190,[],False,,,True,,True,True,True,,False,low_similarity,3,0.1538073289245129,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,errorlock_binary_locked,522-8,False,CWE-522,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.6482103865041561,"The program does not handle the case where the password is not set, which could be a security risk.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle the case where the password is not set, which could be a security risk.""
+}"
+llama3.2:1b,errorlock_binary_locked,125-8,False,CWE-125,[],False,,,True,,True,True,True,,False,low_similarity,3,0.132354639258547,The string contains a hidden character.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""short line/function description"",
+  ""explanation"": ""The string contains a hidden character.""
+}"
+llama3.2:1b,errorlock_binary_locked,89-6,True,CWE-89,"[126, 128]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.5362876381998121,"The code does not handle potential SQL injection attacks. It directly uses user input as a query parameter, which can lead to security vulnerabilities.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not handle potential SQL injection attacks. It directly uses user input as a query parameter, which can lead to security vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,674-10,False,CWE-674,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,1.0,The program does not handle potential division by zero errors.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle potential division by zero errors.""
+}"
+llama3.2:1b,errorlock_binary_locked,78-4,True,CWE-78,"[11, 12]",False,,,True,,False,False,False,wrong_binary_label,False,low_similarity,3,0.1655058310292872,This C code does not contain any potential security vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Enter the number of files to list: "",
+  ""explanation"": ""This C code does not contain any potential security vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,415-4,True,CWE-415,[13],True,,malloc,True,,True,False,False,wrong_cwe,True,applied,3,0.7270031115127459,,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": """",
+  ""explanation"": """"
+}"
+llama3.2:1b,errorlock_binary_locked,674-8,False,CWE-674,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.6335005078867197,No security vulnerabilities detected.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No security vulnerabilities detected.""
+}"
+llama3.2:1b,errorlock_binary_locked,22-9,False,CWE-22,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.4465700520325913,"The program does not check for errors when accessing the file or performing system calls, which can lead to security vulnerabilities.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not check for errors when accessing the file or performing system calls, which can lead to security vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,522-4,True,CWE-522,"[105, 120]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.9891404631173524,"The code does not handle errors properly. If an error occurs while loading the configuration file or authenticating with a service, it will print an error message and continue running without stopping. This could lead to unexpected behavior or crashes.","{""vulnerable"": true, ""cwe"": null, ""location"": ""main function"", ""explanation"": ""The code does not handle errors properly. If an error occurs while loading the configuration file or authenticating with a service, it will print an error message and continue running without stopping. This could lead to unexpected behavior or crashes.""}"
+llama3.2:1b,errorlock_binary_locked,617-7,False,CWE-617,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,1.0,"The program does not handle errors properly, which can lead to unexpected behavior or crashes.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle errors properly, which can lead to unexpected behavior or crashes.""
+}"
+llama3.2:1b,errorlock_binary_locked,78-1,True,CWE-78,"[13, 16]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.2187328231892967,"The program uses a system call to execute a command, which is not secure.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""System call"",
+  ""explanation"": ""The program uses a system call to execute a command, which is not secure.""
+}"
+llama3.2:1b,errorlock_binary_locked,134-1,True,CWE-134,[9],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4152973154672498,This C program does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C program does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,835-5,True,CWE-835,"[11, 14]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.2477573942567657,"The program does not handle the case where i is less than 0, which could lead to an out of bounds access.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle the case where i is less than 0, which could lead to an out of bounds access.""
+}"
+llama3.2:1b,errorlock_binary_locked,617-6,True,CWE-617,[10],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3993982517611011,"The program uses the assert function to check if a number is divisible by 3. However, this is not a secure way to perform this check as it can be easily bypassed by a malicious user.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 4"",
+  ""explanation"": ""The program uses the assert function to check if a number is divisible by 3. However, this is not a secure way to perform this check as it can be easily bypassed by a malicious user.""
+}"
+llama3.2:1b,errorlock_binary_locked,835-2,True,CWE-835,[6],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4724469984243417,The variable 'b' is not initialized before being used in the while loop.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""while loop"",
+  ""explanation"": ""The variable 'b' is not initialized before being used in the while loop.""
+}"
+llama3.2:1b,errorlock_binary_locked,401-1,True,CWE-401,"[5, 16]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.4817911989049745,"The code allocates memory for an array of integers, but does not free it before exiting.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code allocates memory for an array of integers, but does not free it before exiting.""
+}"
+llama3.2:1b,errorlock_binary_locked,369-2,True,CWE-369,[7],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.1994078360057478,Division by zero is undefined,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""line 3"",
+  ""explanation"": ""Division by zero is undefined""
+}"
+llama3.2:1b,errorlock_binary_locked,843-5,True,CWE-843,"[12, 14, 15]",True,,main function,True,,True,False,False,wrong_cwe,False,low_similarity,3,0.1503396602759523,uses a non-standard implementation of the inverse square root algorithm,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""uses a non-standard implementation of the inverse square root algorithm""
+}"
+llama3.2:1b,errorlock_binary_locked,770-10,False,CWE-770,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,1.0,"The accept() function is called repeatedly for each new connection, which can lead to a high number of system calls and potentially cause performance issues.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""accept() function"",
+  ""explanation"": ""The accept() function is called repeatedly for each new connection, which can lead to a high number of system calls and potentially cause performance issues.""
+}"
+llama3.2:1b,errorlock_binary_locked,22-10,False,CWE-22,[],True,,Invalid path: /var/www/html,True,,False,False,False,wrong_binary_label,True,applied,3,0.862171201587638,"The program attempts to open a file in the root directory of the web server, which is not a valid location for a web server.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Invalid path: /var/www/html"",
+  ""explanation"": ""The program attempts to open a file in the root directory of the web server, which is not a valid location for a web server.""
+}"
+llama3.2:1b,errorlock_binary_locked,822-9,False,CWE-822,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.3739205017041165,"The function getTrustedPointer allocates memory for an integer, but does not check if the allocation was successful. This can lead to a buffer overflow vulnerability.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""getTrustedPointer"",
+  ""explanation"": ""The function getTrustedPointer allocates memory for an integer, but does not check if the allocation was successful. This can lead to a buffer overflow vulnerability.""
+}"
+llama3.2:1b,errorlock_binary_locked,835-4,True,CWE-835,"[6, 8]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.414950841793102,"The for loop is not a function call, it's an infinite loop.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""for loop"",
+  ""explanation"": ""The for loop is not a function call, it's an infinite loop.""
+}"
+llama3.2:1b,errorlock_binary_locked,134-9,False,CWE-134,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.6050171393624489,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,401-5,True,CWE-401,"[22, 39]",True,,main function,True,,True,False,False,wrong_cwe,False,near_duplicate_false_positive,3,1.0,Memory leak due to missing free() calls,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Memory leak due to missing free() calls""
+}"
+llama3.2:1b,errorlock_binary_locked,362-10,False,CWE-362,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.9935998363209,"Thread creation is a system call, not a function call. It's safe to use this in a multi-threaded environment.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""pthread_create"",
+  ""explanation"": ""Thread creation is a system call, not a function call. It's safe to use this in a multi-threaded environment.""
+}"
+llama3.2:1b,errorlock_binary_locked,369-1,True,CWE-369,[10],True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.2468744666581659,"The code attempts to calculate a result using the formula 17 / (hello + b), where hello is calculated as (8003+1) % 26 and b is an integer. However, since hello can be any value between 0 and 25, adding it to b will always result in a non-integer value, which cannot be divided by another integer without losing precision. This could potentially lead to incorrect results or crashes.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code attempts to calculate a result using the formula 17 / (hello + b), where hello is calculated as (8003+1) % 26 and b is an integer. However, since hello can be any value between 0 and 25, adding it to b will always result in a non-integer value, which cannot be divided by another integer without losing precision. This could potentially lead to incorrect results or crashes.""
+}"
+llama3.2:1b,errorlock_binary_locked,134-5,True,CWE-134,"[6, 7]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.6209432370510104,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,476-10,False,CWE-476,[],True,,main function,True,,False,False,False,wrong_binary_label,True,applied,3,0.3572785883314237,No vulnerability detected,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No vulnerability detected""
+}"
+llama3.2:1b,errorlock_binary_locked,22-2,True,CWE-22,"[8, 20, 29]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.9468024981929216,The program attempts to create a directory with a non-existent parent directory.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Invalid path: /var/www/html"",
+  ""explanation"": ""The program attempts to create a directory with a non-existent parent directory.""
+}"
+llama3.2:1b,errorlock_binary_locked,327-3,True,CWE-327,"[16, 19, 28]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.591584982459008,The program does not read from a secure key file and stores the key in memory. This is a security risk as an attacker could obtain the key by reading the file or by exploiting a vulnerability in the program.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not read from a secure key file and stores the key in memory. This is a security risk as an attacker could obtain the key by reading the file or by exploiting a vulnerability in the program."" }"
+llama3.2:1b,errorlock_binary_locked,822-5,True,CWE-822,"[16, 21, 25, 31]",True,,getPointer(),True,,True,False,False,wrong_cwe,True,applied,3,0.8025513762583882,"Wrong prediction: vulnerable=True, cwe=None, location=malloc","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""getPointer()"",
+  ""explanation"": ""Wrong prediction: vulnerable=True, cwe=None, location=malloc""
+}"
+llama3.2:1b,errorlock_binary_locked,761-4,True,CWE-761,[30],True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.8291294069025125,The code does not allocate memory for the variable b in the main function.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not allocate memory for the variable b in the main function.""
+}"
+llama3.2:1b,errorlock_binary_locked,190-6,True,CWE-190,[6],False,,,True,,False,False,False,wrong_binary_label,False,low_similarity,3,0.097881633871974,Division by zero,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""Division by zero""
+}"
+llama3.2:1b,errorlock_binary_locked,134-4,True,CWE-134,"[6, 21, 23]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.5628480428947826,"The code does not contain any obvious vulnerabilities, but it could be vulnerable to buffer overflow attacks if the input is not properly sanitized.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not contain any obvious vulnerabilities, but it could be vulnerable to buffer overflow attacks if the input is not properly sanitized.""
+}"
+llama3.2:1b,errorlock_binary_locked,369-5,True,CWE-369,[11],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3806753864949477,Variable declarations are not checked for potential buffer overflows.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Variable declaration"",
+  ""explanation"": ""Variable declarations are not checked for potential buffer overflows.""
+}"
+llama3.2:1b,errorlock_binary_locked,628-3,True,CWE-628,[36],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3469340776846667,The code does not contain any obvious security vulnerabilities such as buffer overflows or use of insecure cryptographic functions.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not contain any obvious security vulnerabilities such as buffer overflows or use of insecure cryptographic functions.""
+}"
+llama3.2:1b,errorlock_binary_locked,362-8,False,CWE-362,[],True,,main function,True,,False,False,False,wrong_binary_label,True,applied,3,0.5077328431494792,"The code does not demonstrate any obvious security vulnerabilities. However, it is worth noting that the use of `pthread_mutex_lock` and `pthread_mutex_unlock` can lead to deadlocks if not used carefully. Additionally, the use of `raise(SIGUSR1)` in the main thread can cause a segmentation fault if the signal handler is not properly registered.","{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The code does not demonstrate any obvious security vulnerabilities. However, it is worth noting that the use of `pthread_mutex_lock` and `pthread_mutex_unlock` can lead to deadlocks if not used carefully. Additionally, the use of `raise(SIGUSR1)` in the main thread can cause a segmentation fault if the signal handler is not properly registered."" 
+}"
+llama3.2:1b,errorlock_binary_locked,822-3,True,CWE-822,"[15, 26, 28, 30]",True,,Invalid number: %s,True,,True,False,False,wrong_cwe,True,applied,3,0.4207116941559879,The command line argument is not converted to an integer before being used in the calculation.,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""Invalid number: %s"",
+  ""explanation"": ""The command line argument is not converted to an integer before being used in the calculation.""
+}"
+llama3.2:1b,errorlock_binary_locked,362-6,True,CWE-362,"[14, 16, 25]",False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.4586500423502272,"The program does not handle the SIGUSR1 signal correctly. It should cancel the threads after sending the signal, but it doesn't do so.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""The program does not handle the SIGUSR1 signal correctly. It should cancel the threads after sending the signal, but it doesn't do so.""
+}"
+llama3.2:1b,errorlock_binary_locked,522-10,False,CWE-522,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.8097746055435915,SQL injection vulnerability,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""sqlite3_prepare_v2"",
+  ""explanation"": ""SQL injection vulnerability""
+}"
+llama3.2:1b,errorlock_binary_locked,674-6,True,CWE-674,"[5, 8, 9]",True,,main function,True,,True,False,False,wrong_cwe,True,applied,3,0.5942212672070715,No vulnerability detected,"{
+  ""vulnerable"": true,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""No vulnerability detected""
+}"
+llama3.2:1b,errorlock_binary_locked,770-5,True,CWE-770,[26],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.8803967808507244,"The accept function is blocking, which can lead to a deadlock if the server socket is not closed properly.","{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""accept function"",
+  ""explanation"": ""The accept function is blocking, which can lead to a deadlock if the server socket is not closed properly.""
+}"
+llama3.2:1b,errorlock_binary_locked,835-7,False,CWE-835,[],False,,,True,,True,True,True,,False,baseline_not_vulnerable,3,0.9415830891720636,This C code does not contain any known vulnerabilities.,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""main function"",
+  ""explanation"": ""This C code does not contain any known vulnerabilities.""
+}"
+llama3.2:1b,errorlock_binary_locked,798-2,True,CWE-798,[10],False,,,True,,False,False,False,wrong_binary_label,False,baseline_not_vulnerable,3,0.3532891234666313,Password input is not secure,"{
+  ""vulnerable"": false,
+  ""cwe"": null,
+  ""location"": ""Enter your password"",
+  ""explanation"": ""Password input is not secure""
+}"
