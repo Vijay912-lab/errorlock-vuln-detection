@@ -30,3 +30,7 @@ errorlock = "errorlock.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["errorlock*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
